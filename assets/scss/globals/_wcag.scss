@@ -1,0 +1,39 @@
+// 無障礙特殊標記
+.sr-only-focusable:not(:focus),
+.fa-sr-only-focusable:not(:focus) {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
+
+.sr-only-focusable:active,
+.sr-only-focusable:focus {
+	position: relative;
+	width: auto;
+	height: auto;
+	overflow: visible;
+	clip: auto;
+	white-space: normal;
+	margin-left: 2.5rem;
+	top: .5rem;
+}
+
+a:focus,
+button:focus,
+.form-select:focus,
+input:focus,
+.item polygon:focus,
+label.tag:has(input:focus) {
+	outline-width: 5px !important;
+	outline-color: var(--c-focus) !important;
+	outline-style: dotted !important;
+	input{
+		outline-width: 0 !important;
+	}
+}

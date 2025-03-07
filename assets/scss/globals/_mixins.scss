@@ -1,0 +1,109 @@
+@use 'sass:math';
+
+/* RWD media breakpoints (Mobile First, aligned with Bootstrap 5.3.3) */
+$XS: 0;     /* Extra small (default, no media query needed) */
+$SM: 576px; /* Small */
+$MD: 768px; /* Medium */
+$LG: 992px; /* Large */
+$XL: 1200px; /* Extra large */
+$XXL: 1400px; /* Extra extra large */
+
+/* Mobile First Mixins */
+@mixin XS() {@content;}
+@mixin SM() {@media only screen and (min-width: $SM) {@content;}}
+@mixin MD() {@media only screen and (min-width: $MD) {@content;}}
+@mixin LG() {@media only screen and (min-width: $LG) {@content;}}
+@mixin XL() {@media only screen and (min-width: $XL) {@content;}}
+@mixin XXL() {@media only screen and (min-width: $XXL) {@content;}}
+
+@mixin fa-icon {font-weight: 900;font-family: "Font Awesome 6 Free";padding: 0 .5ch;}
+@mixin shadow {box-shadow: 0 0 2rem var(--c-shadow);}
+
+$font-family: 'SF Pro', 'Arial', 'Noto Sans', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+
+$brand:#3EA7D1;
+$main:#4A7561;
+$dark:#2E2E40;
+$lite:#FEFFF5;
+
+$white:#FFFFFF;
+$glay:#CCCCCC;
+$black:#000000;
+
+$highlight: #FFA317;
+$highlight-d: #EB2B57;
+
+$brand-d:#3EA7D1;
+$main-d:#40D5A7;
+$dark-d:#2A2522;
+$lite-d:#FEFFF5;
+
+// 暫時沒有用
+$page-padding:.8em;
+$alert:#992255;
+$white-6: rgba(255,255,255,0.6);
+$white-8: rgba(255,255,255,0.8);
+$white-9: rgba(255,255,255,0.9);
+$brand-0:rgba(236, 0, 140, 0);
+
+
+:root{
+	--bs-body-font-family: #{$font-family};
+  --c-brand: #{$brand};
+	--c-main: #{$main};
+	--c-bg: #{$brand};
+	--c-bg-t: #{$white};
+
+	--bs-body-bg: #{$lite}; /* 淺灰色背景 */
+	--bs-body-color: #{$dark}; /* 深灰色文字 */
+	--bs-border-color: #{$dark}; /* 深灰色文字 */
+
+	--c-shadow: rgba(0, 0, 0, 0.2);
+	--c-highlight: #{$highlight};
+	--c-focus: #{$highlight};
+
+	/* Primary 主題相關 */
+	--bs-primary: #{$brand}; /* 主色 */
+	--bs-primary-rgb: 197, 70, 81;
+	--bs-primary-bg-subtle: #{$lite}; /* 淡色背景 */
+	--bs-primary-text-emphasis: #{$dark}; /* 暗色文字 */
+
+	--c-white: #{$white};
+	--c-black: #{$black};
+	--c-dark: #{$dark};
+	--c-glay: #{$glay};
+	--c-lite: #{$lite};
+	--c-alert: #{$alert};
+	--c-white6: #{$white-6};
+	--c-white8: #{$white-8};
+	--c-white9: #{$white-9};
+	--c-brand0: #{$brand-0};
+
+	--page-padding: #{$page-padding};
+	--font-size: 16px;
+}
+
+[data-bs-theme="dark"] {
+	--c-highlight: #{$highlight};
+	--c-focus: #{$highlight-d};
+	--c-brand: #{$brand-d};
+	--c-main: #{$main-d};
+	--c-bg: #{$brand-d};
+	--c-bg-t: #{$white};
+	--c-shadow: rgba(0, 0, 0, 0.9);
+
+	--bs-body-bg: #{$dark-d}; /* 淺灰色背景 */
+	--bs-body-color: #{$lite}; /* 深灰色文字 */
+}
+
+[data-font="M"]{
+	--font-size: 16px;
+}
+[data-font="L"]{
+	--font-size: 18px;
+}
+[data-font="XL"]{
+	--font-size: 20px;
+}
+
+// 暫時沒用

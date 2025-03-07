@@ -1,0 +1,51 @@
+@use 'sass:math';
+@use '../globals/mixins' as *;
+
+button, a, *::after, *::before{
+	transition-property: all;
+	transition-duration: .2s;
+	transition-timing-function: ease-in-out;
+}
+
+#space-fix{
+	content: '';
+	position: fixed;
+	background: var(--c-lite);
+	z-index: -1;
+	transition: all .3s ease-in-out;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	transform: skew(0);
+	&.hi0{
+		top: 0;
+		left: 80vw;
+		transform: skew(45deg);
+	}
+	&.hi1{
+		top: 0;
+		left: 80vw;
+		transform: skew(-60deg);
+	}
+	&.hi2{
+		top: 0;
+		left: -50vw;
+		width: 68vw;
+		transform: skew(-18deg);
+	}
+	&.hi3{
+		top: 12vh;
+		left: 0;
+		height: 30vw;
+		transform: skew(0deg) !important;
+		@include SM(){
+			height: 60vw;
+		}
+	}
+	&.hi4{
+		top: 0;
+		left: -66vw;
+		transform: skew(18deg);
+	}
+}

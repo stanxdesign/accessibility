@@ -1,0 +1,39 @@
+# 忽略系統產生的暫存或備份檔案
+.DS_Store
+Thumbs.db
+
+# 忽略編譯或打包輸出的文件夾
+dist/
+build/
+
+# 忽略依賴管理工具的資料夾（若使用了 npm/yarn/pnpm）
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# 忽略 Sass/SCSS 編譯產生的 CSS（如果是手動編寫的 CSS，請刪除此行）
+*.css.map
+
+# 忽略環境變數與設定檔案（如果有 API 金鑰或其他機密資訊）
+.env
+.env.local
+.env.*.local
+
+# 忽略 VS Code 工作區設定（若多人協作，可視情況刪除）
+.vscode/
+
+# 忽略 NPM / Yarn / PNPM 安裝的 `.cache`
+.npm/
+.yarn/
+.pnpm-store/
+
+# 忽略 log 檔案
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 如果使用 Parcel、Vite 或其他前端工具，忽略其快取
+.parcel-cache/
+.vite/

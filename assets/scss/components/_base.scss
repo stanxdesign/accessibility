@@ -1,0 +1,104 @@
+@use 'sass:math';
+@use '../globals/mixins' as *;
+
+::selection {
+  background: #4A7561;
+  color: var(--c-lite);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: #4A7561;
+  color: var(--c-lite);
+  text-shadow: none;
+}
+
+html {
+	font-family: $font-family;
+	font-size: var(--font-size);
+}
+
+body {
+	font-size: 1em;
+}
+
+h1, h2 {
+	font-size: 1.2rem;
+}
+
+h3, h4, h5, h6 {
+	font-size: 1rem;
+}
+
+.btn-theme{
+	border-radius: 99rem;
+	background-color: var(--c-bg);
+	color: var(--c-white);
+	&:hover,&:focus,&.active{
+		background-color: var(--c-highlight);
+	}
+}
+
+.btn{
+	border-radius: 99rem;
+}
+.btn-more{
+	&::after{
+		content: "\f178";
+		font-weight: 900;
+		font-family: "Font Awesome 6 Free";
+		padding: 0 .5ch;
+	}
+}
+
+.btn-highlight{
+	border-radius: 99rem;
+	background-color: var(--c-highlight);
+	color: var(--c-black);
+	font-weight: 900;
+	&:hover,&:focus,&.active{
+		background-color: var(--c-white);
+		color: var(--c-black);
+	}
+}
+
+$icons: (
+    "info": "\f05a",    // fa-info-circle
+    "search": "\f002",  // fa-search
+    "list": "\f0ca",    // fa-list
+    "login": "\f090",   // fa-sign-in-alt
+    "logout": "\f08b"   // fa-sign-out-alt
+);
+
+@each $name, $code in $icons {
+	.icon-#{$name} {
+		&::before {
+			content: $code;
+			@include fa-icon;
+		}
+	}
+}
+
+.tags{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1ch;
+	.tag{
+		color: var(--c-dark);
+		background-color: var(--c-white);
+		border:solid 1px var(--c-white);
+		border-radius: .5rem;
+		padding: .2em .5em;
+		&:has(.form-check-input:focus) {
+			outline-width: 5px !important;
+			outline-color: var(--c-focus) !important;
+			outline-style: dotted !important;
+			input{
+				outline-width: 0 !important;
+			}
+		}
+		&:has(input:checked) {
+			border:2px solid var(--c-highlight);
+		}
+	}
+}
