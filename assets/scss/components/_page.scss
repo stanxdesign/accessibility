@@ -6,9 +6,8 @@
 	background-color: var(--c-white);
 	margin: 5vw auto;
 	max-width: 960px;
-	border: 2rem solid var(--c-brand);
+	border: 1rem solid var(--c-brand);
 	border-radius: 2rem;
-
 	#thirdLoginCard{
 		background-color: var(--c-main);
 		color: var(--c-white);
@@ -24,6 +23,9 @@
 	}
 	#forgetPassword{
 		float: right;
+	}
+	@include SM{
+		border: 2rem solid var(--c-brand);
 	}
 }
 

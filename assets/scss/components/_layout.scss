@@ -103,8 +103,12 @@
 }
 
 #navbar-sub {
+	display: none;
 	label {
 		padding: 0 0.5ch;
+	}
+	@include LG {
+		display: block;
 	}
 }
 #navbar-main {
@@ -335,7 +339,7 @@ article {
 #slider-main {
 	position: relative;
 	width: 100%;
-	aspect-ratio: 16 / 6;
+	aspect-ratio: 2 / 3;
 	overflow: hidden;
 	margin-top: 3rem;
 	border-radius: 1rem;
@@ -388,6 +392,12 @@ article {
 		&.slider-nav-next {
 			right: 1.5rem;
 		}
+	}
+	@include MD {
+		aspect-ratio: 16 / 9;
+	}
+	@include LG {
+		aspect-ratio: 16 / 6;
 	}
 }
 
