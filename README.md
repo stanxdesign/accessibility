@@ -1,6 +1,6 @@
 # 校園無障礙網站設計
 
-[預覽網址](https://link-url-here.org](https://demo.stanxdesign.info/accessibility/)
+[預覽網址](https://demo.stanxdesign.info/accessibility/)
 
 
 ## 初版發佈 2025.03.07
