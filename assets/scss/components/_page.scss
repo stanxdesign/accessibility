@@ -44,13 +44,21 @@
 #listPage{
 	#filterPanel{
 		width: 100%;
-		max-width: 720px;
 		margin: 1.5rem auto;
 		flex-direction: row;
+		flex-wrap: nowrap;
+		padding: 0;
+		background-color: var(--c-brand);
+		color: var(--c-brand-t);
 		#filterPanelForm{
 			max-width: 100%;
+			order: 1;
+			flex-grow: 1;
 			flex-direction: row;
 			align-items: flex-end;
+			padding: 1rem;
+			border-radius: 0 1rem 1rem 0;
+			background-color: var(--c-dark);
 			.form-group {
 				flex-direction: column;
 				flex: 0 1 25%;
@@ -64,6 +72,110 @@
 				margin-left: auto;
 				padding-left: 2rem;
 				padding-right: 2rem;
+			}
+		}
+		#layoutBtns{
+			order: 2;
+			display: flex;
+			flex: 0;
+			flex-wrap: nowrap;
+			justify-content: center;
+			gap: .5rem;
+			background-color: var(--c-brand);
+			color: var(--c-brand-t);
+			padding: .5rem;
+			a{
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				width: 5rem;
+				aspect-ratio: 1/1;
+				color: var(--c-white);
+				border: var(--c-dark) solid 2px;
+				color: var(--c-dark);
+				background-color: var(--c-white);
+				font-size: .8rem;
+				border-radius:1rem;
+				padding:1ch;
+				&::before{
+					font-size: 2.5rem;
+				}
+				&.active{
+					background-color: var(--c-highlight);
+					color: var(--c-dark);
+				}
+			}
+		}
+	}
+	.resultItem{
+		background-color: var(--c-brand);
+		color: var(--c-brand-t);
+		display: grid;
+		grid-template-areas: 'title  tab-bar'
+													'info tab-bar'
+													'tab-info tab-info';
+		border-radius: 0;
+		overflow: hidden;
+		border: 2px solid var(--c-main);
+		padding: 0;
+		width: calc(100% - 1.5rem);
+		margin: 0 .75rem;
+		border-top: none 0 transparent;
+		border-bottom: dotted 1px var(--c-white);
+		&:first-child{
+			margin-top: 2rem;
+			border-top: solid 2px var(--c-main);
+			border-radius: 2rem 2rem 0 0;
+		}
+		&:last-child{
+			border-bottom: solid 2px var(--c-main);
+			border-radius: 0 0 2rem 2rem;
+		}
+		h3{
+			grid-area: title;
+			font-size: 1.5rem;
+			padding: 1rem 0 0 1rem;
+			margin: 0;
+			color: var(--c-white);
+		}
+		.info{
+			padding: 0 1rem;
+			grid-area: info;
+		}
+		.tab-bar{
+			grid-area: tab-bar;
+			justify-content: right;
+			align-items: center;
+			gap: 1ch;
+			padding: 0 1rem;
+			.tab-bar-btn{
+				border: var(--c-highlight) solid 1px;
+				background-color: var(--c-brand);
+				border-radius: 1rem;
+				background-color: var(--c-white);
+				.mark{
+					background-color: var(--c-highlight);
+				}
+				&.active{
+					background-color: var(--c-highlight);
+					color: var(--c-dark);
+					.mark{
+						background-color: var(--c-white);
+					}
+				}
+			}
+		}
+		.tab-content{
+			grid-area: tab-info;
+			padding: 0;
+			border: none;
+			.tab-content-info{
+				border-top-width: 0;
+				padding: 0 1rem;
+				&.active{
+					border-top: solid 2px var(--c-highlight);
+					padding: 1rem;
+				}
 			}
 		}
 	}
@@ -368,42 +480,7 @@
 					grid-area: tab-bar;
 				}
 				.tab-content{
-					color: var(--c-black);
 					grid-area: tab-info;
-					.items{
-						margin: 0 0 1.5rem 0;
-					}
-					ul,li{
-						list-style: none;
-						padding: 0;
-						margin: 0;
-					}
-					h4{
-						display: none;
-						&:is(:last-child){
-							display: block;
-							&::before{
-								content: '很抱歉，沒有';
-							}
-							&::after{
-								content: '的資料';
-							}
-						}
-					}
-					button.fa{
-						color: var(--c-dark);
-						background-color: var(--c-white);
-						border: solid 1px var(--c-glay);
-						border-radius:.5rem;
-						padding:.5em;
-						margin: .25ch;
-						font-weight: normal;
-						&::before{
-							font-weight: 900;
-							margin-right: .25ch;
-							font-size: 1.2em;
-						}
-					}
 				}
 			}
 		}
@@ -449,6 +526,7 @@
 			flex-grow: 0;
 			border: none;
 			background-color: var(--c-brand);
+			color: var(--c-brand-t);
 			padding: .5rem;
 			font-size: 1.2rem;
 			border-radius: 1rem 1rem 0 0;

@@ -155,8 +155,15 @@ article {
 			display: flex;
 			flex-direction: column;
 			justify-content: space-between;
-			padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 			z-index: 1;
+			a{
+				margin: 1ch;
+			}
+			@include MD {
+				.card {
+					padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+				}
+			}
 		}
 		.card-title {
 			position: relative;
@@ -170,12 +177,22 @@ article {
 				right: 0.1ch;
 				top: 50%;
 				transform: translateY(-50%);
-				font-size: 2.2rem;
+				font-size: 2rem;
 				z-index: 2;
+				@include MD {
+					font-size: 2.2rem;
+				}
 			}
 			label {
 				max-height: 3.8rem;
 				overflow: hidden;
+				span{
+					&::before{
+						content: '\f0da';
+						@include fa-icon;
+						opacity: .8;
+					}
+				}
 			}
 		}
 		.card-cover {
@@ -190,10 +207,12 @@ article {
 			}
 			i {
 				position: absolute;
-				bottom: 1.5rem;
-				right: 2rem;
+				right: 1rem;
+				bottom: 1rem;
 				font-size: 3rem;
 				@include MD {
+					bottom: 1.5rem;
+					right: 2rem;
 					font-size: 4rem;
 				}
 			}
@@ -214,41 +233,6 @@ article {
 		background-color: var(--c-main) !important;
 		border-color: var(--c-main) !important;
 		color: var(--c-white);
-	}
-}
-
-.card-theme-slider {
-	.card {
-		flex-direction: column;
-		aspect-ratio: 1 / 1 !important;
-	}
-}
-
-.card-theme-chart {
-	.card {
-		flex-direction: column;
-		.card-chart {
-			width: 100%;
-			height: 100%;
-			aspect-ratio: inherit;
-			overflow: hidden;
-			background-color: var(--c-white);
-		}
-		.card-body {
-			max-width: 100%;
-			margin-left: 0;
-			@include MD {
-				max-width: 50%;
-				margin-left: 50%;
-			}
-		}
-	}
-	&:not(.card-wide) {
-		aspect-ratio: 1 / 1 !important;
-		.card-body {
-			max-width: 100%;
-			margin-left: 0;
-		}
 	}
 }
 
@@ -326,13 +310,90 @@ article {
 	}
 	.card-cover {
 		i {
-			right: auto;
-			left: 2rem;
+			@include MD {
+				right: auto;
+				left: 2rem;
+			}
 		}
 	}
 	@include MD {
 		flex: 0 0 25%; // 四分之一寬
 		max-width: 25%;
+	}
+}
+
+.card-theme-slider {
+	&:is(.card-third,.card-quarter) {
+		flex: 0 0 100%; // 四分之一寬
+		max-width: 100%;
+	}
+	.card {
+		flex-direction: column;
+		aspect-ratio: 1 / 1 !important;
+	}
+	@include MD {
+		&.card-third{
+			max-width: calc(100% / 3);
+		}
+		&.card-quarter{
+			max-width: calc(100% / 4);
+		}
+	}
+}
+
+.card-theme-chart-filter {
+	.card {
+		flex-direction: column;
+		.card-chart {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: inherit;
+			overflow: hidden;
+			background-color: var(--c-white);
+		}
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+			@include MD {
+				max-width: 50%;
+				margin-left: 50%;
+			}
+		}
+	}
+	&:not(.card-wide) {
+		aspect-ratio: 1 / 1 !important;
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+		}
+	}
+}
+
+.card-theme-chart {
+	.card {
+		flex-direction: column;
+		.card-chart {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: inherit;
+			overflow: hidden;
+			background-color: var(--c-white);
+		}
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+			@include MD {
+				max-width: 50%;
+				margin-left: 50%;
+			}
+		}
+	}
+	&:not(.card-wide) {
+		aspect-ratio: 1 / 1 !important;
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+		}
 	}
 }
 

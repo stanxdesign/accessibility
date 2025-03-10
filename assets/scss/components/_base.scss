@@ -30,6 +30,14 @@ h3, h4, h5, h6 {
 	font-size: 1rem;
 }
 
+.no-icon{
+	&::before{
+		content: none !important;
+	}
+	&::after{
+		content: none !important;
+	}
+}
 .btn-theme{
 	border-radius: 99rem;
 	background-color: var(--c-bg);
@@ -99,6 +107,44 @@ $icons: (
 		}
 		&:has(input:checked) {
 			border:2px solid var(--c-highlight);
+		}
+	}
+}
+
+.tab-content{
+	color: var(--c-black);
+	.items{
+		margin: 0 0 1.5rem 0;
+	}
+	ul,li{
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	h4{
+		display: none;
+		&:is(:last-child){
+			display: block;
+			&::before{
+				content: '很抱歉，沒有';
+			}
+			&::after{
+				content: '的資料';
+			}
+		}
+	}
+	button.fa{
+		color: var(--c-dark);
+		background-color: var(--c-white);
+		border: solid 1px var(--c-glay);
+		border-radius:.5rem;
+		padding:.5em;
+		margin: .25ch;
+		font-weight: normal;
+		&::before{
+			font-weight: 900;
+			margin-right: .25ch;
+			font-size: 1.2em;
 		}
 	}
 }

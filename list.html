@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" integrity="sha256-bA4I6ewBzTSiwrAJh61J0WZTA5P+yY+Je2qKlNLwDyY=" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.01" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.03" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -45,7 +45,7 @@
 		<nav id="navbar-main" class="navbar navbar-expand-lg mx-4 my-1 py-0 navbar-light bg-white">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.html" title="回到首頁">
-					<img src="assets/images/logo.webp" alt="{{網站LOGO}}" height="40" class="custom-logo">
+					<img src="assets/images/logo.webp" alt="網站LOGO" height="40" class="custom-logo">
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
@@ -80,7 +80,7 @@
 				<div id="filterPanelForm">
 					<div class="form-group cities">
 						<label for="cities">縣市</label>
-						<select class="form-select disabledCheck" id="cities" aria-label="設施類型" tabindex="-1" aria-disabled="true">
+						<select class="form-select disabledCheck" id="cities" aria-label="設施類型">
 							<option value="all">全部</option>
 							<option value="taipei">台北</option>
 							<option value="taichung">台中</option>
@@ -110,6 +110,12 @@
 					</div>
 					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
 				</div>
+				<div id="layoutBtns">
+					<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie active" aria-label="切換為圖表模式">統計圖表
+					</a>
+					<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building" aria-label="切換為卡片模式"></i>建物導覽
+					</a>
+				</div>
 
 			</div>
 			<section>
@@ -117,275 +123,55 @@
 					<h2 class="section-title display-5 fw-bold">常用功能</h2>
 				</header>
 				<div class="row g-4">
-					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-01">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
+					<article class="card-half card-theme-cover card-style-brand" aria-labelledby="card-title-03">
+						<div class="card h-100" href="#" title="點選卡片開啟標題頁面" aria-label="點選卡片開啟標題頁面">
 							<div class="card-body">
-								<h5 id="card-title-01" class="card-title"><label>卡片標題</label></h5>
-								<p class="card-text">這是二分之一寬的卡片，佔據 50%。</p>
+								<h5 id="card-title-03" class="card-title no-icon"><label>台灣體育大學<span>一中校區</span></label></h5>
+								<p class="card-text">國立臺灣體育運動大學，簡稱臺體、臺灣體大，是一所位於臺中市北區的國立大學。<br>臺中市北區雙十路一段16號<a href="#" class="btn btn-highlight fa fa-location-arrow">帶我前往</a></p>
+							</div>
+							<div class="card-cover">
+							</div>
+						</>
+					</article>
+					<article class="card-half card-theme-cover card-style-main" aria-labelledby="card-title-01">
+						<div class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
+							<div class="card-body">
+								<h5 id="card-title-01" class="card-title no-icon"><label></label></h5>
+								<p class="card-text"></p>
 							</div>
 							<div class="card-cover">
 								<img src="assets/images/demo01.webp" alt="">
 							</div>
-						</a>
+						</div>
 					</article>
-					<article class="card-half card-theme-cover card-theme-white" aria-labelledby="card-title-02">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
-							<div class="card-body">
-								<h5 id="card-title-02" class="card-title"><label>卡片標題</label></h5>
-								<p class="card-text">想搜尋哪一間學校的資訊呢？<br>輸入關鍵字，快速找出校園無障礙設施</p>
-							</div>
-							<div class="card-cover">
-								<img src="assets/images/demo02.webp" aria-hidden="true">
-							</div>
-						</a>
-					</article>
-					<article class="card-half card-theme-cover card-style-main" aria-labelledby="card-title-03">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
-							<div class="card-body">
-								<h5 id="card-title-03" class="card-title"><label>卡片標題</label></h5>
-								<p class="card-text">這是二分之一寬的卡片，佔據 50%。</p>
-							</div>
-							<div class="card-cover">
-							</div>
-						</a>
-					</article>
-					<article class="card-quarter card-theme-cover card-style-brand" aria-labelledby="card-title-04">
-						<a class="card h-100" href="#" title="FAQ 常見問答" aria-label="點選卡片開啟FAQ 常見問答頁面">
-							<div class="card-body">
-								<h5 id="card-title-04" class="card-title"><label>FAQ 常見問答</label></h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-							</div>
-						</a>
-					</article>
-					<article class="card-quarter card-theme-cover card-style-main" aria-labelledby="card-title-05">
-						<a class="card h-100" href="#" title="系統登入" aria-label="點選卡片開啟登入系統頁面">
-							<div class="card-body">
-								<h5 id="card-title-05" class="card-title">系統登入</h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-							</div>
-						</a>
-					</article>
-					<article class="card-wide card-theme-cover card-style-main" aria-labelledby="card-title-06">
-						<a class="card h-100" href="#" title="系統登入" aria-label="點選卡片開啟登入系統頁面">
-							<div class="card-body">
-								<h5 id="card-title-06" class="card-title">系統登入</h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-							</div>
-						</a>
-					</article>
+
 				</div>
 			</section>
 
 			<!-- 功能區卡片款式 -->
-			<section>
-				<header class="row py-4 my-5">
-					<h2 class="section-title display-5 fw-bold">設施分類與應用</h2>
-				</header>
+			<section class="my-3">
 				<div class="row g-4">
-					<article class="card-half card-theme-cover card-style-main" aria-labelledby="card-title-07">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
-							<div class="card-body">
-								<h5 id="card-title-07" class="card-title"><label>卡片標題</label></h5>
-								<p class="card-text">這是二分之一寬的卡片，佔據 50%。</p>
-							</div>
-							<div class="card-cover">
-								<i class="fa fa-car" aria-hidden="true"></i>
-							</div>
-						</a>
-					</article>
-					<article class="card-quarter card-theme-cover " aria-labelledby="card-title-08">
-						<a class="card h-100" href="#" title="FAQ 常見問答" aria-label="點選卡片開啟FAQ 常見問答頁面">
-							<div class="card-body">
-								<h5 id="card-title-08" class="card-title"><label>小區塊含圖示</label></h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-								<i class="fa fa-globe" aria-hidden="true"></i>
-							</div>
-						</a>
-					</article>
-					<article class="card-quarter card-theme-cover card-style-brand" aria-labelledby="card-title-09">
-						<a class="card h-100" href="#" title="系統登入" aria-label="點選卡片開啟登入系統頁面">
-							<div class="card-body">
-								<h5 id="card-title-09" class="card-title">小區塊含圖示</h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-								<i class="fa fa-info" aria-hidden="true"></i>
-							</div>
-						</a>
-					</article>
-
-					<article class="card-third card-theme-cover card-style-brand" aria-labelledby="card-title-10">
-						<a class="card h-100" href="#" title="系統登入" aria-label="點選卡片開啟登入系統頁面">
-							<div class="card-body">
-								<h5 id="card-title-10" class="card-title">小區塊含圖示</h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-								<i class="fa fa-info" aria-hidden="true"></i>
-							</div>
-						</a>
-					</article>
-
-					<article class="card-third card-theme-cover card-style-brand" aria-labelledby="card-title-11">
-						<a class="card h-100" href="#" title="系統登入" aria-label="點選卡片開啟登入系統頁面">
-							<div class="card-body">
-								<h5 id="card-title-11" class="card-title">小區塊含圖示</h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-								<i class="fa fa-info" aria-hidden="true"></i>
-							</div>
-						</a>
-					</article>
-
-					<article class="card-third card-theme-cover card-style-brand" aria-labelledby="card-title-12">
-						<a class="card h-100" href="#" title="系統登入" aria-label="點選卡片開啟登入系統頁面">
-							<div class="card-body">
-								<h5 id="card-title-12" class="card-title">小區塊含圖示</h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-								<i class="fa fa-info" aria-hidden="true"></i>
-							</div>
-						</a>
-					</article>
-
-					<article class="card-third card-theme-slider card-style-brand" aria-labelledby="card-title-13">
-						<div class="card h-100" href="#" title="台灣體育大學圖片集，共4張" aria-label="台灣體育大學圖片集，共4張">
-							<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
-									 role="region"
-									 aria-label="台灣體育大學圖片集，共4張"
-									 aria-live="polite">
-								<ul class="slider-container" id="slider-13">
-									<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
-										<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
-									</li>
-									<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
-										<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
-									</li>
-									<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
-										<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
-									</li>
-									<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
-										<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
-									</li>
-								</ul>
-								<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
-								<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
-							</div>
-							<h5 id="card-title-13" class="card-title">台灣體育大學</h5>
-						</div>
-					</article>
-				</div>
-			</section>
-
-			<!-- 功能區卡片款式 -->
-			<section>
-				<header class="row py-4 my-5">
-					<h2 class="section-title display-5 fw-bold">圖表與應用</h2>
-				</header>
-				<div class="row g-4">
-					<article class="card-half card-theme-chart card-style-main" aria-labelledby="card-title-14">
+					<article class="card-half card-theme-chart card-style-main" aria-labelledby="card-title-16">
 						<div class="card h-100" href="#" title="點選卡片開啟校園無障礙設施統計頁面" aria-label="點選卡片開啟校園無障礙設施統計頁面">
+							<div class="card-body">
+								<h5 id="card-title-03" class="card-title no-icon">設施統計長條圖</h5>
+							</div>
 							<div class="card-chart">
 								<canvas id="chart-01" aria-label="圖表：校園無障礙設施統計圖表"></canvas>
 							</div>
-							<div class="card-body">
-								<h5 class="card-title visually-hidden" id="card-title-14" aria->校園無障礙設施統計</h5>
-								<div class="row g-3">
-									<div class="col-md-6">
-										<label for="filter-facility" class="form-label">設施類型</label>
-										<select class="form-select" id="filter-facility" aria-label="選擇設施類型以篩選圖表">
-											<option selected value="">所有設施</option>
-											<option value="ramp">坡道</option>
-											<option value="elevator">電梯</option>
-											<option value="accessible-toilet">無障礙廁所</option>
-										</select>
-									</div>
-									<div class="col-md-6">
-										<label for="filter-area" class="form-label">校園區域</label>
-										<select class="form-select" id="filter-area" aria-label="選擇校園區域以篩選圖表">
-											<option selected value="">全校</option>
-											<option value="north">北區</option>
-											<option value="south">南區</option>
-											<option value="central">中區</option>
-										</select>
-									</div>
-								</div>
-							</div>
 						</div>
 					</article>
 
-					<article class="card-half card-theme-chart card-style-brand" aria-labelledby="card-title-15">
+					<article class="card-half card-theme-chart card-style-brand" aria-labelledby="card-title-16">
 						<div class="card h-100" href="#" title="點選卡片開啟校園無障礙設施統計頁面" aria-label="點選卡片開啟校園無障礙設施統計頁面">
-							<div class="card-chart">
-								<canvas id="chart-01" aria-label="圖表：校園無障礙設施統計圖表"></canvas>
-							</div>
 							<div class="card-body">
-								<h5 class="card-title visually-hidden" id="card-title-15" aria->校園無障礙設施統計</h5>
-								<div class="row g-3">
-									<div class="col-md-6">
-										<label for="filter-a1" class="form-label">設施類型</label>
-										<select class="form-select" id="filter-a1" aria-label="請按方向鍵下來選擇篩選條件">
-											<option selected value="">所有設施</option>
-											<option value="ramp">坡道</option>
-											<option value="elevator">電梯</option>
-											<option value="accessible-toilet">無障礙廁所</option>
-										</select>
-									</div>
-									<div class="col-md-6">
-										<label for="filter-a2" class="form-label">校園區域</label>
-										<select class="form-select" id="filter-a2" aria-label="請按方向鍵下來選擇篩選條件">
-											<option selected value="">全校</option>
-											<option value="north">北區</option>
-											<option value="south">南區</option>
-											<option value="central">中區</option>
-										</select>
-									</div>
-								</div>
+								<h5 id="card-title-03" class="card-title no-icon">設施統計圓餅圖</h5>
+							</div>
+							<div class="card-chart">
+								<canvas id="chart-02" aria-label="圖表：校園無障礙設施統計圖表"></canvas>
 							</div>
 						</div>
 					</article>
-
-					<article class="card-wide card-theme-chart card-style-main" aria-labelledby="card-title-16">
-						<div class="card h-100" href="#" title="點選卡片開啟校園無障礙設施統計頁面" aria-label="點選卡片開啟校園無障礙設施統計頁面">
-							<div class="card-chart">
-								<canvas id="chart-01" aria-label="圖表：校園無障礙設施統計圖表"></canvas>
-							</div>
-							<div class="card-body">
-								<h5 class="card-title visually-hidden" id="card-title-16" aria->校園無障礙設施統計</h5>
-								<div class="row g-3">
-									<div class="col-md-6">
-										<label for="filter-b1" class="form-label">設施類型</label>
-										<select class="form-select" id="filter-b1" aria-label="請按方向鍵下來選擇篩選條件">
-											<option selected value="">所有設施</option>
-											<option value="ramp">坡道</option>
-											<option value="elevator">電梯</option>
-											<option value="accessible-toilet">無障礙廁所</option>
-										</select>
-									</div>
-									<div class="col-md-6">
-										<label for="filter-b2" class="form-label">校園區域</label>
-										<select class="form-select" id="filter-b2" aria-label="請按方向鍵下來選擇篩選條件">
-											<option selected value="">全校</option>
-											<option value="north">北區</option>
-											<option value="south">南區</option>
-											<option value="central">中區</option>
-										</select>
-									</div>
-								</div>
-							</div>
-						</div>
-					</article>
-
 				</div>
 			</section>
 		</main>
