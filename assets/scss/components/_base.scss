@@ -2,14 +2,14 @@
 @use '../globals/mixins' as *;
 
 ::selection {
-  background: #4A7561;
-  color: var(--c-lite);
+  background: var(--c-highlight);
+  color: var(--c-black);
   text-shadow: none;
 }
 
 ::-moz-selection {
-  background: #4A7561;
-  color: var(--c-lite);
+  background: var(--c-highlight);
+  color: var(--c-black);
   text-shadow: none;
 }
 
@@ -47,13 +47,29 @@ h3, h4, h5, h6 {
 	}
 }
 
+.btn-main{
+	border-radius: 99rem;
+	background-color: var(--c-main);
+	color: var(--c-white);
+	&:hover,&:focus,&.active{
+		background-color: var(--c-highlight);
+	}
+}
+
 .btn{
 	border-radius: 99rem;
+	font-family: var(--bs-body-font-family);
+	&.fa{
+		&::before{
+			font-family: "Font Awesome 6 Free";
+			margin-right: .5ch;
+		}
+	}
 }
 .btn-more{
 	&::after{
 		content: "\f178";
-		font-weight: 900;
+		font-weight: bold;
 		font-family: "Font Awesome 6 Free";
 		padding: 0 .5ch;
 	}
@@ -61,12 +77,19 @@ h3, h4, h5, h6 {
 
 .btn-highlight{
 	border-radius: 99rem;
-	background-color: var(--c-highlight);
-	color: var(--c-black);
-	font-weight: 900;
+	@include obj-theme(highlight,0);
+	font-weight: bold;
 	&:hover,&:focus,&.active{
 		background-color: var(--c-white);
 		color: var(--c-black);
+	}
+}
+
+.btn-text-lite{
+	background-color: none;
+	color: var(--c-white);
+	&:hover,&:focus,&.active{
+		color: var(--c-highlight);
 	}
 }
 
@@ -92,7 +115,7 @@ $icons: (
 	flex-wrap: wrap;
 	gap: 1ch;
 	.tag{
-		color: var(--c-dark);
+		color: var(--c-black);
 		background-color: var(--c-white);
 		border:solid 1px var(--c-white);
 		border-radius: .5rem;
@@ -131,20 +154,6 @@ $icons: (
 			&::after{
 				content: '的資料';
 			}
-		}
-	}
-	button.fa{
-		color: var(--c-dark);
-		background-color: var(--c-white);
-		border: solid 1px var(--c-glay);
-		border-radius:.5rem;
-		padding:.5em;
-		margin: .25ch;
-		font-weight: normal;
-		&::before{
-			font-weight: 900;
-			margin-right: .25ch;
-			font-size: 1.2em;
 		}
 	}
 }

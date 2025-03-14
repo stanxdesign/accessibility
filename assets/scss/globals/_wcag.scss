@@ -20,8 +20,7 @@
 	overflow: visible;
 	clip: auto;
 	white-space: normal;
-	margin-left: 2.5rem;
-	top: .5rem;
+	margin: .5rem 2rem;
 }
 
 a:focus,
@@ -29,7 +28,8 @@ button:focus,
 .form-select:focus,
 input:focus,
 .item polygon:focus,
-label.tag:has(input:focus) {
+label.tag:has(input:focus),
+label:focus {
 	outline-width: 5px !important;
 	outline-color: var(--c-focus) !important;
 	outline-style: dotted !important;

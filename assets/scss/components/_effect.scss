@@ -10,7 +10,6 @@ button, a, *::after, *::before{
 #space-fix{
 	content: '';
 	position: fixed;
-	background: var(--c-lite);
 	z-index: -1;
 	transition: all .3s ease-in-out;
 	top: 0;

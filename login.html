@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.03"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.04"/>
 
 	<!--
 	上正式環境時，需留意跨域請求的安全屬性
@@ -26,7 +26,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" integrity="sha256-dABdfBfUoC8vJUBOwGVdm8L9qlMWaHTIfXt+7GnZCIo=" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css" integrity="sha256-bA4I6ewBzTSiwrAJh61J0WZTA5P+yY+Je2qKlNLwDyY=" crossorigin="anonymous">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.03" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.04" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	 -->
 </head>
 
@@ -38,55 +38,51 @@
 	</noscript>
 
 	<form><!--<form> start === form tag ASP.NET Web Forms-->
-	<a href="#content" id="gotocenter" title="跳到主要內容" tabindex="1" class="sr-only-focusable sr-only">跳到主要內容</a>
-
-	<header>
-		<div id="navbar-sub" class="container-fluid my-2 px-3 subnav">
-			<div class="row align-items-center mx-2">
-				<div class="col-auto">
-					<span>資料更新<label id="updateTime">2025年1月10日</label></span>
-					<span>進站人次<label id="peopleCount">123,456</label></span>
+		<header id="navHeader">
+			<a href="#content" id="gotocenter" title="跳到主要內容" tabindex="1" class="sr-only-focusable sr-only">跳到主要內容</a>
+			<!-- 主選單列 -->
+			<nav id="navbarMain" class="navbar navbar-expand-lg navbar-light bg-white">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="index.html" title="回到首頁">
+						<img src="assets/images/logo.webp" alt="{{網站LOGO}}" height="40" class="custom-logo">
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div id="navbarNav" class="collapse navbar-collapse">
+						<ul class="navbar-nav ms-auto">
+							<li id="nav-li-home" class="nav-item acc">
+								<a href="#" title="上方選單區" accesskey="u" class="nav-link">:::</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link icon-info" href="#info">設施介紹</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle icon-search" href="#search" id="searchFunction" role="button" data-bs-toggle="dropdown" aria-expanded="false">設施查詢</a>
+								<div class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="searchFunction">
+									<a class="dropdown-item" href="gis.html">快速查詢</a>
+									<a class="dropdown-item" href="gis_statistics.html">空間分析</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link icon-list" href="list.html">設施總覽</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link icon-login" href="login.html">系統登入</a>
+							</li>
+							<li class="nav-item switcher">
+								<label>文字大小</label>
+								<div id="switchFontSize" class="" role="group" aria-label="文字大小切換"></div>
+							</li>
+							<li class="nav-item switcher">
+								<label>網頁配色</label>
+								<div id="switchThemeToggle" class="" role="group" aria-label="配色切換"></div>
+							</li>
+						</ul>
+					</div>
 				</div>
-				<div class="col text-end">
-					<label id="fontLabel">文字大小</label>
-					<div class="btn-group switch-font-size" role="group" aria-label="文字大小切換"></div>
-					<label id="themeLabel">網頁配色</label>
-					<div class="btn-group switch-theme-toggle" role="group" aria-label="配色切換"></div>
-				</div>
-			</div>
-		</div>
-
-		<!-- 主選單列 -->
-		<nav id="navbar-main" class="navbar navbar-expand-lg mx-4 my-1 py-0 navbar-light bg-white">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="index.html" title="回到首頁">
-					<img src="assets/images/logo.webp" alt="{{網站LOGO}}" height="40" class="custom-logo">
-				</a>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav ms-auto">
-						<li id="nav-li-home" class="nav-item acc">
-							<a href="#" title="上方選單區" accesskey="u" class="nav-link">:::</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link icon-info" href="#info">設施介紹</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link icon-search" href="gis.html">地圖查詢</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link icon-list" href="list.html">設施總覽</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link icon-login" href="login.html">系統登入</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</header>
+			</nav>
+		</header>
 
 	<main id="content" class="container-fluid">
 		<section id="loginPage" class="row">

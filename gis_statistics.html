@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>校園無障礙 | 首頁</title>
+
+	<link rel="icon" href="assets/images/logo.webp" type="image/x-icon">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
+
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.04"/>
+</head>
+
+<!-- 套版判端用，圖台專用的ID NAME-->
+<body id="pageGIS">
+
+	<noscript>
+		<div role="alert" style="background-color: black; color: rgb(255, 238, 0); text-align: center; padding: 10px;">
+			<strong>您好！很抱歉，您的瀏覽器不支援JavaScript功能，網頁功能將無法正常使用，請您將瀏覽器的JavaScript支援開啟。</strong>
+		</div>
+	</noscript>
+
+<!-- <form> start === form tag ASP.NET Web Forms 預留，可依開發習慣保留或刪除，非 CSS 排版要素-->
+	<form>
+
+		<!-- 網站標頭與主選單 -->
+		<header id="navHeader">
+			<a href="#content" id="gotocenter" title="跳到主要內容" tabindex="1" class="sr-only-focusable sr-only">跳到主要內容</a>
+			<nav id="navbarMain" class="navbar navbar-expand-lg navbar-light bg-white active">
+				<div class="container-fluid">
+					<a class="navbar-brand" href="index.html" title="回到首頁">
+						<img src="assets/images/logo.webp" alt="{{網站LOGO}}" height="40" class="custom-logo">
+					</a>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div id="navbarNav" class="collapse navbar-collapse">
+						<ul class="navbar-nav ms-auto">
+							<li id="nav-li-home" class="nav-item acc">
+								<a href="#" title="上方選單區" accesskey="u" class="nav-link">:::</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link icon-info" href="#info">設施介紹</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle icon-search" href="#search" id="searchFunction" role="button" data-bs-toggle="dropdown" aria-expanded="false">設施查詢</a>
+								<div class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="searchFunction">
+									<a class="dropdown-item" href="gis.html">快速查詢</a>
+									<a class="dropdown-item" href="gis_statistics.html">空間分析</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link icon-list" href="list.html">設施總覽</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link icon-login" href="login.html">系統登入</a>
+							</li>
+							<li class="nav-item switcher">
+								<label>文字大小</label>
+								<div id="switchFontSize" class="" role="group" aria-label="文字大小切換"></div>
+							</li>
+							<li class="nav-item switcher">
+								<label>網頁配色</label>
+								<div id="switchThemeToggle" class="" role="group" aria-label="配色切換"></div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- 頁面主體 -->
+		<main>
+
+			<!-- 篩選器 -->
+			<div id="filterPanel">
+				<div id="filterPanelForm">
+					<div class="form-group ">
+						<label for="school" required>學校</label>
+						<input class="form-control" list="school" placeholder="輸入或選擇學校" aria-label="學校選擇">
+						<datalist id="school"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
+							<option value="國立臺灣體育運動大學">
+							<option value="中興大學">
+							<option value="台灣大學">
+							<option value="東海大學">
+							<option value="逢甲大學">
+						</datalist>
+					</div>
+
+					<div class="form-group ">
+						<label for="area" required>校區</label>
+						<input class="form-control" list="area" placeholder="輸入或選擇校區" aria-label="選擇校區">
+						<datalist id="area"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
+							<option value="一中校區">
+							<option value="台北校區">
+							<option value="第三校區">
+						</datalist>
+					</div>
+
+					<div class="form-group" required>
+						<label>設施</label>
+						<div class="tags">
+							<label class="tag">
+								<input type="checkbox" value="elevator" aria-label="電梯">
+								<span>電梯</span>
+							</label>
+							<label class="tag">
+								<input type="checkbox" value="toilet" aria-label="廁所">
+								<span>廁所</span>
+							</label>
+							<label class="tag">
+								<input type="checkbox" value="parking-car" aria-label="汽車停車場">
+								<span>停車場</span>
+							</label>
+						</div>
+					</div>
+				</div>
+
+				<div id="moreTags" class="form-group">
+					<label for="moreTags"></label>
+					<div class="tags">
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+							<span>停車場</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="elevator" aria-label="電梯" tabindex="-1" aria-disabled="true">
+							<span>電梯</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+							<span>廁所</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+							<span>停車場</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+							<span>廁所</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+							<span>停車場</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+							<span>廁所</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+							<span>停車場</span>
+						</label>
+					</div>
+				</div>
+
+				<div id="filterPanelMore">
+					<div class="form-group cities">
+						<label for="cities">縣市</label>
+						<select class="form-select disabledCheck" id="cities" aria-label="設施類型" tabindex="-1" aria-disabled="true">
+							<option value="all">全部</option>
+							<option value="elevator">電梯</option>
+							<option value="toilet">廁所</option>
+							<option value="parking-car">汽車停車場</option>
+						</select>
+					</div>
+					<div class="form-group location">
+						<label for="location">位置</label>
+						<select class="form-select disabledCheck" id="location" aria-label="位置" tabindex="-1" aria-disabled="true">
+							<option value="all">全部</option>
+							<option value="i ndoor">室內</option>
+							<option value="outdoor">戶外</option>
+						</select>
+						<select class="form-select disabledCheck" id="location2" aria-label="建築物" tabindex="-1" aria-disabled="true">
+							<option value="all">全部</option>
+							<option value="indoor">教學大樓</option>
+							<option value="outdoor">行政大樓</option>
+						</select>
+						<select class="form-select disabledCheck" id="location3" aria-label="樓層" tabindex="-1" aria-disabled="true">
+							<option value="all">全部</option>
+							<option value="1F">1 樓</option>
+							<option value="2F">2 樓</option>
+						</select>
+					</div>
+					<div class="form-group keyword">
+						<label for="keyword">關鍵字</label>
+						<div class="input-group">
+							<input type="text" class="form-control disabledCheck" id="keyword" placeholder="請輸入關鍵字" tabindex="-1" aria-disabled="true">
+							<button class="input-group-text disabledCheck" aria-label="清除關鍵字" tabindex="-1" aria-disabled="true" type="button"></button>
+						</div>
+					</div>
+				</div>
+
+				<div id="filterBtns">
+					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
+					<button id="moreOptionBtn" type="button" class="btn btn-text-lite" aria-label="開啟更多查詢條件">更多條件</button>
+				</div>
+			</div>
+
+			<!-- 工具按鈕 -->
+			<div id="sidePanel">
+				<button id="openFliter" class="fa fa-bars" aria-label="打開篩選功能" type="button"></button><!-- fa fa-regular fa-square-caret-left-->
+				<button id="zoomInMap" class="fa fa-compass"  aria-label="放大地圖" type="button"></button>
+				<label id="zoomSize" aria-label="目前地圖倍率：1.2倍">1.2x</label>
+				<button id="zoomOutMap" class="fa fa-compass"  aria-label="縮小地圖" type="button"></button>
+				<button class="fa fa-compass" aria-label="取得您目前地點的定位" type="button">目前位置</button>
+				<button class="fa fa-layer-group" aria-label="底圖切換" type="button">設定底圖</button>
+				<button class="fa fa-question" aria-label="操作說明" type="button">操作說明</button>
+			</div>
+
+			<!-- 圖台區塊，＃ID的內容置換為實際圖台 -->
+			<div id="map">
+
+				<!-- 模擬資料 -->
+				<div class="layer area">
+					<svg class="item poly-green poly-line" role="region" aria-label="北部區域圖形" width="150" height="150" style="left: 10%; bottom: 20%;">
+						<polygon points="30,30 120,60 110,80 80,70 80,130 50,120 50,70 20,60" data-id="region-1" data-info="北部區域" role="graphics-object" aria-label="北部區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>北部區域</title>
+							<desc>這是一個位於地圖北部的複雜多邊形區域，面積約 500 平方公里。</desc>
+						</polygon>
+					</svg>
+
+					<svg class="item poly-blue" role="region" aria-label="中部區域圖形" width="150" height="150" style="right: 18%; top: 40%;">
+						<polygon points="30,30 120,50 100,100 70,90 70,130 40,120 " data-id="region-2" data-info="中部區域" role="graphics-object" aria-label="中部區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>中部區域</title>
+							<desc>這是一個位於地圖中部的虛線邊框複雜區域，人口約 10 萬。</desc>
+						</polygon>
+					</svg>
+
+					<svg class="item poly-red poly-wide poly-dot" role="region" aria-label="南部區域圖形" width="150" height="150" style="left: 18%; top: 28%;">
+						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="南部區域" role="graphics-object" aria-label="南部區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>南部區域</title>
+							<desc>這是一個位於地圖南部的點線邊框複雜區域，氣候溫暖。</desc>
+						</polygon>
+					</svg>
+
+					<svg class="item poly-blue poly-wide poly-line" role="region" aria-label="南部區域圖形" width="150" height="150" style="right: 40%; bottom: 30%;">
+						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="南部區域" role="graphics-object" aria-label="東區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>東部區域</title>
+							<desc>這是一個位於地圖南部的點線邊框複雜區域，氣候溫暖。</desc>
+						</polygon>
+					</svg>
+
+
+					<label class="marker dark fa fa-shop" style="left: 35%; top: 30%;" data-id="mark001" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker highlight fa fa-car" style="left: 50%; bottom: 25%;" data-id="mark002" data-info="洗手間" role="graphics-object" aria-label="洗手間" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker fa fa-star" style="right: 10%; top: 38%;" data-id="mark003" data-info="停車場" role="graphics-object" aria-label="停車場" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker dark fa fa-shop" style="right: 35%; bottom: 30%;" data-id="mark004" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker fa fa-car" style="right: 50%; bottom: 45%;" data-id="mark005" data-info="洗手間" role="graphics-object" aria-label="洗手間" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker dark fa fa-star" style="left: 18%; top: 48%;" data-id="mark006" data-info="停車場" role="graphics-object" aria-label="停車場" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+
+					<!-- 模擬設施互動 POPUP -->
+					<div class="gispopup modal-content active" style="bottom:18%;left:25%">
+						<div class="modal-header">
+							<p class="itemWhere">鄰近設施</p>
+							<button type="button" class="modal-dismiss" data-bs-dismiss="modal" aria-label="關閉"></button>
+						</div>
+						<div class="itemInfomation modal-body">
+							<!-- CLASS NAME共用，需要有點選的行為可以用BUTTON -->
+							<p class="itemWhere fa fa-building"><label>行政大樓</label><label>3樓</label></p>
+							<p class="itemWhere fa fa-building"><label>行政大樓</label><label>2樓</label></p>
+							<p class="itemWhere fa fa-building"><label>行政大樓</label><label>1樓</label></p>
+							<p class="itemWhere fa fa-building"><label>行政大樓</label><label>地下1樓</label></p>
+							<p class="itemWhere fa fa-building"><label>行政大樓</label><label>室外</label></p>
+							<button type="button" class="itemWhere fa fa-landmark-flag"><label>圖書館</label><label>停車場</label></button>
+						</div>
+						<article class="itemCover">
+							<!-- 保留主要架構，不產生內容即可隱藏 -->
+						</article>
+
+						<div class="itemFooter modal-footer">
+							<!-- 保留主要架構，不產生內容即可隱藏 -->
+						</div>
+					</div>
+
+
+				</div>
+				<div id="mapViewport"></div>
+			</div>
+
+			<!-- 查詢結果 -->
+			<div id="resultPanel">
+				<label id="resultPanelBtn" aria-disabled="true">空間分析結果</label>
+
+				<!-- 所有查詢結果容器 -->
+				<section id="resultPanelCotainer">
+
+					<!-- 依照校區群組起來 標籤 section 不干擾排版 -->
+					<section>
+						<h2><label>國立臺灣體育運動大學</label><label>主校區</label></h2>
+					</section>
+					<section>
+						<h2><label>國立臺中教育大學</label><label>民生校區</label></h2>
+					</section>
+					<section>
+						<h2 class="active"><label>國立臺中教育大學</label><label>英才校區</label></h2>
+						<!-- 單一建築查詢結果區塊 -->
+						<article class="result-all-item">
+							<h3 class="fa fa-shop">版型1-體育館<small></small></h3>
+							<div class="items">
+								<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+								<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label>
+							</div>
+							<div class="level" data-level="2F">
+								<h4>2樓</h4>
+								<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+							</div>
+							<div class="level" data-level="1F">
+								<h4>1樓</h4>
+								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+							</div>
+							<div class="level" data-level="外">
+								<h4>室外</h4>
+								<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+							</div>
+						</article>
+
+						<!-- 單一建築查詢結果區塊，每建築DOM相同 -->
+						<article class="result-all-item">
+							<!-- 標題 -->
+							<h3 class="fa fa-house">版型1-圖書館</h3>
+
+							<!-- 設施群組 -->
+							<div class="items">
+								<!-- 設施種類，可用BUTTON或其他元素，非BUTTON元素需加上 role="button" tabindex="0" -->
+								<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
+								<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
+							</div>
+
+							<!-- 設施單一樓層，每樓層DOM相同 -->
+							<div class="level" data-level="3F">
+								<h4>3樓</h4>
+								<!-- 設施群組 -->
+								<div class="items">
+									<!-- 設施種類，以BUTTON元素為例，非BUTTON元素需加上  tabindex="0" -->
+									<button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button>
+									<button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button>
+								</div>
+							</div>
+
+							<div class="level" data-level="2F">
+								<h4>2樓</h4>
+								<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+							</div>
+							<div class="level" data-level="1F">
+								<h4>1樓</h4>
+								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+							</div>
+							<div class="level" data-level="B1">
+								<h4>地下一樓</h4>
+								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button></div>
+							</div>
+							<div class="level" data-level="外">
+								<h4>室外</h4>
+								<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+							</div>
+						</article>
+
+						<!-- 單一建築查詢結果區塊 -->
+						<article class="result-all-item">
+							<h3 class="fa fa-building">版型1-行政大樓</h3>
+							<div class="items">
+								<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+								<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>99</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>1</span></label>
+							</div>
+
+							<div class="level" data-level="3F">
+								<h4>3樓</h4>
+								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+							</div>
+							<div class="level" data-level="2F">
+								<h4>2樓</h4>
+								<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+							</div>
+							<div class="level" data-level="1F">
+								<h4>1樓</h4>
+								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+							</div>
+							<div class="level" data-level="B1">
+								<h4>地下一樓</h4>
+								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button></div>
+							</div>
+							<div class="level" data-level="外">
+								<h4>室外</h4>
+								<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+							</div>
+						</article>
+					</section>
+					<!-- 依照校區結束 -->
+
+				</section>
+				<nav class="slider-nav-visible">
+					<label for="">符合條件 共 100 筆</label>
+					<button type="button" class="slider-nav" aria-label="往前一頁" data-slider-nav="prev"></button>
+					<button type="button" class="slider-nav slider-nav-next" aria-label="前後一頁" data-slider-nav="next"></button>
+					<button class="nav-page">1</button><button class="nav-page">2</button><button class="nav-page">3</button><span>...</span><button class="nav-page">14</button><button class="nav-page">15</button>
+				</nav>
+			</div>
+
+			<div class="modal fade" id="popUpModal" tabindex="-1" aria-labelledby="itemTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-gis modal-theme-card modal-theme-brand">
+					<div class="modal-content">
+						<!-- 標頭：包含關閉按鈕 -->
+						<div class="modal-header">
+							<p id="itemWhere"><label>行政大樓</label><label>3F</label></p>
+							<button type="button" class="modal-dismiss" data-bs-dismiss="modal" aria-label="關閉"></button>
+						</div>
+
+						<!-- 可捲動內容區域 -->
+						<div id="itemInfomation" class="modal-body">
+							<h5 id="itemTitle" class="modal-title fa fa-person-dress">無障礙廁所</h5>
+							<p>不區分男女廁，獨立洗手檯。</p>
+						</div>
+
+						<article id="itemCover">
+							<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+										role="region"
+										aria-label="台灣體育大學圖片集，共4張"
+										aria-live="polite">
+								<ul class="slider-container" id="slider-13">
+									<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+										<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+									</li>
+									<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+										<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+									</li>
+									<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+										<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+									</li>
+									<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+										<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+									</li>
+								</ul>
+								<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+								<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+						</article>
+
+						<!-- 底部：包含 btn-info 按鈕 -->
+						<div id="itemFooter" class="modal-footer">
+							<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+							<!-- 可選：額外關閉按鈕 -->
+							<button type="button" class="btn btn-text" data-bs-dismiss="modal">關閉</button>
+						</div>
+					</div>
+        </div>
+			</div>
+
+		</main>
+
+		<footer id="footer">
+			<div id="footerLogo">
+				<a class="navbar-brand" href="#">
+					<img src="assets/images/logo_w.webp" alt="網站LOGO" height="40" class="custom-logo">
+				</a>
+			</div>
+			<div id="footerInfo">
+				<div id="footerLink">
+					<a class="btn btn-link" href="#">服務信箱</a>
+					<a class="btn btn-link" href="#">問題回報</a>
+					<a class="btn btn-link" href="#">版權及隱私權聲明</a>
+				</div>
+				<div id="copyright">
+					<span>版權所有 © 2025</span>
+				</div>
+			</div>
+		</footer>
+	</form><!--<form> end === form tag ASP.NET Web Forms-->
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
+		<script src="assets/js/main.min.js" defer></script>
+		<script src="assets/js/gis.min.js" defer></script>
+
+	</body>
+
+	</html>
