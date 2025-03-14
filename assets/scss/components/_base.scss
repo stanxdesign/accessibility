@@ -30,6 +30,10 @@ h3, h4, h5, h6 {
 	font-size: 1rem;
 }
 
+input, textarea {
+  font-size: max(1em, 16px) !important;
+}
+
 .no-icon{
 	&::before{
 		content: none !important;
@@ -98,7 +102,8 @@ $icons: (
     "search": "\f002",  // fa-search
     "list": "\f0ca",    // fa-list
     "login": "\f090",   // fa-sign-in-alt
-    "logout": "\f08b"   // fa-sign-out-alt
+    "logout": "\f08b",  // fa-sign-out-alt
+		"palette": "\f53f"  // fa-palette
 );
 
 @each $name, $code in $icons {

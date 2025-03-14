@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.04"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.08"/>
 </head>
 
 <!-- 套版判端用，圖台專用的ID NAME-->
@@ -61,13 +61,18 @@
 							<li class="nav-item">
 								<a class="nav-link icon-login" href="login.html">系統登入</a>
 							</li>
-							<li class="nav-item switcher">
-								<label>文字大小</label>
-								<div id="switchFontSize" class="" role="group" aria-label="文字大小切換"></div>
-							</li>
-							<li class="nav-item switcher">
-								<label>網頁配色</label>
-								<div id="switchThemeToggle" class="" role="group" aria-label="配色切換"></div>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle icon-palette" href="#theme" id="themeFunction" role="button" data-bs-toggle="dropdown" aria-expanded="false">樣式設定</a>
+								<div id="switcherMenu" class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="themeFunction">
+									<div class="nav-item switcher">
+										<label>文字大小</label>
+										<div id="switchFontSize" class="" role="group" aria-label="文字大小切換"></div>
+									</div>
+									<div class="nav-item switcher">
+										<label>網頁配色</label>
+										<div id="switchThemeToggle" class="" role="group" aria-label="配色切換"></div>
+									</div>
+								</div>
 							</li>
 						</ul>
 					</div>
@@ -210,7 +215,11 @@
 				<label id="zoomSize" aria-label="目前地圖倍率：1.2倍">1.2x</label>
 				<button id="zoomOutMap" class="fa fa-compass"  aria-label="縮小地圖" type="button"></button>
 				<button class="fa fa-compass" aria-label="取得您目前地點的定位" type="button">目前位置</button>
-				<button class="fa fa-layer-group" aria-label="底圖切換" type="button">設定底圖</button>
+				<button id="setLayerImg"  role="button" data-bs-toggle="dropdown" aria-expanded="false" class="fa fa-layer-group" aria-label="底圖切換" type="button">設定底圖</button>
+					<div class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="setLayerImg">
+						<button id="setLayerImg01" aria-label="顯示電子地圖影像" type="button">電子地圖</button>
+						<button id="setLayerImg02" aria-label="顯示正射影像" type="button">正射影像</button>
+					</div>
 				<button class="fa fa-question" aria-label="操作說明" type="button">操作說明</button>
 			</div>
 
@@ -300,6 +309,11 @@
 
 				</div>
 				<div id="mapViewport"></div>
+				<footer id="footer">
+					<label id="ruler"></label>
+					<label id="source">N 126.215775 / E 68.127852</label>
+					<a id="source" href="#" target="_blank" title="中央繪測試中心">資料來源：中央繪測試中心</a>
+				</footer>
 			</div>
 
 			<!-- 查詢結果 -->
@@ -311,7 +325,7 @@
 
 					<!-- 單一建築查詢結果區塊 -->
 					<article class="result-all-item">
-						<h3>版型1-體育館<small></small></h3>
+						<h3>版型1-體育館<label>距離 15 公尺 室內空間</label></h3>
 						<div class="items">
 							<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
 							<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label>
@@ -333,7 +347,7 @@
 					<!-- 單一建築查詢結果區塊，每建築DOM相同 -->
 					<article class="result-all-item">
 						<!-- 標題 -->
-						<h3>版型1-圖書館</h3>
+						<h3>版型1-圖書館<label>距離 50 公尺 室內空間</label></h3>
 
 						<!-- 設施群組 -->
 						<div class="items">
@@ -373,7 +387,7 @@
 
 					<!-- 單一建築查詢結果區塊 -->
 					<article class="result-all-item">
-						<h3>版型1-行政大樓</h3>
+						<h3>版型1-行政大樓<label>距離 85 公尺</label></h3>
 						<div class="items">
 							<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
 							<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>99</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>1</span></label>
@@ -575,29 +589,13 @@
 
 		</main>
 
-		<footer id="footer">
-			<div id="footerLogo">
-				<a class="navbar-brand" href="#">
-					<img src="assets/images/logo_w.webp" alt="網站LOGO" height="40" class="custom-logo">
-				</a>
-			</div>
-			<div id="footerInfo">
-				<div id="footerLink">
-					<a class="btn btn-link" href="#">服務信箱</a>
-					<a class="btn btn-link" href="#">問題回報</a>
-					<a class="btn btn-link" href="#">版權及隱私權聲明</a>
-				</div>
-				<div id="copyright">
-					<span>版權所有 © 2025</span>
-				</div>
-			</div>
-		</footer>
+
 	</form><!--<form> end === form tag ASP.NET Web Forms-->
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-		<script src="assets/js/main.min.js" defer></script>
-		<script src="assets/js/gis.min.js" defer></script>
+		<script src="assets/js/main.min.js?v=v1.08" defer></script>
+		<script src="assets/js/gis.min.js?v=v1.08" defer></script>
 
 	</body>
 

@@ -467,6 +467,55 @@
 			color: var(--c-black);
 			border: 2px solid var(--c-brand);
 		}
+		#setLayerImg{
+			~ .dropdown-menu-end{
+				min-width: 0;
+				padding: 1ch !important;
+			}
+		}
+		#setLayerImg01{
+			display: block;
+			width: auto;
+			height: auto;
+			aspect-ratio: 0;
+			text-align: center;
+			border-radius: 8px;
+			font-size: 1rem;
+			padding: .5ch;
+			margin-bottom: 1rem;
+			background-color: var(--c-g2);
+			color: var(--c-brand);
+			border: none 0px transparent;
+			box-shadow: none;
+			&::before{
+				content: '';
+				display: block;
+				width: 5rem;
+				height: 3rem;
+				background-color: var(--c-g3);
+			}
+		}
+		#setLayerImg02{
+			display: block;
+			width: auto;
+			height: auto;
+			aspect-ratio: 0;
+			text-align: center;
+			border-radius: 8px;
+			font-size: 1rem;
+			padding: .5ch;
+			background-color: var(--c-g2);
+			color: var(--c-brand);
+			border: none 0px transparent;
+			box-shadow: none;
+			&::before{
+				content: '';
+				display: block;
+				width: 5rem;
+				height: 3rem;
+				background-color: var(--c-g3);
+			}
+		}
 		@include MD{
 			width: auto;
 			height: auto;
@@ -562,19 +611,35 @@
 		}
 	}
 	#footer{
-		display: none;
-		@include MD{
+		position: fixed;
+		bottom: 10rem;
+		left: 0;
+		width: 100%;
+		padding: .5rem 1rem;
+		margin: 6px;
+		height: 2rem;
+		background: none;
+		text-align: right;
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: flex-end;
+		gap: 6px;
+		@include SM{
 			position: fixed;
-			width: 100%;
-			bottom: 0;
-			height: auto;
-			padding: 1rem;
-			#footerInfo{
-				height: 1rem;
-				display: flex;
-			}
-			#footerLogo{
-				display: none;
+			bottom: .5rem;
+			display: block;
+		}
+		label,a{
+			opacity: 0;
+			&:not(:empty){
+				opacity: .8;
+				border: 1px solid var(--c-sub);
+				background-color: var(--c-white);
+				color: var(--c-brand);
+				padding: 0 .5rem;
+				border-radius: 1rem;
+				text-decoration: none;
 			}
 		}
 	}
@@ -953,6 +1018,14 @@
 						content: var(--fa);
 						margin-right: 3px;
 						@include fa-icon;
+					}
+					label{
+						font-size: 1rem;
+						float: right;
+						background-color: var(--c-white);
+						padding: 0 .5rem;
+						border-radius: .5rem;
+						line-height: 1.5;
 					}
 				}
 				h4{

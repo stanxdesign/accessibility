@@ -17,25 +17,8 @@
 }
 
 #footer {
-	@include MD {
-		padding: 3rem;
-		display: flex;
-		align-items: center;
-		#footerInfo {
-			flex: 1;
-			align-items: center;
-			justify-content: flex-end;
-			text-align: right;
-			display: flex;
-		}
-		#copyright {
-			&::before {
-				content: "|";
-				display: inline-block;
-				padding: 0 1ch 0 0.5ch;
-				opacity: 0.5;
-			}
-		}
+	#footerLogo{
+		margin-bottom: 1rem;
 	}
 	min-hight: 100%;
 	height: 25vh;
@@ -56,6 +39,31 @@
 		color: var(--c-white);
 		&:hover,&:focus{
 			color: var(--c-highlight);
+		}
+	}
+	@include MD {
+		padding: 3rem;
+		display: flex;
+		align-items: center;
+
+		#footerInfo {
+			flex: 1;
+			align-items: center;
+			justify-content: flex-end;
+			text-align: right;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		#footerCount{
+			flex: 1 0 100%;
+		}
+		#copyright {
+			&::before {
+				content: "|";
+				display: inline-block;
+				padding: 0 1ch 0 0.5ch;
+				opacity: 0.5;
+			}
 		}
 	}
 }
@@ -120,31 +128,48 @@
 			&.active {
 				background-color: var(--c-highlight);
 			}
+			&::before{
+				color: var(--c-main);
+			}
 		}
 		.dropdown-menu {
 			background-color: var(--c-white);
 			border-radius: 1rem;
-			border: 2px solid var(--c-highlight);
+			// border: 2px solid var(--c-highlight);
 		}
 		.nav-item{
 			align-items: center;
 			align-content: center;
+			width: 8rem;
+			text-align: left;
+			margin-left: auto;
+			margin-right: 2rem;
+			@include MD{
+				width: auto;
+				margin-left: 0;
+				margin-right: 0;
+			}
+		}
+		#switcherMenu{
+			width: max-content;
+			margin: 0 auto;
 		}
 		.switcher{
 			display: flex;
+			flex-direction: column;
 			gap: 0.5ch;
 			background: var(--c-glay);
-			border-radius: 99rem;
+			border-radius: .5rem;
 			align-self: center;
 			width: auto;
 			max-width: 100%;
-			transition: all .5s ease-in-out;
+			margin: .5rem;
+			padding: 0 .5rem .5rem .5rem;
 			label{
 				color: var(--c-black);
-				padding: 3px 0 3px .5ch;
-				height: 40px;
-				line-height: 34px;
 				overflow: hidden;
+				margin-top: 3px;
+				margin-bottom: -3px;
 			}
 			div{
 				display: flex;
@@ -159,20 +184,44 @@
 					overflow: hidden;
 				}
 			}
-			#switchFontSize{
-				padding: 0;
-				height: 100%;
+			&:has(#switchFontSize){
+				display: none;
+				@include MD{
+					display: block;
+				}
 			}
 			#switchThemeToggle{
 				padding: 0;
 				height: 100%;
 			}
 		}
-		&.active{
-			.switcher{
-				max-width: 0;
-				overflow: hidden;
-			}
+	}
+	#nav-li-home{
+		display: none;
+	}
+	#navbarNav{
+		margin-top: 1rem;
+		border-top: solid 1px var(--c-g3);
+		text-align: center;
+		font-size: max(1rem, 16px);
+		background-image: url(../images/menu.webp);
+		background-position: right 6rem top;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+	}
+	@include SM{
+		#navbarNav{
+			background-position: center top;
+		}
+	}
+	@include MD{
+		#nav-li-home{
+			display: block;
+		}
+		#navbarNav{
+			margin-top: 0;
+			border-top: none 0px transparent;
+			background: none;
 		}
 	}
 }
@@ -743,6 +792,7 @@ article {
 	border-radius: 2rem;
 	box-shadow: 0 0 1rem var(--c-shadow);
 	overflow: hidden;
+	z-index: 1;
 	&:not(.active){
 		display: none;
 		pointer-events: none;
