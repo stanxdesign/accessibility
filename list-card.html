@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.08"/>
 </head>
 
-<body>
+<body id="listPage">
 	<noscript>
 		<div role="alert" style="background-color: black; color: rgb(255, 238, 0); text-align: center; padding: 10px;">
 			<strong>您好！很抱歉，您的瀏覽器不支援JavaScript功能，網頁功能將無法正常使用，請您將瀏覽器的JavaScript支援開啟。</strong>
@@ -75,7 +75,7 @@
 	</header>
 
 
-	<form id="listPage">
+	<form>
 		<main id="content" class="container-fluid px-4">
 			<div id="filterPanel">
 				<div id="filterPanelForm">
@@ -111,19 +111,458 @@
 					</div>
 					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
 				</div>
-				<div id="layoutBtns">
-					<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie" aria-label="切換為圖表模式">統計圖表
-					</a>
-					<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building active" aria-label="切換為卡片模式"></i>建物導覽
-					</a>
-				</div>
+			</div>
+
+			<div id="layoutBtns">
+				<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie" aria-label="切換為圖表模式">統計圖表
+				</a>
+				<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building active" aria-label="切換為卡片模式"></i>建物導覽
+				</a>
 			</div>
 
 			<section>
-				<header class="row py-4 my-5 visually-hidden">
-					<h2 class="section-title display-5 fw-bold">常用功能</h2>
-				</header>
-				<div class="row g-4">
+				<h1 class="school-title">國立臺中教育大學</h1>
+				<p class="school-info">簡稱中教大、NTCU，是臺灣國立大學系統與臺灣教育大學系統系統成員校，臺中市西區一所以教育為核心的專業聚焦型特色大學。<br>
+					臺灣臺中市西區民生路140號</p>
+				<p class="school-info text-end"><a href="#" class="btn btn-highlight fa fa-location-arrow">帶我前往</a></p>
+			</section>
+
+			<!-- 一個 section 一個校區 -->
+			<section class="result-area">
+				<!-- 單一建築查詢結果區塊 -->
+				<h2><label>國立臺中教育大學</label><label>校本部校區</label></h2>
+				<article class="result-all-item">
+					<div class="result-info">
+						<h3 class="fa fa-shop">體育館<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button></h3>
+						<p class="fa fa-clock">開放時間：09:00 - 18:00</p>
+						<p class="fa fa-star">要加入圖示只要使用 fa fa-***的CLASS</p>
+						<p>體育館的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+						<p class="fa fa-map">台中市北區雙十路一段16號</p>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<div class="items">
+						<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label><label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label>
+					</div>
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+
+				<!-- 單一建築查詢結果區塊，每建築DOM相同 -->
+				<article class="result-all-item">
+					<div class="result-info">
+						<h3 class="fa fa-shop">教學大樓<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button></h3>
+						<p>教學大樓的介紹文字，沒有限制字數長度足夠，可以更多或是換行都沒有問題</p>
+						<p>台中市北區雙十路一段16號</p>
+						<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<div class="items">
+						<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label>
+					</div>
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+
+				<!-- 單一建築查詢結果區塊，每建築DOM相同 -->
+				<article class="result-all-item">
+					<!-- 標題 -->
+					<div class="result-info">
+						<h3 class="fa fa-house">圖書館-無介紹<label>距離 125 公尺 室內空間</label></h3>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<!-- 設施群組 -->
+					<div class="items">
+						<!-- 設施種類，可用BUTTON或其他元素，非BUTTON元素需加上 role="button" tabindex="0" -->
+						<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
+					</div>
+
+					<!-- 設施單一樓層，每樓層DOM相同 -->
+					<div class="level" data-level="3F">
+						<h4>3樓</h4>
+						<!-- 設施群組 -->
+						<div class="items">
+							<!-- 設施種類，以BUTTON元素為例，非BUTTON元素需加上  tabindex="0" -->
+							<button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button>
+							<button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button>
+						</div>
+					</div>
+
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="B1">
+						<h4>地下一樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+
+				<!-- 單一建築查詢結果區塊 -->
+				<article class="result-all-item">
+					<div class="result-info">
+						<h3 class="fa fa-building">行政大樓<label>距離 15 公尺 室內空間</label></h3>
+						<p>行政大樓的介紹文字，沒有限制字數，依照資料量自動稱長度足夠，可以更多或是換行都沒有問題</p>
+						<p>台中市北區雙十路一段16號</p>
+						<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<div class="items">
+						<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>99</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>1</span></label><label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label>
+					</div>
+
+					<div class="level" data-level="3F">
+						<h4>3樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="B1">
+						<h4>地下一樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+			</section>
+
+			<section class="result-area">
+				<!-- 單一建築查詢結果區塊 -->
+				<h2><label>國立臺中教育大學</label><label>英才校區</label></h2>
+				<article class="result-all-item">
+					<div class="result-info">
+						<h3 class="fa fa-shop">體育館<label>距離 15 公尺 室內空間</label></h3>
+						<p>體育館的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+						<p>體育館的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+						<p>體育館的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+						<p>台中市北區雙十路一段16號</p>
+						<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<div class="items">
+						<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label>
+					</div>
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+
+				<!-- 單一建築查詢結果區塊，每建築DOM相同 -->
+				<article class="result-all-item">
+					<div class="result-info">
+						<h3 class="fa fa-shop">通識中心大樓<label>距離 15 公尺 室內空間</label></h3>
+						<p>通識中心大樓的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+						<p class="info distance">距離 58 公尺</p>
+						<p class="info address">台中市北區雙十路一段16號</p>
+						<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<div class="items">
+						<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label>
+					</div>
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+			</section>
+			<section class="result-area">
+				<!-- 單一建築查詢結果區塊 -->
+				<h2><label>國立臺中教育大學</label><label>虛擬校區</label></h2>
+				<article class="result-all-item">
+					<div class="result-info">
+						<h3 class="fa fa-shop">綜合大樓<label>距離 15 公尺 室內空間</label></h3>
+						<p>體育館的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+						<p class="info distance">距離 58 公尺</p>
+						<p class="info address">台中市北區雙十路一段16號</p>
+						<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<div class="items">
+						<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label>
+					</div>
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+
+				<!-- 單一建築查詢結果區塊，每建築DOM相同 -->
+				<article class="result-all-item">
+					<div class="result-info">
+						<h3 class="fa fa-shop">教學二館<label>距離 15 公尺 室內空間</label></h3>
+						<p>圖書館的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+						<p class="info distance">距離 58 公尺</p>
+						<p class="info address">台中市北區雙十路一段16號</p>
+						<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+					</div>
+					<article class="result-cover">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
+									role="region"
+									aria-label="台灣體育大學圖片集，共4張"
+									aria-live="polite">
+							<ul class="slider-container" id="slider-13">
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第1張：台灣體育大學校門口照片"  aria-hidden="false">
+									<img src="assets/images/demo01.webp" alt="第1張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第2張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第2張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第3張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第3張：台灣體育大學校門口照片">
+								</li>
+								<li class="slide" role="group" aria-roledescription="slide" aria-label="第4張：台灣體育大學校門口照片" aria-hidden="true">
+									<img src="assets/images/demo02.webp" alt="第4張：台灣體育大學校門口照片">
+								</li>
+							</ul>
+							<button type="button" aria-label="往上一張" class="slider-nav" data-controls="prev" aria-controls="slider-13"></button>
+							<button type="button" aria-label="往下一張" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13"></button>
+						</div>
+					</article>
+					<div class="items">
+						<label class="fa fa-person-dress" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" tabindex="0">避難層出入口<span>1</span></label><label class="fa fa-restroom" type="button" tabindex="0">觀眾席<span>1</span></label><label class="fa fa-restroom" tabindex="0">室外走廊<span>1</span></label><label class="fa fa-restroom" tabindex="0">無障礙坡道<span>99</span></label>
+					</div>
+					<div class="level" data-level="2F">
+						<h4>2樓</h4>
+						<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+					</div>
+					<div class="level" data-level="1F">
+						<h4>1樓</h4>
+						<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">電動無障礙升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+					<div class="level" data-level="外">
+						<h4>室外</h4>
+						<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal" tabindex="-1">五號門無障礙坡道</button></div>
+					</div>
+				</article>
+			</section>
+
+
+
+			<section>
+				<div class="row g-4 my-4">
 					<article class="card-half card-theme-cover card-style-main" aria-labelledby="card-title-03">
 						<div class="card h-100" href="#" title="點選卡片開啟標題頁面" aria-label="點選卡片開啟標題頁面">
 							<div class="card-body">
@@ -134,18 +573,6 @@
 							</div>
 						</>
 					</article>
-					<article class="card-half card-theme-cover card-style-brand" aria-labelledby="card-title-01">
-						<div class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
-							<div class="card-body">
-								<h5 id="card-title-01" class="card-title no-icon"><label></label></h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-								<img src="assets/images/demo01.webp" alt="">
-							</div>
-						</div>
-					</article>
-
 				</div>
 			</section>
 
@@ -326,7 +753,7 @@
 			</section>
 		</main>
 
-					<div class="modal fade" id="popUpModal" tabindex="-1" aria-labelledby="itemTitle" aria-hidden="true">
+			<div class="modal fade" id="popUpModal" tabindex="-1" aria-labelledby="itemTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-gis modal-theme-card modal-theme-brand">
 					<div class="modal-content">
 						<!-- 標頭：包含關閉按鈕 -->
@@ -397,6 +824,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
 	<script src="assets/js/main.min.js?v=v1.08" defer></script>
+	<script src="assets/js/list.min.js?v=v1.08" defer></script>
+	<script src="assets/js/gis.min.js?v=v1.08" defer></script>
 
 </body>
 

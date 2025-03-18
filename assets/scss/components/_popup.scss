@@ -1,0 +1,181 @@
+// @use 'sass:math';
+@use '../abstracts/mixins' as *;
+
+.gispopup{
+	position: absolute;
+	width: 16rem;
+	background-color: var(--c-white);
+	padding: 0;
+	border-radius: 2rem;
+	box-shadow: 0 0 1rem var(--c-shadow);
+	overflow: hidden;
+	z-index: 1;
+	&:not(.active){
+		display: none;
+		pointer-events: none;
+	}
+	&.modal-content{
+		border-radius: 1rem;
+		// display: grid;
+		// grid-template-areas: 'slider header'
+		// 											'slider body'
+		// 											'slider footer';
+		grid-template-columns: 3fr 2fr;
+		grid-template-rows: 1fr 4fr 1fr;
+	}
+	.modal-header{
+		grid-area: header;
+		border: none;
+		background-color: var(--c-brand);
+		padding: .5ch 1ch;
+		h5{
+			font-size: 1.2rem;
+		}
+		.modal-dismiss{
+			background: none;
+			border: none;
+			font-size: 1.5rem;
+			margin-left: auto;
+			color: var(--c-white);
+			&::before{
+				content: "\f00d";
+				@include fa-icon;
+			}
+		}
+	}
+
+	.modal-body{
+		grid-area: body;
+		padding: 0 1ch;
+		align-items: start;
+		max-height: calc(50dvh - 5rem);
+		overflow-y: auto;
+		transition: all .5s ease-in-out;
+		.itemWhere{
+			border: var(--c-white) 2px solid;
+			margin: .5ch 0;
+			border-radius: .6rem;
+			label{
+			}
+			label:nth-child(2n-1){
+			}
+			label:nth-child(2n){
+				background-color: var(--c-sub);
+				&::before{
+					background-color: var(--c-sub);
+				}
+			}
+			&:first-child{
+				margin-top: 1ch;
+			}
+			&:hover{
+				border: var(--c-main)	2px solid;
+			}
+		}
+	}
+	.modal-footer{
+		grid-area: footer;
+		border: none;
+		padding: 0 1ch 1ch 1ch;
+	}
+
+	.itemTitle{
+		position: sticky;
+		top: 0;
+		font-size: 1.5rem;
+		padding: 1ch 0;
+		width: 100%;
+		background-color: var(--c-white);
+		&::before{
+			margin-right: 3px;
+		}
+	}
+	.itemWhere{
+		width: fit-content;
+		display: flex;
+		justify-content: left;
+		align-items: center;
+		margin: 0;
+		color: var(--c-white);
+		label{
+			display: flex;
+			height: 2rem;
+			line-height: 2rem;
+			background-color: var(--c-sub);
+			color: var(--c-black);
+			font-weight: bold;
+		}
+		label:nth-child(2n-1){
+			border-radius: .5rem 0 0 .5rem;
+			background-color: var(--c-main);
+			color: var(--c-white);
+			padding: 0 0 0 1ch;
+		}
+		label:nth-child(2n){
+			border-radius: 0 .5rem .5rem 0;
+			padding: 0 2ch 0 0;
+			&::before{
+				content: "";
+				display: inline-block;
+				height: 0;
+				width: 0;
+				border: 1rem solid var(--c-main);
+				border-top: 1rem solid transparent;
+				border-bottom: 1rem solid transparent;
+				border-right: 1ch solid transparent;
+			}
+		}
+		&.fa::before{
+			position: relative;
+			display: inline-block;
+			width: 2rem;
+			height: 2rem;
+			line-height: 2rem;
+			text-align: center;
+			margin-right: -.5rem;
+			border-radius: 99rem;
+			content: var(--fa);
+			@include fa-icon;
+			@include obj-theme(brand,0);
+			z-index: 1;
+			scale: 1.1;
+		}
+	}
+
+	.itemCover{
+		grid-area: slider;
+		width: 100%;
+		height: 100%;
+		padding: 0 1rem;
+		margin-bottom: .5rem;
+		.swiffy-slider{
+			height: 100%;
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+		.slider-nav{
+			color: var(--c-white);
+			position: absolute;
+			top: auto;
+			bottom: calc(50% - 1.5rem);
+			top: auto;
+			left: -1rem;
+			right: auto;
+			background-color: var(--c-brand);
+			border-radius: 99rem;
+			&.slider-nav-next{
+				left: auto;
+				right: -1rem;
+			}
+		}
+	}
+	button.itemWhere{
+		border: none;
+		background: none;
+		padding: 0;
+		font-weight: bold;
+	}
+}

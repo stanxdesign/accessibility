@@ -1,0 +1,192 @@
+// @use 'sass:math';
+@use '../abstracts/mixins' as *;
+
+.result-all-item{
+	h3{
+		width: 100%;
+		top: 0;
+		grid-area: title;
+		font-size: 1.2rem;
+		padding: 1rem .5rem .5rem .5rem;
+		color: var(--c-brand);
+		border-radius: 0;
+		border-top: 1px solid var(--c-sub);
+		z-index: 3;
+		+ .items{
+			padding: .5rem;
+			border-radius: 0 0 1rem 1rem;
+		}
+		&::before{
+			content: var(--fa);
+			margin-right: 3px;
+			@include fa-icon;
+		}
+		label{
+			font-size: 1rem;
+			float: right;
+			background-color: var(--c-white);
+			padding: 0 .5rem;
+			border-radius: .5rem;
+			line-height: 1.5;
+		}
+	}
+	h4{
+		font-size: 1.2rem;
+	}
+	&:first-child{
+		h3{
+			margin: 0 0 0 0;
+			border-top:none;
+		}
+	}
+	.form-select{
+		float: right;
+		width: 50%;
+	}
+	.items{
+		.fa{
+			color: var(--c-black);
+			background-color: var(--c-white);
+			border: solid 1px var(--c-sub);
+			border-radius:99rem;
+			padding:.5em;
+			margin: .25ch;
+			font-weight: normal;
+			cursor: pointer;
+			&::before{
+				font-weight: bold;
+				margin-right: .25ch;
+				font-size: 1.2em;
+				color: var(--c-main);
+			}
+			&:hover{
+				background-color: var(--c-highlight);
+				border-color: var(--c-main);
+			}
+			&:has(span){
+				position: relative;
+				border-radius: 99rem;
+				padding: 0 3rem 0 .8rem;
+				height: 2.5rem;
+				line-height: 2.25rem;
+				background-color: transparent;
+				border-color: var(--c-main);
+				color: var(--c-brand);
+				span{
+					position: absolute;
+					right: 0;
+					top: -1px;
+					border-radius: 99rem;
+					font-family: var(--bs-body-font-family);
+					width: 2.5rem;
+					height: 2.5rem;
+					line-height: 2.5rem;
+					font-size: 1.2rem;
+					text-align: center;
+					background-color: var(--c-main);
+					color: var(--c-white);
+				}
+				&:hover{
+					background-color: var(--c-highlight);
+					border-color: var(--c-main);
+				}
+				&.active{
+					background-color: var(--c-main);
+					border-color: var(--c-brand);
+					color: var(--c-white);
+					box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
+					span{
+						background-color: var(--c-highlight);
+						color: var(--c-brand);
+						scale: 0.8;
+					}
+					&::before{
+						color: var(--c-highlight);
+					}
+				}
+			}
+		}
+	}
+	.level{
+		width: calc(100% - 2rem);
+		position: relative;
+		flex-wrap: wrap;
+		justify-content: start;
+		align-items: center;
+		padding: 0 1rem 0 4rem;
+		padding-top: 0;
+		padding-bottom: 0;
+		margin: 0 auto;
+		max-height: 0;
+		overflow: hidden;
+		transition: all .3s ease-in-out;
+		background-color: var(--c-white);
+		&::before {
+			position: absolute;
+			top: .5rem;
+			left: 0;
+			content: attr(data-level) ;
+			display: block;
+			@include obj-theme(main,2);
+			border-color: var(--c-white);
+			box-shadow: 0 0 0 2px var(--c-brand);
+			border-radius: 99rem;
+			width: 3rem;
+			height: 3rem;
+			line-height: 2.75rem;
+			text-align: center;
+			margin: .5rem;
+			transition: all .3s ease-in-out;
+			font-size: 1.3rem;
+			font-weight: bold;
+			z-index: 2;
+		}
+		&:hover {
+			&::before {
+				@include obj-theme(highlight,0);
+				scale: 1.1;
+				rotate: 366deg;
+			}
+		}
+		&:not(:last-child){
+			&::after{
+				content: '';
+				position: absolute;
+				top:1rem;
+				left: 2rem;
+				display: block;
+				width: 2px;
+				height: 100%;
+				@include obj-theme(main,0);
+				z-index: 1;
+			}
+		}
+		&:last-child{
+			border-radius: 0 0 1rem 1rem;
+		}
+	}
+	h4{
+		display: flex;
+		margin: 1rem .5rem;
+		letter-spacing: 2px;
+	}
+	.items{
+		flex: 0 1 80%;
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		+ .level{
+			border-radius: 1rem 1rem 0 0;
+		}
+	}
+	&:has(.items .active){
+		.level{
+			max-height: 500px;
+			padding-top: 1rem;
+			overflow: visible;
+			&:last-child{
+				padding-bottom: 3rem;
+			}
+		}
+	}
+}

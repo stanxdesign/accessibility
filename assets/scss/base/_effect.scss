@@ -1,0 +1,8 @@
+@use 'sass:math';
+@use '../abstracts/mixins' as *;
+
+button, a, *::after, *::before{
+	transition-property: all;
+	transition-duration: .3s;
+	transition-timing-function: ease-in-out;
+}

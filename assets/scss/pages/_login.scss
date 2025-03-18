@@ -1,0 +1,42 @@
+// @use 'sass:math';
+@use "../abstracts/mixins" as *;
+
+#loginPage{
+	position: relative;
+	background-color: var(--c-white);
+	margin: 5vw auto;
+	max-width: 960px;
+	border: 1rem solid var(--c-brand);
+	border-radius: 2rem;
+	#thirdLoginCard{
+		background-color: var(--c-main);
+		color: var(--c-white);
+		button, a{
+			&:not(:hover,:focus){
+				background: var(--c-white);
+			}
+			&:is(:hover,:focus){
+				background: var(--c-highlight);
+				color: var(--c-black);
+			}
+		}
+	}
+	#forgetPassword{
+		float: right;
+	}
+	@include SM{
+		border: 2rem solid var(--c-brand);
+	}
+}
+
+#togglePassword{
+	&::before{
+		content: '\f06e';
+		@include fa-icon;
+	}
+	&.active{
+		&::before{
+			content: '\f070';
+		}
+	}
+}

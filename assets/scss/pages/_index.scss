@@ -1,0 +1,114 @@
+// @use 'sass:math';
+@use "../abstracts/mixins" as *;
+
+.section-title {
+	position: relative;
+	color: var(--c-main);
+	&::after {
+		position: relative;
+		display: block;
+		content: "";
+		height: 6rem;
+		width: 6px;
+		top: 0.5ch;
+		left: 0.5ch;
+		background-color: var(--c-primary);
+	}
+}
+
+#slider-main {
+	position: relative;
+	width: 100%;
+	aspect-ratio: 2 / 3;
+	overflow: hidden;
+	margin-top: 3rem;
+	border-radius: 1rem;
+	.slide {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+		padding: 1rem;
+		.lead {
+			margin-top: auto;
+		}
+	}
+	.slide-cover {
+		width: 100%;
+		height: 100%;
+		padding: 3rem;
+		position: relative;
+		.cover {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
+	}
+	.slider-nav{
+		position: absolute;
+		height: 3rem;
+		line-height: 3rem;
+		text-align: center;
+		filter: none;
+		transform: none;
+		color: var(--c-brand);
+		opacity: 1;
+		bottom: 3rem;
+		padding: 0 0.5ch;
+		margin: 0.5ch;
+		top: auto;
+		bottom: 1rem;
+		left: auto;
+		right: 5rem;
+		font-size: 4rem;
+		visibility: visible !important;
+		&.slider-nav-next {
+			right: 1.5rem;
+		}
+	}
+	@include MD {
+		aspect-ratio: 16 / 9;
+	}
+	@include LG {
+		aspect-ratio: 16 / 6;
+	}
+}
+
+#filterPanel{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 1rem;
+	z-index: 1;
+	background-color: var(--c-brand);
+	border-radius: 1rem;
+	overflow: hidden;
+	#filterPanelForm{
+		order: 1;
+		width: 100%;
+		max-width: 50%;
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+		color: var(--c-white);
+	}
+	.form-group{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		label{
+			&:is([required]){
+				&::after{
+					content: ' *';
+					color: #F00;
+				}
+			}
+		}
+	}
+}

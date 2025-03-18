@@ -1,0 +1,84 @@
+@use '../abstracts/mixins' as *;
+
+:root{
+	--bs-body-font-family: #{$font-family};
+
+  --c-brand: #{$brand};
+	--c-brand-t: #{$brand-t};
+	--c-main: #{$main};
+	--c-main-t: #{$main-t};
+	--c-sub: #{$sub};
+	--c-sub-t: #{$sub-t};
+	--c-highlight: #{$highlight};
+	--c-highlight-t: #{$highlight-t};
+
+	// 把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+  @for $i from 0 through ($gray-steps - 1) {
+    --c-g#{$i}: #{generate-step-color($i, $gray-steps, $gray-start, $gray-end)};
+  }
+
+	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
+  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
+  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
+
+  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
+  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
+  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
+
+	--c-bg: #{$brand};
+	--c-bg-t: #{$white};
+
+	--bs-body-bg: #{$lite}; /* 淺灰色背景 */
+	--bs-body-color: #{$dark}; /* 深灰色文字 */
+	--bs-border-color: #{$dark}; /* 深灰色文字 */
+
+	--c-shadow: rgba(0, 0, 0, 0.5);
+
+	--c-focus: #{$highlight};
+
+	/* Primary 主題相關 */
+	--bs-primary: #{$brand}; /* 主色 */
+	--bs-primary-rgb: 197, 70, 81;
+	--bs-primary-bg-subtle: #{$lite}; /* 淡色背景 */
+	--bs-primary-text-emphasis: #{$dark}; /* 暗色文字 */
+
+	--c-white: #{$white};
+	--c-black: #{$black};
+	--c-dark: #{$dark};
+	--c-glay: #{$glay};
+	--c-lite: #{$lite};
+	--c-alert: #{$alert};
+	--c-white6: #{$white-6};
+	--c-white8: #{$white-8};
+	--c-white9: #{$white-9};
+	--c-brand0: #{$brand-0};
+
+	--page-padding: #{$page-padding};
+	--font-size: 14px;
+	@include MD{
+		--font-size: 16px;
+	}
+}
+
+[data-bs-theme="dark"] {
+	--c-highlight: #{$highlight};
+	--c-focus: #{$highlight-d};
+	--c-brand: #{$brand-d};
+	--c-main: #{$main-d};
+	--c-bg: #{$brand-d};
+	--c-bg-t: #{$white};
+	--c-shadow: rgba(0, 0, 0, 0.9);
+
+	--bs-body-bg: #{$dark-d}; /* 淺灰色背景 */
+	--bs-body-color: #{$lite}; /* 深灰色文字 */
+}
+
+[data-font="M"]{
+	--font-size: 16px;
+}
+[data-font="L"]{
+	--font-size: 18px;
+}
+[data-font="XL"]{
+	--font-size: 20px;
+}

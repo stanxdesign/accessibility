@@ -1,0 +1,54 @@
+// @use 'sass:math';
+@use "../abstracts/mixins" as *;
+
+#footer {
+	#footerLogo{
+		margin-bottom: 1rem;
+	}
+	min-hight: 100%;
+	height: 25vh;
+	margin-top: 5rem;
+	background-color: var(--c-main);
+	background-image: url(../images/footer.webp);
+	background-position: top center;
+	background-size: cover;
+	color: var(--c-white);
+	padding: .5rem 1rem;
+	display: block;
+	text-align: center;
+	align-content: flex-end;
+	#footerInfo {
+		display: block;
+	}
+	a{
+		color: var(--c-white);
+		&:hover,&:focus{
+			color: var(--c-highlight);
+		}
+	}
+	@include MD {
+		padding: 3rem;
+		display: flex;
+		align-items: center;
+
+		#footerInfo {
+			flex: 1;
+			align-items: center;
+			justify-content: flex-end;
+			text-align: right;
+			display: flex;
+			flex-wrap: wrap;
+		}
+		#footerCount{
+			flex: 1 0 100%;
+		}
+		#copyright {
+			&::before {
+				content: "|";
+				display: inline-block;
+				padding: 0 1ch 0 0.5ch;
+				opacity: 0.5;
+			}
+		}
+	}
+}

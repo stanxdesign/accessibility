@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.08"/>
 </head>
 
-<body>
+<body id="listPage">
 	<noscript>
 		<div role="alert" style="background-color: black; color: rgb(255, 238, 0); text-align: center; padding: 10px;">
 			<strong>您好！很抱歉，您的瀏覽器不支援JavaScript功能，網頁功能將無法正常使用，請您將瀏覽器的JavaScript支援開啟。</strong>
@@ -74,8 +74,7 @@
 		</nav>
 	</header>
 
-
-	<form id="listPage">
+	<form>
 		<main id="content" class="container-fluid px-4">
 			<div id="filterPanel">
 				<div id="filterPanelForm">
@@ -111,42 +110,20 @@
 					</div>
 					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
 				</div>
-				<div id="layoutBtns">
-					<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie active" aria-label="切換為圖表模式">統計圖表
-					</a>
-					<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building" aria-label="切換為卡片模式"></i>建物導覽
-					</a>
-				</div>
-
 			</div>
-			<section>
-				<header class="row py-4 my-5 visually-hidden">
-					<h2 class="section-title display-5 fw-bold">常用功能</h2>
-				</header>
-				<div class="row g-4">
-					<article class="card-half card-theme-cover card-style-brand" aria-labelledby="card-title-03">
-						<div class="card h-100" href="#" title="點選卡片開啟標題頁面" aria-label="點選卡片開啟標題頁面">
-							<div class="card-body">
-								<h5 id="card-title-03" class="card-title no-icon"><label>台灣體育大學<span>一中校區</span></label></h5>
-								<p class="card-text">國立臺灣體育運動大學，簡稱臺體、臺灣體大，是一所位於臺中市北區的國立大學。<br>臺中市北區雙十路一段16號<a href="#" class="btn btn-highlight fa fa-location-arrow">帶我前往</a></p>
-							</div>
-							<div class="card-cover">
-							</div>
-						</>
-					</article>
-					<article class="card-half card-theme-cover card-style-main" aria-labelledby="card-title-01">
-						<div class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
-							<div class="card-body">
-								<h5 id="card-title-01" class="card-title no-icon"><label></label></h5>
-								<p class="card-text"></p>
-							</div>
-							<div class="card-cover">
-								<img src="assets/images/demo01.webp" alt="">
-							</div>
-						</div>
-					</article>
 
-				</div>
+			<div id="layoutBtns">
+				<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie active" aria-label="切換為圖表模式">統計圖表
+				</a>
+				<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building" aria-label="切換為卡片模式"></i>建物導覽
+				</a>
+			</div>
+
+			<section>
+				<h1 class="school-title">國立臺中教育大學</h1>
+				<p class="school-info">簡稱中教大、NTCU，是臺灣國立大學系統與臺灣教育大學系統系統成員校，臺中市西區一所以教育為核心的專業聚焦型特色大學。<br>
+					臺灣臺中市西區民生路140號</p>
+				<p class="school-info text-end"><a href="#" class="btn btn-highlight fa fa-location-arrow">帶我前往</a></p>
 			</section>
 
 			<!-- 功能區卡片款式 -->

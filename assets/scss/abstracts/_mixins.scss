@@ -1,0 +1,120 @@
+@use 'sass:math';
+@use 'sass:color';
+$font-family: 'SF Pro', 'Arial', 'Noto Sans', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+
+$brand:#13341e;
+$main:#4A7561;
+$sub:#bcdfb6;
+
+$brand-t:#FFFFFF;
+$main-t:#FFFFFF;
+$sub-t:#000000;
+
+$highlight: #FADA65;
+$highlight-t: #121826;
+
+$white:#FFFFFF;
+$black:#000000;
+
+$gray-start: #FCFCFE; // 最亮
+$gray-end: #EAEAEF;   // 最暗
+$gray-steps: 4;
+
+$lite:#FEFFF5;
+$glay:#ECECEC;
+$dark:#13341e;
+
+// 使用調色函數將顏色轉換為藍色調 DARK THEME
+$dark-brand: adjust-hue($brand, 180deg);  // 反轉為藍色調
+$dark-main: adjust-hue($main, 180deg);    // 反轉為藍色調
+$dark-sub: adjust-hue($sub, 180deg);      // 反轉為藍色調
+
+$dark-brand-t: $brand-t;  // 文字顏色保持不變
+$dark-main-t: $main-t;    // 文字顏色保持不變
+$dark-sub-t: $sub-t;      // 文字顏色保持不變
+
+$dark-highlight: adjust-hue($highlight, 180deg);  // 反轉為藍色調
+$dark-highlight-t: $highlight-t; // 文字顏色保持不變
+
+// 調暗色彩使其符合暗色主題
+$dark-brand: darken($dark-brand, 20%);
+$dark-main: darken($dark-main, 15%);
+$dark-sub: darken($dark-sub, 10%);
+$dark-highlight: darken($dark-highlight, 25%);
+
+// 顯示最終的藍色調 DARK THEME 色號
+@debug $dark-brand;
+@debug $dark-main;
+@debug $dark-sub;
+@debug $dark-highlight;
+
+$highlight-d: #FACB1F;
+
+$brand-d:#90cfef;
+$main-d:#009bd7;
+$brand-3-d:#0a4c68;
+$dark-d:#121826;
+$lite-d:#FEFFF5;
+
+// 暫時沒有用
+$page-padding:.8em;
+$alert:#992255;
+$white-6: rgba(255,255,255,0.6);
+$white-8: rgba(255,255,255,0.8);
+$white-9: rgba(255,255,255,0.9);
+$brand-0:rgba(236, 0, 140, 0);
+
+// 依參數，組裝對應 CSS 變數名稱
+@function set-color($mode, $type: "") {
+  @return var(--c-#{$mode}#{$type});
+}
+
+// 依傳入值均分並計算色票
+@function generate-step-color($index, $total, $start, $end) {
+  @if $index == 0 { @return $start; } // 第一個色號就是起始色
+  @if $index == $total - 1 { @return $end; } // 最後一個色號就是結束色
+
+  $percentage: calc(($index * 100) / ($total - 1)); // 計算漸變比例
+  @return mix($end, $start, $percentage * 1%); // 正確應用 mix()
+}
+
+// 依參數，組裝對應 CSS 變數名稱
+@function gradient-var($name, $type) {
+  @return unquote("--g-#{$name}-#{$type}");
+}
+
+// // 被 @extend 引用時，依照傳入參數 提供 背景色、文字色、邊框
+@mixin obj-theme($mode, $line: 0) {
+  background-color: set-color($mode);
+  color: set-color($mode, "-t");
+
+  // 處理邊框
+  @if $line > 0 {
+    border-width: #{$line}px;
+    border-style: solid;
+    border-color: set-color($mode);
+  }
+}
+
+// 被 @extend 引用時，依照傳入參數 提供 背景漸層
+@mixin gradient-bg($name, $direction: "h / v") {
+  background: var(#{gradient-var($name, $direction)});
+}
+
+@mixin fa-icon {font-weight: bold;font-family: "Font Awesome 6 Free";padding: 0 .5ch;}
+@mixin shadow {box-shadow: 0 0 2rem var(--c-shadow);}
+
+// 配合 bootstrap 斷點 處理 RWD，以行動裝置優先
+/* RWD media breakpoints (Mobile First, aligned with Bootstrap 5.3.3) */
+$XS: 0;     /* Extra small (default, no media query needed) */
+$SM: 576px; /* Small */
+$MD: 768px; /* Medium */
+$LG: 992px; /* Large */
+$XL: 1200px; /* Extra large */
+$XXL: 1400px; /* Extra extra large */
+@mixin XS() {@content;}
+@mixin SM() {@media only screen and (min-width: $SM) {@content;}}
+@mixin MD() {@media only screen and (min-width: $MD) {@content;}}
+@mixin LG() {@media only screen and (min-width: $LG) {@content;}}
+@mixin XL() {@media only screen and (min-width: $XL) {@content;}}
+@mixin XXL() {@media only screen and (min-width: $XXL) {@content;}}

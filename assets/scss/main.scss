@@ -1,6 +1,33 @@
-@use 'globals/mixins' as *;
+@use 'abstracts/mixins' as *;
 
-@import 'components/base';
-@import 'components/layout';
-@import 'components/page';
-@import 'globals/wcag';
+
+@use 'base/base';
+@use 'base/wcag';
+@use 'base/effect';
+// @use 'base/typography';
+
+@use 'layout/navbar';
+// @use 'layout/header';
+@use 'layout/footer';
+// @use 'layout/grid';
+
+@use 'components/marker';
+@use 'components/card';
+@use 'components/slider';
+@use 'components/modal';
+@use 'components/popup';
+@use 'components/result';
+// @use 'components/form';
+
+@use 'pages/index';
+@use 'pages/page';
+@use 'pages/login';
+@use 'pages/gis';
+@use 'pages/list';
+
+// @use 'pages/home';
+// @use 'pages/about';
+// @use 'pages/login';
+
+@use 'themes/default';
+// @use 'themes/light';

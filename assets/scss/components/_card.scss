@@ -1,0 +1,266 @@
+// @use 'sass:math';
+@use '../abstracts/mixins' as *;
+
+// 自訂卡片寬度類別
+article {
+	&[class^="card-"] {
+		.card {
+			width: 100%;
+			text-decoration: none !important;
+			border-radius: 2rem;
+			margin-bottom: 0;
+			overflow: hidden;
+			border: var(--c-dark) solid 1px;
+			background-color: var(--c-white);
+			transition: scale 0.3s ease-in-out;
+			&:hover,
+			&:focus {
+				scale: 1.03;
+			}
+		}
+		.card-body {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			z-index: 1;
+			a{
+				margin: 1ch;
+			}
+			@include MD {
+				.card {
+					padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+				}
+			}
+		}
+		.card-title {
+			position: relative;
+			font-size: 1.6rem;
+			padding-right: 2.5rem;
+			&::after {
+				content: "\f0a9"; /* 假設使用 Font Awesome 的右箭頭 */
+				font-weight: bold;
+				font-family: "Font Awesome 6 Free"; /* 根據你的圖標庫調整 */
+				position: absolute;
+				right: 0.1ch;
+				top: 50%;
+				transform: translateY(-50%);
+				font-size: 2rem;
+				z-index: 2;
+				@include MD {
+					font-size: 2.2rem;
+				}
+			}
+			label {
+				max-height: 3.8rem;
+				overflow: hidden;
+				span{
+					&::before{
+						content: '\f0da';
+						@include fa-icon;
+						opacity: .8;
+					}
+				}
+			}
+		}
+		.card-cover {
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+			}
+			i {
+				position: absolute;
+				right: 1rem;
+				bottom: 1rem;
+				font-size: 3rem;
+				@include MD {
+					bottom: 1.5rem;
+					right: 2rem;
+					font-size: 4rem;
+				}
+			}
+		}
+	}
+}
+
+.card-style-brand {
+	.card {
+		background-color: var(--c-brand) !important;
+		border-color: var(--c-brand) !important;
+		color: var(--c-white);
+	}
+}
+
+.card-style-main {
+	.card {
+		background-color: var(--c-main) !important;
+		border-color: var(--c-main) !important;
+		color: var(--c-white);
+	}
+}
+
+.card-wide {
+	flex: 0 0 100%; // 全寬
+	max-width: 100%;
+	.card {
+		aspect-ratio: 1 /1;
+	}
+	@include MD {
+		.card {
+			aspect-ratio: 2 /1;
+		}
+	}
+}
+
+.card-half {
+	flex: 0 0 100%; // 二分之一寬
+	max-width: 100%;
+	.card {
+		aspect-ratio: 2 / 1;
+	}
+	&.card-theme-split {
+		.card {
+			flex-direction: row;
+			.card-body {
+				flex: 0 0 50%;
+				max-width: 50%;
+				padding: 1.5rem 0.5rem 1.5rem 1.5rem;
+			}
+			.card-cover {
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+		}
+	}
+	&.card-theme-cover {
+		.card {
+			.card-cover {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+	}
+	@include MD {
+		flex: 0 0 50%; // 二分之一寬
+		max-width: 50%;
+		.card {
+			aspect-ratio: 2 / 1;
+		}
+	}
+}
+
+.card-third {
+	flex: 0 0 50%; // 三分之一寬
+	max-width: 50%;
+	.card {
+		aspect-ratio: 1 / 1;
+	}
+	@include MD {
+		flex: 0 0 calc(100% / 3); // 三分之一寬
+		max-width: calc(100% / 3);
+		.card {
+			aspect-ratio: 4 / 3;
+		}
+	}
+}
+
+.card-quarter {
+	flex: 0 0 50%; // 四分之一寬
+	max-width: 50%;
+	.card {
+		aspect-ratio: 1 / 1;
+	}
+	.card-cover {
+		i {
+			@include MD {
+				right: auto;
+				left: 2rem;
+			}
+		}
+	}
+	@include MD {
+		flex: 0 0 25%; // 四分之一寬
+		max-width: 25%;
+	}
+}
+
+.card-theme-slider {
+	&:is(.card-third,.card-quarter) {
+		flex: 0 0 100%; // 四分之一寬
+		max-width: 100%;
+	}
+	.card {
+		flex-direction: column;
+		aspect-ratio: 1 / 1 !important;
+	}
+	@include MD {
+		&.card-third{
+			max-width: calc(100% / 3);
+		}
+		&.card-quarter{
+			max-width: calc(100% / 4);
+		}
+	}
+}
+
+.card-theme-chart-filter {
+	.card {
+		flex-direction: column;
+		.card-chart {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: inherit;
+			overflow: hidden;
+			background-color: var(--c-white);
+		}
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+			@include MD {
+				max-width: 50%;
+				margin-left: 50%;
+			}
+		}
+	}
+	&:not(.card-wide) {
+		aspect-ratio: 1 / 1 !important;
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+		}
+	}
+}
+
+.card-theme-chart {
+	.card {
+		flex-direction: column;
+		.card-chart {
+			width: 100%;
+			height: 100%;
+			aspect-ratio: inherit;
+			overflow: hidden;
+			background-color: var(--c-white);
+		}
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+			@include MD {
+				max-width: 50%;
+				margin-left: 50%;
+			}
+		}
+	}
+	&:not(.card-wide) {
+		aspect-ratio: 1 / 1 !important;
+		.card-body {
+			max-width: 100%;
+			margin-left: 0;
+		}
+	}
+}

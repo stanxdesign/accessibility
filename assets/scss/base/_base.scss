@@ -1,5 +1,5 @@
 @use 'sass:math';
-@use '../globals/mixins' as *;
+@use '../abstracts/mixins' as *;
 
 ::selection {
   background: var(--c-highlight);
@@ -86,6 +86,7 @@ input, textarea {
 	&:hover,&:focus,&.active{
 		background-color: var(--c-white);
 		color: var(--c-black);
+		box-shadow: 1px 1px 0 3px var(--c-shadow);
 	}
 }
 
@@ -95,6 +96,10 @@ input, textarea {
 	&:hover,&:focus,&.active{
 		color: var(--c-highlight);
 	}
+}
+
+.captcha {
+	min-height: 3rem;
 }
 
 $icons: (

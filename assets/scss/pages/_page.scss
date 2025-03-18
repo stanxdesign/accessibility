@@ -1,0 +1,48 @@
+// @use 'sass:math';
+@use '../abstracts/mixins' as *;
+
+.tab-switch{
+	.tab-bar{
+		display: flex;
+		grid-area: tab-bar;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		.tab-bar-btn{
+			position: relative;
+			min-width: 6rem;
+			flex-grow: 0;
+			border: none;
+			background-color: var(--c-brand);
+			color: var(--c-brand-t);
+			padding: .5rem;
+			font-size: 1.2rem;
+			border-radius: 1rem 1rem 0 0;
+			&.active{
+				background-color: var(--c-highlight);
+			}
+			.mark:not(:empty){
+				border-radius: 99rem;
+				width: 1.5rem;
+				height: 1.5rem;
+				line-height: 1.25rem;
+				font-size: 1rem;
+				text-align: center;
+				margin: 0 0 0 0.5ch;
+			}
+		}
+	}
+	.tab-content{
+		background-color: var(--c-white);
+		padding: 1rem;
+		border-top: solid 2px var(--c-highlight);
+		grid-area: tab-info;
+		.tab-content-info {
+			height: 0;
+			overflow: hidden;
+			transition: height 0.3s ease-out;
+			&.active {
+				height: auto;
+			}
+		}
+	}
+}
