@@ -5,13 +5,13 @@
 	&.modal-theme-brand{
 		.modal-content{
 			background-color: var(--c-brand);
-			color: var(--c-white);
+			color: var(--c-brand-t);
 		}
 	}
 	&.modal-theme-main{
 		.modal-content{
 			background-color: var(--c-main);
-			color: var(--c-white);
+			color: var(--c-brand-t);
 		}
 	}
 	.modal-content{
@@ -41,7 +41,7 @@
 		border: none;
 		h5{
 			font-size: 1.2rem;
-			color: var(--c-white);
+			color: var(--c-brand-t);
 			&::before{
 				margin-right: 1ch;
 			}
@@ -49,7 +49,7 @@
 		.modal-dismiss{
 			background: none;
 			border: none;
-			color: var(--c-white);
+			color: var(--c-brand-t);
 			font-size: 1.5rem;
 			margin-left: auto;
 			&::before{
@@ -124,7 +124,7 @@
 			}
 		}
 		.slider-nav{
-			color: var(--c-white);
+			color: var(--c-brand-t);
 			background-color: var(--c-brand);
 			position: absolute;
 			bottom: calc(50% - 1rem);
@@ -141,7 +141,7 @@
 		@include MD{
 			.slider-nav{
 				background-color: transparent;
-				color: var(--c-white);
+				color: var(--c-brand-t);
 				position: absolute;
 				bottom: .5rem;
 				right: -3rem;

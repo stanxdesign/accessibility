@@ -45,7 +45,7 @@
 		opacity: .5;
 	}
 	&.lite{
-		background-color: var(--c-alert);
+		background-color: var(--c-brand);
 		&::before{
 			border: 2px solid var(--c-brand);
 			background-color: var(--c-brand);
@@ -79,7 +79,7 @@
 		&::before{
 			border: 2px solid var(--c-white);
 			background-color: var(--c-brand);
-			color: var(--c-white);
+			color: var(--c-highlight);
 		}
 	}
 	&-highlight{
@@ -95,7 +95,7 @@
 		&::before{
 			border: 2px solid var(--c-black);
 			background-color: var(--c-highlight);
-			color: var(--c-black);
+			color: var(--c-highlight-t);
 		}
 	}
 	&-brand{
@@ -111,7 +111,7 @@
 		&::before{
 			border: 2px solid var(--c-brand);
 			background-color: var(--c-brand);
-			color: var(--c-white);
+			color: var(--c-brand-t);
 		}
 	}
 	&-red{
@@ -158,7 +158,7 @@
 		&::before{
 			border: 2px solid var(--c-highlight);
 			background-color: var(--c-highlight);
-			color: var(--c-black);
+			color: var(--c-highlight-t);
 		}
 	}
 }

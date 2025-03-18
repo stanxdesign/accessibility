@@ -8,7 +8,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5ch;
-		background: var(--c-glay);
+		background-color: var(--c-back-sub);
 		border-radius: .5rem;
 		align-self: center;
 		width: auto;
@@ -16,7 +16,7 @@
 		margin: .5rem;
 		padding: 0 .5rem .5rem .5rem;
 		label{
-			color: var(--c-black);
+			color: var(--c-front);
 			overflow: hidden;
 			margin-top: 3px;
 			margin-bottom: -3px;
@@ -25,7 +25,7 @@
 			display: flex;
 			margin: 3px;
 			padding: 3px;
-			background-color: var(--c-white);
+			background-color: var(--c-g1);
 			border-radius: 99rem;
 			button{
 				padding: 3px .5ch;
@@ -48,7 +48,7 @@
 		&:has(#switchFontSize){
 			display: none;
 			@include MD{
-				display: block;
+				display: flex;
 			}
 		}
 		#switchThemeToggle{
@@ -70,16 +70,16 @@
 		}
 		&-theme{
 			&-light {
-				background-color: var(--c-white);
-				color: var(--c-black);
+				background-color: #FFFFFF;
+				color: #13341e;
 			}
 			&-dark {
-				background-color: var(--c-brand);
-				color: var(--c-highlight);
+				background-color: #3A3A3F;
+				color: #B3DBEC;
 			}
-			&-highlight {
-				background-color: var(--c-black);
-				color: var(--c-white);
+			&-contrast {
+				background-color: #4F3188;
+				color: #F9F4AB;
 			}
 		}
 	}
@@ -89,14 +89,14 @@
 	width: 100%;
 	top: 0;
 	position: fixed;
-	background-color: var(--c-white);
+	background-color: var(--c-back-sub);
 	box-shadow: 0 0 2rem var(--c-shadow);
 	z-index: 3;
 	#navbarMain {
 		z-index: 2;
 		a {
 			height: 3.5rem;
-			color: var(--c-black);
+			color: var(--c-front-sub);
 			padding: 0.5ch 1ch;
 			align-content: center;
 			&:hover,
@@ -109,9 +109,8 @@
 			}
 		}
 		.dropdown-menu {
-			background-color: var(--c-white);
+			background-color: var(--c-back-sub);
 			border-radius: 1rem;
-			// border: 2px solid var(--c-highlight);
 		}
 		.nav-item{
 			align-items: center;

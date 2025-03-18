@@ -12,9 +12,18 @@
 	--c-highlight: #{$highlight};
 	--c-highlight-t: #{$highlight-t};
 
+	--c-white: #{$white};
+	--c-black: #{$black};
+
+	--c-front: #{$black};
+	--c-back: #{$lite};
+	--c-front-sub: #{$black};
+	--c-back-sub: #{$white};
+	 --c-front-brand: #{$brand};
+
 	// 把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
-  @for $i from 0 through ($gray-steps - 1) {
-    --c-g#{$i}: #{generate-step-color($i, $gray-steps, $gray-start, $gray-end)};
+  @for $i from 1 through ($gray-steps - 1) {
+    --c-g#{$i}: #{generate-step-color($i, $gray-steps, #F5F5FC, #CCCCD1)};
   }
 
 	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
@@ -25,52 +34,91 @@
   #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
   #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
 
-	--c-bg: #{$brand};
-	--c-bg-t: #{$white};
-
-	--bs-body-bg: #{$lite}; /* 淺灰色背景 */
-	--bs-body-color: #{$dark}; /* 深灰色文字 */
-	--bs-border-color: #{$dark}; /* 深灰色文字 */
-
 	--c-shadow: rgba(0, 0, 0, 0.5);
 
 	--c-focus: #{$highlight};
 
 	/* Primary 主題相關 */
-	--bs-primary: #{$brand}; /* 主色 */
-	--bs-primary-rgb: 197, 70, 81;
-	--bs-primary-bg-subtle: #{$lite}; /* 淡色背景 */
-	--bs-primary-text-emphasis: #{$dark}; /* 暗色文字 */
+	// --bs-primary: #{$brand}; /* 主色 */
+	// --bs-primary-rgb: 197, 70, 81;
+	// --bs-primary-bg-subtle: #{$lite}; /* 淡色背景 */
+	// --bs-primary-text-emphasis: #{$dark}; /* 暗色文字 */
 
-	--c-white: #{$white};
-	--c-black: #{$black};
-	--c-dark: #{$dark};
-	--c-glay: #{$glay};
-	--c-lite: #{$lite};
-	--c-alert: #{$alert};
-	--c-white6: #{$white-6};
-	--c-white8: #{$white-8};
-	--c-white9: #{$white-9};
-	--c-brand0: #{$brand-0};
-
-	--page-padding: #{$page-padding};
 	--font-size: 14px;
+
 	@include MD{
 		--font-size: 16px;
 	}
 }
 
 [data-bs-theme="dark"] {
-	--c-highlight: #{$highlight};
-	--c-focus: #{$highlight-d};
-	--c-brand: #{$brand-d};
-	--c-main: #{$main-d};
-	--c-bg: #{$brand-d};
-	--c-bg-t: #{$white};
-	--c-shadow: rgba(0, 0, 0, 0.9);
+	--bs-body-font-family: #{$font-family};
 
-	--bs-body-bg: #{$dark-d}; /* 淺灰色背景 */
-	--bs-body-color: #{$lite}; /* 深灰色文字 */
+  --c-brand: #{$brand-d};
+	--c-brand-t: #{$brand-d-t};
+	--c-main: #{$main-d};
+	--c-main-t: #{$main-d-t};
+	--c-sub: #{$sub-d};
+	--c-sub-t: #{$sub-d-t};
+	--c-highlight: #{$highlight-d};
+	--c-highlight-t: #{$highlight-d-t};
+
+	--c-front: #{$white};
+	--c-back: #{$dark};
+	--c-front-sub: #{$white};
+	--c-back-sub: #{$black};
+	--c-front-brand: #{$sub-d};
+
+	// 把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+  @for $i from 0 through ($gray-steps - 1) {
+    --c-g#{$i}: #{generate-step-color($i, $gray-steps, #3A3A3F, #464647)};
+  }
+
+	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
+  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
+  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
+
+  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
+  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
+  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
+
+	--c-shadow: rgba(0, 0, 0, 0.8);
+	--c-focus: #E24A76;
+}
+
+[data-bs-theme="contrast"] {
+	--bs-body-font-family: #{$font-family};
+
+  --c-brand: #{$brand-c};
+	--c-brand-t: #{$brand-c-t};
+	--c-main: #{$main-c};
+	--c-main-t: #{$main-c-t};
+	--c-sub: #{$sub-c};
+	--c-sub-t: #{$sub-c-t};
+	--c-highlight: #{$highlight-c};
+	--c-highlight-t: #{$highlight-c-t};
+
+	--c-front: #{$black};
+	--c-back: #{$white};
+	--c-front-sub: #{$black};
+	--c-back-sub: #{$white};
+	--c-front-brand: #{$brand-c};
+
+	// 把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+  @for $i from 1 through ($gray-steps - 1) {
+    --c-g#{$i}: #{generate-step-color($i, $gray-steps, #F5F5FC, #CCCCD1)};
+  }
+
+	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
+  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
+  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
+
+  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
+  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
+  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
+
+	--c-shadow: rgba(0, 0, 0, 0.8);
+	--c-focus: #{$highlight-c};
 }
 
 [data-font="M"]{

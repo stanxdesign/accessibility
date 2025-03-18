@@ -2,6 +2,14 @@
 @use 'sass:color';
 $font-family: 'SF Pro', 'Arial', 'Noto Sans', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
 
+$gray-steps: 4;
+
+$white:#FFFFFF;
+$black:#000000;
+$lite:#F5F5FC;
+$dark:#3A3A3F;
+
+// === default pattern ===
 $brand:#13341e;
 $main:#4A7561;
 $sub:#bcdfb6;
@@ -13,56 +21,29 @@ $sub-t:#000000;
 $highlight: #FADA65;
 $highlight-t: #121826;
 
-$white:#FFFFFF;
-$black:#000000;
+// === Dark pattern ===
+$brand-d:#0A4A66;
+$main-d:#70BFE0;
+$sub-d:#B3DBEC;
 
-$gray-start: #FCFCFE; // 最亮
-$gray-end: #EAEAEF;   // 最暗
-$gray-steps: 4;
+$brand-d-t:#FFFFFF;
+$main-d-t:#000000;
+$sub-d-t:#000000;
 
-$lite:#FEFFF5;
-$glay:#ECECEC;
-$dark:#13341e;
+$highlight-d: #FFE3F1;
+$highlight-d-t: #121826;
 
-// 使用調色函數將顏色轉換為藍色調 DARK THEME
-$dark-brand: adjust-hue($brand, 180deg);  // 反轉為藍色調
-$dark-main: adjust-hue($main, 180deg);    // 反轉為藍色調
-$dark-sub: adjust-hue($sub, 180deg);      // 反轉為藍色調
+// === contrast pattern ===
+$brand-c:#3F094D;
+$main-c:#4F3188;
+$sub-c:#FABB07;
 
-$dark-brand-t: $brand-t;  // 文字顏色保持不變
-$dark-main-t: $main-t;    // 文字顏色保持不變
-$dark-sub-t: $sub-t;      // 文字顏色保持不變
+$brand-c-t:#FEF852;
+$main-c-t:#FEF852;
+$sub-c-t:#000000;
 
-$dark-highlight: adjust-hue($highlight, 180deg);  // 反轉為藍色調
-$dark-highlight-t: $highlight-t; // 文字顏色保持不變
-
-// 調暗色彩使其符合暗色主題
-$dark-brand: darken($dark-brand, 20%);
-$dark-main: darken($dark-main, 15%);
-$dark-sub: darken($dark-sub, 10%);
-$dark-highlight: darken($dark-highlight, 25%);
-
-// 顯示最終的藍色調 DARK THEME 色號
-@debug $dark-brand;
-@debug $dark-main;
-@debug $dark-sub;
-@debug $dark-highlight;
-
-$highlight-d: #FACB1F;
-
-$brand-d:#90cfef;
-$main-d:#009bd7;
-$brand-3-d:#0a4c68;
-$dark-d:#121826;
-$lite-d:#FEFFF5;
-
-// 暫時沒有用
-$page-padding:.8em;
-$alert:#992255;
-$white-6: rgba(255,255,255,0.6);
-$white-8: rgba(255,255,255,0.8);
-$white-9: rgba(255,255,255,0.9);
-$brand-0:rgba(236, 0, 140, 0);
+$highlight-c: #FEF852;
+$highlight-c-t: #3F094D;
 
 // 依參數，組裝對應 CSS 變數名稱
 @function set-color($mode, $type: "") {
@@ -72,7 +53,7 @@ $brand-0:rgba(236, 0, 140, 0);
 // 依傳入值均分並計算色票
 @function generate-step-color($index, $total, $start, $end) {
   @if $index == 0 { @return $start; } // 第一個色號就是起始色
-  @if $index == $total - 1 { @return $end; } // 最後一個色號就是結束色
+  @if $index == $total { @return $end; } // 最後一個色號就是結束色
 
   $percentage: calc(($index * 100) / ($total - 1)); // 計算漸變比例
   @return mix($end, $start, $percentage * 1%); // 正確應用 mix()

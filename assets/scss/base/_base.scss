@@ -20,10 +20,13 @@ html {
 
 body {
 	font-size: 1em;
+	color: var(--c-front);
+  background-color: var(--c-back);
 }
 
 h1, h2 {
 	font-size: 1.2rem;
+	color: var( --c-front-brand);
 }
 
 h3, h4, h5, h6 {
@@ -42,51 +45,58 @@ input, textarea {
 		content: none !important;
 	}
 }
-.btn-theme{
-	border-radius: 99rem;
-	background-color: var(--c-bg);
-	color: var(--c-white);
-	&:hover,&:focus,&.active{
-		background-color: var(--c-highlight);
-	}
-}
-
-.btn-main{
-	border-radius: 99rem;
-	background-color: var(--c-main);
-	color: var(--c-white);
-	&:hover,&:focus,&.active{
-		background-color: var(--c-highlight);
-	}
-}
 
 .btn{
-	border-radius: 99rem;
+	border-radius: 99rem 0 99rem 99rem;
 	font-family: var(--bs-body-font-family);
+	background-color: var(--c-brand);
+	color: var(--c-brand-t);
 	&.fa{
 		&::before{
 			font-family: "Font Awesome 6 Free";
 			margin-right: .5ch;
 		}
 	}
+	&:hover,&:focus,&.active{
+		background-color: var(--c-highlight);
+		color: var(--c-highlight-t);
+	}
 }
-.btn-more{
-	&::after{
-		content: "\f178";
-		font-weight: bold;
-		font-family: "Font Awesome 6 Free";
-		padding: 0 .5ch;
+
+.btn-brand{
+	background-color: var(--c-brand);
+	color: var(--c-brand-t);
+	&:hover,&:focus,&.active{
+		background-color: var(--c-highlight);
+		color: var(--c-highlight-t);
+	}
+}
+
+.btn-main{
+	background-color: var(--c-main);
+	color: var(--c-main-t);
+	&:hover,&:focus,&.active{
+		background-color: var(--c-highlight);
+		color: var(--c-highlight-t);
 	}
 }
 
 .btn-highlight{
-	border-radius: 99rem;
 	@include obj-theme(highlight,0);
 	font-weight: bold;
 	&:hover,&:focus,&.active{
 		background-color: var(--c-white);
 		color: var(--c-black);
 		box-shadow: 1px 1px 0 3px var(--c-shadow);
+	}
+}
+
+.btn-more{
+	&::after{
+		content: "\f178";
+		font-weight: bold;
+		font-family: "Font Awesome 6 Free";
+		padding: 0 .5ch;
 	}
 }
 
@@ -125,8 +135,8 @@ $icons: (
 	flex-wrap: wrap;
 	gap: 1ch;
 	.tag{
-		color: var(--c-black);
-		background-color: var(--c-white);
+		color: var(--c-front);
+		background-color: var(--c-back-sub);
 		border:solid 1px var(--c-white);
 		border-radius: .5rem;
 		padding: .2em .5em;

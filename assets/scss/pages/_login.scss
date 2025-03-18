@@ -10,14 +10,14 @@
 	border-radius: 2rem;
 	#thirdLoginCard{
 		background-color: var(--c-main);
-		color: var(--c-white);
+		color: var(--c-main-t);
 		button, a{
 			&:not(:hover,:focus){
 				background: var(--c-white);
 			}
 			&:is(:hover,:focus){
 				background: var(--c-highlight);
-				color: var(--c-black);
+				color: var(--c-highlight-t);
 			}
 		}
 	}

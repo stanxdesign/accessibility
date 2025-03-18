@@ -232,15 +232,14 @@
 			width: 2.5rem;
 			height: 2.5rem;
 			aspect-ratio: 1/1;
-			border: var(--c-brand) solid 1px;
-			color: var(--c-white);
 			background-color: var(--c-brand);
+			color: var(--c-brand-t);
+			border: var(--c-brand) solid 1px;
 			font-size: 0;
 			line-height: 2rem;
 			flex-direction: column;
 			justify-content: space-around;
 			align-items: center;
-			background-color: var(--c-brand);
 			border-radius: 99rem;
 			box-shadow: 0 0 1rem 0 var(--c-shadow);
 			&::before{
@@ -278,58 +277,15 @@
 			font-size: .9rem;
 			padding: 1.5rem 2px;
 			margin: -2rem 0;
-			background-color: var(--c-lite);
+			background-color: var(--c-back-sub);
 			z-index: -1;
-			color: var(--c-black);
+			color: var(--c-front-brand);
 			border: 2px solid var(--c-brand);
 		}
 		#setLayerImg{
 			~ .dropdown-menu-end{
 				min-width: 0;
 				padding: 1ch !important;
-			}
-		}
-		#setLayerImg01{
-			display: block;
-			width: auto;
-			height: auto;
-			aspect-ratio: 0;
-			text-align: center;
-			border-radius: 8px;
-			font-size: 1rem;
-			padding: .5ch;
-			margin-bottom: 1rem;
-			background-color: var(--c-g2);
-			color: var(--c-brand);
-			border: none 0px transparent;
-			box-shadow: none;
-			&::before{
-				content: '';
-				display: block;
-				width: 5rem;
-				height: 3rem;
-				background-color: var(--c-g3);
-			}
-		}
-		#setLayerImg02{
-			display: block;
-			width: auto;
-			height: auto;
-			aspect-ratio: 0;
-			text-align: center;
-			border-radius: 8px;
-			font-size: 1rem;
-			padding: .5ch;
-			background-color: var(--c-g2);
-			color: var(--c-brand);
-			border: none 0px transparent;
-			box-shadow: none;
-			&::before{
-				content: '';
-				display: block;
-				width: 5rem;
-				height: 3rem;
-				background-color: var(--c-g3);
 			}
 		}
 		@include MD{
@@ -348,8 +304,6 @@
 			align-items: center;
 			gap: .5rem;
 			border-radius: 0 1rem 1rem 0;
-			// background-color: var(--c-brand);
-			color: var(--c-white);
 			button{
 				display: flex;
 				width: 100%;
@@ -476,7 +430,7 @@
 			position: sticky;
 			top: 0;
 			left: 0;
-			background-color: var(--c-g2);
+			background-color: var(--c-g3);
 			display: block;
 			text-align: center;
 			width: 100%;
@@ -524,11 +478,7 @@
 			}
 			.result-item{
 				background-color: var(--c-brand);
-				// display: grid;
-				grid-template-areas: 'title  title'
-															'info  info'
-															'tab-bar tab-bar'
-															'tab-info tab-info';
+				color: var(--c-brand-t);
 				border-radius: 1rem;
 				overflow: hidden;
 				border: 2px solid var(--c-main);
@@ -585,7 +535,7 @@
 					button.fa{
 						color: var(--c-black);
 						background-color: var(--c-white);
-						border: solid 1px var(--c-glay);
+						border: solid 1px var(--c-g3);
 						border-radius:.99rem;
 						padding:.5em;
 						margin: .25ch;
@@ -662,7 +612,7 @@
 			justify-content: right;
 			padding: 0 1rem;
 			background-color: var(--c-brand);
-			color: var(--c-white);
+			color: var(--c-brand-t);
 			border-radius: 1rem;
 			margin-top: .5rem;
 			margin-left: auto;

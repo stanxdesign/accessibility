@@ -27,6 +27,7 @@
 			padding: 1rem;
 			border-radius: 0 1rem 1rem 0;
 			background-color: var(--c-brand);
+			color: var(--c-brand-t);
 			.form-group {
 				flex-direction: column;
 				flex: 1 1 auto;
@@ -96,7 +97,7 @@
 			}
 			&.active{
 				background-color: var(--c-highlight);
-				color: var(--c-black);
+				color: var(--c-highlight-t);
 				&::before{
 					font-size: 1.5rem;
 					color: var(--c-brand);
@@ -118,7 +119,7 @@
 			position: absolute;
 			top: 50%;
 			z-index: -1;
-			border-top: 1px solid var(--c-brand);
+			border-top: 1px solid var(--c-front-brand);
 		}
 	}
 
@@ -167,14 +168,14 @@
 			.tab-bar-btn{
 				border: var(--c-highlight) solid 1px;
 				background-color: var(--c-brand);
+				color: var(--c-brand-t);
 				border-radius: 1rem;
-				background-color: var(--c-white);
 				.mark{
 					background-color: var(--c-highlight);
 				}
 				&.active{
 					background-color: var(--c-highlight);
-					color: var(--c-black);
+					color: var(--c-highlight-t);
 					.mark{
 						background-color: var(--c-white);
 					}
@@ -212,7 +213,7 @@
 			grid-area: h2;
 			margin:0;
 			background-color: var(--c-main);
-			color: var(--c-brand-t);
+			color: var(--c-main-t);
 			padding:.5rem 1rem;
 			border: 1px solid var(--c-main);
 			border-radius:1rem 1rem 0 0;
@@ -236,7 +237,6 @@
 			height: auto;
 			max-height: 100%;
 			background-color: var(--c-g1);
-			border-bottom: 1px solid var(--c-sub);
 			overflow-y: hidden;
 			overflow-x: auto;
 			transition: all .5s ease-in-out;
@@ -297,6 +297,7 @@
 							scale: 1.2;
 							rotate: 360deg;
 							background-color: var(--c-highlight);
+							color: var(--c-highlight-t);
 						}
 					}
 				}
@@ -322,7 +323,7 @@
 					bottom: calc(50% - 1.5rem);
 					right: auto;
 					left: -.25rem;
-					color: var(--c-white) !important;
+					color: var(--c-brand-t) !important;
 					background-color: var(--c-brand);
 					border-radius: 99rem;
 				}
@@ -447,6 +448,7 @@
 				}
 				.level{
 					margin-left: 16rem;
+					width: calc((100% - 16rem));
 					&:last-child{
 						margin-bottom: 2rem;
 					}

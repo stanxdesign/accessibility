@@ -13,6 +13,7 @@ article {
 			border: var(--c-dark) solid 1px;
 			background-color: var(--c-white);
 			transition: scale 0.3s ease-in-out;
+			box-shadow: 0 0 2rem rgba($color: #000000, $alpha: 0.1);
 			&:hover,
 			&:focus {
 				scale: 1.03;
@@ -92,7 +93,7 @@ article {
 	.card {
 		background-color: var(--c-brand) !important;
 		border-color: var(--c-brand) !important;
-		color: var(--c-white);
+		color: var(--c-brand-t) !important;
 	}
 }
 
@@ -100,7 +101,7 @@ article {
 	.card {
 		background-color: var(--c-main) !important;
 		border-color: var(--c-main) !important;
-		color: var(--c-white);
+		color: var(--c-main-t);
 	}
 }
 

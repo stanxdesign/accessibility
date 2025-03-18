@@ -5,14 +5,14 @@
 	#footerLogo{
 		margin-bottom: 1rem;
 	}
-	min-hight: 100%;
 	height: 25vh;
+	min-height: 100%;
 	margin-top: 5rem;
+	color: var(--c-white);
 	background-color: var(--c-main);
 	background-image: url(../images/footer.webp);
 	background-position: top center;
 	background-size: cover;
-	color: var(--c-white);
 	padding: .5rem 1rem;
 	display: block;
 	text-align: center;
