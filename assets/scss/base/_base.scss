@@ -101,10 +101,11 @@ input, textarea {
 }
 
 .btn-text-lite{
-	background-color: none;
-	color: var(--c-white);
+	background-color: transparent;
+	color: inherit;
 	&:hover,&:focus,&.active{
-		color: var(--c-highlight);
+		background-color: var(--c-back-sub);
+		color: var(--c-front-sub);
 	}
 }
 

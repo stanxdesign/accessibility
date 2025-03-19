@@ -1,6 +1,7 @@
 // @use 'sass:math';
 @use '../abstracts/mixins' as *;
 
+// ===	圖標 ===
 .marker{
 	position: absolute;
 	display: block;
@@ -162,40 +163,64 @@
 		}
 	}
 }
-/* 多邊形樣式 */
-.poly-blue {
-	fill: rgba(0, 128, 255, 0.5);
-	stroke: #0066cc;
-	stroke-width: 0;
-	stroke-linejoin: round;
+
+// === 區塊 ===
+svg{
+	position: absolute;
 }
-.poly-red {
-	fill: rgba(255, 0, 0, 0.3);
-	stroke: #cc0000;
-	stroke-width: 0;
-	stroke-linejoin: round;
-}
-.poly-green {
-	fill: rgba(0, 255, 128, 0.4);
-	stroke: #008000;
-	stroke-width: 0;
-	stroke-linecap: round;
+.poly {
+	&-brand {
+		fill: color-mix(in srgb, var(--c-sub) 80%, transparent);
+		stroke: var(--c-main);
+		stroke-width: 0;
+	}
+	&-red {
+		fill: color-mix(in srgb, var(--bs-pink) 50%, transparent);
+		stroke:var(--bs-pink);
+		stroke-width: 0;
+	}
+	&-orange {
+		fill: color-mix(in srgb, var(--bs-orange) 50%, transparent);
+		stroke: var(--bs-orange);
+		stroke-width: 0;
+	}
+	&-blue {
+		fill: color-mix(in srgb, var(--bs-blue) 50%, transparent);
+		stroke: var(--bs-blue);
+		stroke-width: 0;
+	}
+	&-green {
+		fill: color-mix(in srgb, var(--bs-teal) 50%, transparent);
+		stroke: var(--bs-teal);
+		stroke-width: 0;
+	}
+	&-indigo {
+		fill: color-mix(in srgb, var(--bs-indigo) 50%, transparent);
+		stroke: var(--bs-indigo);
+		stroke-width: 0;
+	}
+	&-dot{
+		stroke-dasharray: 3, 3;
+		stroke-width: 3px;
+		vector-effect: non-scaling-stroke;
+		&.poly-wide{
+			stroke-dasharray: 6, 9;
+		}
+	}
+	&-thin{
+		stroke-width: 2px !important;
+		stroke-linecap: round;
+		vector-effect: non-scaling-stroke;
+	}
+	&-wide{
+		stroke-width: 4px !important;
+		stroke-linecap: round;
+		vector-effect: non-scaling-stroke;
+	}
 }
 
-.poly-line, .poly-line polygon{
-	stroke-width: 2px !important;
-}
-.poly-thin, .poly-thin polygon{
-	stroke-width: 2px !important;
-}
-.poly-wide, .poly-wide polygon{
-	stroke-width: 4px !important;
-}
-.poly-dot, .poly-dot polygon{
-	stroke-dasharray: 4, 6 !important;
-}
-
-/* 互動效果，依照實際程式DOM需要改寫*/
+// === 互動效果，依照實際程式DOM需要改寫 ===
+svg polygon:hover,
 .item polygon:hover {
 	fill-opacity: 0.8;
 	cursor: pointer;

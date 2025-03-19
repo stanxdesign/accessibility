@@ -1,90 +1,6 @@
 // @use 'sass:math';
 @use "../abstracts/mixins" as *;
 
-#switcherMenu{
-	width: max-content;
-	margin: 0 auto;
-	.switcher{
-		display: flex;
-		flex-direction: column;
-		gap: 0.5ch;
-		background-color: var(--c-back-sub);
-		border-radius: .5rem;
-		align-self: center;
-		width: auto;
-		max-width: 100%;
-		margin: .5rem;
-		padding: 0 .5rem .5rem .5rem;
-		label{
-			color: var(--c-front);
-			overflow: hidden;
-			margin-top: 3px;
-			margin-bottom: -3px;
-		}
-		div{
-			display: flex;
-			margin: 3px;
-			padding: 3px;
-			background-color: var(--c-g1);
-			border-radius: 99rem;
-			button{
-				padding: 3px .5ch;
-				height: 40px;
-				position: relative;
-				&.active {
-					&::before{
-						content: '✔';
-						position: absolute;
-						top: -1ch;
-						left: 1ch;
-						font-size: 24px;
-					}
-				}
-				&:focus {
-					background-color: var(--c-white);
-				}
-			}
-		}
-		&:has(#switchFontSize){
-			display: none;
-			@include MD{
-				display: flex;
-			}
-		}
-		#switchThemeToggle{
-			padding: 0;
-			height: 100%;
-		}
-	}
-	#switch{
-		&-font-size{
-			&-M {
-			font-size: 16px;
-			}
-			&-L {
-			font-size: 18px;
-			}
-			&-XL {
-			font-size: 20px;
-			}
-		}
-		&-theme{
-			&-light {
-				background-color: #FFFFFF;
-				color: #13341e;
-			}
-			&-dark {
-				background-color: #3A3A3F;
-				color: #B3DBEC;
-			}
-			&-contrast {
-				background-color: #4F3188;
-				color: #F9F4AB;
-			}
-		}
-	}
-}
-
 #navHeader{
 	width: 100%;
 	top: 0;
@@ -123,6 +39,81 @@
 				width: auto;
 				margin-left: 0;
 				margin-right: 0;
+			}
+		}
+		#switcherMenu{
+			padding: 1rem .5rem !important;
+			width: max-content;
+			text-align: center;
+			position: relative;
+			top: 0;
+			left: -5rem;
+			.switcher{
+				text-align: center;
+				align-items: center;
+				width: max-content;
+				text-align: center;
+				margin-left: auto;
+				margin-right: auto;
+				button{
+					border-radius: 0;
+					background-color: var(--c-back);
+					color: var(--c-front);
+					border-top: 2px solid var(--c-back);
+					border-bottom: 2px solid var(--c-back);
+					&:first-child{
+						border-radius: 99rem 0 0 99rem;
+						padding-right: .5ch;
+					}
+					&:last-child{
+						border-radius: 0 99rem 99rem 0;
+						padding-left: .5ch;
+					}
+					&.active{
+						border: 2px solid var(--c-highlight);
+					}
+					&:hover,&:focus{
+						background-color: var(--c-highlight);
+						border-color:var(--c-highlight);
+						color: var(--c-highlight-t);
+					}
+				}
+			}
+			#switch{
+				&-font-size{
+					margin-bottom: 1rem;
+					&-M {
+					font-size: 16px;
+					line-height: 20px;
+					}
+					&-L {
+					font-size: 18px;
+					line-height: 20px;
+					}
+					&-XL {
+					font-size: 20px;
+					line-height: 20px;
+					}
+				}
+				&-theme{
+					&-light {
+						background-color: #FFFFFF;
+						color: #13341e;
+					}
+					&-dark {
+						background-color: #3A3A3F;
+						color: #B3DBEC;
+					}
+					&-contrast {
+						background-color: #4F3188;
+						color: #F9F4AB;
+					}
+				}
+			}
+			@include MD{
+				position: absolute;
+				top: auto;
+				right: 0;
 			}
 		}
 	}

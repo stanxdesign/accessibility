@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.09"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.10"/>
 </head>
 
 <!-- 套版判端用，圖台專用的ID NAME-->
@@ -66,11 +66,11 @@
 								<div id="switcherMenu" class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="themeFunction">
 									<div class="nav-item switcher">
 										<label>文字大小</label>
-										<div id="switchFontSize" class="" role="group" aria-label="文字大小切換"></div>
+										<div id="switch-font-size" class="" role="group" aria-label="文字大小切換"></div>
 									</div>
 									<div class="nav-item switcher">
 										<label>網頁配色</label>
-										<div id="switchThemeToggle" class="" role="group" aria-label="配色切換"></div>
+										<div id="switch-theme" class="" role="group" aria-label="配色切換"></div>
 									</div>
 								</div>
 							</li>
@@ -228,48 +228,209 @@
 
 				<!-- 模擬資料 -->
 				<div class="layer area">
-					<svg class="item poly-green poly-line" role="region" aria-label="北部區域圖形" width="150" height="150" style="left: 10%; bottom: 20%;">
-						<polygon points="30,30 120,60 110,80 80,70 80,130 50,120 50,70 20,60" data-id="region-1" data-info="北部區域" role="graphics-object" aria-label="北部區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
-							<title>北部區域</title>
-							<desc>這是一個位於地圖北部的複雜多邊形區域，面積約 500 平方公里。</desc>
+
+					<svg class="item poly-blue" role="region" aria-label="區域圖形" width="150" height="150" style="left: 15%; top: 65%;">
+						<polygon points="30,30 120,50 100,100 70,90 70,130 40,120 " data-id="region-2" data-info="區域標題-Blue" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Blue</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-blue poly-thin" role="region" aria-label="區域圖形" width="150" height="150" style="left: 30%; top: 65%;">
+						<polygon points="30,30 120,50 100,100 70,90 70,130 40,120 " data-id="region-2" data-info="區域標題-Blue" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-標題-Blue</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-blue poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 45%; top: 65%;">
+						<polygon points="30,30 120,50 100,100 70,90 70,130 40,120 " data-id="region-2" data-info="區域標題-Blue" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Blue</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-blue poly-dot" role="region" aria-label="區域圖形" width="150" height="150" style="left: 60%; top: 65%;">
+						<polygon points="30,30 120,50 100,100 70,90 70,130 40,120 " data-id="region-2" data-info="區域標題-Blue" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Blue</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-blue poly-dot poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 75%; top: 65%;">
+						<polygon points="30,30 120,50 100,100 70,90 70,130 40,120 " data-id="region-2" data-info="區域標題-Blue" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Blue</title>
+							<desc>說明文：可讓JS取值說明文這是一個位於地圖的點線邊框區域</desc>
 						</polygon>
 					</svg>
 
-					<svg class="item poly-blue" role="region" aria-label="中部區域圖形" width="150" height="150" style="right: 18%; top: 40%;">
-						<polygon points="30,30 120,50 100,100 70,90 70,130 40,120 " data-id="region-2" data-info="中部區域" role="graphics-object" aria-label="中部區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
-							<title>中部區域</title>
-							<desc>這是一個位於地圖中部的虛線邊框複雜區域，人口約 10 萬。</desc>
+					<svg class="item poly-indigo" role="region" aria-label="區域圖形" width="150" height="150" style="left: 15%; top: 55%;">
+						<polygon points="12,18 128,22 108,128 48,128 50,58 0,48" data-id="region-3" data-info="區域標題-indigo" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-indigo</title>
+							<desc>說明文：可讓JS取值說明文：可讓取JS這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-indigo poly-thin" role="region" aria-label="區域圖形" width="150" height="150" style="left: 30%; top: 55%;">
+						<polygon points="12,18 128,22 108,128 48,128 50,58 0,48" data-id="region-3" data-info="區域標題-indigo" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-indigo</title>
+							<desc>說明文：可讓JS取值說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-indigo poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 45%; top: 55%;">
+						<polygon points="12,18 128,22 108,128 48,128 50,58 0,48" data-id="region-3" data-info="區域標題-indigo" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-indigo</title>
+							<desc>說明文：可讓JS取值說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-indigo poly-dot" role="region" aria-label="區域圖形" width="150" height="150" style="left: 60%; top: 55%;">
+						<polygon points="12,18 128,22 108,128 48,128 50,58 0,48" data-id="region-3" data-info="區域標題-indigo" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-indigo</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-indigo poly-dot poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 75%; top: 55%;">
+						<polygon points="12,18 128,22 108,128 48,128 50,58 0,48" data-id="region-3" data-info="區域標題-indigo" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-indigo</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
 						</polygon>
 					</svg>
 
-					<svg class="item poly-red poly-wide poly-dot" role="region" aria-label="南部區域圖形" width="150" height="150" style="left: 18%; top: 28%;">
-						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="南部區域" role="graphics-object" aria-label="南部區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
-							<title>南部區域</title>
-							<desc>這是一個位於地圖南部的點線邊框複雜區域，氣候溫暖。</desc>
+					<svg class="item poly-green" role="region" aria-label="區域圖形" width="150" height="150" style="left: 15%; top: 45%;">
+						<polygon points="20,18 128,22 128,108 28,108 12,48" data-id="region-3" data-info="區域標題-Green" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Green</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-green poly-thin" role="region" aria-label="區域圖形" width="150" height="150" style="left: 30%; top: 45%;">
+						<polygon points="20,18 128,22 128,108 28,108 12,48" data-id="region-3" data-info="區域標題-Green" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Green</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-green poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 45%; top: 45%;">
+						<polygon points="20,18 128,22 128,108 28,108 12,48" data-id="region-3" data-info="區域標題-Green" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Green</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-green poly-dot" role="region" aria-label="區域圖形" width="150" height="150" style="left: 60%; top: 45%;">
+						<polygon points="20,18 128,22 128,108 28,108 12,48" data-id="region-3" data-info="區域標題-Green" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Green</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-green poly-dot poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 75%; top: 45%;">
+						<polygon points="20,18 128,22 128,108 28,108 12,48" data-id="region-3" data-info="區域標題-Green" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Green</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
 						</polygon>
 					</svg>
 
-					<svg class="item poly-blue poly-wide poly-line" role="region" aria-label="南部區域圖形" width="150" height="150" style="right: 40%; bottom: 30%;">
-						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="南部區域" role="graphics-object" aria-label="東區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
-							<title>東部區域</title>
-							<desc>這是一個位於地圖南部的點線邊框複雜區域，氣候溫暖。</desc>
+
+					<svg class="item poly-orange" role="region" aria-label="區域圖形" width="150" height="150" style="left: 15%; top: 35%;">
+						<polygon points="30,30 120,60 110,80 80,70 80,130 50,120 50,70 20,60" data-id="region-3" data-info="區域標題-Orange" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Orange</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-orange poly-thin" role="region" aria-label="區域圖形" width="150" height="150" style="left: 30%; top: 35%;">
+						<polygon points="30,30 120,60 110,80 80,70 80,130 50,120 50,70 20,60" data-id="region-3" data-info="區域標題-Orange" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Orange</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-orange poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 45%; top: 35%;">
+						<polygon points="30,30 120,60 110,80 80,70 80,130 50,120 50,70 20,60" data-id="region-3" data-info="區域標題-Orange" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Orange</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-orange poly-dot" role="region" aria-label="區域圖形" width="150" height="150" style="left: 60%; top: 35%;">
+						<polygon points="30,30 120,60 110,80 80,70 80,130 50,120 50,70 20,60" data-id="region-3" data-info="區域標題-Orange" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Orange</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-orange poly-dot poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 75%; top: 35%;">
+						<polygon points="30,30 120,60 110,80 80,70 80,130 50,120 50,70 20,60" data-id="region-3" data-info="區域標題-Orange" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Orange</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
 						</polygon>
 					</svg>
 
 
-					<label class="marker fa fa-person-walking-arrow-right" style="left: 15%; top: 30%;" data-id="mark001-1" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-reverse fa fa-shop" style="left: 25%; top: 30%;" data-id="mark001-2" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-highlight fa fa-door-open" style="left: 35%; top: 30%;" data-id="mark001-3" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-highlight-reverse fa fa-stairs" style="left: 45%; top: 30%;" data-id="mark001-4" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-brand fa fa-wheelchair" style="left: 55%; top: 30%;" data-id="mark001-5" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-brand-reverse fa fa-suitcase-medical" style="left: 65%; top: 30%;" data-id="mark001-6" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<svg class="item poly-red" role="region" aria-label="區域圖形" width="150" height="150" style="left: 15%; top: 28%;">
+						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="區域標題-Red" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Red</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-red poly-thin" role="region" aria-label="區域圖形" width="150" height="150" style="left: 30%; top: 28%;">
+						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="區域標題-Red" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Red</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-red poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 45%; top: 28%;">
+						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="區域標題-Red" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Red</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-red poly-dot" role="region" aria-label="區域圖形" width="150" height="150" style="left: 60%; top: 28%;">
+						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="區域標題-Red" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Red</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-red poly-dot poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 75%; top: 28%;">
+						<polygon points="12,18 88,22 128,108 28,78 18,48" data-id="region-3" data-info="區域標題-Red" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Red</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
 
-					<label class="marker marker-red fa fa-restroom" style="left: 15%; top: 40%;" data-id="mark009-1" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-indigo fa fa-person-walking-with-cane" style="left: 25%; top: 40%;" data-id="mark009-2" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-blue fa fa-elevator" style="left: 35%; top: 40%;" data-id="mark009-3" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-orange fa fa-person-cane" style="left: 45%; top: 40%;" data-id="mark009-4" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-green fa fa-shop" style="left: 55%; top: 40%;" data-id="mark009-5" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
-					<label class="marker marker-brand-reverse fa fa-shop" style="left: 65%; top: 40%;" data-id="mark009-6" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<svg class="item poly-brand" role="region" aria-label="區域圖形" width="150" height="150" style="left: 15%; top: 75%;">
+						<polygon points="62,68 88,22 128,22 128,108 28,108 18,68" data-id="region-3" data-info="區域標題-主題色" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-主題色</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-brand poly-thin" role="region" aria-label="區域圖形" width="150" height="150" style="left: 30%; top: 75%;">
+						<polygon points="62,68 88,22 128,22 128,108 28,108 18,68" data-id="region-3" data-info="區域標題-主題色" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-主題色</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-brand poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 45%; top: 75%;">
+						<polygon points="62,68 88,22 128,22 128,108 28,108 18,68" data-id="region-3" data-info="區域標題-主題色" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-主題色</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-brand poly-dot" role="region" aria-label="區域圖形" width="150" height="150" style="left: 60%; top: 75%;">
+						<polygon points="62,68 88,22 128,22 128,108 28,108 18,68" data-id="region-3" data-info="區域標題-Red" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-主題色</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+					<svg class="item poly-brand poly-dot poly-wide" role="region" aria-label="區域圖形" width="150" height="150" style="left: 75%; top: 75%;">
+						<polygon points="62,68 88,22 128,22 128,108 28,108 18,68" data-id="region-3" data-info="區域標題-標題Red" role="graphics-object" aria-label="區域多邊形" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal">
+							<title>區域標題-Red</title>
+							<desc>說明文：可讓JS取值這是一個位於地圖的點線邊框區域</desc>
+						</polygon>
+					</svg>
+
+
+					<label class="marker fa fa-person-walking-arrow-right" style="left: 15%; top: 38%;" data-id="mark001-1" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-reverse fa fa-shop" style="left: 25%; top: 38%;" data-id="mark001-2" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-highlight fa fa-door-open" style="left: 35%; top: 38%;" data-id="mark001-3" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-highlight-reverse fa fa-stairs" style="left: 45%; top: 38%;" data-id="mark001-4" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-brand fa fa-wheelchair" style="left: 55%; top: 38%;" data-id="mark001-5" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-brand-reverse fa fa-suitcase-medical" style="left: 65%; top: 38%;" data-id="mark001-6" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+
+					<label class="marker marker-red fa fa-restroom" style="left: 15%; top: 52%;" data-id="mark009-1" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-indigo fa fa-person-walking-with-cane" style="left: 25%; top: 52%;" data-id="mark009-2" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-blue fa fa-elevator" style="left: 35%; top: 52%;" data-id="mark009-3" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-orange fa fa-person-cane" style="left: 45%; top: 52%;" data-id="mark009-4" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-green fa fa-shop" style="left: 55%; top: 52%;" data-id="mark009-5" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
+					<label class="marker marker-brand-reverse fa fa-shop" style="left: 65%; top: 52%;" data-id="mark009-6" data-info="出入口" role="graphics-object" aria-label="出入口" tabindex="0" data-bs-toggle="modal" data-bs-target="#popUpModal"></label>
 					<!-- 模擬資料 -->
 
 					<!-- 模擬設施互動 POPUP -->
@@ -601,8 +762,8 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-		<script src="assets/js/main.min.js?v=v1.09" defer></script>
-		<script src="assets/js/gis.min.js?v=v1.09" defer></script>
+		<script src="assets/js/main.min.js?v=v1.10" defer></script>
+		<script src="assets/js/gis.min.js?v=v1.10" defer></script>
 
 	</body>
 
