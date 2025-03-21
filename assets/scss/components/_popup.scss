@@ -51,7 +51,7 @@
 		max-height: calc(50dvh - 5rem);
 		overflow-y: auto;
 		transition: all .5s ease-in-out;
-		.itemWhere{
+		.extra-where{
 			border: var(--c-white) 2px solid;
 			margin: .5ch 0;
 			border-radius: .6rem;
@@ -79,7 +79,7 @@
 		padding: 0 1ch 1ch 1ch;
 	}
 
-	.itemTitle{
+	.item-title{
 		position: sticky;
 		top: 0;
 		font-size: 1.5rem;
@@ -90,7 +90,7 @@
 			margin-right: 3px;
 		}
 	}
-	.itemWhere{
+	.extra-where{
 		width: fit-content;
 		display: flex;
 		justify-content: left;
@@ -142,7 +142,7 @@
 		}
 	}
 
-	.itemCover{
+	.extra-gallery{
 		grid-area: slider;
 		width: 100%;
 		height: 100%;
@@ -173,7 +173,7 @@
 			}
 		}
 	}
-	button.itemWhere{
+	button.extra-where{
 		border: none;
 		background: none;
 		padding: 0;

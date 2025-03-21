@@ -17,13 +17,7 @@
 	.modal-content{
 		border: 2px solid var(--c-main);
 		border-radius: 1rem;
-		display: grid;
-		grid-template-areas: 'header header'
-													'body body'
-													'slider slider'
-													'footer footer';
-		grid-template-columns: 3fr 2fr;
-		grid-template-rows: 1fr 2fr 2fr 1fr;
+		display: flex;
 		@include MD{
 			border: 2px solid var(--c-main);
 			border-radius: 1rem;
@@ -58,7 +52,13 @@
 			}
 		}
 	}
-
+	.modal-title{
+		font-size: 1.5rem;
+		margin: 0 0 1rem 0;
+		&::before{
+			margin-right: 1ch;
+		}
+	}
 	.modal-body{
 		grid-area: body;
 		font-weight: bold;
@@ -69,14 +69,25 @@
 		border: none;
 	}
 
-	#itemTitle{
-		font-size: 1.5rem;
-		margin: 0 0 1rem 0;
+	.extra-mini-map{
+		border-radius: 1rem;
+		overflow: hidden;
 		&::before{
-			margin-right: 1ch;
+			content: "地圖位置";
+			display: block;
+			width: 100%;
+			padding: .5ch 1rem;
+			background-color: var(--c-main);
+			color: var(--c-main-t);
+			position: relative;
+		}
+		img, svg, iframe, canvas, video, embed, object, applet{
+			width: 100%;
+			height: 100%;
+			aspect-ratio: 16/10;
 		}
 	}
-	#itemWhere{
+	.extra-where{
 		display: flex;
 		justify-content: left;
 		align-items: center;
@@ -111,7 +122,7 @@
 		}
 	}
 
-	#itemCover{
+	.extra-gallery{
 		grid-area: slider;
 		width: 100%;
 		height: 100%;
@@ -152,6 +163,11 @@
 					right: -5rem;
 				}
 			}
+		}
+		&:empty {
+			background-image: url(/assets/images/demo_nopic.webp);
+			background-size: cover;
+			background-position: left bottom;
 		}
 	}
 }

@@ -379,7 +379,7 @@
 					order: 1;
 					flex-grow: 0;
 					flex-shrink: 0;
-					flex-basis: 8rem;
+					flex-basis: auto;
 					max-height: 0;
 					opacity: 0;
 					pointer-events: none;
@@ -460,6 +460,7 @@
 						min-height: unset;
 					}
 					.result-cover{
+						flex-basis: 8rem;
 						order: 2;
 						opacity: 0;
 						pointer-events: none;
