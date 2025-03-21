@@ -51,27 +51,6 @@
 		max-height: calc(50dvh - 5rem);
 		overflow-y: auto;
 		transition: all .5s ease-in-out;
-		.extra-where{
-			border: var(--c-white) 2px solid;
-			margin: .5ch 0;
-			border-radius: .6rem;
-			label{
-			}
-			label:nth-child(2n-1){
-			}
-			label:nth-child(2n){
-				background-color: var(--c-sub);
-				&::before{
-					background-color: var(--c-sub);
-				}
-			}
-			&:first-child{
-				margin-top: 1ch;
-			}
-			&:hover{
-				border: var(--c-main)	2px solid;
-			}
-		}
 	}
 	.modal-footer{
 		grid-area: footer;
@@ -91,40 +70,8 @@
 		}
 	}
 	.extra-where{
-		width: fit-content;
-		display: flex;
-		justify-content: left;
-		align-items: center;
-		margin: 0;
-		color: var(--c-main-t);
-		label{
-			display: flex;
-			height: 2rem;
-			line-height: 2rem;
-			background-color: var(--c-sub);
-			color: var(--c-black);
-			font-weight: bold;
-		}
-		label:nth-child(2n-1){
-			border-radius: .5rem 0 0 .5rem;
-			background-color: var(--c-main);
-			color: var(--c-main-t);
-			padding: 0 0 0 1ch;
-		}
-		label:nth-child(2n){
-			border-radius: 0 .5rem .5rem 0;
-			padding: 0 2ch 0 0;
-			&::before{
-				content: "";
-				display: inline-block;
-				height: 0;
-				width: 0;
-				border: 1rem solid var(--c-main);
-				border-top: 1rem solid transparent;
-				border-bottom: 1rem solid transparent;
-				border-right: 1ch solid transparent;
-			}
-		}
+		margin: 1ch 0;
+		font-family: var(--bs-body-font-family);
 		&.fa::before{
 			position: relative;
 			display: inline-block;

@@ -21,6 +21,30 @@ $sub-t:#000000;
 $highlight: #FADA65;
 $highlight-t: #121826;
 
+// === default pattern ===
+// $brand:#ffae04;
+// $main:#ffae04;
+// $sub:#da724b;
+
+// $brand-t:#FFFFFF;
+// $main-t:#FFFFFF;
+// $sub-t:#000000;
+
+// $highlight: #d518bd;
+// $highlight-t: #121826;
+
+// === default pattern ===
+// $brand:#b7d329;
+// $main:#b7d329;
+// $sub:#565b5d;
+
+// $brand-t:#000000;
+// $main-t:#000000;
+// $sub-t:#FFFFFF;
+
+// $highlight: #e55738;
+// $highlight-t: #121826;
+
 // === Dark pattern ===
 $brand-d:#0A4A66;
 $main-d:#70BFE0;
@@ -82,7 +106,7 @@ $highlight-c-t: #3F094D;
   background: var(#{gradient-var($name, $direction)});
 }
 
-@mixin fa-icon {font-weight: bold;font-family: "Font Awesome 6 Free";padding: 0 .5ch;}
+@mixin fa-icon {font-weight: bold;font-family: "Font Awesome 6 Free";margin-right:.5ch;}
 @mixin shadow {box-shadow: 0 0 2rem var(--c-shadow);}
 
 // 配合 bootstrap 斷點 處理 RWD，以行動裝置優先
