@@ -221,12 +221,23 @@
 		background-color: transparent;
 		@include MD{
 			display: grid;
-			grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+			grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
 		}
 	}
 	.level{
 		position: relative;
-		padding: 0 .5ch 1rem 1rem;
+		padding: 0 .0 1rem 1.5rem;
+		&::before{
+			position: absolute;
+			top: 0;
+			left: .75rem;
+			content: '';
+			display: block;
+			border-radius: 99rem;
+			width: 3px;
+			height: 100%;
+			background-color: var(--c-main);
+		}
 		&::after{
 			position: absolute;
 			top: 0;
@@ -239,17 +250,6 @@
 			background-color: var(--c-main);
 			border: 2px solid var(--c-white);
 			box-shadow: 0 0 0 3px var(--c-brand);
-		}
-		&::before{
-			position: absolute;
-			top: 0;
-			left: .75rem;
-			content: '';
-			display: block;
-			border-radius: 99rem;
-			width: 3px;
-			height: 100%;
-			background-color: var(--c-main);
 		}
 		&:hover{
 			.items{
@@ -268,7 +268,7 @@
 			}
 		}
 		@include MD{
-			padding: 0 .5ch 1rem 3rem;
+			padding: 0 .5ch 1rem 2.5rem;
 			&::before{
 				left: 2rem;
 			}

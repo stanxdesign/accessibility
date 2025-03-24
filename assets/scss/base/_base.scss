@@ -52,6 +52,7 @@ input, textarea {
 	background-color: var(--c-brand);
 	color: var(--c-brand-t);
 	&.fa{
+		line-height: var(---bs-btn-line-height);
 		&::before{
 			font-family: "Font Awesome 6 Free";
 			margin-right: .5ch;
@@ -214,5 +215,9 @@ $icons: (
 			border-right: 1ch solid transparent;
 			opacity: 1;
 		}
+	}
+	&:not(:has(label)){
+		color: var(--c-main-t);
+		margin:  0 !important;
 	}
 }

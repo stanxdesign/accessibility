@@ -3,7 +3,7 @@
 
 .modal-theme-card{
 	&.modal-theme-brand{
-		.modal-content{
+		.modal-header{
 			background-color: var(--c-brand);
 			color: var(--c-brand-t);
 		}
@@ -15,31 +15,37 @@
 		}
 	}
 	.modal-content{
-		border: 2px solid var(--c-main);
 		border-radius: 1rem;
 		display: flex;
+		overflow-y: auto;
+		overflow-x: hidden;
 		@include MD{
 			border: 2px solid var(--c-main);
 			border-radius: 1rem;
 			display: grid;
-			grid-template-areas: 'slider header'
+			grid-template-areas: 'header header'
+														'map map'
 														'slider body'
-														'slider footer';
-			grid-template-columns: 3fr 2fr;
-			grid-template-rows: 1fr 4fr 1fr;
+														'footer footer';
+			grid-template-columns: 60% 40%;
+			&:has(.extra-gallery:empty){
+				grid-template-areas: 'header header'
+															'map map'
+															'body body'
+															'body body'
+															'footer footer';
+			}
 		}
 	}
+
 	.modal-header{
+		position: sticky;
+		top: 0;
+		z-index: 2;
 		grid-area: header;
 		border-radius: 0;
 		border: none;
-		h5{
-			font-size: 1.2rem;
-			color: var(--c-brand-t);
-			&::before{
-				margin-right: 1ch;
-			}
-		}
+		padding: .5ch 1rem;
 		.modal-dismiss{
 			background: none;
 			border: none;
@@ -52,60 +58,54 @@
 			}
 		}
 	}
-	.modal-title{
-		font-size: 1.5rem;
-		margin: 0 0 1rem 0;
-		&::before{
-			margin-right: 1ch;
-		}
-	}
 	.modal-body{
 		grid-area: body;
-		font-weight: bold;
 		align-items: start;
 	}
 	.modal-footer{
 		grid-area: footer;
 		border: none;
+		padding: 0.5ch;
+	}
+
+	.modal-title{
+		font-size: 1.25rem;
+		font-weight: bold;
+		&::before{
+			margin-right: .5ch;
+		}
 	}
 
 	.extra-mini-map{
-		border-radius: 1rem;
+		position: sticky;
+		top: calc(2.5rem + 1ch);
+		z-index: 1;
+		grid-area: map;
 		overflow: hidden;
-		&::before{
-			content: "地圖位置";
-			display: block;
-			width: 100%;
-			padding: .5ch 1rem;
-			background-color: var(--c-main);
-			color: var(--c-main-t);
-			position: relative;
-		}
+		border-bottom: 1px solid var(--c-main);
 		img, svg, iframe, canvas, video, embed, object, applet{
 			width: 100%;
 			height: 100%;
-			aspect-ratio: 16/10;
+			aspect-ratio: 16/8;
 		}
 	}
 
-
 	.extra-gallery{
 		grid-area: slider;
-		width: 100%;
-		height: 100%;
+		margin: 1rem;
+		border-radius: .5rem;
+		overflow: hidden;
+		box-shadow: 0 0 1rem 0 var(--c-shadow);
+		max-height: 40vh;
 		.swiffy-slider{
 			height: 100%;
-			img{
-				width: 100%;
-				height: 100%;
-				object-fit: cover;
-			}
+			max-height: 40vh;
 		}
 		.slider-nav{
-			color: var(--c-brand-t);
+			color: var(--c-brand-t) !important;
 			background-color: var(--c-brand);
 			position: absolute;
-			bottom: calc(50% - 1rem);
+			bottom: 50%;
 			right: auto;
 			top: auto;
 			border-radius: 99rem;
@@ -116,25 +116,11 @@
 				right: 1rem;
 			}
 		}
-		@include MD{
-			.slider-nav{
-				background-color: transparent;
-				color: var(--c-brand-t);
-				position: absolute;
-				bottom: .5rem;
-				right: -3rem;
-				top: auto;
-				left: auto;
-				opacity: 1;
-				&.slider-nav-next{
-					right: -5rem;
-				}
-			}
-		}
 		&:empty {
-			background-image: url(/assets/images/demo_nopic.webp);
-			background-size: cover;
-			background-position: left bottom;
+			// background-image: url(/assets/images/demo_nopic.webp);
+			// background-size: cover;
+			// background-position: left bottom;
+			display: none;
 		}
 	}
 }

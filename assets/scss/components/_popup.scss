@@ -3,7 +3,8 @@
 
 .gispopup{
 	position: absolute;
-	width: 16rem;
+	width: 19rem;
+	max-width: 100%;
 	background-color: var(--c-back-sub);
 	padding: 0;
 	border-radius: 2rem;
@@ -16,10 +17,6 @@
 	}
 	&.modal-content{
 		border-radius: 1rem;
-		// display: grid;
-		// grid-template-areas: 'slider header'
-		// 											'slider body'
-		// 											'slider footer';
 		grid-template-columns: 3fr 2fr;
 		grid-template-rows: 1fr 4fr 1fr;
 	}
@@ -51,6 +48,17 @@
 		max-height: calc(50dvh - 5rem);
 		overflow-y: auto;
 		transition: all .5s ease-in-out;
+		h3, .h3{
+			width: 100%;
+			font-size: 1.1rem;
+			color: var(--c-front-brand);
+			margin: .5ch 0 0 0;
+			padding: .5ch 0 0 0;
+			&:not(:first-child){
+				margin: 1ch 0 0 0;
+				border-top: 1px solid var(--c-g3);
+			}
+		}
 	}
 	.modal-footer{
 		grid-area: footer;
@@ -75,15 +83,15 @@
 		&.fa::before{
 			position: relative;
 			display: inline-block;
+			content: var(--fa);
+			@include fa-icon;
+			@include obj-theme(brand,0);
 			width: 2rem;
 			height: 2rem;
 			line-height: 2rem;
 			text-align: center;
 			margin-right: -.5rem;
 			border-radius: 99rem;
-			content: var(--fa);
-			@include fa-icon;
-			@include obj-theme(brand,0);
 			z-index: 1;
 			scale: 1.1;
 		}
@@ -94,10 +102,17 @@
 		width: 100%;
 		height: 100%;
 		padding: 0 1rem;
-		margin-bottom: .5rem;
+
 		color: var(--c-brand-t);
 		.swiffy-slider{
 			height: 100%;
+			margin: 1ch 0;
+			// border-radius: .5rem;
+			// overflow: hidden;
+			.slide{
+				border-radius: .5rem;
+				overflow: hidden;
+			}
 			img{
 				width: 100%;
 				height: 100%;
