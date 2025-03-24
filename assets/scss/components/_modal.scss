@@ -77,8 +77,8 @@
 	}
 
 	.extra-mini-map{
-		position: sticky;
-		top: calc(2.5rem + 1ch);
+		// position: sticky;
+		// top: calc(2.5rem + 1ch);
 		z-index: 1;
 		grid-area: map;
 		overflow: hidden;
