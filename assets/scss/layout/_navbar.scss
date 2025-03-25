@@ -1,6 +1,15 @@
 // @use 'sass:math';
 @use "../abstracts/mixins" as *;
-
+.navbar-toggler{
+	.navbar-toggler-icon{
+		color: var(--c-front);
+		background-color: var(--c-front-sub);
+		mask-image: var(--bs-navbar-toggler-icon-bg);
+		mask-repeat: no-repeat;
+		mask-position:center;
+		mask-size: 100%;
+	}
+}
 #navHeader{
 	width: 100%;
 	top: 0;
@@ -26,8 +35,12 @@
 			}
 		}
 		.dropdown-menu {
+			border: 1px solid var(--c-gary);
 			background-color: var(--c-back-sub);
 			border-radius: 1rem;
+			position: absolute;
+			left: auto;
+			right: -1.5rem;
 		}
 		.nav-item{
 			align-items: center;
@@ -46,10 +59,9 @@
 			padding: 1rem .5rem !important;
 			width: max-content;
 			text-align: center;
-			position: relative;
-			top: 0;
+			position: absolute;
 			left: auto;
-			right: 4rem;
+			right: -1.5rem;
 			.switcher{
 				text-align: center;
 				align-items: center;
@@ -119,6 +131,10 @@
 						background-color: #FFF7EA;
 						color: #06C97B;
 					}
+					&-dark2 {
+						background-color: #2a1604;
+						color: #fab449;
+					}
 				}
 			}
 			@include MD{
@@ -136,7 +152,7 @@
 		border-top: solid 1px var(--c-g3);
 		text-align: center;
 		font-size: max(1rem, 16px);
-		background-image: url(../images/menu.webp);
+		// background-image: url(../images/menu.webp);
 		background-position: right 6rem top;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
