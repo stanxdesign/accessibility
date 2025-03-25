@@ -54,7 +54,7 @@ $dark:#3A3A3F;
 
 // 被 @extend 引用時，依照傳入參數 提供 背景漸層
 @mixin gradient-bg($name, $direction: "h / v") {
-  background: var(#{gradient-var($name, $direction)});
+  background-image: var(#{gradient-var($name, $direction)});
 }
 
 @mixin fa-icon {font-weight: bold;font-family: "Font Awesome 6 Free";margin-right:.5ch;}

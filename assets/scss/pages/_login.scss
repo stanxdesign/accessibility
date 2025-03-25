@@ -9,32 +9,50 @@
 	border: 1rem solid var(--c-brand);
 	border-radius: 2rem;
 	#loginCard{
-		border-radius: 1rem 0 0 1rem;
+		border-radius: 1rem 1rem 0 0;
 		background-color: var(--c-g1);
 	}
 	#thirdLoginCard{
-		border-radius: 0 1rem 1rem 0;
+		border-radius: 0 0 1rem 1rem;
 		background-color: var(--c-main);
 		color: var(--c-main-t);
 		h2{
 			color: var(--c-main-t);
 		}
 		button, a{
-			width: 30%;
+			flex: 1 1 100%;
 			border-radius: var(--bs-btn-border-radius);
 			&:not(:hover,:focus){
-				background-color: var(--c-back-sub);
+				background-color: var(--c-lite);
 				color: var(--c-front-brand);
 			}
 			&:is(:hover,:focus){
 				background: var(--c-highlight);
 				color: var(--c-highlight-t);
+				&::before{
+					color: var(--c-sub);
+				}
 			}
 			&::before{
 				display: block;
 				font-size: 2.5rem;
 				margin: 0;
-				color: var(--c-main);
+				color: var(--c-highlight);
+			}
+		}
+		div{
+			height: auto;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+			align-content: space-between;
+			padding: 2rem 0 1rem 0;
+			hr{
+				flex: 0 0 100%;
+			}
+			button,a{
+				width: 100%;
 			}
 		}
 	}
@@ -43,6 +61,29 @@
 	}
 	@include SM{
 		border: 2rem solid var(--c-brand);
+	}
+	@include MD{
+		#loginCard{
+			border-radius: 1rem 0 0 1rem;
+			background-color: var(--c-g1);
+		}
+		#thirdLoginCard{
+			border-radius: 0 1rem 1rem 0;
+			div{
+				height: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				align-content: space-between;
+				padding: 2rem 0 1rem 0;
+				hr{
+					flex: 0 0 100%;
+				}
+				button, a{
+					flex: 0 1 30%;
+				}
+			}
+		}
 	}
 }
 

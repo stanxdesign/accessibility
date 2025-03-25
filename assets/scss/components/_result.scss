@@ -58,6 +58,7 @@
 		padding: 1rem .5rem;
 		margin: 0;
 		background-color: var(--c-main);
+		@include gradient-bg(brand, v);
 		color: var(--c-main-t);
 		text-align: center;
 		&::before{
@@ -86,20 +87,23 @@
 		}
 	}
 	.items{
-		background-color: transparent;
+		background-color: var(--c-main);
+		@include gradient-bg(brand, vr);
 		border-top: 1px dotted var(--c-main);
 		border-bottom: 1px dotted var(--c-main);
 		.fa{
-			background-color: var(--c-back);
-			color: var(--c-front);
+			background-color: var(--c-brand);
+			color: var(--c-brand-t);
 		}
 	}
 	.levels{
 		padding: 0 1rem;
 		.items{
+			background: none;
 			border: none 0px transparent;
 			.fa{
 				background-color: transparent;
+				color: var(--c-front);
 			}
 		}
 	}
@@ -118,6 +122,8 @@
 			padding: 1rem;
 		}
 		.items{
+			border-top: 0 none transparent;
+			border-bottom: 0 none transparent;
 			background-color: var(--c-main);
 			order: 1;
 		}
@@ -195,17 +201,17 @@
 				border-color: var(--c-front-brand);
 			}
 			&.active{
-				background-color: var(--c-main);
-				border-color: var(--c-brand);
-				color: var(--c-main-t);
+				background-color: var(--c-hover);
+				border-color: transparent;
+				color: var(--c-front-brand);
 				box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
 				span{
-					background-color: var(--c-highlight);
-					color: var(--c-highlight-t);
+					background-color: var(--c-back-sub);
+					color: var(--c-front-brand);
 					scale: 0.8;
 				}
 				&::before{
-					color: var(--c-highlight);
+					color: var(--c-brand);
 				}
 			}
 		}
@@ -255,7 +261,7 @@
 		&:hover{
 			.items{
 				.fa{
-					border-color: var(--c-g3);
+					border-color: var(--c-hover);
 				}
 			}
 			&::after{
@@ -308,8 +314,5 @@
 		&.extra-where{
 			translate: 0 -.5ch;
 		}
-	}
-	&:hover{
-
 	}
 }

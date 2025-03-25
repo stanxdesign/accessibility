@@ -14,13 +14,14 @@
 	--c-main-t:		#FFFFFF;
 	--c-sub-t: 		#000000;
 	--c-highlight: 		#F28A10;
+	--c-hover:		 		#F28A10;
 	--c-highlight-t: 	#000000;
 	--c-focus: 				#F28A10;
 
 	--c-front: 				#000000;
 	--c-front-sub: 		#000000;
 	--c-front-brand: 	#1A6006;
-	--c-back: 		#F5F5FC;
+	--c-back: 		#F7F5EF;
 	--c-back-sub: #FFFFFF;
 
 	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
@@ -37,13 +38,21 @@
   }
 
 	// 主題漸層色票 function
-	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
-  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
-  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
+	// #{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
+  // #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
+  // #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
 
-  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
-  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
-  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
+  // #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
+  // #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
+  // #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
+
+	// #{gradient-var(brand, hr)}: linear-gradient(to left, var(--c-brand), var(--c-main));
+  // #{gradient-var(main, hr)}: linear-gradient(to left, var(--c-main), var(--c-sub));
+  // #{gradient-var(sub, hr)}: linear-gradient(to left, var(--c-sub), var(--c-white));
+
+  // #{gradient-var(brand, vr)}: linear-gradient(to top, var(--c-brand), var(--c-main));
+  // #{gradient-var(main, vr)}: linear-gradient(to top, var(--c-main), var(--c-sub));
+  // #{gradient-var(sub, vr)}: linear-gradient(to top, var(--c-sub), var(--c-white));
 
 	/* Primary 主題相關 */
 	// --bs-primary: #{$brand}; /* 主色 */
@@ -57,26 +66,27 @@
 // ------------------------------------------------------------------
 [data-bs-theme="dark"] {
   // 把色票移來主題，直接可以看效果。
-  --c-brand:	#0A4A66;
-	--c-main:		#70BFE0;
-	--c-sub:		#B3DBEC;
-	--c-brand-t:	#FFFFFF;
+  --c-brand:	#70BFE0;
+	--c-main:		#B3DBEC;
+	--c-sub:		#0A4A66;
+	--c-brand-t:	#000000;
 	--c-main-t:		#000000;
-	--c-sub-t: 		#000000;
-	--c-highlight: 		#FFE3F1;
-	--c-highlight-t: 	#121826;
+	--c-sub-t: 		#FFFFFF;
+	--c-highlight: 		#E24A76;
+	--c-hover:				#E24A76;
+	--c-highlight-t: 	#FFFFFF;
 	--c-focus: 				#E24A76;
 
 	--c-front: 				#FFFFFF;
 	--c-front-sub: 		#B3DBEC;
-	--c-front-brand: 	#0A4A66;
-	--c-back: 		#121826;
-	--c-back-sub: #000000;
+	--c-front-brand: 	#70BFE0;
+	--c-back: 		#171D22;
+	--c-back-sub: #1E2B37;
 
 	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
 	--c-shadow: rgba(0,0,0,0.8);	//固定透明陰影
 	--c-white: 	#FFFFFF;	//固定白色
-	--c-black: 	#000000;	//固定黑色
+	--c-black: 	#0A0C1B;	//固定黑色
 	--c-lite: 	#F5F5FC;	//固定淺灰
 	--c-dark: 	#3A3A3F;	//固定深灰
 	--c-gary: 	#CCCCCC;	//固定中性灰
@@ -85,14 +95,6 @@
   @for $i from 0 through ($gray-steps - 1) {
     --c-g#{$i}: #{generate-step-color($i, $gray-steps, #3A3A3F, #464647)};
   }
-
-	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
-  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
-  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
-
-  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
-  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
-  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
 }
 
 
@@ -102,19 +104,20 @@
 [data-bs-theme="contrast"] {
   // 把色票移來主題，直接可以看效果。
   --c-brand:	#3F094D;
-	--c-main:		#4F3188;
-	--c-sub:		#FABB07;
-	--c-brand-t:	#FEF852;
-	--c-main-t:		#FEF852;
+	--c-main:		#5D01E8;
+	--c-sub:		#FFE502;
+	--c-brand-t:	#FFE502;
+	--c-main-t:		#FFE502;
 	--c-sub-t: 		#000000;
-	--c-highlight: 		#FEF852;
+	--c-highlight: 		#FFE502;
+	--c-hover:		 		#38FFDB;
 	--c-highlight-t: 	#3F094D;
 	--c-focus: 				#FABB07;
 
 	--c-front: 				#000000;
-	--c-front-sub: 		#4F3188;
+	--c-front-sub: 		#3F094D;
 	--c-front-brand: 	#3F094D;
-	--c-back: 		#F5F5FC;
+	--c-back: 		#F8F7F3;
 	--c-back-sub: #FFFFFF;
 
 	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
@@ -129,14 +132,6 @@
   @for $i from 1 through ($gray-steps - 1) {
     --c-g#{$i}: #{generate-step-color($i, $gray-steps, #F5F5FC, #CCCCD1)};
   }
-
-	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
-  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
-  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
-
-  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
-  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
-  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
 }
 
 // ------------------------------------------------------------------
@@ -144,20 +139,21 @@
 // ------------------------------------------------------------------
 [data-bs-theme="light2"]{
   // 把色票移來主題，直接可以看效果。
-  --c-brand:	#FF5733;
-	--c-main:		#FFCC02;
-	--c-sub:		#F0AFB4;
+  --c-brand:	#FFE502;
+	--c-main:		#FDCF00;
+	--c-sub:		#FFC0C6;
 	--c-brand-t:	#000000;
 	--c-main-t:		#000000;
 	--c-sub-t: 		#000000;
-	--c-highlight: 		#5BC2EC;
-	--c-highlight-t: 	#000000;
-	--c-focus: 				#FABB07;
+	--c-highlight: 		#02B4AA;
+	--c-hover:		 		#02B4AA;
+	--c-highlight-t: 	#FFFFFF;
+	--c-focus: 				#02B4AA;
 
 	--c-front: 				#000000;
 	--c-front-sub: 		#000000;
-	--c-front-brand: 	#FF5733;
-	--c-back: 		#F5F5FC;
+	--c-front-brand: 	#F29800;
+	--c-back: 		#FFF7EA;
 	--c-back-sub: #FFFFFF;
 
 	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
@@ -172,14 +168,112 @@
   @for $i from 1 through ($gray-steps - 1) {
     --c-g#{$i}: #{generate-step-color($i, $gray-steps, #F5F5FC, #CCCCD1)};
   }
+}
 
-	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand2), var(--c-main2));
-  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main2), var(--c-sub2));
-  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub2), var(--c-white2));
+// ------------------------------------------------------------------
+// === 淺色主題 3  ===-----------------------------------------------
+// ------------------------------------------------------------------
+[data-bs-theme="light3"]{
+  // 把色票移來主題，直接可以看效果。
+  --c-brand:	#06C97B;
+	--c-main:		#FDCF00;
+	--c-sub:		#5b35de;
+	--c-brand-t:	#000000;
+	--c-main-t:		#000000;
+	--c-sub-t: 		#FFFFFF;
+	--c-highlight: 		#f97aab;
+	--c-hover:		 		#f97aab;
+	--c-highlight-t: 	#000000;
+	--c-focus: 				#5b35de;
 
-  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand2), var(--c-main2));
-  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main2), var(--c-sub2));
-  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub2), var(--c-white2));
+	--c-front: 				#000000;
+	--c-front-sub: 		#000000;
+	--c-front-brand: 	#06C97B;
+	--c-back: 		#FFF7EA;
+	--c-back-sub: #FFFFFF;
+
+	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
+	--c-shadow: rgba(0,0,0,0.6);	//固定透明陰影
+	--c-white: 	#FFFFFF;	//固定白色
+	--c-black: 	#000000;	//固定黑色
+	--c-lite: 	#F5F5FC;	//固定淺灰
+	--c-dark: 	#3A3A3F;	//固定深灰
+	--c-gary: 	#CCCCCC;	//固定中性灰
+
+	// 灰度 g1~g3 色票 function，把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+  @for $i from 1 through ($gray-steps - 1) {
+    --c-g#{$i}: #{generate-step-color($i, $gray-steps, #FFF7EA, #CCCCD1)};
+  }
+
+		// 主題漸層色票 function
+		// #{gradient-var(brand, h)}: linear-gradient(to right, var(--c-main), var(--c-main));
+		// #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-sub));
+
+		// #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-brand));
+		// #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-sub));
+
+		// #{gradient-var(brand, hr)}: linear-gradient(to left, var(--c-brand), var(--c-brand));
+		// #{gradient-var(main, hr)}: linear-gradient(to left, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, hr)}: linear-gradient(to left, var(--c-sub), var(--c-sub));
+
+		// #{gradient-var(brand, vr)}: linear-gradient(to top, var(--c-brand), var(--c-brand));
+		// #{gradient-var(main, vr)}: linear-gradient(to top, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, vr)}: linear-gradient(to top, var(--c-sub), var(--c-sub));
+}
+
+// ------------------------------------------------------------------
+// === 深色主題 3  ===-----------------------------------------------
+// ------------------------------------------------------------------
+[data-bs-theme="dark2"]{
+  // 把色票移來主題，直接可以看效果。
+  --c-brand:	#fab449;
+	--c-main:		#fce4df;
+	--c-sub:		#eda9b6;
+	--c-brand-t:	#000000;
+	--c-main-t:		#000000;
+	--c-sub-t: 		#000000;
+	--c-highlight: 		#00bfc1;
+	--c-hover: 				#007A7C;
+	--c-highlight-t: 	#FFFFFF;
+	--c-focus: 				#00bfc1;
+
+	--c-front: 				#FFFFFF;
+	--c-front-sub: 		#fae3ce;
+	--c-front-brand: 	#fab449;
+	--c-back: 		#2a1604;
+	--c-back-sub: #0f1110;
+
+	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
+	--c-shadow: rgba(0,0,0,0.6);	//固定透明陰影
+	--c-white: 	#FFFFFF;	//固定白色
+	--c-black: 	#000000;	//固定黑色
+	--c-lite: 	#F5F5FC;	//固定淺灰
+	--c-dark: 	#3A3A3F;	//固定深灰
+	--c-gary: 	#CCCCCC;	//固定中性灰
+
+	// 灰度 g1~g3 色票 function，把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+  @for $i from 0 through ($gray-steps - 1) {
+    --c-g#{$i}: #{generate-step-color($i, $gray-steps, #3A3A3F, #2a1604)};
+  }
+
+		// 主題漸層色票 function
+		// #{gradient-var(brand, h)}: linear-gradient(to right, var(--c-main), var(--c-main));
+		// #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-sub));
+
+		// #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-brand));
+		// #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-sub));
+
+		// #{gradient-var(brand, hr)}: linear-gradient(to left, var(--c-brand), var(--c-brand));
+		// #{gradient-var(main, hr)}: linear-gradient(to left, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, hr)}: linear-gradient(to left, var(--c-sub), var(--c-sub));
+
+		// #{gradient-var(brand, vr)}: linear-gradient(to top, var(--c-brand), var(--c-brand));
+		// #{gradient-var(main, vr)}: linear-gradient(to top, var(--c-main), var(--c-main));
+		// #{gradient-var(sub, vr)}: linear-gradient(to top, var(--c-sub), var(--c-sub));
 }
 
 [data-font="M"]{

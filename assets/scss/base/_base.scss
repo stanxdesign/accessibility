@@ -23,7 +23,6 @@ body {
 	color: var(--c-front);
   background-color: var(--c-back);
 }
-
 h1, h2 {
 	font-size: 1.2rem;
 	color: var( --c-front-brand);
@@ -91,8 +90,8 @@ input, textarea {
 	@include obj-theme(highlight,0);
 	font-weight: bold;
 	&:hover,&:focus,&.active{
-		background-color: var(--c-white);
-		color: var(--c-black);
+		background-color: var(--c-hover);
+		color: var(--c-highlight-t);
 	}
 }
 

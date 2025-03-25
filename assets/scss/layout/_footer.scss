@@ -20,12 +20,6 @@
 	#footerInfo {
 		display: block;
 	}
-	a{
-		color: var(--c-white);
-		&:hover,&:focus{
-			color: var(--c-highlight-t);
-		}
-	}
 	@include MD {
 		padding: 3rem;
 		display: flex;
