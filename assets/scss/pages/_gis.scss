@@ -5,211 +5,7 @@
 		display: none;
 	}
 	#filterPanel{
-		width: 100%;
-		max-height: 6rem;
-		top: auto;
-		left: 0;
-		bottom: 0;
-		padding: 2rem 1.5rem 1rem 1rem;
-		position: fixed;
-		background-color: var(--c-brand);
-		display: block;
-		box-shadow: 0 0 .5rem 0 var(--c-shadow);
-		z-index: 1;
-		border-radius: 1rem 1rem 0 0;
-		transition: all .5s ease-in-out;
-		&:has(:focus){
-			max-height: 100vh;
-			#filterPanelForm{
-				.form-group:not(:first-child){
-					opacity: 1;
-				}
-			}
-		}
-		#filterPanelForm{
-			order: 1;
-			width: 100%;
-			max-width: 100%;
-			display: flex;
-			flex-direction: column;
-			gap: .5rem;
-			color: var(--c-white);
-			.form-group:not(:first-child){
-				opacity: 0;
-				transition: all .3s ease-in-out;
-			}
-		}
-		#filterPanelMore{
-			width: 100%;
-			max-width: 100%;
-			order: 3;
-			display: flex;
-			flex-direction: column;
-			flex-wrap: wrap;
-			justify-content: left;
-			gap: .5rem;
-			color: var(--c-white);
-			border-top: solid 1px var(--c-white);
-			padding-top: 1rem;
-			margin-top: .5rem;
-		}
-		#moreTags{
-			width: 100%;
-			order: 2;
-			margin: .5rem 0;
-			transition: all .3s ease-in-out;
-			transition-delay: 1s;
-			.tags{
-				border-top: dotted 1px var(--c-white);
-				padding: .5rem 0;
-			}
-		}
-		#filterBtns{
-			order: 4;
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-			margin-top: 1rem;
-			flex: 1 0 100%;
-			button{
-				width: 45%;
-			}
-		}
-		.form-control:is([list],[select]) {
-			position: relative;
-			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
-			background-repeat: no-repeat;
-			background-position: right 1ch center;
-		}
-		.form-group{
-			width: 100%;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			label:not(.tag){
-				flex: 0 0 3.5rem;
-				&:is([required]){
-					&::after{
-						content: ' *';
-						color: #F00;
-					}
-				}
-			}
-			#keyword + .input-group-text{
-				&::before{
-					content: '\f00d';
-					@include fa-icon;
-				}
-			}
-		}
-		&.active{
-			#moreOptionBtn{
-				&::after{
-					content: '\f00d';
-					@include fa-icon;
-				}
-			}
-		}
-		&:not(.active){
-			#filterPanelForm{
-				max-width: 100%;
-				transition: all .5s ease-in-out;
-			}
-			#filterPanelMore{
-				max-width: 100%;
-				max-height: 0;
-				overflow: hidden;
-				margin-left: 0;
-				padding-left: 0;
-				border-width: 0;
-				transition: all .5s ease-in-out;
-				@include MD{
-					max-width: 0%;
-					max-height: 0;
-					overflow: hidden;
-					margin-left: 0;
-					padding-left: 0;
-					border-width: 0;
-				}
-			}
-			#moreTags{
-				max-height: 0;
-				overflow: hidden;
-			}
-			#moreOptionBtn{
-				&::after{
-					content: '\f101';
-					@include fa-icon;
-				}
-			}
-			@include MD{
-				width: 23rem;
-				#filterPanelForm{
-					max-width: 20rem;
-				}
-			}
-		}
-		@include MD{
-			display: flex;
-			width: 46rem;
-			max-height: 400px;
-			top: 5.5rem;
-			left: 1.5rem;
-			bottom: auto;
-			padding: 1rem;
-			border-radius: 1rem;
-			.form-group{
-				display: flex;
-				flex-direction: row;
-				align-items: center;
-				label:not(.tag){
-					flex: 0 0 3.5rem;
-					&:is([required]){
-						&::after{
-							content: ' *';
-							color: #F00;
-						}
-					}
-				}
-				#keyword + .input-group-text{
-					&::before{
-						content: '\f00d';
-						@include fa-icon;
-					}
-				}
-			}
-			#filterPanelForm{
-				order: 1;
-				width: 100%;
-				max-width: 50%;
-				.form-group:not(:first-child){
-					opacity: 1;
-				}
-			}
-			#filterPanelMore{
-				width: 100%;
-				order: 2;
-				max-width: calc(50% - 1rem);
-				display: flex;
-				flex-direction: column;
-				flex-wrap: wrap;
-				justify-content: left;
-				gap: .5rem;
-				color: var(--c-white);
-				border-left: solid 1px var(--c-white);
-				padding-left: 1rem;
-				margin-left: 1rem;
-				border-top: none 0 transparent;
-				padding-top: 0;
-				margin-top: .0;
-			}
-			#moreTags{
-				order: 3;
-			}
-			#filterBtns{
-				margin-top: auto;
-			}
-		}
+
 	}
 	#sidePanel{
 		width: 3rem;
@@ -229,9 +25,9 @@
 			width: 2.5rem;
 			height: 2.5rem;
 			aspect-ratio: 1/1;
-			background-color: var(--c-back);
+			background-color: var(--c-lite);
 			color: var(--c-brand);
-			border: var(--c-sub) solid 1px;
+			border: var(--c-lite) solid 1px;
 			font-size: 0;
 			line-height: 2rem;
 			flex-direction: column;
@@ -273,11 +69,10 @@
 			position: relative;
 			font-size: .9rem;
 			padding: 1.5rem 2px;
-			margin: -2rem 0;
-			background-color: var(--c-back);
+			margin: -1.5rem 0;
+			background-color: var(--c-brand);
 			z-index: -1;
-			color: var(--c-front-brand);
-			border: 1px solid var(--c-sub);
+			color: var(--c-brand-t);
 		}
 		#setLayerImg{
 			~ .dropdown-menu-end{
@@ -374,7 +169,7 @@
 	#map{
 		height: 100dvh;
 		width: 100%;
-		background-color: $brand-d;
+		background-color: var(--c-white);
 		position: fixed;
 		top: 0;
 		left: 0;
@@ -577,7 +372,7 @@
 		@include MD{
 			position: fixed;
 			top: 4.5rem;
-			right:02;
+			right:0;
 			height: calc(100dvh - 4.5rem);
 			width: 40vw;
 			max-width: 39rem;
@@ -617,7 +412,7 @@
 			top: calc(100dvh - 9.5rem);
 		}
 		@include MD{
-			padding: 0 0 3.5rem 0;
+			padding: 5rem 0 3.5rem 0;
 			&:not(.active){
 				top: -110vh;
 				opacity: 0;

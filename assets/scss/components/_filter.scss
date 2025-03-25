@@ -1,0 +1,102 @@
+// @use 'sass:math';
+@use '../abstracts/mixins' as *;
+
+#filterPanel{
+	width: 100%;
+	top: auto;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	padding: 1rem 1.5rem 1rem 1rem;
+	position: fixed;
+	background-color: var(--c-back-sub);
+	display: block;
+	border-top: var(--c-main) solid .5ch;
+	border-bottom: var(--c-white) solid 1px;
+	box-shadow: 0 .5rem .5rem 0 rgba($color: #000000, $alpha: .3);
+	z-index: 3;
+	border-radius: 0 0 1rem 1rem;
+	max-height: 5rem;
+	overflow: hidden;
+	transition: all .5s ease-in-out;
+	@include MD{
+		width: 40vw;
+    max-width: 39rem;
+    min-width: 30rem;
+		top: 4.5rem;
+		left: auto;
+		bottom: auto;
+	}
+	#filterPanelForm{
+		order: 1;
+		display: flex;
+		flex-direction: column;
+		gap: .5rem;
+		.form-group:not(:first-child){
+			opacity: 0;
+		}
+	}
+	#filterPanelMore{
+		order: 3;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		justify-content: left;
+		gap: .5rem;
+		border-top: solid 1px var(--c-white);
+
+		max-height: 0;
+		opacity: 0;
+		pointer-events: none;
+		overflow: hidden;
+	}
+	#moreTags{
+		order: 2;
+		max-height: 0;
+		opacity: 0;
+		pointer-events: none;
+		overflow: hidden;
+		transition: all .3s ease-in-out;
+		.tags{
+			border-top: dotted 1px var(--c-white);
+			padding: .5rem 0;
+		}
+	}
+	#filterBtns{
+		order: 4;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin-top: 1rem;
+		flex: 1 0 100%;
+		button{
+			width: 45%;
+		}
+	}
+	&.active{
+		#filterPanelMore{
+			opacity: 1;
+			pointer-events: all;
+			max-height: 10rem;
+		}
+		#moreTags{
+			opacity: 1;
+			pointer-events: all;
+			max-height: 10rem;
+		}
+		#moreOptionBtn{
+			&::after{
+				content: '\f00d';
+				@include fa-icon;
+			}
+		}
+	}
+	&:has(:focus){
+		max-height: 50vh;
+		overflow: hidden;
+		.form-group{
+			opacity: 1 !important;
+			transition: all .5s ease-in-out;
+		}
+	}
+}

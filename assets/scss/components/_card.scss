@@ -89,6 +89,15 @@ article {
 	}
 }
 
+.card-style-blank {
+	.card {
+		background-color: var(--c-back-sub) !important;
+		border-color: var(--c-back-sub) !important;
+		color: var(--c-front-brand) !important;
+	}
+}
+
+
 .card-style-brand {
 	.card {
 		background-color: var(--c-brand) !important;

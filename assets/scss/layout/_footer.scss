@@ -23,7 +23,7 @@
 	a{
 		color: var(--c-white);
 		&:hover,&:focus{
-			color: var(--c-highlight);
+			color: var(--c-highlight-t);
 		}
 	}
 	@include MD {

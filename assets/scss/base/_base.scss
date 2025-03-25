@@ -58,9 +58,14 @@ input, textarea {
 			margin-right: .5ch;
 		}
 	}
-	&:hover,&:focus,&.active{
+	&:hover,&.focus{
 		background-color: var(--c-highlight);
 		color: var(--c-highlight-t);
+		box-shadow: 1px 1px 0 3px var(--c-shadow);
+	}
+	&.active{
+		background-color: var(--c-highlight);
+		color: var(--c-shadow);
 	}
 }
 
@@ -88,7 +93,6 @@ input, textarea {
 	&:hover,&:focus,&.active{
 		background-color: var(--c-white);
 		color: var(--c-black);
-		box-shadow: 1px 1px 0 3px var(--c-shadow);
 	}
 }
 
@@ -108,6 +112,37 @@ input, textarea {
 		background-color: var(--c-back-sub);
 		color: var(--c-front-sub);
 	}
+}
+
+.form-group{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	label:not(.tag){
+		flex: 0 0 3.5rem;
+		&:is([required]){
+			&::after{
+				content: ' *';
+				color: #F00;
+			}
+		}
+	}
+	.form-control:is([list],[select]) {
+		position: relative;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+		background-repeat: no-repeat;
+		background-position: right 1ch center;
+	}
+	.form-control + .input-group-text{
+		&::before{
+			content: '\f00d';
+			@include fa-icon;
+		}
+	}
+}
+.dropdown-menu.show{
+	z-index: 99;
 }
 
 .captcha {
@@ -191,7 +226,7 @@ $icons: (
 		height: 2rem;
 		line-height: 2rem;
 		background-color: var(--c-sub);
-		color: var(--c-black);
+		color: var(--c-sub-t);
 		letter-spacing: 1px;
 	}
 	label:nth-child(2n-1){

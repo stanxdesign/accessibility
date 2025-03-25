@@ -5,7 +5,8 @@
 	position: absolute;
 	width: 19rem;
 	max-width: 100%;
-	background-color: var(--c-back-sub);
+	background-color: var(--c-white);
+	color: var(--c-black);
 	padding: 0;
 	border-radius: 2rem;
 	box-shadow: 0 0 1rem var(--c-shadow);
@@ -72,7 +73,7 @@
 		font-size: 1.5rem;
 		padding: 1ch 0;
 		width: 100%;
-		background-color: var(--c-back-sub);
+		color: var(--c-front-brand);
 		&::before{
 			margin-right: 3px;
 		}

@@ -1,73 +1,24 @@
 @use 'sass:math';
 @use 'sass:color';
 $font-family: 'SF Pro', 'Arial', 'Noto Sans', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
-
 $gray-steps: 4;
 
+// === regular color palette ===
 $white:#FFFFFF;
 $black:#000000;
 $lite:#F5F5FC;
 $dark:#3A3A3F;
 
 // === default pattern ===
-$brand:#13341e;
-$main:#4A7561;
-$sub:#bcdfb6;
-
-$brand-t:#FFFFFF;
-$main-t:#FFFFFF;
-$sub-t:#000000;
-
-$highlight: #FADA65;
-$highlight-t: #121826;
-
-// === default pattern ===
-// $brand:#ffae04;
-// $main:#ffae04;
-// $sub:#da724b;
-
+// 為了直接編輯器看著色，現在直接用CSS變數寫在 theme中
+// $brand:	#13341e;
+// $main:		#4A7561;
+// $sub:		#bcdfb6;
 // $brand-t:#FFFFFF;
-// $main-t:#FFFFFF;
-// $sub-t:#000000;
-
-// $highlight: #d518bd;
-// $highlight-t: #121826;
-
-// === default pattern ===
-// $brand:#b7d329;
-// $main:#b7d329;
-// $sub:#565b5d;
-
-// $brand-t:#000000;
-// $main-t:#000000;
-// $sub-t:#FFFFFF;
-
-// $highlight: #e55738;
-// $highlight-t: #121826;
-
-// === Dark pattern ===
-$brand-d:#0A4A66;
-$main-d:#70BFE0;
-$sub-d:#B3DBEC;
-
-$brand-d-t:#FFFFFF;
-$main-d-t:#000000;
-$sub-d-t:#000000;
-
-$highlight-d: #FFE3F1;
-$highlight-d-t: #121826;
-
-// === contrast pattern ===
-$brand-c:#3F094D;
-$main-c:#4F3188;
-$sub-c:#FABB07;
-
-$brand-c-t:#FEF852;
-$main-c-t:#FEF852;
-$sub-c-t:#000000;
-
-$highlight-c: #FEF852;
-$highlight-c-t: #3F094D;
+// $main-t:	#FFFFFF;
+// $sub-t:	#000000;
+// $highlight: 		#FADA65;
+// $highlight-t: 	#121826;
 
 // 依參數，組裝對應 CSS 變數名稱
 @function set-color($mode, $type: "") {

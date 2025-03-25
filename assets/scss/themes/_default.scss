@@ -2,30 +2,41 @@
 
 :root{
 	--bs-body-font-family: #{$font-family};
+	// SM以下螢幕將字級定為14px 避免行動裝置字體過大；其餘裝置配合無障礙以16px為基礎
+	--font-size: 14px;
+	@include SM{--font-size: 16px;}
 
-  --c-brand: #{$brand};
-	--c-brand-t: #{$brand-t};
-	--c-main: #{$main};
-	--c-main-t: #{$main-t};
-	--c-sub: #{$sub};
-	--c-sub-t: #{$sub-t};
-	--c-highlight: #{$highlight};
-	--c-highlight-t: #{$highlight-t};
+	// 把色票移來主題，直接可以看效果。
+  --c-brand: 	#1A6006;
+	--c-main: 	#90C131;
+	--c-sub:		#E1EFBB;
+	--c-brand-t:	#FFFFFF;
+	--c-main-t:		#FFFFFF;
+	--c-sub-t: 		#000000;
+	--c-highlight: 		#F28A10;
+	--c-highlight-t: 	#000000;
+	--c-focus: 				#F28A10;
 
-	--c-white: #{$white};
-	--c-black: #{$black};
+	--c-front: 				#000000;
+	--c-front-sub: 		#000000;
+	--c-front-brand: 	#1A6006;
+	--c-back: 		#F5F5FC;
+	--c-back-sub: #FFFFFF;
 
-	--c-front: #{$black};
-	--c-back: #{$lite};
-	--c-front-sub: #{$black};
-	--c-back-sub: #{$white};
-	 --c-front-brand: #{$brand};
+	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
+	--c-shadow: rgba(0,0,0,0.6);	//固定透明陰影
+	--c-white: 	#FFFFFF;	//固定白色
+	--c-black: 	#000000;	//固定黑色
+	--c-lite: 	#F5F5FC;	//固定淺灰
+	--c-dark: 	#3A3A3F;	//固定深灰
+	--c-gary: 	#CCCCCC;	//固定中性灰
 
-	// 把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+	// 灰度 g1~g3 色票 function，把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
   @for $i from 1 through ($gray-steps - 1) {
     --c-g#{$i}: #{generate-step-color($i, $gray-steps, #F5F5FC, #CCCCD1)};
   }
 
+	// 主題漸層色票 function
 	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand), var(--c-main));
   #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main), var(--c-sub));
   #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub), var(--c-white));
@@ -34,42 +45,43 @@
   #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
   #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
 
-	--c-shadow: rgba(0, 0, 0, 0.5);
-
-	--c-focus: #{$highlight};
-
 	/* Primary 主題相關 */
 	// --bs-primary: #{$brand}; /* 主色 */
 	// --bs-primary-rgb: 197, 70, 81;
 	// --bs-primary-bg-subtle: #{$lite}; /* 淡色背景 */
 	// --bs-primary-text-emphasis: #{$dark}; /* 暗色文字 */
-
-	--font-size: 14px;
-
-	@include MD{
-		--font-size: 16px;
-	}
 }
 
+// ------------------------------------------------------------------
+// === 深色主題 ===--------------------------------------------------
+// ------------------------------------------------------------------
 [data-bs-theme="dark"] {
-	--bs-body-font-family: #{$font-family};
+  // 把色票移來主題，直接可以看效果。
+  --c-brand:	#0A4A66;
+	--c-main:		#70BFE0;
+	--c-sub:		#B3DBEC;
+	--c-brand-t:	#FFFFFF;
+	--c-main-t:		#000000;
+	--c-sub-t: 		#000000;
+	--c-highlight: 		#FFE3F1;
+	--c-highlight-t: 	#121826;
+	--c-focus: 				#E24A76;
 
-  --c-brand: #{$brand-d};
-	--c-brand-t: #{$brand-d-t};
-	--c-main: #{$main-d};
-	--c-main-t: #{$main-d-t};
-	--c-sub: #{$sub-d};
-	--c-sub-t: #{$sub-d-t};
-	--c-highlight: #{$highlight-d};
-	--c-highlight-t: #{$highlight-d-t};
+	--c-front: 				#FFFFFF;
+	--c-front-sub: 		#B3DBEC;
+	--c-front-brand: 	#0A4A66;
+	--c-back: 		#121826;
+	--c-back-sub: #000000;
 
-	--c-front: #{$white};
-	--c-back: #{$dark};
-	--c-front-sub: #{$white};
-	--c-back-sub: #{$black};
-	--c-front-brand: #{$sub-d};
+	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
+	--c-shadow: rgba(0,0,0,0.8);	//固定透明陰影
+	--c-white: 	#FFFFFF;	//固定白色
+	--c-black: 	#000000;	//固定黑色
+	--c-lite: 	#F5F5FC;	//固定淺灰
+	--c-dark: 	#3A3A3F;	//固定深灰
+	--c-gary: 	#CCCCCC;	//固定中性灰
 
-	// 把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+	// 灰度 g1~g3 色票 function，把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
   @for $i from 0 through ($gray-steps - 1) {
     --c-g#{$i}: #{generate-step-color($i, $gray-steps, #3A3A3F, #464647)};
   }
@@ -81,30 +93,39 @@
   #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
   #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
   #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
-
-	--c-shadow: rgba(0, 0, 0, 0.8);
-	--c-focus: #E24A76;
 }
 
+
+// ------------------------------------------------------------------
+// === 高對比主題 ===------------------------------------------------
+// ------------------------------------------------------------------
 [data-bs-theme="contrast"] {
-	--bs-body-font-family: #{$font-family};
+  // 把色票移來主題，直接可以看效果。
+  --c-brand:	#3F094D;
+	--c-main:		#4F3188;
+	--c-sub:		#FABB07;
+	--c-brand-t:	#FEF852;
+	--c-main-t:		#FEF852;
+	--c-sub-t: 		#000000;
+	--c-highlight: 		#FEF852;
+	--c-highlight-t: 	#3F094D;
+	--c-focus: 				#FABB07;
 
-  --c-brand: #{$brand-c};
-	--c-brand-t: #{$brand-c-t};
-	--c-main: #{$main-c};
-	--c-main-t: #{$main-c-t};
-	--c-sub: #{$sub-c};
-	--c-sub-t: #{$sub-c-t};
-	--c-highlight: #{$highlight-c};
-	--c-highlight-t: #{$highlight-c-t};
+	--c-front: 				#000000;
+	--c-front-sub: 		#4F3188;
+	--c-front-brand: 	#3F094D;
+	--c-back: 		#F5F5FC;
+	--c-back-sub: #FFFFFF;
 
-	--c-front: #{$black};
-	--c-back: #{$white};
-	--c-front-sub: #{$black};
-	--c-back-sub: #{$white};
-	--c-front-brand: #{$brand-c};
+	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
+	--c-shadow: rgba(0,0,0,0.8);	//固定透明陰影
+	--c-white: 	#FFFFFF;	//固定白色
+	--c-black: 	#000000;	//固定黑色
+	--c-lite: 	#F5F5FC;	//固定淺灰
+	--c-dark: 	#3A3A3F;	//固定深灰
+	--c-gary: 	#CCCCCC;	//固定中性灰
 
-	// 把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+	// 灰度 g1~g3 色票 function，把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
   @for $i from 1 through ($gray-steps - 1) {
     --c-g#{$i}: #{generate-step-color($i, $gray-steps, #F5F5FC, #CCCCD1)};
   }
@@ -116,9 +137,49 @@
   #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand), var(--c-main));
   #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main), var(--c-sub));
   #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub), var(--c-white));
+}
 
-	--c-shadow: rgba(0, 0, 0, 0.8);
-	--c-focus: #{$highlight-c};
+// ------------------------------------------------------------------
+// === 淺色主題 2  ===-----------------------------------------------
+// ------------------------------------------------------------------
+[data-bs-theme="light2"]{
+  // 把色票移來主題，直接可以看效果。
+  --c-brand:	#FF5733;
+	--c-main:		#FFCC02;
+	--c-sub:		#F0AFB4;
+	--c-brand-t:	#000000;
+	--c-main-t:		#000000;
+	--c-sub-t: 		#000000;
+	--c-highlight: 		#5BC2EC;
+	--c-highlight-t: 	#000000;
+	--c-focus: 				#FABB07;
+
+	--c-front: 				#000000;
+	--c-front-sub: 		#000000;
+	--c-front-brand: 	#FF5733;
+	--c-back: 		#F5F5FC;
+	--c-back-sub: #FFFFFF;
+
+	// 固定值色票，提供版面上需要強制指定黑白使用，有需要再覆蓋
+	--c-shadow: rgba(0,0,0,0.6);	//固定透明陰影
+	--c-white: 	#FFFFFF;	//固定白色
+	--c-black: 	#000000;	//固定黑色
+	--c-lite: 	#F5F5FC;	//固定淺灰
+	--c-dark: 	#3A3A3F;	//固定深灰
+	--c-gary: 	#CCCCCC;	//固定中性灰
+
+	// 灰度 g1~g3 色票 function，把灰色值 丟給 generate-step-color() 計算結果，輸出 CSS 變數
+  @for $i from 1 through ($gray-steps - 1) {
+    --c-g#{$i}: #{generate-step-color($i, $gray-steps, #F5F5FC, #CCCCD1)};
+  }
+
+	#{gradient-var(brand, h)}: linear-gradient(to right, var(--c-brand2), var(--c-main2));
+  #{gradient-var(main, h)}: linear-gradient(to right, var(--c-main2), var(--c-sub2));
+  #{gradient-var(sub, h)}: linear-gradient(to right, var(--c-sub2), var(--c-white2));
+
+  #{gradient-var(brand, v)}: linear-gradient(to bottom, var(--c-brand2), var(--c-main2));
+  #{gradient-var(main, v)}: linear-gradient(to bottom, var(--c-main2), var(--c-sub2));
+  #{gradient-var(sub, v)}: linear-gradient(to bottom, var(--c-sub2), var(--c-white2));
 }
 
 [data-font="M"]{

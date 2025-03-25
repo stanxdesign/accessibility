@@ -91,6 +91,7 @@
 		border-bottom: 1px dotted var(--c-main);
 		.fa{
 			background-color: var(--c-back);
+			color: var(--c-front);
 		}
 	}
 	.levels{
@@ -170,7 +171,7 @@
 		&:has(span){
 			position: relative;
 			background-color: var(--c-g1);
-			border: solid 1px var(--c-back-sub);
+			border: solid 1px var(--c-brand);
 			span{
 				position: absolute;
 				right: -.5rem;

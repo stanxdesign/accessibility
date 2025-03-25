@@ -7,7 +7,8 @@
 	position: fixed;
 	background-color: var(--c-back-sub);
 	box-shadow: 0 0 2rem var(--c-shadow);
-	z-index: 3;
+	border-top: 2px solid var(--c-brand);
+	z-index: 4;
 	#navbarMain {
 		z-index: 2;
 		a {
@@ -47,7 +48,7 @@
 			text-align: center;
 			position: relative;
 			top: 0;
-			left: -5rem;
+			left: auto;
 			.switcher{
 				text-align: center;
 				align-items: center;

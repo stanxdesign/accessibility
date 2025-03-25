@@ -10,8 +10,8 @@
 	}
 	&.modal-theme-main{
 		.modal-content{
-			background-color: var(--c-main);
-			color: var(--c-brand-t);
+			background-color: var(--c-white);
+			color: var(--c-black);
 		}
 	}
 	.modal-content{
@@ -19,13 +19,15 @@
 		display: flex;
 		overflow-y: auto;
 		overflow-x: hidden;
+		background-color: var(--c-white);
+		color: var(--c-black);
 		@include MD{
 			border: 2px solid var(--c-main);
 			border-radius: 1rem;
-			display: grid;
+			// display: grid;
 			grid-template-areas: 'header header'
-														'map map'
-														'slider body'
+														'slider slider'
+														'body body'
 														'footer footer';
 			grid-template-columns: 60% 40%;
 			&:has(.extra-gallery:empty){
@@ -94,12 +96,10 @@
 		grid-area: slider;
 		margin: 1rem;
 		border-radius: .5rem;
-		overflow: hidden;
 		box-shadow: 0 0 1rem 0 var(--c-shadow);
-		max-height: 40vh;
 		.swiffy-slider{
 			height: 100%;
-			max-height: 40vh;
+			aspect-ratio: 16/9;
 		}
 		.slider-nav{
 			color: var(--c-brand-t) !important;

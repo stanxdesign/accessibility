@@ -9,16 +9,21 @@
 		display: none;
 	}
 	#filterPanel{
+		position: relative;
+		top: 0;
 		width: 100%;
+		max-height: unset;
+		max-width: 960px;
 		margin: 1.5rem auto;
 		flex-direction: row;
 		flex-wrap: wrap;
 		padding: 0;
 		background-color: var(--c-brand);
 		color: var(--c-brand-t);
+		border-radius: 1rem;
+		border: none;
 		overflow: hidden;
 		#filterPanelForm{
-			max-width: 100%;
 			order: 1;
 			flex-grow: 1;
 			flex-direction: row;
@@ -29,6 +34,7 @@
 			background-color: var(--c-brand);
 			color: var(--c-brand-t);
 			.form-group {
+				opacity: 1;
 				flex-direction: column;
 				flex: 1 1 auto;
 				align-items: start;

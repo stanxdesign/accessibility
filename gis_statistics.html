@@ -85,26 +85,12 @@
 			<!-- 篩選器 -->
 			<div id="filterPanel">
 				<div id="filterPanelForm">
-					<div class="form-group ">
-						<label for="school" required>學校</label>
-						<input class="form-control" list="school" placeholder="輸入或選擇學校" aria-label="學校選擇">
-						<datalist id="school"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
-							<option value="國立臺灣體育運動大學">
-							<option value="中興大學">
-							<option value="台灣大學">
-							<option value="東海大學">
-							<option value="逢甲大學">
-						</datalist>
-					</div>
-
-					<div class="form-group ">
-						<label for="area" required>校區</label>
-						<input class="form-control" list="area" placeholder="輸入或選擇校區" aria-label="選擇校區">
-						<datalist id="area"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
-							<option value="一中校區">
-							<option value="台北校區">
-							<option value="第三校區">
-						</datalist>
+					<div class="form-group keyword">
+						<label for="range">範圍</label>
+						<div class="input-group">
+							<input type="text" class="form-control disabledCheck" id="range" placeholder="請輸入您要搜尋的直徑距離（公尺）" tabindex="-1" aria-disabled="true">
+							<button class="input-group-text disabledCheck" aria-label="清除輸入" tabindex="-1" aria-disabled="true" type="button"></button>
+						</div>
 					</div>
 
 					<div class="form-group" required>
@@ -629,7 +615,7 @@
 						<div id="itemFooter" class="modal-footer">
 							<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
 							<!-- 可選：額外關閉按鈕 -->
-							<button type="button" class="btn btn-text" data-bs-dismiss="modal">關閉</button>
+							<button type="button" class="btn btn-text-lite" data-bs-dismiss="modal">關閉</button>
 						</div>
 					</div>
         </div>

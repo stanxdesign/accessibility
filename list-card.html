@@ -205,7 +205,7 @@
 							<div class="items">
 								<!-- 這是分類結構說明 button 設定 fa class產生圖示，中間不需要包 span -->
 								<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
-								<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal"	>大門口無障礙坡道</button>
+								<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button>
 								<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">側門無障礙坡道</button>
 							</div>
 						</div>
@@ -396,36 +396,19 @@
 						<h4 class="modal-title item-title fa fa-person-dress">無障礙廁所，設施位置</h4>
 						<button type="button" class="modal-dismiss" data-bs-dismiss="modal" aria-label="關閉"></button>
 					</div>
-					<div class="extra-mini-map">
-						<img src="assets/images/demo_minimap.webp" alt="這是假地圖">
-					</div>
-
-					<!-- 可捲動內容區域 -->
-					<div class="modal-body item-info">
-						<p class="extra-where"><label>行政大樓</label><label>3F</label></p>
-						<!-- 這是內文的標題，前面已經有了，所以不用再給h4標題標籤，避免報讀錯誤 -->
-						<p class="modal-title my-2">無障礙廁所</p>
-						<p>不區分男女廁，獨立洗手檯。</p>
-						<p>文字撐開到100％會加上捲動</p>
-						<p>不區分男女廁，獨立洗手檯。</p>
-						<p>撐開到全高會改為捲動</p>
-						<p>不區分男女廁，獨立洗手檯。</p>
-						<p>文字撐開到100％會加上捲動</p>
-						<p>不區分男女廁，獨立洗手檯。</p>
-						<p>撐開到全高會改為捲動</p>
-						<p>不區分男女廁，獨立洗手檯。</p>
-						<p>文字撐開到100％會加上捲動</p>
-						<p>不區分男女廁，獨立洗手檯。</p>
-						<p>撐開到全高會改為捲動</p>
-					</div>
 
 					<article class="extra-gallery">
 						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
 							role="region"
-							aria-label="大學校園圖片集，共4張"
+							aria-label="大學校園位置圖及圖片集，共5張"
 							aria-live="polite">
-							<p id="slider-status" class="sr-only">目前顯示第1張，共4張</p>
+							<p id="slider-status" class="sr-only">目前顯示第1張，共5張</p>
 							<div class="slider-container" id="slider-13">
+								<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-4" aria-hidden="false">
+									<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1820.3974894011405!2d120.66923333884971!3d24.143837192175976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d74a3cc6029%3A0xc81df603b4737da5!2z5ZyL56uL6Ie65Lit5pWZ6IKy5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1742811791218!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="國立臺中教育大學校園地圖"></iframe>
+									<figcaption id="caption-0">國立臺中教育大學位置圖（Google Maps）</figcaption>
+								</figure>
+
 								<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-4" aria-hidden="false">
 									<img src="assets/images/demo_photo04.webp" alt="教學大樓外觀">
 									<figcaption id="caption-4">這是學校的教學大樓，主要用於課堂授課和行政辦公，建築設計融合了現代與傳統元素。</figcaption>
@@ -451,9 +434,28 @@
 						</div>
 					</article>
 
+					<!-- 可捲動內容區域 -->
+					<div class="modal-body item-info">
+						<p class="extra-where"><label>行政大樓</label><label>3F</label></p>
+						<!-- 這是內文的標題，前面已經有了，所以不用再給h4標題標籤，避免報讀錯誤 -->
+						<p class="modal-title my-2">無障礙廁所</p>
+						<p>不區分男女廁，獨立洗手檯。</p>
+						<p>文字撐開到100％會加上捲動</p>
+						<p>不區分男女廁，獨立洗手檯。</p>
+						<p>撐開到全高會改為捲動</p>
+						<p>不區分男女廁，獨立洗手檯。</p>
+						<p>文字撐開到100％會加上捲動</p>
+						<p>不區分男女廁，獨立洗手檯。</p>
+						<p>撐開到全高會改為捲動</p>
+						<p>不區分男女廁，獨立洗手檯。</p>
+						<p>文字撐開到100％會加上捲動</p>
+						<p>不區分男女廁，獨立洗手檯。</p>
+						<p>撐開到全高會改為捲動</p>
+					</div>
+
 					<div class="modal-footer">
 						<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
-						<button type="button" class="btn btn-text" data-bs-dismiss="modal">關閉</button>
+						<button type="button" class="btn btn-text-lite" data-bs-dismiss="modal">關閉</button>
 					</div>
 				</div>
 			</div>
