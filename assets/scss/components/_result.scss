@@ -87,7 +87,7 @@
 		}
 	}
 	.items{
-		background-color: var(--c-main);
+		background-color: transparent;
 		@include gradient-bg(brand, vr);
 		border-top: 1px dotted var(--c-main);
 		border-bottom: 1px dotted var(--c-main);
