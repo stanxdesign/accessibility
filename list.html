@@ -76,11 +76,18 @@
 
 	<form>
 		<main id="content" class="container-fluid px-4">
+			<nav id="breadcrumb" aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#"><i class="fa fa-house"></i></a></li>
+					<li class="breadcrumb-item"><a href="#">設施查詢</a></li>
+					<li class="breadcrumb-item active" aria-current="page">統計圖表</li>
+				</ol>
+			</nav><!-- === 搜尋框 ===-->
 			<div id="filterPanel">
 				<div id="filterPanelForm">
 					<div class="form-group cities">
 						<label for="cities">縣市</label>
-						<select class="form-select disabledCheck" id="cities" aria-label="設施類型">
+						<select class="form-select" id="cities" aria-label="縣市">
 							<option value="all">全部</option>
 							<option value="taipei">台北</option>
 							<option value="taichung">台中</option>
@@ -88,8 +95,8 @@
 						</select>
 					</div>
 					<div class="form-group ">
-						<label for="school" required>學校</label>
-						<input class="form-control" list="school" placeholder="輸入或選擇學校" aria-label="學校選擇">
+						<label for="school" required>學校(必填)</label>
+						<input class="form-control" list="school" placeholder="必填，請輸入或選擇學校" aria-label="學校選擇">
 						<datalist id="school"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
 							<option value="國立臺灣體育運動大學">
 							<option value="中興大學">
@@ -100,17 +107,60 @@
 					</div>
 
 					<div class="form-group ">
-						<label for="area" required>校區</label>
-						<input class="form-control" list="area" placeholder="輸入或選擇校區" aria-label="選擇校區">
+						<label for="area" required>校區(必填)</label>
+						<input class="form-control" list="area" placeholder="必填，請輸入或選擇校區" aria-label="選擇校區">
 						<datalist id="area"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
 							<option value="一中校區">
 							<option value="台北校區">
 							<option value="第三校區">
 						</datalist>
 					</div>
-					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
+					<div class="tags">
+						<label for="tag" required>設施</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="elevator" aria-label="電梯" tabindex="-1" aria-disabled="true">
+							<span>電梯</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+							<span>廁所</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+							<span>停車場</span>
+						</label>
+						<a id="moreTagsFunction" class="dropdown-toggle tag"  role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false">
+							更多設施條件...
+						</a>
+						<div id="moreTagsMenu" class="dropdown-menu dropdown-menu-end" aria-labelledby="moreTagsFunction">
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+								<span>全選</span>
+							</label>
+							<hr>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+								<span>廁所</span>
+							</label>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+								<span>停車場</span>
+							</label>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+								<span>廁所</span>
+							</label>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+								<span>停車場</span>
+							</label>
+						</div>
+					</div>
+					<button id="send" type="button" class="btn btn-highlight fa fa-search" aria-label="送出查詢">查詢</button>
+					<button id="clear" type="button" class="btn btn-text-lite" aria-label="清除查詢資料">清除</button>
 				</div>
 			</div>
+			<!-- === 搜尋框  結束===-->
 
 			<div id="layoutBtns">
 				<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie active" aria-label="切換為圖表模式">統計圖表

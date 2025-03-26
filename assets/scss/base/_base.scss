@@ -95,6 +95,16 @@ input, textarea {
 	}
 }
 
+.btn-no-color{
+	background-color: var(--c-g1);
+	color: var(--c-front-sub);
+	font-weight: bold;
+	&:hover,&:focus,&.active{
+		background-color: var(--c-hover);
+		color: var(--c-highlight-t);
+	}
+}
+
 .btn-more{
 	&::after{
 		content: "\f178";
@@ -119,7 +129,7 @@ input, textarea {
 	flex-direction: row;
 	align-items: center;
 	label:not(.tag){
-		flex: 0 0 3.5rem;
+		flex: 0 0 6rem;
 		&:is([required]){
 			&::after{
 				content: ' *';
@@ -176,6 +186,7 @@ $icons: (
 		border:solid 1px var(--c-white);
 		border-radius: .5rem;
 		padding: .2em .5em;
+		align-self: center;
 		&:has(.form-check-input:focus) {
 			outline-width: 5px !important;
 			outline-color: var(--c-focus) !important;
@@ -253,5 +264,14 @@ $icons: (
 	&:not(:has(label)){
 		color: var(--c-main-t);
 		margin:  0 !important;
+	}
+}
+
+.breadcrumb{
+	a{
+		color: var(--c-front-brand-front);
+	}
+	.active{
+		color: var(--c-front);
 	}
 }

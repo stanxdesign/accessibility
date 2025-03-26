@@ -96,7 +96,7 @@
 		grid-area: slider;
 		margin: 1rem;
 		border-radius: .5rem;
-		box-shadow: 0 0 1rem 0 var(--c-shadow);
+		@include shadow;
 		.swiffy-slider{
 			height: 100%;
 			aspect-ratio: 16/9;

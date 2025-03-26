@@ -32,14 +32,14 @@
 			justify-content: space-around;
 			align-items: center;
 			border-radius: 99rem;
-			box-shadow: 0 0 1rem 0 var(--c-shadow);
+			@include shadow;
 			&::before{
 				font-size: 1.2rem;
 			}
 			&#zoomOutMap{
 				border-radius: 99rem;
 				padding: 0;
-				border: none;
+				box-shadow: inset 3px 3px .75rem 0 rgba($color: #000000, $alpha: 0.3);
 				&::before{
 					content: '\f010';
 				}
@@ -48,6 +48,7 @@
 				border-radius: 99rem;
 				padding: 0;
 				border: none;
+				box-shadow: inset 3px 3px .75rem 0 rgba($color: #000000, $alpha: 0.3);
 				&::before{
 					content: '\f00e';
 				}
@@ -65,12 +66,30 @@
 		}
 		#zoomSize{
 			position: relative;
-			font-size: .9rem;
-			padding: 1.5rem 2px;
-			margin: -1.5rem 0;
-			background-color: var(--c-brand);
+			width: 100%;
+			text-align: center;
+			font-size: 1rem;
+			width: 2.8rem;
 			z-index: -1;
-			color: var(--c-brand-t);
+			color: var(--c-black);
+			border-radius: 99rem;
+			font-weight: bold;
+			padding: 3.2rem 2px;
+			margin: -3.2rem 0;
+			&::after{
+				position: absolute;
+				top:0;
+				left: 0;
+				content: '';
+				display: block;
+				background-color: var(--c-white);
+				width: 100%;
+				height: 100%;
+				border-radius: 99rem;
+				@include shadow;
+				translate: 0 0;
+				z-index: -1;
+			}
 		}
 		#setLayerImg{
 			~ .dropdown-menu-end{
@@ -129,7 +148,26 @@
 				align-items: center;
 				line-height: 1;
 				&::before{
-					font-size: 2em;
+					font-size: 2rem;
+				}
+				&#getGPS{
+					margin-bottom: 2rem;
+					border-radius: 1rem;
+					transition: all .3s ease-in-out;
+					&::before{
+						translate: 0 0;
+						font-size: 2rem;
+					}
+				}
+				&#getGPS:not(:hover){
+					font-size: 0;
+					border-radius: 99rem;
+					padding: 0;
+					border: none;
+					&::before{
+						translate: 0 18%;
+						font-size: 2.5rem;
+					}
 				}
 				&#zoomOutMap{
 					border-radius: 99rem;
@@ -159,8 +197,16 @@
 				}
 			}
 			#zoomSize{
-				font-size: 1.2rem;
-				padding: 1.5rem .7ch;
+				width: 100%;
+				padding: 5rem 2px;
+				margin: -5rem 0;
+				&::after{
+					width: calc(100% + 6px);
+					height: 100%;
+					@include shadow;
+					translate: -3px 0;
+					z-index: -1;
+				}
 			}
 		}
 	}
@@ -237,7 +283,7 @@
 		background-color: var(--c-g1);
 		color: var(--c-brand);
 		overflow-y: scroll;
-		box-shadow: 0 0 1rem 0 var(--c-shadow);
+		@include shadow;
 		#resultPanelBtn{
 			position: sticky;
 			top: 0;
@@ -272,7 +318,7 @@
 		nav{
 			width: calc(100% - 1rem);
 			margin: 0 auto;
-			padding: 1ch 1rem;
+			padding: 1ch 6rem 1ch 1rem;
 			display: flex;
 			align-items: center;
 			justify-content: right;
@@ -294,6 +340,17 @@
 				border: none;
 				background: none;
 				color: var(--c-front-brand);
+			}
+			.backTop{
+				position: absolute;
+				right: 1rem;
+				text-decoration: none;
+				&::before{
+					display: inline-block;
+					margin-right: .5ch;
+					rotate: 270deg;
+					font-size: 1.2rem;
+				}
 			}
 		}
 
@@ -413,8 +470,26 @@
 			padding: 5rem 0 3.5rem 0;
 			&:not(.active){
 				top: -110vh;
-				opacity: 0;
 				pointer-events: none;
+			}
+		}
+	}
+	#breadcrumb{
+		position: fixed;
+		top: 5.5rem;
+		left: 0;
+		.breadcrumb{
+			background-color: var(--c-white);
+			color: var(--c-dark);
+			padding: .5rem 1rem .5rem 1.5rem;
+			border-radius: 0 99rem 99rem 0;
+			border: 1px solid var(--c-lite);
+			// @include shadow;
+			a,.active{
+				color: var(--c-dark);
+				&::before{
+					color: var(--c-gary);
+				}
 			}
 		}
 	}

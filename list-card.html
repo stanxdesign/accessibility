@@ -76,7 +76,13 @@
 
 	<form>
 		<main id="content" class="container-fluid px-4">
-
+			<nav id="breadcrumb" aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#"><i class="fa fa-house"></i></a></li>
+					<li class="breadcrumb-item"><a href="#">設施查詢</a></li>
+					<li class="breadcrumb-item active" aria-current="page">建物導覽</li>
+				</ol>
+			</nav>
 			<!-- === 搜尋框 ===-->
 			<div id="filterPanel">
 				<div id="filterPanelForm">
@@ -110,7 +116,48 @@
 							<option value="第三校區">
 						</datalist>
 					</div>
-					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
+					<div class="tags">
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="elevator" aria-label="電梯" tabindex="-1" aria-disabled="true">
+							<span>電梯</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+							<span>廁所</span>
+						</label>
+						<label class="tag">
+							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+							<span>停車場</span>
+						</label>
+						<a id="moreTagsFunction" class="dropdown-toggle tag"  role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false">
+							更多設施條件...
+						</a>
+						<div id="moreTagsMenu" class="dropdown-menu dropdown-menu-end" aria-labelledby="moreTagsFunction">
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+								<span>全選</span>
+							</label>
+							<hr>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+								<span>廁所</span>
+							</label>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+								<span>停車場</span>
+							</label>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
+								<span>廁所</span>
+							</label>
+							<label class="tag">
+								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
+								<span>停車場</span>
+							</label>
+						</div>
+					</div>
+					<button id="send" type="button" class="btn btn-highlight fa fa-search" aria-label="送出查詢">查詢</button>
+					<button id="clear" type="button" class="btn btn-text-lite" aria-label="清除查詢資料">清除</button>
 				</div>
 			</div>
 			<!-- === 搜尋框  結束===-->

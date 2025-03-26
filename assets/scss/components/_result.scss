@@ -16,10 +16,7 @@
 		aspect-ratio: 16 / 10;
 		overflow: hidden;
 		border-radius: .5rem;
-		box-shadow: 0 0 1rem 0 var(--c-shadow);
-		+ *{
-			// margin-bottom: 3rem;
-		}
+		@include shadow;
 	}
 	.slider-nav{
 		bottom: calc(50% - 1.5rem);
@@ -41,7 +38,7 @@
 	flex-direction: column;
 	margin-bottom: 2rem;
 	border-radius: 1rem;
-	box-shadow: 0 0 1rem 0 var(--c-shadow);
+	@include shadow;
 	overflow: hidden;
 	.result-left{
 		order: 1;
@@ -76,7 +73,6 @@
 		margin: 1rem;
 		p.fa{
 			font-family: var(--bs-body-font-family);
-			font-weight: normal;
 			display: block;
 			&::before{
 				margin-left: 0;
@@ -160,7 +156,7 @@
 		padding: 0 1ch;
 		height: 2.5rem;
 		line-height: 2.25rem;
-		margin: 1ch;
+		margin: 1ch .3ch;
 		font-weight: normal;
 		text-align: left;
 		transition: all .2s ease-in-out;
@@ -313,6 +309,48 @@
 		letter-spacing: 1px;
 		&.extra-where{
 			translate: 0 -.5ch;
+		}
+	}
+}
+
+#resultPanel + {
+	#resultPanelToggle{
+		display: none;
+		&::before{
+			content: 'none';
+		}
+	}
+}
+#resultPanel.active + {
+	#resultPanelToggle{
+		&::before{
+			content: none;
+		}
+	}
+}
+
+@include MD{
+	#resultPanel + {
+		#resultPanelToggle{
+			position: fixed;
+			background-color: var(--c-back-sub);
+			display: block;
+			border: none;
+			top: 6rem;
+			right: 1rem;
+			font-size: 2rem;
+			z-index: 3;
+			opacity: .6;
+			&::before{
+				content: '\f0c9';
+			}
+		}
+	}
+	#resultPanel.active + {
+		#resultPanelToggle{
+			&::before{
+				content: '\f00d';
+			}
 		}
 	}
 }

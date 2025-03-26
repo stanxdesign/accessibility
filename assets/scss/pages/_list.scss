@@ -2,9 +2,6 @@
 @use '../abstracts/mixins' as *;
 
 #listPage{
-	#content{
-		margin-top: 6rem;
-	}
 	#navbar-sub{
 		display: none;
 	}
@@ -18,11 +15,11 @@
 		flex-direction: row;
 		flex-wrap: wrap;
 		padding: 0;
+		border-radius: 1rem;
 		background-color: var(--c-brand);
 		color: var(--c-brand-t);
-		border-radius: 1rem;
 		border: none;
-		overflow: hidden;
+		overflow: visible;
 		#filterPanelForm{
 			order: 1;
 			flex-grow: 1;
@@ -30,7 +27,7 @@
 			flex-wrap: wrap;
 			align-items: center;
 			padding: 1rem;
-			border-radius: 0 1rem 1rem 0;
+			border-radius: 1rem;
 			background-color: var(--c-brand);
 			color: var(--c-brand-t);
 			.form-group {
@@ -43,10 +40,27 @@
 					padding: 0ch;
 				}
 			}
-			#send{
-				margin-left: auto;
+			.tags{
+				flex: 1 1 100%;
+			}
+			#send,#clear{
+				flex: 1 0 50%;
 				padding-left: 2rem;
 				padding-right: 2rem;
+			}
+		}
+		#moreTagsFunction{
+			text-decoration: none;
+			background-color: var(--c-sub);
+			border-color: var(--c-sub);
+			margin-left: 2.5rem;
+			margin-right: auto;
+			margin-bottom: 1ch;
+		}
+		#moreTagsMenu{
+			padding: .5rem;
+			hr{
+				margin: .5ch 0;
 			}
 		}
 		@include MD{
@@ -57,7 +71,6 @@
 			padding: 0;
 			background-color: var(--c-brand);
 			color: var(--c-brand-t);
-			overflow: hidden;
 			#filterPanelForm{
 				max-width: 100%;
 				order: 1;
@@ -65,12 +78,22 @@
 				flex-direction: row;
 				align-items: flex-end;
 				padding: 1rem;
-				border-radius: 0 1rem 1rem 0;
+				justify-content: space-between;
 				.form-group {
-					flex-direction: column;
-					flex: 0 1 25%;
-					align-items: start;
+					flex: 0 1 32%;
 				}
+				.tags{
+					flex: 1 1 65%;
+				}
+				#send,#clear{
+					flex: 1 0 15%;
+					padding-left: 2rem;
+					padding-right: 2rem;
+				}
+			}
+			#moreTagsFunction{
+				margin-left: auto;
+				margin-right: 0;
 			}
 		}
 	}

@@ -81,14 +81,20 @@
 		</header>
 		<!-- 頁面主體 -->
 		<main>
-
+			<nav id="breadcrumb" aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#"><i class="fa fa-house"></i></a></li>
+					<li class="breadcrumb-item"><a href="#">設施查詢</a></li>
+					<li class="breadcrumb-item active" aria-current="page">空間分析</li>
+				</ol>
+			</nav>
 			<!-- 篩選器 -->
 			<div id="filterPanel">
 				<div id="filterPanelForm">
 					<div class="form-group keyword">
-						<label for="range">範圍</label>
+						<label for="range">範圍(必填)</label>
 						<div class="input-group">
-							<input type="text" class="form-control disabledCheck" id="range" placeholder="請輸入您要搜尋的直徑距離（公尺）" tabindex="-1" aria-disabled="true">
+							<input type="text" class="form-control disabledCheck" id="range" placeholder="(必填)請輸入您要搜尋的直徑距離（公尺）" tabindex="-1" aria-disabled="true">
 							<button class="input-group-text disabledCheck" aria-label="清除輸入" tabindex="-1" aria-disabled="true" type="button"></button>
 						</div>
 					</div>
@@ -188,8 +194,9 @@
 				</div>
 
 				<div id="filterBtns">
-					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
-					<button id="moreOptionBtn" type="button" class="btn btn-text-lite" aria-label="開啟更多查詢條件">更多條件</button>
+					<button id="send" type="button" class="btn btn-highlight fa fa-search" aria-label="送出查詢">查詢</button>
+					<button id="moreOptionBtn" type="button" class="btn btn-no-color" aria-label="開啟更多查詢條件">更多條件</button>
+					<button id="clear" type="button" class="btn btn-text-lite" aria-label="清除查詢資料">清除</button>
 				</div>
 			</div>
 

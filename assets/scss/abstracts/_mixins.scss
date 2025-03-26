@@ -58,7 +58,7 @@ $dark:#3A3A3F;
 }
 
 @mixin fa-icon {font-weight: bold;font-family: "Font Awesome 6 Free";margin-right:.5ch;}
-@mixin shadow {box-shadow: 0 0 2rem var(--c-shadow);}
+@mixin shadow {box-shadow: 0 0 5px 5px var(--c-shadow);}
 
 // 配合 bootstrap 斷點 處理 RWD，以行動裝置優先
 /* RWD media breakpoints (Mobile First, aligned with Bootstrap 5.3.3) */

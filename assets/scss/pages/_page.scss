@@ -1,6 +1,11 @@
 // @use 'sass:math';
 @use '../abstracts/mixins' as *;
 
+#content{
+	margin-top: 6rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
 .tab-switch{
 	.tab-bar{
 		display: flex;

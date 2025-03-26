@@ -82,13 +82,20 @@
 
 		<!-- 頁面主體 -->
 		<main>
+			<nav id="breadcrumb" aria-label="breadcrumb">
+				<ol class="breadcrumb">
+					<li class="breadcrumb-item"><a href="#"><i class="fa fa-house"></i></a></li>
+					<li class="breadcrumb-item"><a href="#">設施查詢</a></li>
+					<li class="breadcrumb-item active" aria-current="page">快速查詢</li>
+				</ol>
+			</nav>
 
 			<!-- 篩選器 -->
 			<div id="filterPanel">
 				<div id="filterPanelForm">
 					<div class="form-group ">
-						<label for="school" required>學校</label>
-						<input class="form-control" list="school" placeholder="輸入或選擇學校" aria-label="學校選擇">
+						<label for="school" required>學校(必填)</label>
+						<input class="form-control" list="school" placeholder="必填，請輸入或選擇學校" aria-label="學校選擇">
 						<datalist id="school"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
 							<option value="國立臺灣體育運動大學">
 							<option value="中興大學">
@@ -99,8 +106,8 @@
 					</div>
 
 					<div class="form-group ">
-						<label for="area" required>校區</label>
-						<input class="form-control" list="area" placeholder="輸入或選擇校區" aria-label="選擇校區">
+						<label for="area" required>校區(必填)</label>
+						<input class="form-control" list="area" placeholder="必填，請輸入或選擇校區" aria-label="選擇校區">
 						<datalist id="area"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
 							<option value="一中校區">
 							<option value="台北校區">
@@ -203,18 +210,20 @@
 				</div>
 
 				<div id="filterBtns">
-					<button id="send" type="button" class="btn btn-highlight" aria-label="送出查詢">查詢</button>
-					<button id="moreOptionBtn" type="button" class="btn btn-text-lite" aria-label="開啟更多查詢條件">更多條件</button>
+					<button id="send" type="button" class="btn btn-highlight fa fa-search" aria-label="送出查詢">查詢</button>
+					<button id="moreOptionBtn" type="button" class="btn btn-no-color" aria-label="開啟更多查詢條件">更多條件</button>
+					<button id="clear" type="button" class="btn btn-text-lite" aria-label="清除查詢資料">清除</button>
 				</div>
 			</div>
 
 			<!-- 工具按鈕 -->
 			<div id="sidePanel">
-				<button id="openFliter" class="fa fa-bars" aria-label="打開篩選功能" type="button"></button><!-- fa fa-regular fa-square-caret-left-->
+				<button id="getGPS" class="fa fa-compass" aria-label="取得您目前地點的定位" type="button">目前位置</button>
+
 				<button id="zoomInMap" class="fa fa-compass"  aria-label="放大地圖" type="button"></button>
 				<label id="zoomSize" aria-label="目前地圖倍率：1.2倍">1.2x</label>
 				<button id="zoomOutMap" class="fa fa-compass"  aria-label="縮小地圖" type="button"></button>
-				<button class="fa fa-compass" aria-label="取得您目前地點的定位" type="button">目前位置</button>
+
 				<button id="setLayerImg"  role="button" data-bs-toggle="dropdown" aria-expanded="false" class="fa fa-layer-group" aria-label="底圖切換" type="button">設定底圖</button>
 					<div class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="setLayerImg">
 						<button id="setLayerImg01" aria-label="顯示電子地圖影像" type="button">電子地圖</button>
@@ -490,7 +499,7 @@
 
 				<!-- 所有查詢結果容器 -->
 				<section id="resultPanelCotainer">
-
+					<a name="top" tabindex="-1" aria-disabled="true"></a>
 				<!-- ===建築單位，結構相同 ===-->
 				<article class="result-all-item">
 					<!-- ===建築物標題，學校/校區/建物，分別用label包起來，可以多個label也可以單個label，距離單獨用span或a(若需超連結)包起來 === -->
@@ -616,8 +625,11 @@
 					<button type="button" class="slider-nav" aria-label="往前一頁" data-slider-nav="prev"></button>
 					<button type="button" class="slider-nav slider-nav-next" aria-label="前後一頁" data-slider-nav="next"></button>
 					<button class="nav-page">1</button><button class="nav-page">2</button><button class="nav-page">3</button><span>...</span><button class="nav-page">14</button><button class="nav-page">15</button>
+					<a class="backTop fa fa-forward-step" href="#top" aria-label="移到查詢結果最上端">top</a>
 				</nav>
 			</div>
+
+			<button id="resultPanelToggle" class="fa" type="button" aria-label="隱藏查詢結果"></button>
 
 			<div class="modal fade" id="popUpModal" tabindex="-1" aria-labelledby="item-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-gis modal-theme-card modal-theme-brand">
