@@ -163,12 +163,16 @@
 		white-space: nowrap;
 		cursor: pointer;
 		&::before{
+			display: inline-block;
 			@include fa-icon;
 		}
 		&:hover{
 			background-color: var(--c-highlight) !important;
 			color: var(--c-highlight-t) !important;
 			border: solid 1px var(--c-highlight);
+			&::before{
+				animation: shake 0.5s;
+			}
 		}
 		&:has(span){
 			position: relative;
@@ -187,6 +191,7 @@
 				text-align: center;
 				background-color: var(--c-sub);
 				color: var(--c-sub-t);
+				font-weight: bold;
 				&:empty{
 					display: none;
 				}
@@ -352,5 +357,26 @@
 				content: '\f00d';
 			}
 		}
+	}
+}
+
+#noResult{
+	padding: 2rem 1rem;
+	width: 100%;
+	text-align: center;
+	color: var(--c-front);
+	&::before{
+		content: '';
+		display: block;
+		width: 80%;
+		min-width: 10rem;
+		height: auto;
+		margin: 0 auto;
+		aspect-ratio: 3 / 2;
+		background-image: url(../images/demo_noresult.webp);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		opacity: .7;
 	}
 }

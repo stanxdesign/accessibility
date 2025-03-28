@@ -38,6 +38,7 @@ article {
 			position: relative;
 			font-size: 1.6rem;
 			padding-right: 2.5rem;
+			font-weight: bold;
 			&::after {
 				content: "\f0a9"; /* 假設使用 Font Awesome 的右箭頭 */
 				font-weight: bold;

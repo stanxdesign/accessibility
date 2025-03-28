@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.16"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.17"/>
 </head>
 
 <body id="listPage">
@@ -119,15 +119,15 @@
 					<div class="tags">
 						<label class="tag">
 							<input class="disabledCheck" type="checkbox" value="elevator" aria-label="電梯" tabindex="-1" aria-disabled="true">
-							<span>電梯</span>
+							<span class="fa fa-elevator">電梯</span>
 						</label>
 						<label class="tag">
 							<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-							<span>廁所</span>
+							<span class="fa fa-toilet">廁所</span>
 						</label>
 						<label class="tag">
 							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
-							<span>停車場</span>
+							<span class="fa fa-car">停車場</span>
 						</label>
 						<a id="moreTagsFunction" class="dropdown-toggle tag"  role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false">
 							更多設施條件...
@@ -140,19 +140,19 @@
 							<hr>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-								<span>廁所</span>
+								<span class="fa fa-toilet">廁所</span>
 							</label>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
-								<span>停車場</span>
+								<span class="fa fa-car">停車場</span>
 							</label>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-								<span>廁所</span>
+								<span class="fa fa-toilet">廁所</span>
 							</label>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
-								<span>停車場</span>
+								<span class="fa fa-car">停車場</span>
 							</label>
 						</div>
 					</div>
@@ -164,9 +164,9 @@
 
 			<!-- === 模式切換列 ===-->
 			<div id="layoutBtns">
-				<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie" aria-label="切換為圖表模式">統計圖表
+				<a id="layoutChart" href="list.html" class="btn btn-layout fa fa-chart-pie" aria-label="切換為統計圖表">統計圖表
 				</a>
-				<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building active" aria-label="切換為卡片模式"></i>建物導覽
+				<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building active" aria-label="切換為建物導覽"></i>建物導覽
 				</a>
 			</div>
 			<!-- === 模式切換列 ===-->
@@ -182,7 +182,7 @@
 
 				<!-- ===建築單位，結構相同 ===-->
 				<article class="result-all-item">
-					<h2 class="fa fa-shop">體育館</h2>
+					<h2 class="fa fa-shop">體育館<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location-arrow">距離150公尺</a></h2>
 					<!-- ===設施分類-物件群組 ===-->
 
 					<!-- 所有的設施標籤用一個 items包起來即可 -->
@@ -270,7 +270,7 @@
 
 				<!-- ===建築單位，結構相同 ===-->
 				<article class="result-all-item">
-					<h2 class="fa fa-shop">教學大樓</h2>
+					<h2 class="fa fa-shop">教學大樓<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location-arrow">距離210公尺</a></h2>
 					<!-- ===設施分類-物件群組 ===-->
 					<div class="items">
 						<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
@@ -348,7 +348,7 @@
 
 				<!-- ===建築單位，結構相同 ===-->
 				<article class="result-all-item">
-					<h2 class="fa fa-shop">圖書館</h2>
+					<h2 class="fa fa-shop">圖書館<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location-arrow">距離318公尺</a></h2>
 					<!-- ===設施分類-物件群組 ===-->
 					<div class="items">
 						<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
@@ -529,9 +529,9 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-	<script src="assets/js/main.min.js?v=v1.16" defer></script>
-	<script src="assets/js/list.min.js?v=v1.16" defer></script>
-	<script src="assets/js/gis.min.js?v=v1.16" defer></script>
+	<script src="assets/js/main.min.js?v=v1.17" defer></script>
+	<script src="assets/js/list.min.js?v=v1.17" defer></script>
+	<script src="assets/js/gis.min.js?v=v1.17" defer></script>
 
 </body>
 

@@ -123,6 +123,15 @@ input, textarea {
 	}
 }
 
+.btn-text-{
+	background-color: transparent;
+	color: inherit;
+	&:hover,&:focus,&.active{
+		background-color: var(--c-back-sub);
+		color: var(--c-front-sub);
+	}
+}
+
 .form-group{
 	width: 100%;
 	display: flex;
@@ -197,6 +206,14 @@ $icons: (
 		}
 		&:has(input:checked) {
 			border:2px solid var(--c-highlight);
+		}
+		&:hover{
+			span{
+				&::before{
+					display: inline-block;
+					animation: shake 0.5s;
+				}
+			}
 		}
 	}
 }
@@ -275,3 +292,51 @@ $icons: (
 		color: var(--c-front);
 	}
 }
+
+/* Basic Rules */
+.toggle-switch {
+	display:inline-block;
+	height:1.5rem;
+	margin:0 8px;
+	position:relative;
+	.dot {
+		position:absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right:0;
+		border-radius:99rem;
+		box-shadow:0 0 0 2px var(--c-gary);
+		width: 3rem;
+		cursor:pointer;
+		border:2px solid transparent;
+		overflow:hidden;
+		 transition:.4s;
+		 &:before {
+			position:absolute;
+			content:"";
+			width:100%;
+			height:100%;
+			background:var(--c-gary);
+			border-radius:99rem;
+			transform:translateX(-1.5rem);
+			transition:.4s;
+		}
+	}
+	input {
+		display:none;
+		&:checked{
+			+ .dot {
+				box-shadow:0 0 0 2px var(--c-gary);
+				&::before {
+					transform:translateX(1.5rem);
+					background:var(--c-highlight);
+				}
+			}
+		}
+	}
+	.toggle-label{
+		margin-left: 3.5rem;
+	}
+}
+/* Style Wired */

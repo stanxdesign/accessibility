@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.16"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.17"/>
 </head>
 
 <body id="listPage">
@@ -119,40 +119,43 @@
 						<label for="tag" required>設施</label>
 						<label class="tag">
 							<input class="disabledCheck" type="checkbox" value="elevator" aria-label="電梯" tabindex="-1" aria-disabled="true">
-							<span>電梯</span>
+							<span class="fa fa-elevator">電梯</span>
 						</label>
 						<label class="tag">
 							<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-							<span>廁所</span>
+							<span class="fa fa-toilet">廁所</span>
 						</label>
 						<label class="tag">
 							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
-							<span>停車場</span>
+							<span class="fa fa-car">停車場</span>
 						</label>
 						<a id="moreTagsFunction" class="dropdown-toggle tag"  role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false">
 							更多設施條件...
 						</a>
 						<div id="moreTagsMenu" class="dropdown-menu dropdown-menu-end" aria-labelledby="moreTagsFunction">
-							<label class="tag">
-								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-								<span>全選</span>
+
+							<label class="toggle-switch">
+								<input type="checkbox" aria-label="全選">
+								<span class="dot"></span>
+								<span class="toggle-label">全選</span>
 							</label>
+
 							<hr>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-								<span>廁所</span>
+								<span class="fa fa-toilet">廁所</span>
 							</label>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
-								<span>停車場</span>
+								<span class="fa fa-car">停車場</span>
 							</label>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-								<span>廁所</span>
+								<span class="fa fa-toilet">廁所</span>
 							</label>
 							<label class="tag">
 								<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
-								<span>停車場</span>
+								<span class="fa fa-car">停車場</span>
 							</label>
 						</div>
 					</div>
@@ -225,7 +228,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-	<script src="assets/js/main.min.js?v=v1.16" defer></script>
+	<script src="assets/js/main.min.js?v=v1.17" defer></script>
 
 </body>
 

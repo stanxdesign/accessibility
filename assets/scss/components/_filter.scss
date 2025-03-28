@@ -123,4 +123,38 @@
 			}
 		}
 	}
+	.tags{
+		.tag{
+			color: var(--c-front);
+			background-color: transparent;
+			border: solid 2px var(--c-gary);
+			border-radius:.5rem;
+			padding:.2em .5em;
+			align-self: center;
+			span{
+				&::before{
+					margin-right: .5ch;
+					opacity: .6;
+				}
+			}
+			&:has(input:checked) {
+				border: 2px solid var(--c-highlight);
+				background-color: var(--c-highlight);
+				color: var(--c-highlight-t);
+				span{
+					&::before{
+						margin-right: .5ch;
+						opacity: 1;
+						color: var(--c-highlight-t);
+					}
+				}
+			}
+			input{
+				opacity: 0;
+				scale: 0;
+				visibility: hidden;
+				display: none;
+			}
+		}
+	}
 }

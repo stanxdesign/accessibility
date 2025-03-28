@@ -51,16 +51,25 @@
 		}
 		#moreTagsFunction{
 			text-decoration: none;
-			background-color: var(--c-sub);
-			border-color: var(--c-sub);
+			background-color: var(--c-back);
+			border-color: var(--c-back);
+			color: var(--c-sub-t);
 			margin-left: 2.5rem;
 			margin-right: auto;
 			margin-bottom: 1ch;
+			opacity: .8;
+			&:hover{
+				border-color: var(--c-highlight);
+				opacity: 1;
+			}
 		}
 		#moreTagsMenu{
 			padding: .5rem;
 			hr{
 				margin: .5ch 0;
+			}
+			.tag{
+				color: var(--c-front);
 			}
 		}
 		@include MD{
@@ -94,6 +103,7 @@
 			#moreTagsFunction{
 				margin-left: auto;
 				margin-right: 0;
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -161,6 +171,33 @@
 		margin-bottom: 3rem;
 		.align-right{
 			text-align: right;
+		}
+	}
+
+	.tags{
+		.tag{
+			border-width: 2px;
+			color: var(--c-brand-t);
+			&:has(input:checked) {
+				border: 2px solid var(--c-highlight);
+				background-color: var(--c-highlight);
+				span{
+					&::before{
+						margin-right: .5ch;
+						opacity: 1;
+						color: var(--c-highlight-t);
+					}
+				}
+			}
+			input{
+				opacity: 0;
+				scale: 0;
+				visibility: hidden;
+				display: none;
+			}
+			&:hover{
+				border: 2px solid var(--c-highlight);
+			}
 		}
 	}
 }
