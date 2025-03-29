@@ -1,6 +1,6 @@
 @use '../abstracts/mixins' as *;
 
-:root{
+:root, [data-bs-theme=light]{
 	--bs-body-font-family: #{$font-family};
 	// SM以下螢幕將字級定為14px 避免行動裝置字體過大；其餘裝置配合無障礙以16px為基礎
 	--font-size: 14px;

@@ -48,6 +48,10 @@
 		border-radius: 0;
 		border: none;
 		padding: .5ch 1rem;
+		h4{
+			font-size: 1.2rem;
+			margin: 0.5ch 0;
+		}
 		.modal-dismiss{
 			background: none;
 			border: none;
@@ -121,6 +125,26 @@
 			// background-size: cover;
 			// background-position: left bottom;
 			display: none;
+		}
+	}
+}
+
+
+#popUpModalfoGPS{
+	.modal-body{
+		background-image: url(../images/demo_gps.webp);
+		background-repeat: no-repeat;
+		background-position: top center;
+		padding-left: 1rem;
+		padding-top: 14rem;
+		background-size: auto 14rem;
+	}
+	@include MD{
+		.modal-body{
+			background-position: center left;
+			padding-left: 14rem;
+			padding-top: 1rem;
+			background-size: 13rem auto;
 		}
 	}
 }

@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.17"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.18"/>
 </head>
 
 <!-- 套版判端用，圖台專用的ID NAME-->
@@ -218,7 +218,8 @@
 
 			<!-- 工具按鈕 -->
 			<div id="sidePanel">
-				<button id="getGPS" class="fa fa-compass" aria-label="取得您目前地點的定位" type="button">目前位置</button>
+				<button id="allowGPS" class="fa fa-compass" aria-label="允許裝置啟用您的定位資訊" type="button">啟用定位</button>
+				<button id="getGPS" class="fa fa-location" aria-label="將地圖移動至您目前地點的位置" type="button">目前位置</button>
 
 				<button id="zoomInMap" class="fa fa-compass"  aria-label="放大地圖" type="button"></button>
 				<label id="zoomSize" aria-label="目前地圖倍率：1.2倍">1.2x</label>
@@ -516,7 +517,7 @@
 				<div id="mapViewport"></div>
 				<footer id="footer">
 					<label id="ruler"></label>
-					<label id="source">N 126.215775 / E 68.127852</label>
+					<label id="locationOutput">N 126.215775 / E 68.127852</label>
 					<a id="source" href="#" target="_blank" title="中央繪測試中心">資料來源：中央繪測試中心</a>
 				</footer>
 			</div>
@@ -660,7 +661,7 @@
 					<button type="button" class="slider-nav" aria-label="往前一頁" data-slider-nav="prev"></button>
 					<button type="button" class="slider-nav slider-nav-next" aria-label="前後一頁" data-slider-nav="next"></button>
 					<button class="nav-page">1</button><button class="nav-page">2</button><button class="nav-page">3</button><span>...</span><button class="nav-page">14</button><button class="nav-page">15</button>
-					<a class="backTop fa fa-forward-step" href="#top" aria-label="移到查詢結果最上端">top</a>
+					<a class="backTop fa fa-forward-step" href="#top" aria-label="移到查詢結果最上端">回頂端</a>
 				</nav>
 			</div>
 
@@ -735,10 +736,36 @@
 						</article>
 
 						<!-- 底部：包含 btn-info 按鈕 -->
-						<div id="itemFooter" class="modal-footer">
-							<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往"> 帶我前往</button>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-highlight fa fa-location-arrow"  aria-label="帶我前往">帶我前往</button>
 							<!-- 可選：額外關閉按鈕 -->
-							<button type="button" class="btn btn-text-lite" data-bs-dismiss="modal">關閉</button>
+							<button type="button" class="btn btn-text-lite  fa fa-x" data-bs-dismiss="modal" aria-label="關閉視窗">關閉視窗</button>
+						</div>
+					</div>
+        </div>
+			</div>
+
+			<div class="modal fade" id="popUpModalfoGPS" tabindex="-1" aria-labelledby="item-title" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-gis modal-theme-card modal-theme-brand">
+					<div class="modal-content">
+						<!-- 標頭：包含關閉按鈕 -->
+						<div class="modal-header">
+							<h4>是否允許您的瀏覽器存取您的 GPS 定位資訊？</h4>
+						</div>
+
+						<!-- 可捲動內容區域 -->
+						<div class="modal-body item-info">
+							<p>開啟定位後，地圖能準確顯示您附近的位置，提升使用體驗。若未開啟，可能無法顯示。</p>
+							<p>建議使用支援 GPS 的設備開啟定位功能，地圖即可精確標示您的位置，操作更便利。</p>
+							<p>若使用固網或無 GPS 的裝置，定位可能受限，效果不佳，還請見諒。</p>
+							<p>請點選「取得授權」開啟瀏覽器的「定位要求視窗」</p>
+							<p>您隨時可以從瀏覽器的設定中，停止本網站的定位授權。</p>
+						</div>
+
+						<!-- 底部：包含 btn-info 按鈕 -->
+						<div class="modal-footer">
+							<button id="requestLocation"  type="button" class="btn btn-highlight fa fa-compass"  aria-label="取得定位授權">取得定位授權</button>
+							<button type="button" class="btn btn-text-lite fa fa-x" data-bs-dismiss="modal" aria-label="不要定位，關閉視窗">不要定位</button>
 						</div>
 					</div>
         </div>
@@ -751,8 +778,8 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-		<script src="assets/js/main.min.js?v=v1.17" defer></script>
-		<script src="assets/js/gis.min.js?v=v1.17" defer></script>
+		<script src="assets/js/main.min.js?v=v1.18" defer></script>
+		<script src="assets/js/gis.min.js?v=v1.18" defer></script>
 
 	</body>
 

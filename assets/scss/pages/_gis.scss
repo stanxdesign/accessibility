@@ -150,30 +150,29 @@
 				&::before{
 					font-size: 2rem;
 				}
-				&#getGPS{
-					margin-bottom: 2rem;
+				&#getGPS, &#allowGPS{
 					border-radius: 1rem;
 					transition: all .3s ease-in-out;
 					&::before{
 						translate: 0 0;
 						font-size: 2rem;
 					}
-				}
-				&#getGPS:not(:hover){
-					font-size: 0;
-					border-radius: 99rem;
-					padding: 0;
-					border: none;
-					&::before{
-						translate: 0 18%;
-						font-size: 2.5rem;
+					&:not(:hover){
+						font-size: 0;
+						border-radius: 99rem;
+						padding: 0;
+						border: none;
+						&::before{
+							translate: 0 18%;
+							font-size: 2.5rem;
+						}
 					}
 				}
 				&#zoomOutMap{
 					border-radius: 99rem;
 					padding: 0;
 					border: none;
-					margin-bottom: 2rem;
+					margin-bottom: 1.5rem;
 					&::before{
 						font-size: 2.5rem;
 					}
@@ -182,6 +181,7 @@
 					border-radius: 99rem;
 					padding: 0;
 					border: none;;
+					margin-top: 1.5rem;
 					&::before{
 						font-size: 2.5rem;
 					}
@@ -316,9 +316,10 @@
 		}
 
 		nav{
+			position: relative;
 			width: calc(100% - 1rem);
-			margin: 0 auto;
-			padding: 1ch 6rem 1ch 1rem;
+			margin: .5rem  auto 0 1rem;
+			padding: .5rem 1rem 1ch 1rem;
 			display: flex;
 			align-items: center;
 			justify-content: right;
@@ -340,17 +341,6 @@
 				border: none;
 				background: none;
 				color: var(--c-front-brand);
-			}
-			.backTop{
-				position: absolute;
-				right: 1rem;
-				text-decoration: none;
-				&::before{
-					display: inline-block;
-					margin-right: .5ch;
-					rotate: 270deg;
-					font-size: 1.2rem;
-				}
 			}
 		}
 
@@ -467,7 +457,7 @@
 			top: calc(100dvh - 8rem);
 		}
 		@include MD{
-			padding: 5rem 0 3.5rem 0;
+			padding: 2rem 0 3.5rem 0;
 			&:not(.active){
 				top: -110vh;
 				pointer-events: none;
