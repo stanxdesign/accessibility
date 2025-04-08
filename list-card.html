@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.18"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=1.19"/>
 </head>
 
 <body id="listPage">
@@ -133,9 +133,10 @@
 							更多設施條件...
 						</a>
 						<div id="moreTagsMenu" class="dropdown-menu dropdown-menu-end" aria-labelledby="moreTagsFunction">
-							<label class="tag">
-								<input class="disabledCheck" type="checkbox" value="toilet" aria-label="廁所" tabindex="-1" aria-disabled="true">
-								<span>全選</span>
+							<label class="toggle-switch">
+								<input type="checkbox" aria-label="全選">
+								<span class="dot"></span>
+								<span class="toggle-label">全選</span>
 							</label>
 							<hr>
 							<label class="tag">
@@ -262,8 +263,11 @@
 						</div>
 						<div class="level" data-level="2F">
 							<h4 class="extra-where"><label>2 樓</label><label>圖書室</label></h4>
-							<!-- ===樓層設施--物件群組 ===-->
 							<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+						</div>
+						<div class="level" data-level="3F">
+							<h4 class="extra-where"><label>3 樓</label><label>天台</label></h4>
+							<div class="items"></div>
 						</div>
 					</div>
 				</article>
@@ -340,7 +344,6 @@
 						</div>
 						<div class="level" data-level="2F">
 							<h4 class="extra-where"><label>2 樓</label><label>圖書室</label></h4>
-							<!-- ===樓層設施--物件群組 ===-->
 							<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
 						</div>
 					</div>
@@ -533,9 +536,9 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-	<script src="assets/js/main.min.js?v=v1.18" defer></script>
-	<script src="assets/js/list.min.js?v=v1.18" defer></script>
-	<script src="assets/js/gis.min.js?v=v1.18" defer></script>
+	<script src="assets/js/main.min.js?v=1.19" defer></script>
+	<script src="assets/js/list.min.js?v=1.19" defer></script>
+	<script src="assets/js/gis.min.js?v=1.19" defer></script>
 
 </body>
 

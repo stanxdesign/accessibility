@@ -14,7 +14,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=v1.18"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=1.19"/>
 </head>
 
 <!-- 套版判端用，圖台專用的ID NAME-->
@@ -496,123 +496,154 @@
 
 					<!-- ===建築單位，結構相同 ===-->
 					<article class="result-all-item">
-						<!-- ===建築物標題，學校/校區/建物，分別用label包起來，可以多個label也可以單個label，距離單獨用span或a(若需超連結)包起來 === -->
-						<h2 class="fa fa-shop"><label>國立臺中教育大學</label><label>校本部校區</label><label>體育館</label><span>距離100公尺</span></h2>
+						<div>
+							<!-- 圖台查詢專屬：次要資訊欄與顯示範圍切換 -->
+							<p><label>國立臺中教育大學</label><label>校本部校區</label><span>距離100公尺</span></p>
 
-						<!-- ===設施分類-物件群組 ===-->
-						<!-- 所有的設施標籤用一個 items包起來即可 -->
-						<div class="items">
-							<!-- 這是分類結構說明 label 設定 fa class產生圖示，中間包 span 呈現數量 -->
-							<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
-							<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label>
-							<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
-							<ul class="dropdown-menu">
-								<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
-							<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
-							</ul>
-						</div>
-						<!-- ===左側區域，和總覽不同，整個左側區域刪除===-->
-						<!-- ===右側區域 ===-->
-						<div class="result-right levels">
-							<h3>樓層設施</h3>
-							<!-- ===樓層 ===-->
-							<div class="level" data-level="外">
-								<h4 class="extra-where"><label>室外</label><label>走廊</label></h4>
+							<label class="toggle-switch">
+								<input type="checkbox" aria-label="顯示範圍">
+								<span class="dot"></span>
+								<span class="toggle-label">顯示範圍</span>
+							</label>
 
-								<!-- 所有的設施標籤用一個 items包起來即可 -->
-								<div class="items">
-									<!-- 這是分類結構說明 button 設定 fa class產生圖示，中間不需要包 span -->
-									<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
-									<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal"	>大門口無障礙坡道</button>
-									<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">側門無障礙坡道</button>
+							<h2 class="fa fa-shop"><label>體育館</label></h2>
+
+							<!-- ===設施分類-物件群組 ===-->
+							<!-- 所有的設施標籤用一個 items包起來即可 -->
+							<div class="items">
+								<!-- 這是分類結構說明 label 設定 fa class產生圖示，中間包 span 呈現數量 -->
+								<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
+								<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label>
+								<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
+								<ul class="dropdown-menu">
+									<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
+								<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
+								</ul>
+							</div>
+							<!-- ===左側區域，和總覽不同，整個左側區域刪除===-->
+							<!-- ===右側區域 ===-->
+							<div class="result-right levels">
+								<h3>樓層設施</h3>
+								<!-- ===樓層 ===-->
+								<div class="level" data-level="外">
+									<h4 class="extra-where"><label>室外</label><label>走廊</label></h4>
+
+									<!-- 所有的設施標籤用一個 items包起來即可 -->
+									<div class="items">
+										<!-- 這是分類結構說明 button 設定 fa class產生圖示，中間不需要包 span -->
+										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+										<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal"	>大門口無障礙坡道</button>
+										<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">側門無障礙坡道</button>
+									</div>
+								</div>
+								<div class="level" data-level="1F">
+									<h4 class="extra-where"><label>1 樓</label><label>期刊室</label></h4>
+									<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+								</div>
+								<div class="level" data-level="2F">
+									<h4 class="extra-where"><label>2 樓</label><label>圖書室</label></h4>
+									<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+								</div>
+								<div class="level" data-level="3F">
+									<h4 class="extra-where"><label>3 樓</label><label>走廊</label></h4>
+									<div class="items"></div>
 								</div>
 							</div>
-							<div class="level" data-level="1F">
-								<h4 class="extra-where"><label>1 樓</label><label>期刊室</label></h4>
-								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
-							</div>
-							<div class="level" data-level="2F">
-								<h4 class="extra-where"><label>2 樓</label><label>圖書室</label></h4>
-								<!-- ===樓層設施--物件群組 ===-->
-								<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
-							</div>
 						</div>
 					</article>
 
 					<!-- ===建築單位，結構相同 ===-->
 					<article class="result-all-item">
-						<h2 class="fa fa-shop"><label>國立臺中教育大學</label><label>校本部校區</label><label>教學大樓</label><a href="#" target="_blank" title="導航前往國立臺中教育大學，校本部校區，教學大樓">距離120公尺</a></h2>
-						<!-- ===設施分類-物件群組 ===-->
-						<div class="items">
-							<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
-							<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label>
-							<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
-							<ul class="dropdown-menu">
-								<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
-							<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
-							</ul>
-						</div>
-						<!-- ===右側區域 ===-->
-						<div class="result-right levels">
-							<h3>樓層設施</h3>
-							<!-- ===樓層 ===-->
-							<div class="level" data-level="外">
-								<h4 class="extra-where"><label>室外</label><label>走廊</label></h4>
-								<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+						<p><label>國立臺中教育大學</label><label>校本部校區</label><a href="#" target="_blank" title="導航前往國立臺中教育大學，校本部校區，教學大樓">距離120公尺</a></p>
+						<label class="toggle-switch">
+							<input type="checkbox" aria-label="顯示範圍">
+							<span class="dot"></span>
+							<span class="toggle-label">顯示範圍</span>
+						</label>
+						<div>
+							<h2 class="fa fa-shop"><label>教學大樓</label></h2>
+							<div class="items">
+								<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
+								<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label>
+								<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
+								<ul class="dropdown-menu">
+									<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
+								<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
+								</ul>
 							</div>
-							<div class="level" data-level="1F">
-								<h4 class="extra-where"><label>1 樓</label><label>期刊室</label></h4>
-								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
-							</div>
-							<div class="level" data-level="2F">
-								<h4 class="extra-where"><label>2 樓</label><label>圖書室</label></h4>
-								<!-- ===樓層設施--物件群組 ===-->
-								<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+							<div class="result-right levels">
+								<h3>樓層設施</h3>
+								<div class="level" data-level="外">
+									<h4 class="extra-where"><label>室外</label><label>走廊</label></h4>
+									<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+								</div>
+								<div class="level" data-level="B1F">
+									<h4 class="extra-where"><label>地下 1 樓</label><label>倉庫</label></h4>
+									<div class="items"></div>
+								</div>
+								<div class="level" data-level="1F">
+									<h4 class="extra-where"><label>1 樓</label><label>期刊室</label></h4>
+									<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+								</div>
+								<div class="level" data-level="2F">
+									<h4 class="extra-where"><label>2 樓</label><label>圖書室</label></h4>
+									<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+								</div>
+								<div class="level" data-level="3F">
+									<h4 class="extra-where"><label>3 樓</label><label>天台</label></h4>
+									<div class="items"></div>
+								</div>
 							</div>
 						</div>
 					</article>
 
-					<!-- ===建築單位，結構相同 ===-->
 					<article class="result-all-item">
-						<h2 class="fa fa-shop"><label>國立臺中教育大學</label><label>校本部校區</label><label>圖書館</label><a href="#" target="_blank" title="導航前往國立臺中教育大學，校本部校區，教學大樓">距離120公尺</a></h2>
-						<!-- ===設施分類-物件群組 ===-->
-						<div class="items">
-							<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
-							<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label>
-							<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
-							<ul class="dropdown-menu">
-								<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
-							<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
-							</ul>
-						</div>
-						<!-- ===右側區域 ===-->
-						<div class="result-right levels">
-							<h3>樓層設施</h3>
-							<!-- ===樓層 ===-->
-							<div class="level" data-level="3F">
-								<h4>3樓</h4>
-								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+						<p><label>國立臺中教育大學</label><label>校本部校區</label><a href="#" target="_blank" title="導航前往國立臺中教育大學，校本部校區，教學大樓">距離120公尺</a></p>
+						<label class="toggle-switch">
+							<input type="checkbox" aria-label="顯示範圍">
+							<span class="dot"></span>
+							<span class="toggle-label">顯示範圍</span>
+						</label>
+
+						<div>
+							<h2 class="fa fa-shop"><label>圖書館</label></h2>
+							<div class="items">
+								<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
+								<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label>
+								<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
+								<ul class="dropdown-menu">
+									<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
+								<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
+								</ul>
 							</div>
-							<div class="level" data-level="2F">
-								<h4>2樓</h4>
-								<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
-							</div>
-							<div class="level" data-level="1F">
-								<h4>1樓</h4>
-								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
-							</div>
-							<div class="level" data-level="B1">
-								<h4>地下一樓</h4>
-								<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button></div>
-							</div>
-							<div class="level" data-level="外">
-								<h4>室外</h4>
-								<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+							<div class="result-right levels">
+								<h3>樓層設施</h3>
+								<div class="level" data-level="3F">
+									<h4>3樓</h4>
+									<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+								</div>
+								<div class="level" data-level="2F">
+									<h4>2樓</h4>
+									<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+								</div>
+								<div class="level" data-level="1F">
+									<h4>1樓</h4>
+									<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+								</div>
+								<div class="level" data-level="B1">
+									<h4>地下一樓</h4>
+									<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button></div>
+								</div>
+								<div class="level" data-level="外">
+									<h4>室外</h4>
+									<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+								</div>
 							</div>
 						</div>
 					</article>
 
-					</section>
+				</section>
+
 				<nav class="slider-nav-visible">
 					<label for="">符合條件 共 100 筆</label>
 					<button type="button" class="slider-nav" aria-label="往前一頁" data-slider-nav="prev"></button>
@@ -624,6 +655,7 @@
 
 			<button id="resultPanelToggle" class="fa" type="button" aria-label="隱藏查詢結果"></button>
 
+			<!-- === 共用資訊 modal === -->
 			<div class="modal fade" id="popUpModal" tabindex="-1" aria-labelledby="item-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-gis modal-theme-card modal-theme-brand">
 					<div class="modal-content">
@@ -653,6 +685,7 @@
         </div>
 			</div>
 
+			<!-- === 定位授權 modal === -->
 			<div class="modal fade" id="popUpModalfoGPS" tabindex="-1" aria-labelledby="item-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-gis modal-theme-card modal-theme-brand">
 					<div class="modal-content">
@@ -667,12 +700,12 @@
 							<p>建議使用支援 GPS 的設備開啟定位功能，地圖即可精確標示您的位置，操作更便利。</p>
 							<p>若使用固網或無 GPS 的裝置，定位可能受限，效果不佳，還請見諒。</p>
 							<p>請點選「取得授權」開啟瀏覽器的「定位要求視窗」</p>
-							<p>您隨時可以從瀏覽器的設定中，停止本網站的定位授權。</p>
+							<p>由於瀏覽器對資料取用的限制，若您要取消您本網站的定位授權，請由瀏覽器的功能直接關閉設定。</p>
 						</div>
 
 						<!-- 底部：包含 btn-info 按鈕 -->
 						<div class="modal-footer">
-							<button id="requestLocation"  type="button" class="btn btn-highlight fa fa-compass"  aria-label="取得定位授權">取得定位授權</button>
+							<button id="requestLocation"  type="button" class="btn btn-highlight fa fa-compass" data-bs-dismiss="modal" aria-label="取得定位授權">取得定位授權</button>
 							<button type="button" class="btn btn-text-lite fa fa-x" data-bs-dismiss="modal" aria-label="不要定位，關閉視窗">不要定位</button>
 						</div>
 					</div>
