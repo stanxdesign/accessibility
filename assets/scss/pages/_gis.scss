@@ -422,7 +422,7 @@
 	// 共用 CLASS 本頁特殊處理 result-all-item
 	.result-all-item{
 		box-shadow: none;
-		margin: 2rem 1rem 4rem 1rem;
+		margin: 2rem 1.5rem 4rem 1.5rem;
 		border-radius: 0;
 		overflow: visible;
 		> div{
@@ -455,14 +455,21 @@
 				float: right;
 				color: var(--c-brand);
 				font-weight: bold;
+				line-height: inherit;
+				text-decoration: none;
 				&::before{
 					content: '\f601';
 					@include fa-icon;
+				}
+				&:hover{
+					color: var(--c-highlight);
 				}
 			}
 		}
 		h2{
 			width: 100%;
+			padding-left: 1rem;
+			letter-spacing: 1px;
 		}
 		.levels{
 			padding: 1rem;
@@ -473,77 +480,6 @@
 				.fa{
 					margin: .5ch;
 					padding: 0 1ch;
-				}
-			}
-		}
-	}
-	.result-all-itemX{
-		border-radius: 0;
-		margin: 1rem;
-		box-shadow: none;
-		overflow: visible;
-		> div{
-			border-radius: 1rem;
-			overflow: hidden;
-			@include shadow;
-		}
-
-		h2{
-			width: 100%;
-			font-size: 1.2rem;
-			line-height: var(--bs-line-height);
-			@include obj-theme(brand,0);
-			max-width: 100%;
-			padding: .5rem 1rem;
-			box-shadow: none;
-			label + label{
-					&::before{
-						content: '\f0da';
-						@include fa-icon;
-						opacity: 0.8;
-					}
-			}
-			span,a{
-				display: inline-block;
-				font-size: .9rem;
-				float: right;
-				line-height: 1.75rem;
-				font-family: var(--bs-body-font-family);
-				font-weight: bold;
-				color: var(--c-highlight);
-				transition: all .3s ease-in-out;
-				&::before{
-					content: '\f124';
-					@include fa-icon;
-				}
-				&:hover{
-					color: var(--c-brand-t);
-				}
-			}
-		}
-		.items{
-			border-radius: 0 0 1rem 1rem;
-			padding: .5ch 0;
-			background-color: var(--c-main);
-			border-top: 0 none transparent;
-			border-bottom: 0 none transparent;
-			.fa{
-				margin: .5ch;
-				padding: 0 1ch;
-			}
-		}
-		.levels{
-			padding: 1rem;
-			h3{
-				display: none;
-			}
-			h4.extra-where{
-				padding: 0 .5rem;
-			}
-			.level{
-				.items{
-					background-color: transparent;
-					margin: 0;
 				}
 			}
 		}
