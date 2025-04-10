@@ -485,3 +485,26 @@
 		}
 	}
 }
+
+#getGPS{
+	width: 10rem;
+	line-height: 2.25;
+	border: none;
+	background-color: var(--c-g1);
+	color: var(--c-brand);
+	border-radius: 0 6px 6px 0;
+	&::before{
+		margin-right: .5ch;
+		color: var(--c-dark);
+		opacity: .6;
+	}
+	&.active{
+		background-color: var(--c-sub);
+		color: var(--c-sub-t);
+		&::before{
+			margin-right: .5ch;
+			opacity: 1;
+			color: var(--c-brand);
+		}
+	}
+}
