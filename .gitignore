@@ -12,9 +12,6 @@ package-lock.json
 yarn.lock
 pnpm-lock.yaml
 
-# 忽略 Sass/SCSS 編譯產生的 CSS（如果是手動編寫的 CSS，請刪除此行）
-*.css.map
-
 # 忽略環境變數與設定檔案（如果有 API 金鑰或其他機密資訊）
 .env
 .env.local

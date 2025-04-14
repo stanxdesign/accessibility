@@ -92,7 +92,7 @@ input, textarea {
 	font-weight: bold;
 	&:hover,&:focus,&.active{
 		background-color: var(--c-hover);
-		color: var(--c-highlight-t);
+		color: var(--c-hover-t);
 	}
 }
 
@@ -102,7 +102,7 @@ input, textarea {
 	font-weight: bold;
 	&:hover,&:focus,&.active{
 		background-color: var(--c-hover);
-		color: var(--c-highlight-t);
+		color: var(--c-hover-t);
 	}
 }
 
@@ -253,13 +253,13 @@ $icons: (
 		display: flex;
 		height: 2rem;
 		line-height: 2rem;
-		background-color: var(--c-sub);
-		color: var(--c-sub-t);
+		background-color: var(--c-main);
+		color: var(--c-main-t);
 		letter-spacing: 1px;
 	}
 	label:nth-child(2n-1){
 		border-radius: .5rem 0 0 .5rem;
-		@include obj-theme(main,0);
+		@include obj-theme(brand,0);
 		padding: 0 0 0 1ch;
 	}
 	label:nth-child(2n){
@@ -272,7 +272,7 @@ $icons: (
 			width: 0;
 			margin-right:0;
 			padding:0;
-			border: 1rem solid var(--c-main);
+			border: 1rem solid var(--c-brand);
 			border-top: 1rem solid transparent;
 			border-bottom: 1rem solid transparent;
 			border-right: 1ch solid transparent;
@@ -312,13 +312,13 @@ $icons: (
 		cursor:pointer;
 		border:2px solid transparent;
 		overflow:hidden;
-		 transition:.4s;
-		 &:before {
+		transition:.4s;
+		&:before {
 			position:absolute;
 			content:"";
 			width:100%;
 			height:100%;
-			background:var(--c-gary);
+			background:var(--c-brand);
 			border-radius:99rem;
 			transform:translateX(-1.5rem);
 			transition:.4s;
@@ -331,7 +331,7 @@ $icons: (
 				box-shadow:0 0 0 2px var(--c-gary);
 				&::before {
 					transform:translateX(1.5rem);
-					background:var(--c-highlight);
+					background:var(--c-hover);
 				}
 			}
 		}

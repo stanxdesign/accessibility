@@ -64,12 +64,23 @@
 			}
 		}
 		#moreTagsMenu{
+			width: 100%;
 			padding: .5rem;
+
+			margin: 0 1rem;
+			grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
 			hr{
-				margin: .5ch 0;
+				margin: 1ch 0;
+				grid-column-start: 1;
+				grid-column-end: 4;
 			}
 			.tag{
 				color: var(--c-front);
+				margin-right: auto;
+				margin-bottom: .5ch;
+			}
+			&.dropdown-menu.show{
+				display: grid;
 			}
 		}
 		@include MD{

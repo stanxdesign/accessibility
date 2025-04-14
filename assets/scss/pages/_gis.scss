@@ -1,6 +1,30 @@
 // @use 'sass:math';
 @use '../abstracts/mixins' as *;
 #pageGIS{
+	#filterPanel{
+		#getGPS{
+			width: 10rem;
+			line-height: 2.25;
+			border: none;
+			background-color: var(--c-g1);
+			color: var(--c-front-brand);
+			border-radius: 0 6px 6px 0;
+			&::before{
+				margin-right: .5ch;
+				color: var(--c-front);
+				opacity: .6;
+			}
+			&.active{
+				background-color: var(--c-brand);
+				color: var(--c-brand-t);
+				&::before{
+					margin-right: .5ch;
+					opacity: 1;
+					color: var(--c-highlight);
+				}
+			}
+		}
+	}
 	#navbar-sub{
 		display: none;
 	}
@@ -282,8 +306,8 @@
 		width: 100%;
 		padding: 0 0 5.5rem 0;
 		transition: all .5s ease-in-out;
-		background-color: rgba($color: #ECECEC, $alpha: 0.9);
 		overflow-y: scroll;
+		background-color: var(--c-back-blur);
 		backdrop-filter: blur(5px);
 		@include shadow;
 
@@ -315,7 +339,6 @@
 				color: var(--c-front-brand);
 			}
 		}
-
 		@include MD{
 			position: fixed;
 			top: 4.5rem;
@@ -436,7 +459,14 @@
 			right: 1rem;
 			.dot{
 				box-shadow: 0 0 0 1px var(--c-gary);
-				background-color: var(--c-g1);
+				background-color: var(--c-gary);
+			}
+			input {
+				&:checked{
+					+ .dot {
+						background-color: var(--c-highlight);
+					}
+				}
 			}
 		}
 		p{
@@ -444,13 +474,19 @@
 			width: 100%;
 			top: -2rem;
 			padding: 0 1rem;
-			label:not(:last-child){
-				&::after{
-					content: '>';
-					opacity: 0.5;
-					margin: 0 .5ch;
+			label{
+				&:not(:last-child){
+					&::after{
+						content: '>';
+						opacity: 0.5;
+						margin: 0 .5ch;
+					}
+				}
+				&:last-of-type{
+					color: var(--c-hover);
 				}
 			}
+			label
 			span,a,button{
 				float: right;
 				color: var(--c-brand);
@@ -482,29 +518,6 @@
 					padding: 0 1ch;
 				}
 			}
-		}
-	}
-}
-
-#getGPS{
-	width: 10rem;
-	line-height: 2.25;
-	border: none;
-	background-color: var(--c-g1);
-	color: var(--c-brand);
-	border-radius: 0 6px 6px 0;
-	&::before{
-		margin-right: .5ch;
-		color: var(--c-dark);
-		opacity: .6;
-	}
-	&.active{
-		background-color: var(--c-sub);
-		color: var(--c-sub-t);
-		&::before{
-			margin-right: .5ch;
-			opacity: 1;
-			color: var(--c-brand);
 		}
 	}
 }

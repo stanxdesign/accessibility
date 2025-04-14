@@ -33,7 +33,7 @@
 }
 .result-all-item{
 	position: relative;
-	background-color: var(--c-g1);
+	background-color: var(--c-back-sub);
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -58,9 +58,8 @@
 		font-size: 1.5rem;
 		padding: 1rem .5rem;
 		margin: 0;
-		background-color: var(--c-main);
 		letter-spacing: 1px;
-		@include gradient-bg(brand, v);
+		background-image: var(--g-brant-top);
 		color: var(--c-main-t);
 		text-align: center;
 		&::before{
@@ -89,17 +88,18 @@
 	}
 	.items{
 		background-color: transparent;
-		@include gradient-bg(brand, vr);
+		background-image: var(--g-brand-bottom);
 		border-top: 1px dotted var(--c-main);
 		border-bottom: 1px dotted var(--c-main);
 		.fa{
-			background-color: var(--c-brand);
-			color: var(--c-brand-t);
+			background-color: var(--c-highlight);
+			color: var(--c-highlight-t);
 		}
 	}
 	.levels{
 		padding: 0 1rem;
 		.items{
+			background-image: none;
 			.fa{
 				background-color: transparent;
 				color: var(--c-front);
@@ -123,7 +123,7 @@
 		.items{
 			border-top: 0 none transparent;
 			border-bottom: 0 none transparent;
-			background-color: var(--c-main);
+			background-color: var(--c-highlight);
 			order: 1;
 		}
 		h2{
@@ -161,7 +161,7 @@
 		padding: 0 1ch;
 		height: 2.5rem;
 		line-height: 2.25rem;
-		margin: 1ch .8ch;
+		margin: 1ch auto 1ch .8ch;
 		font-weight: normal;
 		text-align: left;
 		transition: all .2s ease-in-out;
@@ -172,9 +172,9 @@
 			@include fa-icon;
 		}
 		&:hover{
-			background-color: var(--c-highlight) !important;
-			color: var(--c-highlight-t) !important;
-			border: solid 1px var(--c-highlight);
+			background-color: var(--c-hover) !important;
+			color: var(--c-hover-t) !important;
+			border: solid 1px var(--c-hover-t);
 			&::before{
 				animation: shake 0.5s;
 			}
@@ -182,7 +182,6 @@
 		&:has(span){
 			position: relative;
 			background-color: var(--c-g1);
-			border: solid 1px var(--c-brand);
 			span{
 				position: absolute;
 				right: -.5rem;
@@ -209,15 +208,16 @@
 			&.active{
 				background-color: var(--c-hover);
 				border-color: transparent;
-				color: var(--c-front-brand);
+				color: var(--c-white);
 				box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
 				span{
 					background-color: var(--c-back-sub);
 					color: var(--c-front-brand);
 					scale: 0.8;
+					box-shadow: 0 0 2px 0 var(--c-shadow);
 				}
 				&::before{
-					color: var(--c-brand);
+					color: var(--c-highlight);
 				}
 			}
 		}
@@ -251,7 +251,7 @@
 			border-radius: 99rem;
 			width: 3px;
 			height: 100%;
-			background-color: var(--c-main);
+			background-color: var(--c-gary);
 		}
 		&::after{
 			position: absolute;
@@ -262,21 +262,22 @@
 			border-radius: 99rem;
 			width: 1.2rem;
 			height: 1.2rem;
-			background-color: var(--c-main);
+			background-color: var(--c-hover);
 			border: 2px solid var(--c-white);
 			box-shadow: 0 0 0 3px var(--c-brand);
 		}
 		&:hover{
 			.items{
 				border-radius: .5rem;
-				background-color: var(--c-white);
+				background-color: var(--c-sub);
 				.fa{
 					border-color: var(--c-hover);
 				}
 			}
 			&::after{
 				background-color: var(--c-highlight);
-				border-color: var(--c-front-brand);
+				border-color: var(--c-hover);
+				box-shadow: 0 0 0 3px var(--c-highlight);
 				scale: 1.2;
 			}
 			&::before{
@@ -315,7 +316,7 @@
 			border-radius: 99rem;
 			width: 3px;
 			height: 100%;
-			background-color: var(--c-main);
+			background-color: var(--c-gary);
 		}
 		@include MD{
 
