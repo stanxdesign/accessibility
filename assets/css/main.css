@@ -423,22 +423,28 @@ input, textarea {
   top: -1.25rem;
   left: 50%;
   translate: -50% 0;
-  height: 2rem;
-  line-height: 2rem;
+  width: 4rem;
+  height: 4rem;
+  line-height: 1rem;
   text-align: center;
   padding: 0 1ch;
   text-decoration: none;
-  background-color: var(--c-g1);
-  color: var(--c-front-brand);
-  border-radius: 1rem;
+  background-color: var(--c-brand);
+  color: var(--c-brand-t) !important;
+  border-radius: 99rem;
   -webkit-box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
 }
 .backTop::before {
-  display: inline-block;
+  display: block;
   rotate: 270deg;
   font-size: 1.2rem;
-  margin-right: 0.5ch;
+  margin-top: 0.5ch;
+  margin-bottom: -0.5ch;
+  height: 2rem;
+  line-height: 1.5;
+  font-weight: bold;
 }
 .backTop:hover {
   -webkit-animation: bounce 1s;
@@ -452,7 +458,7 @@ div:has(.backTop) {
   border-top: 1px solid var(--c-gary);
 }
 div:has(.backTop) .backTop {
-  background-color: var(--c-back);
+  background-color: var(--c-brand);
 }
 
 .sr-only-focusable:not(:focus),
@@ -666,6 +672,7 @@ button, a, *::after, *::before {
   padding: 0.5ch 1ch;
   -ms-flex-line-pack: center;
       align-content: center;
+  border-radius: 1rem;
 }
 #navHeader #navbarMain a:hover, #navHeader #navbarMain a:focus, #navHeader #navbarMain a.active {
   background-color: var(--c-highlight);
@@ -2353,6 +2360,7 @@ article[class^=card-] .card-cover i {
 }
 .items .dropdown-menu {
   border-radius: 1rem;
+  padding: 1rem 1.5rem 1rem 1rem;
 }
 
 .levels .items {
@@ -2692,7 +2700,7 @@ article[class^=card-] .card-cover i {
 }
 #loginPage #loginCard {
   border-radius: 1rem 1rem 0 0;
-  background-color: var(--c-g1);
+  background-color: var(--c-back-sub);
 }
 #loginPage #thirdLoginCard {
   border-radius: 0 0 1rem 1rem;
@@ -2710,20 +2718,20 @@ article[class^=card-] .card-cover i {
 }
 #loginPage #thirdLoginCard button:not(:hover, :focus), #loginPage #thirdLoginCard a:not(:hover, :focus) {
   background-color: var(--c-lite);
-  color: var(--c-front-brand);
+  color: var(--c-dark);
 }
 #loginPage #thirdLoginCard button:is(:hover, :focus), #loginPage #thirdLoginCard a:is(:hover, :focus) {
   background: var(--c-highlight);
   color: var(--c-highlight-t);
 }
 #loginPage #thirdLoginCard button:is(:hover, :focus)::before, #loginPage #thirdLoginCard a:is(:hover, :focus)::before {
-  color: var(--c-sub);
+  color: var(--c-highlight-t);
 }
 #loginPage #thirdLoginCard button::before, #loginPage #thirdLoginCard a::before {
   display: block;
   font-size: 2.5rem;
   margin: 0;
-  color: var(--c-highlight);
+  color: var(--c-hover);
 }
 #loginPage #thirdLoginCard div {
   height: auto;
@@ -2762,7 +2770,6 @@ article[class^=card-] .card-cover i {
 @media only screen and (min-width: 768px) {
   #loginPage #loginCard {
     border-radius: 1rem 0 0 1rem;
-    background-color: var(--c-g1);
   }
   #loginPage #thirdLoginCard {
     border-radius: 0 1rem 1rem 0;
@@ -3464,12 +3471,12 @@ article[class^=card-] .card-cover i {
   width: 100%;
   padding: 0.5rem;
   margin: 0 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  grid-template-columns: repeat(auto-fill, 1fr);
 }
 #listPage #filterPanel #moreTagsMenu hr {
   margin: 1ch 0;
   grid-column-start: 1;
-  grid-column-end: 4;
+  grid-column-end: 5;
 }
 #listPage #filterPanel #moreTagsMenu .tag {
   color: var(--c-front);

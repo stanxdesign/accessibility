@@ -368,21 +368,27 @@ $icons: (
 	top: -1.25rem;
 	left: 50%;
 	translate: -50% 0;
-	height: 2rem;
-	line-height: 2rem;
+	width: 4rem;
+	height: 4rem;
+	line-height: 1rem;
   text-align: center;
   padding: 0 1ch;
 	text-decoration: none;
-	background-color: var(--c-g1);
-	color: var(--c-front-brand);
-	border-radius: 1rem;
+	background-color: var(--c-brand);
+	color: var(--c-brand-t)	!important;
+	border-radius: 99rem;
 	// @include shadow;
 	box-shadow: 0 -3px 3px 0 rgba(0,0,0,0.3);
+	font-size: .9rem;
 	&::before{
-		display: inline-block;
+		display: block;
 		rotate: 270deg;
 		font-size: 1.2rem;
-		margin-right: .5ch;
+		margin-top: .5ch;
+		margin-bottom: -.5ch;
+		height: 2rem;
+		line-height: 1.5;
+		font-weight: bold;
 	}
 	&:hover{
 		animation: bounce 1s;
@@ -395,6 +401,6 @@ div:has(.backTop){
 	padding: 1rem 0;
 	border-top: 1px solid var(--c-gary);
 	.backTop{
-		background-color: var(--c-back);
+		background-color: var(--c-brand);
 	}
 }
