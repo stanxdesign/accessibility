@@ -12,7 +12,6 @@
 
 @use 'components/marker';
 @use 'components/card';
-@use 'components/slider';
 @use 'components/modal';
 @use 'components/popup';
 @use 'components/filter';
@@ -25,6 +24,7 @@
 @use 'pages/gis';
 @use 'pages/list';
 
+@use 'components/slider';
 // @use 'pages/home';
 // @use 'pages/about';
 // @use 'pages/login';

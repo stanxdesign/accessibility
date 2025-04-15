@@ -30,3 +30,30 @@ button, a, *::after, *::before{
     transform: translateX(1px); /* 向右抖動 */
   }
 }
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0); /* 初始位置 */
+  }
+  33% {
+    transform: translate(-2%, 1%) rotate(-1deg); /* 向上浮動 */
+  }
+	66% {
+    transform: translate(-2%, -2%) rotate(2deg);
+  }
+	100% {
+		transform: translate(0, 0);
+	}
+}
+
+@keyframes zoom {
+  0% {
+		transform: scale(1);
+  }
+	50% {
+		transform: scale(1.08);
+	}
+	100% {
+		transform: scale(1);
+	}
+}

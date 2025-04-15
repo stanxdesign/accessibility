@@ -96,6 +96,26 @@ input, textarea {
 	}
 }
 
+.btn-focus{
+	@include obj-theme(focus,0);
+	color: var(--c-highlight-t);
+	font-weight: bold;
+	&:hover,&:focus,&.active{
+		background-color: var(--c-hover);
+		color: var(--c-hover-t);
+	}
+}
+
+.btn-hover{
+	@include obj-theme(hover,0);
+	color: var(--c-hover-t);
+	font-weight: bold;
+	&:hover,&:focus,&.active{
+		background-color: var(--c-highlight);
+		color: var(--c-highlight-t);
+	}
+}
+
 .btn-no-color{
 	background-color: var(--c-g1);
 	color: var(--c-front-sub);
