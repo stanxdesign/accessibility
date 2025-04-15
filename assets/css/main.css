@@ -2537,6 +2537,10 @@ article[class^=card-] .card-cover i {
 .startup #slider-main .slide {
   opacity: 0;
 }
+.startup #slider-main::before {
+  opacity: 0.6;
+  background-color: var(--c-highlight);
+}
 
 #slider-main {
   position: relative;
@@ -3717,7 +3721,8 @@ article[class^=card-] .card-cover i {
 #slider-main {
   padding: 0;
   border-radius: 0;
-  overflow: visible;
+  overflow-y: visible;
+  overflow-x: hidden;
 }
 #slider-main .slide .cover {
   position: fixed;
@@ -3749,7 +3754,7 @@ article[class^=card-] .card-cover i {
 }
 #slider-main::before {
   content: "";
-  position: absolute;
+  position: fixed;
   top: 3rem;
   right: -8rem;
   width: 80%;
@@ -3768,6 +3773,8 @@ article[class^=card-] .card-cover i {
   -webkit-animation: float 8s linear infinite;
           animation: float 8s linear infinite;
   z-index: -1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 #slider-main::after {
   content: "";
