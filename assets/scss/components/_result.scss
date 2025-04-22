@@ -5,35 +5,45 @@
 	position: relative;
 	order: 1;
 	justify-self: start;
+	width: 100%;
 	height: auto;
 	max-height: 100%;
+	aspect-ratio: 16 / 10;
 	align-self: stretch;
 	opacity: 1;
 	margin-bottom: 2rem;
+	background-image: url(../images/demo_noimage.webp);
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: visible;
+	color: var(--c-brand-t);
 	.swiffy-slider {
 		width: 100%;
 		height: 100%;
 		aspect-ratio: 16 / 10;
-		overflow: hidden;
 		border-radius: .5rem;
 		@include shadow;
+		.slide{
+			aspect-ratio: 16 / 10;
+			overflow: hidden;
+		}
 	}
 	.slider-nav{
-		bottom: calc(50% - 1.5rem);
-		right: auto;
-		left: -.25rem;
+		bottom: calc(50% - 1.5rem) !important;
+		right: auto !important;
+		left: -.25rem !important;
+		background-color: var(--c-brand) !important;
 		color: var(--c-brand-t) !important;
-		background-color: var(--c-brand);
 		border-radius: 99rem;
 	}
 	.slider-nav-next{
-		left: auto;
-		right: -.25rem;
+		left: auto !important;
+		right: -.25rem !important;
 	}
 }
 .result-all-item{
 	position: relative;
-	background-color: var(--c-back-sub);
+	background-color: var(--c-main);
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: column;
@@ -41,11 +51,39 @@
 	border-radius: 1rem;
 	@include shadow;
 	overflow: hidden;
+	&::after{
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 8rem;
+		background-color: var(--c-highlight);
+		mask: url(../images/title.svg) no-repeat center;
+		mask-size: auto 100%;
+		mask-position: left top;
+		opacity: .6;
+	}
+	&::before{
+		content: '';
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 12rem;
+		background-color: var(--c-brand);
+		mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+		mask-size: auto 100%;
+		mask-position: right top;
+		opacity: .3;
+	}
 	.result-left{
+		background-color: var(--c-back-sub);
 		order: 1;
 	}
 	.result-right{
 		order: 3;
+		background-color: var(--c-back-sub);
 	}
 	.items{
 		order: 2;
@@ -59,9 +97,9 @@
 		padding: 1rem .5rem;
 		margin: 0;
 		letter-spacing: 1px;
-		background-image: var(--g-brant-top);
 		color: var(--c-main-t);
 		text-align: center;
+		z-index: 2;
 		&::before{
 			content: var(--fa);
 			margin-right: 3px;
@@ -75,7 +113,7 @@
 	}
 	.result-info{
 		margin: 1rem;
-		p.fa{
+		p[class^="fa"]{
 			font-family: var(--bs-body-font-family);
 			display: block;
 			&::before{
@@ -88,10 +126,9 @@
 	}
 	.items{
 		background-color: transparent;
-		background-image: var(--g-brand-bottom);
 		border-top: 1px dotted var(--c-main);
 		border-bottom: 1px dotted var(--c-main);
-		.fa{
+		[class^="fa"]{
 			background-color: var(--c-highlight);
 			color: var(--c-highlight-t);
 		}
@@ -100,9 +137,14 @@
 		padding: 0 1rem;
 		.items{
 			background-image: none;
-			.fa{
+			[class^="fa"]{
 				background-color: transparent;
 				color: var(--c-front);
+				&.hidden{
+					display: none;
+					visibility: hidden;
+					pointer-events: none;
+				}
 			}
 		}
 	}
@@ -123,16 +165,20 @@
 		.items{
 			border-top: 0 none transparent;
 			border-bottom: 0 none transparent;
-			background-color: var(--c-highlight);
 			order: 1;
 		}
 		h2{
 			width: 100%;
 			padding: 1rem .5rem .5rem .5rem;
+			a{
+				float: none !important;
+				position: absolute;
+				right: 1rem;
+			}
 		}
 		.result-info{
 			margin: 1rem;
-			p.fa{
+			p[class^="fa"]{
 				font-family: var(--bs-body-font-family);
 				font-weight: normal;
 				display: block;
@@ -154,19 +200,22 @@
 	background-color: var(--c-main);
 	text-align: center;
 	border: none 0px transparent;
-	.fa{
+	[class^="fa"]{
 		background-color: transparent;
 		border: solid 1px transparent;
 		border-radius: 99rem;
 		padding: 0 1ch;
 		height: 2.5rem;
 		line-height: 2.25rem;
-		margin: 1ch auto 1ch .8ch;
+		margin: .25ch auto .25ch .8ch;
 		font-weight: normal;
 		text-align: left;
 		transition: all .2s ease-in-out;
 		white-space: nowrap;
 		cursor: pointer;
+		input{
+			display: none;
+		}
 		&::before{
 			display: inline-block;
 			@include fa-icon;
@@ -204,6 +253,21 @@
 				background-color: var(--c-highlight);
 				color: var(--c-highlight-t);
 				border-color: var(--c-front-brand);
+			}
+			&:has(:checked){
+				background-color: var(--c-hover);
+				border-color: transparent;
+				color: var(--c-white);
+				box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
+				span{
+					background-color: var(--c-back-sub);
+					color: var(--c-front-brand);
+					scale: 0.8;
+					box-shadow: 0 0 2px 0 var(--c-shadow);
+				}
+				&::before{
+					color: var(--c-highlight);
+				}
 			}
 			&.active{
 				background-color: var(--c-hover);
@@ -271,7 +335,7 @@
 			.items{
 				border-radius: .5rem;
 				background-color: var(--c-sub);
-				.fa{
+				[class^="fa"]{
 					border-color: var(--c-hover);
 				}
 			}
@@ -288,9 +352,36 @@
 		}
 		&:has(.items:empty){
 			filter: grayscale(80%);
-			.items::before{
-				content: '本區域無相關設施';
-				padding: 1rem;
+			.extra-where{
+				&::after{
+					position: absolute;
+					content: '本區域無相關設施';
+					margin-left: calc(5rem + 10%);
+					font-weight: normal;
+					font-size: 1rem;
+				}
+				&:has(label:empty){
+					&::after{
+						margin-left: 5rem;
+					}
+				}
+			}
+		}
+		&:not(:has(button)){
+			filter: grayscale(80%);
+			.extra-where{
+				&::after{
+					position: absolute;
+					content: '本區域無相關設施';
+					margin-left: calc(5rem + 10%);
+					font-weight: normal;
+					font-size: 1rem;
+				}
+				&:has(label:empty){
+					&::after{
+						margin-left: 4rem;
+					}
+				}
 			}
 		}
 		@include MD{

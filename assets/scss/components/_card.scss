@@ -28,6 +28,13 @@ article {
 			a{
 				margin: 1ch;
 			}
+			p{
+				i{
+					display: block;
+					font-size: 3em;
+					margin-bottom: .5ch;
+				}
+			}
 			@include MD {
 				.card {
 					padding: 1.5rem 1.5rem 1.5rem 1.5rem;
@@ -193,6 +200,42 @@ article {
 				right: auto;
 				left: 2rem;
 			}
+		}
+	}
+	@include MD {
+		flex: 0 0 25%; // 四分之一寬
+		max-width: 25%;
+	}
+}
+
+.card-small {
+	flex: 0 0 100%; // 四分之一 一半高
+	max-width: 100%;
+	.card {
+		aspect-ratio: 2 / 1;
+		display: flex;
+		flex-direction: row;
+		.card-title{
+			padding-right: 0;
+			&::after{
+				content: '';
+			}
+		}
+	}
+	.card-body{
+		order: 2;
+		flex: 0 0 calc(100% - 5rem);
+		padding: 1rem 1rem 1rem 0;
+	}
+	.card-cover {
+		order: 1;
+		padding: 1rem;
+		i {
+			font-size: 3rem !important;
+			position: relative !important;
+			bottom: auto !important;
+			left: 0 !important;
+			right: auto !important;
 		}
 	}
 	@include MD {

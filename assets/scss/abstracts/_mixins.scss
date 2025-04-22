@@ -67,8 +67,8 @@ $XS: 0;     /* Extra small (default, no media query needed) */
 $SM: 576px; /* Small */
 $MD: 768px; /* Medium */
 $LG: 992px; /* Large */
-$XL: 1200px; /* Extra large */
-$XXL: 1400px; /* Extra extra large */
+$XL: 1440px; /* Extra large */
+$XXL: 1920px; /* Extra extra large */
 @mixin XS() {@content;}
 @mixin SM() {@media only screen and (min-width: $SM) {@content;}}
 @mixin MD() {@media only screen and (min-width: $MD) {@content;}}

@@ -61,10 +61,10 @@ input, textarea {
   background-color: var(--c-brand);
   color: var(--c-brand-t);
 }
-.btn.fa {
+.btn[class*=fa] {
   line-height: var(---bs-btn-line-height);
 }
-.btn.fa::before {
+.btn[class*=fa]::before {
   font-family: "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
@@ -337,6 +337,9 @@ input, textarea {
   color: var(--c-brand-t);
   padding: 0 0 0 1ch;
 }
+.extra-where label:nth-child(2n-1):empty {
+  background-color: transparent;
+}
 .extra-where label:nth-child(2n) {
   border-radius: 0 0.5rem 0.5rem 0;
   padding: 0 2ch 0 0;
@@ -353,6 +356,9 @@ input, textarea {
   border-bottom: 1rem solid transparent;
   border-right: 1ch solid transparent;
   opacity: 1;
+}
+.extra-where label:nth-child(2n):empty {
+  background-color: transparent;
 }
 .extra-where:not(:has(label)) {
   color: var(--c-main-t);
@@ -380,8 +386,8 @@ input, textarea {
   left: 0;
   right: 0;
   border-radius: 99rem;
-  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
-          box-shadow: 0 0 0 2px var(--c-gary);
+  -webkit-box-shadow: 0 0 0 2px var(--c-g3);
+          box-shadow: 0 0 0 2px var(--c-g3);
   width: 3rem;
   cursor: pointer;
   border: 2px solid transparent;
@@ -394,7 +400,8 @@ input, textarea {
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--c-brand);
+  background: var(--c-g3);
+  opacity: 0.6;
   border-radius: 99rem;
   -webkit-transform: translateX(-1.5rem);
           transform: translateX(-1.5rem);
@@ -405,13 +412,15 @@ input, textarea {
   display: none;
 }
 .toggle-switch input:checked + .dot {
-  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
-          box-shadow: 0 0 0 2px var(--c-gary);
+  -webkit-box-shadow: 0 0 0 2px var(--c-highlight);
+          box-shadow: 0 0 0 2px var(--c-highlight);
+  background-color: var(--c-black);
 }
 .toggle-switch input:checked + .dot::before {
+  opacity: 1;
   -webkit-transform: translateX(1.5rem);
           transform: translateX(1.5rem);
-  background: var(--c-hover);
+  background: var(--c-highlight);
 }
 .toggle-switch .toggle-label {
   margin-left: 3.5rem;
@@ -449,6 +458,27 @@ input, textarea {
 .backTop:hover {
   -webkit-animation: bounce 1s;
           animation: bounce 1s;
+}
+
+body:is([id^=list], #index) .backTop {
+  position: fixed;
+  top: auto;
+  left: auto;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 0;
+  pointer-events: none;
+}
+body:is([id^=list], #index).startup .backTop {
+  position: fixed;
+  top: auto;
+  left: auto;
+  bottom: 1rem;
+  right: 1rem;
+  opacity: 1;
+  background-color: var(--c-main);
+  color: var(--c-brand) !important;
+  pointer-events: auto;
 }
 
 div:has(.backTop) {
@@ -835,7 +865,7 @@ button, a, *::after, *::before {
   color: var(--c-white);
   background-color: var(--c-brand);
   background-image: url(../images/footer.webp);
-  background-position: top center;
+  background-position: center;
   background-size: cover;
   padding: 0.5rem 1rem;
   display: block;
@@ -1358,6 +1388,11 @@ article[class^=card-] .card-body {
 article[class^=card-] .card-body a {
   margin: 1ch;
 }
+article[class^=card-] .card-body p i {
+  display: block;
+  font-size: 3em;
+  margin-bottom: 0.5ch;
+}
 @media only screen and (min-width: 768px) {
   article[class^=card-] .card-body .card {
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
@@ -1540,6 +1575,59 @@ article[class^=card-] .card-cover i {
 }
 @media only screen and (min-width: 768px) {
   .card-quarter {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+  }
+}
+
+.card-small {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
+.card-small .card {
+  aspect-ratio: 2/1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.card-small .card .card-title {
+  padding-right: 0;
+}
+.card-small .card .card-title::after {
+  content: "";
+}
+.card-small .card-body {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(100% - 5rem);
+          flex: 0 0 calc(100% - 5rem);
+  padding: 1rem 1rem 1rem 0;
+}
+.card-small .card-cover {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  padding: 1rem;
+}
+.card-small .card-cover i {
+  font-size: 3rem !important;
+  position: relative !important;
+  bottom: auto !important;
+  left: 0 !important;
+  right: auto !important;
+}
+@media only screen and (min-width: 768px) {
+  .card-small {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 25%;
             flex: 0 0 25%;
@@ -1854,7 +1942,7 @@ article[class^=card-] .card-cover i {
   margin: 1ch 0;
   font-family: var(--bs-body-font-family);
 }
-.gispopup .extra-where.fa::before {
+.gispopup .extra-where[class^=fa]::before {
   position: relative;
   display: inline-block;
   content: var(--fa);
@@ -2033,12 +2121,12 @@ article[class^=card-] .card-cover i {
 #filterPanel.active #filterPanelMore {
   opacity: 1;
   pointer-events: all;
-  max-height: 10rem;
+  max-height: 20rem;
 }
 #filterPanel.active #moreTags {
   opacity: 1;
   pointer-events: all;
-  max-height: 10rem;
+  max-height: 20rem;
 }
 #filterPanel.active #moreOptionBtn::after {
   content: "\f00d";
@@ -2047,7 +2135,7 @@ article[class^=card-] .card-cover i {
   margin-right: 0.5ch;
 }
 #filterPanel:focus-within {
-  max-height: 50vh;
+  max-height: 100vh;
   overflow: hidden;
 }
 #filterPanel:focus-within #filterPanelForm .form-group:not(:first-child) {
@@ -2095,38 +2183,48 @@ article[class^=card-] .card-cover i {
       -ms-flex-order: 1;
           order: 1;
   justify-self: start;
+  width: 100%;
   height: auto;
   max-height: 100%;
+  aspect-ratio: 16/10;
   -ms-flex-item-align: stretch;
       align-self: stretch;
   opacity: 1;
   margin-bottom: 2rem;
+  background-image: url(../images/demo_noimage.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: visible;
+  color: var(--c-brand-t);
 }
 .result-cover .swiffy-slider {
   width: 100%;
   height: 100%;
   aspect-ratio: 16/10;
-  overflow: hidden;
   border-radius: 0.5rem;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
 }
+.result-cover .swiffy-slider .slide {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+}
 .result-cover .slider-nav {
-  bottom: calc(50% - 1.5rem);
-  right: auto;
-  left: -0.25rem;
+  bottom: calc(50% - 1.5rem) !important;
+  right: auto !important;
+  left: -0.25rem !important;
+  background-color: var(--c-brand) !important;
   color: var(--c-brand-t) !important;
-  background-color: var(--c-brand);
   border-radius: 99rem;
 }
 .result-cover .slider-nav-next {
-  left: auto;
-  right: -0.25rem;
+  left: auto !important;
+  right: -0.25rem !important;
 }
 
 .result-all-item {
   position: relative;
-  background-color: var(--c-back-sub);
+  background-color: var(--c-main);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2142,7 +2240,40 @@ article[class^=card-] .card-cover i {
           box-shadow: 0 0 5px 0 var(--c-shadow);
   overflow: hidden;
 }
+.result-all-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8rem;
+  background-color: var(--c-highlight);
+  -webkit-mask: url(../images/title.svg) no-repeat center;
+          mask: url(../images/title.svg) no-repeat center;
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+  -webkit-mask-position: left top;
+          mask-position: left top;
+  opacity: 0.6;
+}
+.result-all-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 12rem;
+  background-color: var(--c-brand);
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+          mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+  -webkit-mask-size: auto 100%;
+          mask-size: auto 100%;
+  -webkit-mask-position: right top;
+          mask-position: right top;
+  opacity: 0.3;
+}
 .result-all-item .result-left {
+  background-color: var(--c-back-sub);
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
@@ -2151,6 +2282,7 @@ article[class^=card-] .card-cover i {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+  background-color: var(--c-back-sub);
 }
 .result-all-item .items {
   -webkit-box-ordinal-group: 3;
@@ -2166,9 +2298,9 @@ article[class^=card-] .card-cover i {
   padding: 1rem 0.5rem;
   margin: 0;
   letter-spacing: 1px;
-  background-image: var(--g-brant-top);
   color: var(--c-main-t);
   text-align: center;
+  z-index: 2;
 }
 .result-all-item h2::before {
   content: var(--fa);
@@ -2185,11 +2317,11 @@ article[class^=card-] .card-cover i {
 .result-all-item .result-info {
   margin: 1rem;
 }
-.result-all-item .result-info p.fa {
+.result-all-item .result-info p[class^=fa] {
   font-family: var(--bs-body-font-family);
   display: block;
 }
-.result-all-item .result-info p.fa::before {
+.result-all-item .result-info p[class^=fa]::before {
   margin-left: 0;
   margin-right: 3px;
   color: var(--c-main);
@@ -2199,11 +2331,10 @@ article[class^=card-] .card-cover i {
 }
 .result-all-item .items {
   background-color: transparent;
-  background-image: var(--g-brand-bottom);
   border-top: 1px dotted var(--c-main);
   border-bottom: 1px dotted var(--c-main);
 }
-.result-all-item .items .fa {
+.result-all-item .items [class^=fa] {
   background-color: var(--c-highlight);
   color: var(--c-highlight-t);
 }
@@ -2213,9 +2344,14 @@ article[class^=card-] .card-cover i {
 .result-all-item .levels .items {
   background-image: none;
 }
-.result-all-item .levels .items .fa {
+.result-all-item .levels .items [class^=fa] {
   background-color: transparent;
   color: var(--c-front);
+}
+.result-all-item .levels .items [class^=fa].hidden {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
 }
 @media only screen and (min-width: 768px) {
   .result-all-item {
@@ -2246,7 +2382,6 @@ article[class^=card-] .card-cover i {
   .result-all-item .items {
     border-top: 0 none transparent;
     border-bottom: 0 none transparent;
-    background-color: var(--c-highlight);
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -2255,15 +2390,20 @@ article[class^=card-] .card-cover i {
     width: 100%;
     padding: 1rem 0.5rem 0.5rem 0.5rem;
   }
+  .result-all-item h2 a {
+    float: none !important;
+    position: absolute;
+    right: 1rem;
+  }
   .result-all-item .result-info {
     margin: 1rem;
   }
-  .result-all-item .result-info p.fa {
+  .result-all-item .result-info p[class^=fa] {
     font-family: var(--bs-body-font-family);
     font-weight: normal;
     display: block;
   }
-  .result-all-item .result-info p.fa::before {
+  .result-all-item .result-info p[class^=fa]::before {
     margin-left: 0;
     margin-right: 3px;
     color: var(--c-main);
@@ -2284,14 +2424,14 @@ article[class^=card-] .card-cover i {
   text-align: center;
   border: none 0px transparent;
 }
-.items .fa {
+.items [class^=fa] {
   background-color: transparent;
   border: solid 1px transparent;
   border-radius: 99rem;
   padding: 0 1ch;
   height: 2.5rem;
   line-height: 2.25rem;
-  margin: 1ch auto 1ch 0.8ch;
+  margin: 0.25ch auto 0.25ch 0.8ch;
   font-weight: normal;
   text-align: left;
   -webkit-transition: all 0.2s ease-in-out;
@@ -2299,26 +2439,29 @@ article[class^=card-] .card-cover i {
   white-space: nowrap;
   cursor: pointer;
 }
-.items .fa::before {
+.items [class^=fa] input {
+  display: none;
+}
+.items [class^=fa]::before {
   display: inline-block;
   font-weight: bold;
   font-family: "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
-.items .fa:hover {
+.items [class^=fa]:hover {
   background-color: var(--c-hover) !important;
   color: var(--c-hover-t) !important;
   border: solid 1px var(--c-hover-t);
 }
-.items .fa:hover::before {
+.items [class^=fa]:hover::before {
   -webkit-animation: shake 0.5s;
           animation: shake 0.5s;
 }
-.items .fa:has(span) {
+.items [class^=fa]:has(span) {
   position: relative;
   background-color: var(--c-g1);
 }
-.items .fa:has(span) span {
+.items [class^=fa]:has(span) span {
   position: absolute;
   right: -0.5rem;
   top: -0.5rem;
@@ -2333,29 +2476,46 @@ article[class^=card-] .card-cover i {
   color: var(--c-sub-t);
   font-weight: bold;
 }
-.items .fa:has(span) span:empty {
+.items [class^=fa]:has(span) span:empty {
   display: none;
 }
-.items .fa:has(span):hover {
+.items [class^=fa]:has(span):hover {
   background-color: var(--c-highlight);
   color: var(--c-highlight-t);
   border-color: var(--c-front-brand);
 }
-.items .fa:has(span).active {
+.items [class^=fa]:has(span):has(:checked) {
   background-color: var(--c-hover);
   border-color: transparent;
   color: var(--c-white);
   -webkit-box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
           box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
 }
-.items .fa:has(span).active span {
+.items [class^=fa]:has(span):has(:checked) span {
   background-color: var(--c-back-sub);
   color: var(--c-front-brand);
   scale: 0.8;
   -webkit-box-shadow: 0 0 2px 0 var(--c-shadow);
           box-shadow: 0 0 2px 0 var(--c-shadow);
 }
-.items .fa:has(span).active::before {
+.items [class^=fa]:has(span):has(:checked)::before {
+  color: var(--c-highlight);
+}
+.items [class^=fa]:has(span).active {
+  background-color: var(--c-hover);
+  border-color: transparent;
+  color: var(--c-white);
+  -webkit-box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
+          box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
+}
+.items [class^=fa]:has(span).active span {
+  background-color: var(--c-back-sub);
+  color: var(--c-front-brand);
+  scale: 0.8;
+  -webkit-box-shadow: 0 0 2px 0 var(--c-shadow);
+          box-shadow: 0 0 2px 0 var(--c-shadow);
+}
+.items [class^=fa]:has(span).active::before {
   color: var(--c-highlight);
 }
 .items .dropdown-menu {
@@ -2412,7 +2572,7 @@ article[class^=card-] .card-cover i {
   border-radius: 0.5rem;
   background-color: var(--c-sub);
 }
-.levels .level:hover .items .fa {
+.levels .level:hover .items [class^=fa] {
   border-color: var(--c-hover);
 }
 .levels .level:hover::after {
@@ -2430,9 +2590,29 @@ article[class^=card-] .card-cover i {
   -webkit-filter: grayscale(80%);
           filter: grayscale(80%);
 }
-.levels .level:has(.items:empty) .items::before {
+.levels .level:has(.items:empty) .extra-where::after {
+  position: absolute;
   content: "本區域無相關設施";
-  padding: 1rem;
+  margin-left: calc(5rem + 10%);
+  font-weight: normal;
+  font-size: 1rem;
+}
+.levels .level:has(.items:empty) .extra-where:has(label:empty)::after {
+  margin-left: 5rem;
+}
+.levels .level:not(:has(button)) {
+  -webkit-filter: grayscale(80%);
+          filter: grayscale(80%);
+}
+.levels .level:not(:has(button)) .extra-where::after {
+  position: absolute;
+  content: "本區域無相關設施";
+  margin-left: calc(5rem + 10%);
+  font-weight: normal;
+  font-size: 1rem;
+}
+.levels .level:not(:has(button)) .extra-where:has(label:empty)::after {
+  margin-left: 4rem;
 }
 @media only screen and (min-width: 768px) {
   .levels .level {
@@ -2525,6 +2705,27 @@ article[class^=card-] .card-cover i {
   background-position: center;
   background-size: cover;
   opacity: 0.7;
+}
+
+.navbar-brand {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+.navbar-brand h1 {
+  font-size: 1rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  margin: 0 1ch;
 }
 
 .section-title {
@@ -2636,6 +2837,18 @@ article[class^=card-] .card-cover i {
   margin-top: 6rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+}
+@media only screen and (min-width: 1440px) {
+  #content section {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  #content section {
+    max-width: 100%;
+    margin: 0 auto;
+  }
 }
 
 .tab-switch .tab-bar {
@@ -2814,12 +3027,14 @@ article[class^=card-] .card-cover i {
 }
 
 #pageGIS #filterPanel #getGPS {
-  width: 10rem;
+  min-width: 5rem;
   line-height: 2.25;
   border: none;
   background-color: var(--c-g1);
   color: var(--c-front-brand);
   border-radius: 0 6px 6px 0;
+  font-size: 0.8rem;
+  height: 2.25rem;
 }
 #pageGIS #filterPanel #getGPS::before {
   margin-right: 0.5ch;
@@ -2834,6 +3049,12 @@ article[class^=card-] .card-cover i {
   margin-right: 0.5ch;
   opacity: 1;
   color: var(--c-highlight);
+}
+@media only screen and (min-width: 768px) {
+  #pageGIS #filterPanel #getGPS {
+    min-width: 6.5rem;
+    font-size: 1rem;
+  }
 }
 #pageGIS #navbar-sub {
   display: none;
@@ -2892,8 +3113,10 @@ article[class^=card-] .card-cover i {
 #pageGIS #sidePanel button#zoomOutMap {
   border-radius: 99rem;
   padding: 0;
-  -webkit-box-shadow: inset 3px 3px 0.75rem 0 rgba(0, 0, 0, 0.3);
-          box-shadow: inset 3px 3px 0.75rem 0 rgba(0, 0, 0, 0.3);
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none 0 transparent;
 }
 #pageGIS #sidePanel button#zoomOutMap::before {
   content: "\f010";
@@ -2902,8 +3125,10 @@ article[class^=card-] .card-cover i {
   border-radius: 99rem;
   padding: 0;
   border: none;
-  -webkit-box-shadow: inset 3px 3px 0.75rem 0 rgba(0, 0, 0, 0.3);
-          box-shadow: inset 3px 3px 0.75rem 0 rgba(0, 0, 0, 0.3);
+  background: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none 0 transparent;
 }
 #pageGIS #sidePanel button#zoomInMap::before {
   content: "\f00e";
@@ -3073,6 +3298,9 @@ article[class^=card-] .card-cover i {
   #pageGIS #sidePanel button#openFliter::before {
     font-size: 1.5rem;
   }
+  #pageGIS #sidePanel button:hover {
+    color: var(--c-hover);
+  }
   #pageGIS #sidePanel #zoomSize {
     width: 100%;
     padding: 5rem 2px;
@@ -3160,11 +3388,11 @@ article[class^=card-] .card-cover i {
 }
 #pageGIS #resultPanel {
   position: fixed;
-  top: 4.5rem;
+  top: 1.5rem;
   right: 0;
-  height: calc(100dvh - 5.5rem);
+  height: calc(100dvh - 2.5rem);
   width: 100%;
-  padding: 0 0 5.5rem 0;
+  padding: 0 0 7.5rem 0;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   overflow-y: scroll;
@@ -3309,7 +3537,7 @@ article[class^=card-] .card-cover i {
 #pageGIS .result-all-item {
   -webkit-box-shadow: none;
           box-shadow: none;
-  margin: 2rem 1.5rem 4rem 1.5rem;
+  margin: 7rem 1.5rem 4rem 1.5rem;
   border-radius: 0;
   overflow: visible;
 }
@@ -3321,8 +3549,8 @@ article[class^=card-] .card-cover i {
 }
 #pageGIS .result-all-item .toggle-switch {
   position: absolute;
-  top: 0.75rem;
-  right: 1rem;
+  top: -2rem;
+  right: 0;
 }
 #pageGIS .result-all-item .toggle-switch .dot {
   -webkit-box-shadow: 0 0 0 1px var(--c-gary);
@@ -3335,7 +3563,7 @@ article[class^=card-] .card-cover i {
 #pageGIS .result-all-item p {
   position: absolute;
   width: 100%;
-  top: -2rem;
+  top: -4rem;
   padding: 0 1rem;
 }
 #pageGIS .result-all-item p label:not(:last-child)::after {
@@ -3362,6 +3590,10 @@ article[class^=card-] .card-cover i {
 #pageGIS .result-all-item p label span:hover, #pageGIS .result-all-item p a:hover, #pageGIS .result-all-item p button:hover {
   color: var(--c-highlight);
 }
+#pageGIS .result-all-item p a {
+  margin-top: 0.5rem;
+  float: none !important;
+}
 #pageGIS .result-all-item h2 {
   width: 100%;
   padding-left: 1rem;
@@ -3373,11 +3605,54 @@ article[class^=card-] .card-cover i {
 #pageGIS .result-all-item .levels h3 {
   display: none;
 }
-#pageGIS .result-all-item .levels .items .fa {
+#pageGIS .result-all-item .levels .items [class^=fa] {
   margin: 0.5ch;
   padding: 0 1ch;
 }
+@media only screen and (min-width: 576px) {
+  #pageGIS .result-all-item {
+    margin: 2rem 1.5rem 4rem 1.5rem;
+  }
+  #pageGIS .result-all-item .toggle-switch {
+    top: 0.75rem;
+    left: auto;
+    right: 1rem;
+  }
+  #pageGIS .result-all-item p a {
+    float: right;
+  }
+}
 
+#listPage .result-area {
+  -webkit-column-count: 1;
+     -moz-column-count: 1;
+          column-count: 1;
+}
+#listPage::before {
+  content: "";
+  position: fixed;
+  top: 6rem;
+  right: -8rem;
+  width: 80%;
+  height: 80%;
+  opacity: 0.3;
+  background-color: var(--c-highlight);
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+  -webkit-mask-size: 100%;
+          mask-size: 100%;
+  -webkit-mask-image: url(../images/curve.svg);
+          mask-image: url(../images/curve.svg);
+  mask-mode: alpha;
+  scale: 1.15 1.1;
+  -webkit-animation: float 8s linear infinite;
+          animation: float 8s linear infinite;
+  z-index: -1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
 #listPage #navbar-sub {
   display: none;
 }
@@ -3452,15 +3727,17 @@ article[class^=card-] .card-cover i {
           flex: 1 0 50%;
   padding-left: 2rem;
   padding-right: 2rem;
+  height: 2rem;
+  line-height: 1.25;
 }
 #listPage #filterPanel #moreTagsFunction {
   text-decoration: none;
   background-color: var(--c-back);
   border-color: var(--c-back);
   color: var(--c-sub-t);
-  margin-left: 2.5rem;
+  margin-left: 0;
   margin-right: auto;
-  margin-bottom: 1ch;
+  margin-bottom: 0;
   opacity: 0.8;
 }
 #listPage #filterPanel #moreTagsFunction:hover {
@@ -3469,8 +3746,8 @@ article[class^=card-] .card-cover i {
 }
 #listPage #filterPanel #moreTagsMenu {
   width: 100%;
-  padding: 0.5rem;
-  margin: 0 1rem;
+  padding: 0.5rem 0;
+  margin: 0;
   grid-template-columns: repeat(auto-fill, 1fr);
 }
 #listPage #filterPanel #moreTagsMenu hr {
@@ -3479,7 +3756,6 @@ article[class^=card-] .card-cover i {
   grid-column-end: 5;
 }
 #listPage #filterPanel #moreTagsMenu .tag {
-  color: var(--c-front);
   margin-right: auto;
   margin-bottom: 0.5ch;
 }
@@ -3499,6 +3775,12 @@ article[class^=card-] .card-cover i {
     padding: 0;
     background-color: var(--c-brand);
     color: var(--c-brand-t);
+  }
+  #listPage #filterPanel #moreTagsMenu {
+    width: 100%;
+    padding: 0.5rem 0;
+    margin: 0;
+    grid-template-columns: repeat(auto-fill, 1fr);
   }
   #listPage #filterPanel #filterPanelForm {
     max-width: 100%;
@@ -3534,8 +3816,11 @@ article[class^=card-] .card-cover i {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 15%;
             flex: 1 0 15%;
+    margin-top: 0.25rem;
     padding-left: 2rem;
     padding-right: 2rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
   }
   #listPage #filterPanel #moreTagsFunction {
     margin-left: auto;
@@ -3557,7 +3842,7 @@ article[class^=card-] .card-cover i {
   padding: 0.5rem;
   margin-bottom: 2rem;
 }
-#listPage #layoutBtns a {
+#listPage #layoutBtns a, #listPage #layoutBtns button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3570,29 +3855,30 @@ article[class^=card-] .card-cover i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  border-radius: 0;
 }
-#listPage #layoutBtns a:first-child {
+#listPage #layoutBtns a:first-child, #listPage #layoutBtns button:first-child {
   border-radius: 1rem 0 0 1rem;
 }
-#listPage #layoutBtns a:last-child {
+#listPage #layoutBtns a:last-child, #listPage #layoutBtns button:last-child {
   border-radius: 0 1rem 1rem 0;
 }
-#listPage #layoutBtns a::before {
+#listPage #layoutBtns a::before, #listPage #layoutBtns button::before {
   font-size: 1rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   color: var(--c-main);
 }
-#listPage #layoutBtns a.active {
+#listPage #layoutBtns a.active, #listPage #layoutBtns button.active {
   background-color: var(--c-highlight);
   color: var(--c-highlight-t);
 }
-#listPage #layoutBtns a.active::before {
+#listPage #layoutBtns a.active::before, #listPage #layoutBtns button.active::before {
   font-size: 1.5rem;
   color: var(--c-brand);
   rotate: 360deg;
 }
-#listPage #layoutBtns a:hover::before {
+#listPage #layoutBtns a:hover::before, #listPage #layoutBtns button:hover::before {
   font-size: 1.5rem;
   color: var(--c-brand);
   rotate: 360deg;
@@ -3611,11 +3897,55 @@ article[class^=card-] .card-cover i {
   margin-bottom: 3rem;
 }
 #listPage .school-info {
+  position: relative;
   clear: both;
   margin-bottom: 3rem;
+  padding-left: 0;
+  padding-right: 4rem;
 }
 #listPage .school-info .align-right {
   text-align: right;
+}
+#listPage .school-info .btn-takeme {
+  position: absolute;
+  left: auto;
+  right: 0;
+  top: 50%;
+  translate: 0 -50%;
+  width: 3rem;
+  min-height: 3rem;
+  padding-top: 3rem;
+  text-align: center;
+}
+#listPage .school-info .btn-takeme::before {
+  top: 0;
+  left: 0;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--c-hover);
+  -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 80 80" viewBox="0 0 80 80"><path d="M37.8 27.6c-4.3 4.6-7.1 10.2-8.1 16.3-.9-2.2-2.3-4.1-4-5.8L12.2 24.6l11.3-11.3L37 26.8l.8.8z"/><path d="m71 9.6-31.8 5.1 7.7 6.6-7 7c-5.6 5.6-8.7 13-8.7 20.9v21.4h16V49.3c0-3.6 1.4-7 4-9.6l6.5-6.5 4.8 6.9L71 9.6z"/></svg>');
+          mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 80 80" viewBox="0 0 80 80"><path d="M37.8 27.6c-4.3 4.6-7.1 10.2-8.1 16.3-.9-2.2-2.3-4.1-4-5.8L12.2 24.6l11.3-11.3L37 26.8l.8.8z"/><path d="m71 9.6-31.8 5.1 7.7 6.6-7 7c-5.6 5.6-8.7 13-8.7 20.9v21.4h16V49.3c0-3.6 1.4-7 4-9.6l6.5-6.5 4.8 6.9L71 9.6z"/></svg>');
+  -webkit-mask-position: center;
+          mask-position: center;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
+}
+#listPage .school-info .btn-takeme:hover::before {
+  background-color: var(--c-brand);
+}
+@media only screen and (min-width: 768px) {
+  #listPage .school-info {
+    padding-left: 4rem;
+    padding-right: 0;
+  }
+  #listPage .school-info .btn-takeme {
+    left: 0;
+    right: auto;
+  }
 }
 #listPage .tags .tag {
   border-width: 2px;
@@ -3638,6 +3968,76 @@ article[class^=card-] .card-cover i {
 }
 #listPage .tags .tag:hover {
   border: 2px solid var(--c-highlight);
+}
+@media only screen and (min-width: 1440px) {
+  #listPage .result-area {
+    -webkit-column-count: 1;
+       -moz-column-count: 1;
+            column-count: 1;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  #listPage {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  #listPage #content .result-area {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+  #listPage #content .result-area header {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    -webkit-column-span: all;
+       -moz-column-span: all;
+            column-span: all;
+    -webkit-column-break-inside: avoid;
+       -moz-column-break-inside: avoid;
+            break-inside: avoid;
+  }
+  #listPage #content .result-all-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 2rem);
+            flex: 0 0 calc(50% - 2rem);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .twoColumn#listPage #content .result-area {
+    min-width: 100%;
+    max-width: unset;
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+    -webkit-column-gap: 2rem;
+       -moz-column-gap: 2rem;
+            column-gap: 2rem;
+  }
+  .twoColumn#listPage #content .result-area header {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    -webkit-column-span: all;
+       -moz-column-span: all;
+            column-span: all;
+    -webkit-column-break-inside: avoid;
+       -moz-column-break-inside: avoid;
+            break-inside: avoid;
+  }
+  .twoColumn#listPage #content .result-all-item {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 2rem);
+            flex: 0 0 calc(50% - 2rem);
+  }
 }
 
 .swiffy-slider {
@@ -3754,8 +4154,8 @@ article[class^=card-] .card-cover i {
      object-fit: cover;
   -o-object-position: left bottom;
      object-position: left bottom;
-  -webkit-animation: zoom 12s ease-in-out;
-          animation: zoom 12s ease-in-out;
+  -webkit-animation: zoom 12s ease-in-out infinite;
+          animation: zoom 12s ease-in-out infinite;
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
@@ -3807,8 +4207,8 @@ article[class^=card-] .card-cover i {
   opacity: 1;
 }
 #slider-main .slide-visible .cover img {
-  -webkit-animation: zoom 12s ease-in-out;
-          animation: zoom 12s ease-in-out;
+  -webkit-animation: zoom 12s ease-in-out infinite;
+          animation: zoom 12s ease-in-out infinite;
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }

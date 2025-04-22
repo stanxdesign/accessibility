@@ -86,12 +86,12 @@
 		#filterPanelMore{
 			opacity: 1;
 			pointer-events: all;
-			max-height: 10rem;
+			max-height: 20rem;
 		}
 		#moreTags{
 			opacity: 1;
 			pointer-events: all;
-			max-height: 10rem;
+			max-height: 20rem;
 		}
 		#moreOptionBtn{
 			&::after{
@@ -101,7 +101,7 @@
 		}
 	}
 	&:focus-within{
-		max-height: 50vh;
+		max-height: 100vh;
 		overflow: hidden;
 		#filterPanelForm{
 			.form-group:not(:first-child){

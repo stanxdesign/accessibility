@@ -3,12 +3,14 @@
 #pageGIS{
 	#filterPanel{
 		#getGPS{
-			width: 10rem;
+			min-width: 5rem;
 			line-height: 2.25;
 			border: none;
 			background-color: var(--c-g1);
 			color: var(--c-front-brand);
 			border-radius: 0 6px 6px 0;
+			font-size: .8rem;
+			height: 2.25rem;
 			&::before{
 				margin-right: .5ch;
 				color: var(--c-front);
@@ -22,6 +24,12 @@
 					opacity: 1;
 					color: var(--c-highlight);
 				}
+			}
+		}
+		@include MD{
+			#getGPS{
+				min-width: 6.5rem;
+				font-size: 1rem;
 			}
 		}
 	}
@@ -63,7 +71,9 @@
 			&#zoomOutMap{
 				border-radius: 99rem;
 				padding: 0;
-				box-shadow: inset 3px 3px .75rem 0 rgba($color: #000000, $alpha: 0.3);
+				background: none;
+				box-shadow: none;
+				border: none 0 transparent;
 				&::before{
 					content: '\f010';
 				}
@@ -72,7 +82,9 @@
 				border-radius: 99rem;
 				padding: 0;
 				border: none;
-				box-shadow: inset 3px 3px .75rem 0 rgba($color: #000000, $alpha: 0.3);
+				background: none;
+				box-shadow: none;
+				border: none 0 transparent;
 				&::before{
 					content: '\f00e';
 				}
@@ -219,6 +231,9 @@
 						font-size: 1.5rem;
 					}
 				}
+				&:hover{
+					color: var(--c-hover);
+				}
 			}
 			#zoomSize{
 				width: 100%;
@@ -300,11 +315,11 @@
 
 	#resultPanel{
 		position: fixed;
-		top: 4.5rem;
+		top: 1.5rem;
 		right:0;
-		height: calc(100dvh - 5.5rem);
+		height: calc(100dvh - 2.5rem);
 		width: 100%;
-		padding: 0 0 5.5rem 0;
+		padding: 0 0 7.5rem 0;
 		transition: all .5s ease-in-out;
 		overflow-y: scroll;
 		background-color: var(--c-back-blur);
@@ -445,7 +460,7 @@
 	// 共用 CLASS 本頁特殊處理 result-all-item
 	.result-all-item{
 		box-shadow: none;
-		margin: 2rem 1.5rem 4rem 1.5rem;
+		margin: 7rem 1.5rem 4rem 1.5rem;
 		border-radius: 0;
 		overflow: visible;
 		> div{
@@ -455,8 +470,8 @@
 		}
 		.toggle-switch{
 			position: absolute;
-			top: .75rem;
-			right: 1rem;
+			top: -2rem;
+			right: 0;
 			.dot{
 				box-shadow: 0 0 0 1px var(--c-gary);
 				background-color: var(--c-gary);
@@ -472,7 +487,7 @@
 		p{
 			position: absolute;
 			width: 100%;
-			top: -2rem;
+			top: -4rem;
 			padding: 0 1rem;
 			label{
 				&:not(:last-child){
@@ -501,6 +516,10 @@
 					color: var(--c-highlight);
 				}
 			}
+			a{
+				margin-top: .5rem;
+				float: none !important;
+			}
 		}
 		h2{
 			width: 100%;
@@ -513,9 +532,22 @@
 				display: none;
 			}
 			.items{
-				.fa{
+				[class^="fa"]{
 					margin: .5ch;
 					padding: 0 1ch;
+				}
+			}
+		}
+		@include SM{
+			margin: 2rem 1.5rem 4rem 1.5rem;
+			.toggle-switch {
+				top: .75rem;
+				left: auto;
+				right: 1rem;
+			}
+			p{
+				a{
+					float: right;
 				}
 			}
 		}

@@ -129,10 +129,10 @@
 							<input class="disabledCheck" type="checkbox" value="parking-car" aria-label="汽車停車場" tabindex="-1" aria-disabled="true">
 							<span class="fa fa-car">停車場</span>
 						</label>
-						<a id="moreTagsFunction" class="dropdown-toggle tag"  role="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false">
+						<a id="moreTagsFunction" class="dropdown-toggle tag"  role="button" data-bs-toggle="collapse" data-bs-target="#moreTagsMenu" aria-expanded="false" aria-controls="更多設施條件">
 							更多設施條件...
 						</a>
-						<div id="moreTagsMenu" class="dropdown-menu" aria-labelledby="moreTagsFunction">
+						<div id="moreTagsMenu" class="collapse" aria-labelledby="moreTagsFunction">
 							<label class="toggle-switch">
 								<input type="checkbox" aria-label="全選">
 								<span class="dot"></span>
@@ -205,6 +205,8 @@
 				</a>
 				<a id="layoutCard" href="list-card.html" class="btn btn-layout fa fa-building active" aria-label="切換為建物導覽"></i>建物導覽
 				</a>
+				<button id="layoutCardTwo" type="button" class="btn btn-layout fa fa-building" aria-label="切換為建物導覽 兩欄式"></i>建物導覽 兩欄式
+				</button>
 			</div>
 			<!-- === 模式切換列 ===-->
 
@@ -213,8 +215,9 @@
 				<!-- === 學校及校區 ===-->
 				<header>
 					<h1 class="school-title"><label>國立臺中教育大學</label><label>校本部校區</label></h1>
-					<p class="school-info">簡稱中教大、NTCU，是臺灣國立大學系統與臺灣教育大學系統系統成員校，臺中市西區一所以教育為核心的專業聚焦型特色大學。<br>
+					<p class="school-info"><a href="#" class="btn-takeme" title="路線" target="_blank">路線</a>簡稱中教大、NTCU，是臺灣國立大學系統與臺灣教育大學系統系統成員校，臺中市西區一所以教育為核心的專業聚焦型特色大學。<br>
 						臺灣臺中市西區民生路140號</p>
+
 				</header>
 
 				<!-- ===建築單位，結構相同 ===-->
@@ -224,13 +227,69 @@
 
 					<!-- 所有的設施標籤用一個 items包起來即可 -->
 					<div class="items">
-						<!-- 這是分類結構說明 label 設定 fa class產生圖示，中間包 span 呈現數量 -->
-						<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
-						<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label><label class="fa fa-door-open" tabindex="0">出入口<span>23</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>6</span></label>
+						<!-- label 設定 fa class產生圖示，中間包 span 呈現數量 clsss 與data-type 需有 {filter-類別} 作為篩選運算使用-->
+						<!-- radio 的 name 需帶本建築物的 KEY ID 才可以讓 radio 整組運作-->
+						<label class="fa fa-check-double filter-all" data-type="filter-all" tabindex="0">
+							<input type="radio" value="all" name="id0001" aria-label="廁所" tabindex="-1" aria-disabled="true" checked="ture">
+							全部
+							<span>18</span>
+						</label>
+
+						<label class="fa fa-elevator filter-toilet" data-type="filter-toilet" tabindex="0">
+							<input type="radio" value="toilet" name="id0001" aria-label="廁所" tabindex="-1" aria-disabled="true">
+							廁所
+							<span>18</span>
+						</label>
+
+						<label class="fa fa-car filter-parking" data-type="filter-parking" tabindex="0">
+							<input type="radio" value="parking" name="id0001" aria-label="停車場" tabindex="-1" aria-disabled="true">
+							停車場
+							<span>3</span>
+						</label>
+
+						<label class="fa fa-elevator filter-elevator" data-type="filter-elevator" tabindex="0">
+							<input type="radio" value="elevator" name="id0001" aria-label="電梯" tabindex="-1" aria-disabled="true">
+							電梯
+							<span>18</span>
+						</label>
+
+						<label class="fa fa-door-open filter-exit" data-type="filter-exit" tabindex="0">
+							<input type="radio" value="exit" name="id0001" aria-label="停車場" tabindex="-1" aria-disabled="true">
+							出入口
+							<span>8</span>
+						</label>
+
+						<label class="fa fa-wheelchair-move filter-slope" data-type="filter-slope" tabindex="0">
+							<input type="radio" value="slope" name="id0001" aria-label="無障礙坡道" tabindex="-1" aria-disabled="true">
+							無障礙坡道
+							<span>6</span>
+						</label>
+
 						<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
 						<ul class="dropdown-menu">
-							<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
-						<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
+							<label class="fa fa-person-dress filter-toilet01" data-type="filter-toilet01" tabindex="0">
+								<input type="radio" value="toilet" name="id0001" aria-label="女生廁所" tabindex="-1" aria-disabled="true">
+								女生廁所
+								<span>8</span>
+							</label>
+
+							<label class="fa fa-person filter-toilet02" data-type="filter-toilet02" tabindex="0">
+								<input type="radio" value="toilet" name="id0001" aria-label="男生廁所" tabindex="-1" aria-disabled="true">
+								男生廁所
+								<span>8</span>
+							</label>
+
+							<label class="fa fa-wheelchair filter-toilet03" data-type="filter-toilet03" tabindex="0">
+								<input type="radio" value="toilet" name="id0001" aria-label="無障礙廁所" tabindex="-1" aria-disabled="true">
+								無障礙廁所
+								<span>4</span>
+							</label>
+
+							<label class="fa fa-restroom filter-toilet04" data-type="filter-toilet04" tabindex="0">
+								<input type="radio" value="toilet" name="id0001" aria-label="性別友善廁所" tabindex="-1" aria-disabled="true">
+								性別友善廁所
+								<span>1</span>
+							</label>
 						</ul>
 					</div>
 					<!-- ===左側區域 ===-->
@@ -244,6 +303,10 @@
 								aria-live="polite">
 								<p id="slider-status" class="sr-only">目前顯示第1張，共4張</p>
 								<div class="slider-container" id="slider-13">
+									<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-3" aria-hidden="false">
+										<img src="assets/images/demo_photo07.webp" alt="體育場">
+										<figcaption id="caption-3"></figcaption>
+								</figure>
 								<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-3" aria-hidden="false">
 										<img src="assets/images/demo_photo03.webp" alt="體育館側門">
 										<figcaption id="caption-3"></figcaption>
@@ -289,20 +352,25 @@
 							<div class="items">
 								<!-- 這是分類結構說明 button 設定 fa class產生圖示，中間不需要包 span -->
 								<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
-								<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button>
-								<button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">側門無障礙坡道</button>
+								<!-- button 的 clsss 需有 {filter-類別} 作為篩選運算使用，允許多個{filter-類別}-->
+								<button class="fa fa-wheelchair-move filter-slope filter-exit" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button>
+								<button class="fa fa-wheelchair-move filter-slope" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button><button class="fa fa-wheelchair-move" type="button filter-slope" data-bs-toggle="modal" data-bs-target="#popUpModal">側門無障礙坡道</button>
 							</div>
 						</div>
 						<div class="level" data-level="1F">
 							<h4 class="extra-where"><label>1 樓</label><label>期刊室</label></h4>
-							<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+							<div class="items"><button class="fa fa-person-dress filter-toilet01 filter-toilet" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair filter-toilet03 filter-toilet" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom filter-toilet04 filter-toilet" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down filter-elevator" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move filter-slope" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move filter-slope" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
 						</div>
 						<div class="level" data-level="2F">
 							<h4 class="extra-where"><label>2 樓</label><label>圖書室</label></h4>
-							<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+							<div class="items"><button class="fa fa-person filter-toilet02 filter-toilet" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom filter-toilet04 filter-toilet" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
 						</div>
 						<div class="level" data-level="3F">
 							<h4 class="extra-where"><label>3 樓</label><label>天台</label></h4>
+							<div class="items"></div>
+						</div>
+						<div class="level" data-level="4F">
+							<h4 class="extra-where"><label>4 樓</label><label></label></h4>
 							<div class="items"></div>
 						</div>
 					</div>
@@ -448,27 +516,645 @@
 						<h3>樓層設施</h3>
 						<!-- ===樓層 ===-->
 						<div class="level" data-level="3F">
-							<h4>3樓</h4>
+							<h4 class="extra-where"><label>3樓</label><label></label></h4>
 							<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
 						</div>
 						<div class="level" data-level="2F">
-							<h4>2樓</h4>
+							<h4 class="extra-where"><label>2樓</label><label></label></h4>
 							<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
 						</div>
 						<div class="level" data-level="1F">
-							<h4>1樓</h4>
+							<h4 class="extra-where"><label>1樓</label><label></label></h4>
 							<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
 						</div>
 						<div class="level" data-level="B1">
-							<h4>地下一樓</h4>
+							<h4 class="extra-where"><label>地下一樓</label><label></label></h4>
 							<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button></div>
 						</div>
 						<div class="level" data-level="外">
-							<h4>室外</h4>
+							<h4 class="extra-where"><label>室外</label><label></label></h4>
 							<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
 						</div>
 					</div>
 				</article>
+
+				<!-- ===建築單位，結構相同 ===-->
+				<article class="result-all-item">
+					<h2 class="fa fa-shop">圖書館<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location">距離318公尺</a></h2>
+					<!-- ===設施分類-物件群組 ===-->
+					<div class="items">
+						<label class="fa fa-elevator" tabindex="0">電梯<span>18</span></label>
+						<label class="fa fa-car" tabindex="0">停車場<span>3</span></label><label class="fa fa-wheelchair-move" tabindex="0">無障礙坡道<span>9</span></label><label class="fa fa-door-open" tabindex="0">出入口<span>23</span></label><label class="fa fa-wheelchair" tabindex="0">無障礙廁所<span>6</span></label>
+						<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
+						<ul class="dropdown-menu">
+							<label class="fa fa-person-dress" role="button" tabindex="0">女生廁所<span>1</span></label>
+						<label class="fa fa-person" role="button" tabindex="0">男生廁所<span>1</span></label><label class="fa fa-wheelchair" role="button" tabindex="0">無障礙廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">性別友善廁所<span>1</span></label><label class="fa fa-restroom" role="button" tabindex="0">電梯<span>88</span></label><label class="fa fa-restroom" role="button" tabindex="0">無障礙坡道<span>1</span></label>
+						</ul>
+					</div>
+					<!-- ===左側區域 ===-->
+					<div class="result-left">
+						<!-- ===介紹圖集 ===-->
+						<article class="result-cover">
+
+							<!-- ===slider元件本體 結束 ===-->
+							<button type="button" class="btn btn-highlight fa fa-location-arrow btn-takeme"  aria-label="帶我前往">帶我前往</button>
+						</article>
+						<!-- ===介紹文字 ===-->
+						<article class="result-info">
+							<p class="fa fa-clock">開放時間：09:00 - 18:00</p>
+							<p class="fa fa-star">要加入圖示只要使用 fa fa-***的CLASS</p>
+							<p>圖書館的介紹文字，沒有限制字數，依照資料量自動稱高長度足夠，可以更多或是換行都沒有問題</p>
+							<p class="fa fa-map">台中市北區雙十路一段16號</p>
+						</article>
+					</div>
+					<!-- ===右側區域 ===-->
+					<div class="result-right levels">
+						<h3>樓層設施</h3>
+						<!-- ===樓層 ===-->
+						<!-- ===樓層 ===-->
+						<div class="level" data-level="3F">
+							<h4 class="extra-where"><label>3樓</label><label></label></h4>
+							<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+						</div>
+						<div class="level" data-level="2F">
+							<h4 class="extra-where"><label>2樓</label><label></label></h4>
+							<div class="items"><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button></div>
+						</div>
+						<div class="level" data-level="1F">
+							<h4 class="extra-where"><label>1樓</label><label></label></h4>
+							<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-restroom" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">性別友善廁所</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+						</div>
+						<div class="level" data-level="B1">
+							<h4 class="extra-where"><label>地下一樓</label><label></label></h4>
+							<div class="items"><button class="fa fa-person-dress" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">女生廁所</button><button class="fa fa-person" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">男生廁所</button><button class="fa fa-wheelchair" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">無障礙廁所</button><button class="fa fa-car" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">教職員停車場</button><button class="fa fa-arrows-up-down" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">電動升降裝置</button></div>
+						</div>
+						<div class="level" data-level="外">
+							<h4 class="extra-where"><label>室外</label><label></label></h4>
+							<div class="items"><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">大門口無障礙坡道</button><button class="fa fa-wheelchair-move" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">五號門無障礙坡道</button></div>
+						</div>
+					</div>
+				</article>
+
+				<article class="result-all-item">
+					<h2 class="fa fa-shop">中正樓<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location">距離150公尺</a></h2>
+
+					<!-- ===設施分類-物件群組 ===-->
+						<div class="items">
+
+									<label class="fa fa-solid fa-restroom-simple" tabindex="0">廁所<span>1</span></label>
+						</div>
+
+					<!-- ===左側區域 ===-->
+					<div class="result-left">
+						<article class="result-cover">
+							<!-- ===slider元件本體 ===-->
+
+							<!-- ===slider元件本體 結束 ===-->
+							<button type="button" class="btn-GoMap btn btn-highlight fa fa-location-arrow btn-takeme" data-geo="POLYGON ((13433088.341026353 2770911.904552376, 13433107.861300208 2770911.9402495525, 13433107.861300208 2770907.6787621514, 13433145.747167667 2770907.346075191, 13433145.459740154 2770911.6027353704, 13433154.303217273 2770911.6026681033, 13433153.923065225 2770871.686703198, 13433145.831048135 2770871.3013690547, 13433145.831048135 2770875.92537882, 13433107.971968172 2770876.021712356, 13433107.971968172 2770871.590369666, 13433088.319926668 2770871.0123684453, 13433088.341026353 2770911.904552376))" aria-label="帶我前往中正樓">前往中正樓</button>
+
+						</article>
+
+						<!-- ===介紹文字 ===-->
+						<article class="result-info">
+								<p class="fa fa-star">中正樓介紹</p>
+								<p>UCAT_TO_SET 新增空間資訊</p>
+						</article>
+					</div>
+
+					<!-- ===右側區域 ===-->
+					<div class="result-right levels">
+							<h3>樓層設施</h3>
+								<div class="level" data-level="1F ">
+									<h4 class="extra-where">
+										<label>1F</label>
+										<label></label>
+									</h4>
+
+										<!-- 所有的設施標籤用一個 items包起來即可 -->
+										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+										<div class="items">
+												<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+										</div>
+
+
+								</div>
+								<div class="level" data-level="2F ">
+									<h4 class="extra-where">
+										<label>2F</label>
+										<label></label>
+									</h4>
+
+										<!-- 所有的設施標籤用一個 items包起來即可 -->
+										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+										<div class="items">
+										</div>
+
+
+								</div>
+								<div class="level" data-level="3F ">
+									<h4 class="extra-where">
+										<label>3F</label>
+										<label></label>
+									</h4>
+
+										<!-- 所有的設施標籤用一個 items包起來即可 -->
+										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+										<div class="items">
+										</div>
+
+
+								</div>
+								<div class="level" data-level="4F ">
+									<h4 class="extra-where">
+										<label>4F</label>
+										<label></label>
+									</h4>
+
+										<!-- 所有的設施標籤用一個 items包起來即可 -->
+										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+										<div class="items">
+										</div>
+
+
+								</div>
+
+					</div>
+
+				</article>
+
+
+
+				<article class="result-all-item">
+																<h2 class="fa fa-shop">向上樓<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location">距離150公尺</a></h2>
+
+																<!-- ===設施分類-物件群組 ===-->
+																		<div class="items">
+
+																								<label class="fa fa-solid fa-ramp-loading" tabindex="0">無障礙坡道<span>1</span></label>
+																								<label class="fa fa-solid fa-stairs" tabindex="0">樓梯<span>2</span></label>
+																								<label class="fa fa-solid fa-elevator" tabindex="0">電梯<span>1</span></label>
+																								<label class="fa fa-solid fa-restroom-simple" tabindex="0">廁所<span>2</span></label>
+																								<label class="fa fa-solid fa-square-parking" tabindex="0">停車位<span>2</span></label>
+																						<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
+																						<ul class="dropdown-menu">
+																						</ul>
+																		</div>
+
+																<!-- ===左側區域 ===-->
+																<div class="result-left">
+																		<article class="result-cover">
+																				<!-- ===slider元件本體 ===-->
+
+																				<!-- ===slider元件本體 結束 ===-->
+																				<button type="button" class="btn-GoMap btn btn-highlight fa fa-location-arrow btn-takeme" data-geo="POLYGON ((13432812.676540185 2771334.908325605, 13432837.781709574 2771335.1172043737, 13432837.96754023 2771320.3650565404, 13432839.186793478 2771320.321511785, 13432839.273882998 2771315.8364016237, 13432826.741225133 2771315.9854063457, 13432826.93155655 2771309.988340513, 13432824.980751354 2771309.9047345766, 13432824.980751354 2771306.839183554, 13432813.220182886 2771306.5883657434, 13432812.676540185 2771334.908325605))" aria-label="帶我前往向上樓">前往向上樓</button>
+
+																		</article>
+
+																		<!-- ===介紹文字 ===-->
+																		<article class="result-info">
+																						<p class="fa fa-star">向上樓介紹</p>
+																						<p>UCAT_TO_SET 新增空間資訊</p>
+																		</article>
+																</div>
+
+																<!-- ===右側區域 ===-->
+																<div class="result-right levels">
+																				<h3>樓層設施</h3>
+																						<div class="level" data-level="B1F ">
+																								<h4 class="extra-where">
+																										<label>B1F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-stairs" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">樓梯</button>
+																														<button class="fa fa-solid fa-elevator" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">昇降設備</button>
+																														<button class="fa fa-solid fa-square-parking" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">停車位</button>
+																														<button class="fa fa-solid fa-square-parking" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">停車位</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="1F ">
+																								<h4 class="extra-where">
+																										<label>1F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-ramp-loading" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">坡道及扶手</button>
+																														<button class="fa fa-solid fa-stairs" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">樓梯</button>
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="2F ">
+																								<h4 class="extra-where">
+																										<label>2F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="3F ">
+																								<h4 class="extra-where">
+																										<label>3F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="4F ">
+																								<h4 class="extra-where">
+																										<label>4F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="5F ">
+																								<h4 class="extra-where">
+																										<label>5F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+
+																</div>
+
+														</article>
+
+
+
+
+					<article class="result-all-item">
+																<h2 class="fa fa-shop">求真樓<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location">距離150公尺</a></h2>
+
+																<!-- ===設施分類-物件群組 ===-->
+																		<div class="items">
+
+																								<label class="fa fa-solid fa-ramp-loading" tabindex="0">無障礙坡道<span>3</span></label>
+																								<label class="fa fa-solid fa-stairs" tabindex="0">樓梯<span>3</span></label>
+																								<label class="fa fa-solid fa-elevator" tabindex="0">電梯<span>1</span></label>
+																								<label class="fa fa-solid fa-restroom-simple" tabindex="0">廁所<span>10</span></label>
+																								<label class="fa fa-sharp fa-solid fa-location-dot" tabindex="0">其他設施<span>2</span></label>
+																						<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
+																						<ul class="dropdown-menu">
+																						</ul>
+																		</div>
+
+																<!-- ===左側區域 ===-->
+																<div class="result-left">
+																		<article class="result-cover">
+																				<!-- ===slider元件本體 ===-->
+
+																				<!-- ===slider元件本體 結束 ===-->
+																				<button type="button" class="btn-GoMap btn btn-highlight fa fa-location-arrow btn-takeme" data-geo="POLYGON ((13433054.512518454 2771100.485382034, 13433076.045108257 2771100.5569188735, 13433076.402792474 2771093.903992457, 13433080.051171476 2771094.04706614, 13433085.845655777 2771089.182560804, 13433086.203339992 2771085.2480344316, 13433089.136350565 2771085.319571272, 13433089.5298032 2771065.468097282, 13433091.604371654 2771062.8212340865, 13433112.314287761 2771063.143149882, 13433112.600435136 2771059.9955287757, 13433115.676519394 2771060.353212993, 13433121.757151064 2771054.558728693, 13433121.399466848 2771050.8388128486, 13433125.405530067 2771050.9103496904, 13433125.369761646 2771030.200433582, 13433120.648329994 2771029.556601992, 13433120.648329994 2771023.046749262, 13433113.065424616 2771023.189822948, 13433112.27851934 2771027.2674230137, 13433105.482519237 2771019.8275913205, 13433064.630510714 2771057.67952348, 13433062.734191954 2771055.7299824287, 13433047.693268875 2771069.8072539247, 13433049.581841538 2771071.5241381656, 13433046.033614114 2771075.415742437, 13433053.158683695 2771082.598041493, 13433053.044224748 2771083.2847951907, 13433050.297209967 2771083.4564836146, 13433049.267079428 2771083.8570899363, 13433048.69478468 2771084.5438436293, 13433048.580325732 2771085.459515219, 13433048.294178357 2771090.72462688, 13433048.465866782 2771091.1824626783, 13433048.980932055 2771091.811986899, 13433049.724915223 2771092.3270521704, 13433051.670717357 2771092.5559700667, 13433054.761108983 2771092.613199542, 13433054.732494248 2771092.6990437526, 13433054.512518454 2771100.485382034))" aria-label="帶我前往求真樓">前往求真樓</button>
+
+																		</article>
+
+																		<!-- ===介紹文字 ===-->
+																		<article class="result-info">
+																						<p class="fa fa-star">求真樓介紹</p>
+																						<p>UCAT_TO_SET 新增空間資訊</p>
+																		</article>
+																</div>
+
+																<!-- ===右側區域 ===-->
+																<div class="result-right levels">
+																				<h3>樓層設施</h3>
+																						<div class="level" data-level="B2F ">
+																								<h4 class="extra-where">
+																										<label>B2F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="B1F ">
+																								<h4 class="extra-where">
+																										<label>B1F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="1F ">
+																								<h4 class="extra-where">
+																										<label>1F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-ramp-loading" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">坡道及扶手</button>
+																														<button class="fa fa-solid fa-ramp-loading" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">坡道及扶手</button>
+																														<button class="fa fa-solid fa-ramp-loading" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">坡道及扶手</button>
+																														<button class="fa fa-solid fa-stairs" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">樓梯</button>
+																														<button class="fa fa-solid fa-stairs" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">樓梯</button>
+																														<button class="fa fa-solid fa-stairs" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">樓梯</button>
+																														<button class="fa fa-solid fa-elevator" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">昇降設備</button>
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																														<button class="fa fa-sharp fa-solid fa-location-dot" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">其他</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="2F ">
+																								<h4 class="extra-where">
+																										<label>2F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="3F ">
+																								<h4 class="extra-where">
+																										<label>3F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="4F ">
+																								<h4 class="extra-where">
+																										<label>4F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="5F ">
+																								<h4 class="extra-where">
+																										<label>5F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="6F ">
+																								<h4 class="extra-where">
+																										<label>6F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="7F ">
+																								<h4 class="extra-where">
+																										<label>7F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																														<button class="fa fa-sharp fa-solid fa-location-dot" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">其他</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="8F ">
+																								<h4 class="extra-where">
+																										<label>8F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="9F ">
+																								<h4 class="extra-where">
+																										<label>9F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="10F ">
+																								<h4 class="extra-where">
+																										<label>10F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																										</div>
+
+
+																						</div>
+
+																</div>
+
+														</article>
+
+
+				<article class="result-all-item">
+																<h2 class="fa fa-shop">圖書館<a href="#" title="距離150公尺，帶我前往" aria-label="距離150公尺" class="btn btn-text-lite float-end fa fa-location">距離150公尺</a></h2>
+
+																<!-- ===設施分類-物件群組 ===-->
+																		<div class="items">
+
+																								<label class="fa fa-solid fa-ramp-loading" tabindex="0">無障礙坡道<span>1</span></label>
+																								<label class="fa fa-solid fa-stairs" tabindex="0">樓梯<span>2</span></label>
+																								<label class="fa fa-solid fa-elevator" tabindex="0">電梯<span>1</span></label>
+																								<label class="fa fa-solid fa-restroom-simple" tabindex="0">廁所<span>1</span></label>
+																								<label class="fa fa-sharp fa-solid fa-location-dot" tabindex="0">其他設施<span>1</span></label>
+																						<button class="fa fa-angles-down" tabindex="0" data-bs-toggle="dropdown" aria-expanded="false">其他<span></span></button>
+																						<ul class="dropdown-menu">
+																						</ul>
+																		</div>
+
+																<!-- ===左側區域 ===-->
+																<div class="result-left">
+																		<article class="result-cover">
+																				<!-- ===slider元件本體 ===-->
+
+																				<!-- ===slider元件本體 結束 ===-->
+																				<button type="button" class="btn-GoMap btn btn-highlight fa fa-location-arrow btn-takeme" data-geo="POLYGON ((13433124.308351431 2770987.806435583, 13433125.988117397 2770987.806435583, 13433125.78803456 2770990.371219666, 13433137.230917392 2770990.272574126, 13433137.033626309 2770999.6439005835, 13433142.755067727 2770999.545255043, 13433142.853713268 2771004.8721142933, 13433153.310140686 2771004.477532128, 13433153.50743177 2770999.24931842, 13433158.538354395 2770999.24931842, 13433158.439708853 2770990.7658018353, 13433169.586655064 2770990.5685107526, 13433169.715644933 2770987.806435583, 13433171.460920354 2770987.806435583, 13433171.460920354 2770974.8838696247, 13433169.677690871 2770974.7915261956, 13433169.981237229 2770971.9245033725, 13433154.987114895 2770971.9245033725, 13433155.085760435 2770969.359719288, 13433141.17673906 2770969.45836483, 13433140.979447976 2770971.7272122917, 13433126.083971184 2770971.9245033725, 13433126.182616726 2770974.982515166, 13433124.406996977 2770974.982515166, 13433124.308351431 2770987.806435583))" aria-label="帶我前往圖書館">前往圖書館</button>
+
+																		</article>
+
+																		<!-- ===介紹文字 ===-->
+																		<article class="result-info">
+																						<p class="fa fa-star">圖書館介紹</p>
+																						<p>UCAT_TO_SET 新增空間資訊</p>
+																		</article>
+																</div>
+
+																<!-- ===右側區域 ===-->
+																<div class="result-right levels">
+																				<h3>樓層設施</h3>
+																						<div class="level" data-level="B1F ">
+																								<h4 class="extra-where">
+																										<label>B1F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-stairs" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">樓梯</button>
+																														<button class="fa fa-solid fa-stairs" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">樓梯</button>
+																														<button class="fa fa-solid fa-elevator" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">昇降設備</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="1F ">
+																								<h4 class="extra-where">
+																										<label>1F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																														<button class="fa fa-solid fa-ramp-loading" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">坡道及扶手</button>
+																														<button class="fa fa-solid fa-restroom-simple" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">廁所盥洗室</button>
+																														<button class="fa fa-sharp fa-solid fa-location-dot" type="button" data-bs-toggle="modal" data-bs-target="#popUpModal">其他</button>
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="2F ">
+																								<h4 class="extra-where">
+																										<label>2F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="3F ">
+																								<h4 class="extra-where">
+																										<label>3F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="4F ">
+																								<h4 class="extra-where">
+																										<label>4F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+																						<div class="level" data-level="5F ">
+																								<h4 class="extra-where">
+																										<label>5F</label>
+																										<label></label>
+																								</h4>
+
+																										<!-- 所有的設施標籤用一個 items包起來即可 -->
+																										<!-- 用 button 是因為比較容易重用按鈕行為，按鈕被隱藏時需加上 tabindex="-1" -->
+																										<div class="items">
+																										</div>
+
+
+																						</div>
+
+																</div>
+
+														</article>
 
 			</section>
 		</main>
