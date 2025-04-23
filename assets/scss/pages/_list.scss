@@ -38,8 +38,8 @@
 		flex-wrap: wrap;
 		padding: 0;
 		border-radius: 1rem;
-		background-color: var(--c-brand);
-		color: var(--c-brand-t);
+		background-color: var(--c-back-sub);
+		color: var(--c-front-sub);
 		border: none;
 		overflow: visible;
 		#filterPanelForm{
@@ -50,8 +50,6 @@
 			align-items: center;
 			padding: 1rem;
 			border-radius: 1rem;
-			background-color: var(--c-brand);
-			color: var(--c-brand-t);
 			.form-group {
 				opacity: 1;
 				flex-direction: column;
@@ -92,13 +90,40 @@
 			padding: .5rem  0;
 			margin: 0;
 			grid-template-columns: repeat(auto-fill, 1fr);
+			.toggle-switch {
+				.dot {
+					box-shadow:0 0 0 2px var(--c-gary);
+					&:before {
+						background:var(--c-gary);
+					}
+				}
+				input {
+					display:none;
+					&:checked{
+						+ .dot {
+							box-shadow:0 0 0 2px var(--c-gary);
+							background-color: var(--c-highlight);
+							&::before {
+								opacity: 1;
+								transform:translateX(1.5rem);
+								background:var(--c-hover);
+							}
+						}
+					}
+				}
+				&:hover{
+					color: var(--c-hover);
+					.dot {
+						box-shadow:0 0 0 2px var(--c-hover);
+					}
+				}
+			}
 			hr{
 				margin: 1ch 0;
 				grid-column-start: 1;
 				grid-column-end: 5;
 			}
 			.tag{
-				margin-right: auto;
 				margin-bottom: .5ch;
 			}
 			&.dropdown-menu.show{
@@ -111,8 +136,6 @@
 			flex-direction: row;
 			flex-wrap: nowrap;
 			padding: 0;
-			background-color: var(--c-brand);
-			color: var(--c-brand-t);
 			#moreTagsMenu{
 				width: 100%;
 				padding: .5rem 0;
@@ -174,7 +197,7 @@
 			&::before{
 				font-size: 1rem;
 				transition: all .3s ease-in-out;
-				color: var(--c-main);
+				color: var(--c-hover);
 			}
 			&.active{
 				background-color: var(--c-highlight);
@@ -259,7 +282,6 @@
 	.tags{
 		.tag{
 			border-width: 2px;
-			color: var(--c-brand-t);
 			&:has(input:checked) {
 				border: 2px solid var(--c-highlight);
 				background-color: var(--c-highlight);
@@ -295,7 +317,7 @@
 				header{
 					flex: 0 0 100%;
 					max-width: 1600px;
-					margin: 0 auto;
+					margin: 0 auto 0 0;
 					column-span: all;
 					break-inside: avoid;
 				}
@@ -321,7 +343,7 @@
 					header{
 						flex: 0 0 100%;
 						max-width: 1600px;
-						margin: 0 auto;
+						margin: 0 auto 0 0;
 						column-span: all;
 						break-inside: avoid;
 					}

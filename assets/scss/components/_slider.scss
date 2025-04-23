@@ -6,7 +6,9 @@
 	height: calc(100% - 8rem);
 	.slider-container {
 		figure{
+			aspect-ratio: 16 / 9;
 			margin: 0;
+			overflow: hidden;
 		}
 		img, iframe {
 			width: 100%;

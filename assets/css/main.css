@@ -251,6 +251,7 @@ input, textarea {
 }
 
 .tags {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -320,6 +321,7 @@ input, textarea {
           align-items: center;
   margin: 0;
   font-weight: bold;
+  z-index: 2;
 }
 .extra-where label {
   display: -webkit-box;
@@ -386,8 +388,8 @@ input, textarea {
   left: 0;
   right: 0;
   border-radius: 99rem;
-  -webkit-box-shadow: 0 0 0 2px var(--c-g3);
-          box-shadow: 0 0 0 2px var(--c-g3);
+  -webkit-box-shadow: 0 0 0 2px var(--c-white);
+          box-shadow: 0 0 0 2px var(--c-white);
   width: 3rem;
   cursor: pointer;
   border: 2px solid transparent;
@@ -400,7 +402,7 @@ input, textarea {
   content: "";
   width: 100%;
   height: 100%;
-  background: var(--c-g3);
+  background: var(--c-white);
   opacity: 0.6;
   border-radius: 99rem;
   -webkit-transform: translateX(-1.5rem);
@@ -412,9 +414,9 @@ input, textarea {
   display: none;
 }
 .toggle-switch input:checked + .dot {
-  -webkit-box-shadow: 0 0 0 2px var(--c-highlight);
-          box-shadow: 0 0 0 2px var(--c-highlight);
-  background-color: var(--c-black);
+  -webkit-box-shadow: 0 0 0 2px var(--c-hover);
+          box-shadow: 0 0 0 2px var(--c-hover);
+  background-color: var(--c-hover);
 }
 .toggle-switch input:checked + .dot::before {
   opacity: 1;
@@ -424,6 +426,13 @@ input, textarea {
 }
 .toggle-switch .toggle-label {
   margin-left: 3.5rem;
+}
+.toggle-switch:hover {
+  color: var(--c-hover);
+}
+.toggle-switch:hover .dot {
+  -webkit-box-shadow: 0 0 0 2px var(--c-white);
+          box-shadow: 0 0 0 2px var(--c-white);
 }
 
 /* Style Wired */
@@ -444,6 +453,7 @@ input, textarea {
   -webkit-box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.3);
           box-shadow: 0 -3px 3px 0 rgba(0, 0, 0, 0.3);
   font-size: 0.9rem;
+  z-index: 99;
 }
 .backTop::before {
   display: block;
@@ -456,8 +466,8 @@ input, textarea {
   font-weight: bold;
 }
 .backTop:hover {
-  -webkit-animation: bounce 1s;
-          animation: bounce 1s;
+  -webkit-box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 body:is([id^=list], #index) .backTop {
@@ -477,7 +487,7 @@ body:is([id^=list], #index).startup .backTop {
   right: 1rem;
   opacity: 1;
   background-color: var(--c-main);
-  color: var(--c-brand) !important;
+  color: var(--c-main-t) !important;
   pointer-events: auto;
 }
 
@@ -1757,9 +1767,50 @@ article[class^=card-] .card-cover i {
   border: none;
   padding: 0.5ch 1rem;
 }
+.modal-theme-card .modal-header::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--c-main);
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+          mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+  -webkit-mask-size: auto 200%;
+          mask-size: auto 200%;
+  -webkit-mask-position: right top;
+          mask-position: right top;
+  opacity: 0.4;
+  scale: 2 -1;
+  -webkit-transform-origin: right center;
+          transform-origin: right center;
+  z-index: 0;
+}
+.modal-theme-card .modal-header::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--c-black);
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+          mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+  -webkit-mask-size: auto 200%;
+          mask-size: auto 200%;
+  -webkit-mask-position: right top;
+          mask-position: right top;
+  opacity: 0.3;
+  scale: -1 1;
+  z-index: 0;
+}
 .modal-theme-card .modal-header h4 {
   font-size: 1.2rem;
   margin: 0.5ch 0;
+  z-index: 1;
 }
 .modal-theme-card .modal-header .modal-dismiss {
   background: none;
@@ -1767,6 +1818,7 @@ article[class^=card-] .card-cover i {
   color: var(--c-brand-t);
   font-size: 1.5rem;
   margin-left: auto;
+  z-index: 1;
 }
 .modal-theme-card .modal-header .modal-dismiss::before {
   content: "\f00d";
@@ -1806,13 +1858,11 @@ article[class^=card-] .card-cover i {
 .modal-theme-card .extra-gallery {
   grid-area: slider;
   margin: 1rem;
-  border-radius: 0.5rem;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
 }
 .modal-theme-card .extra-gallery .swiffy-slider {
   height: 100%;
-  aspect-ratio: 16/9;
 }
 .modal-theme-card .extra-gallery .slider-nav {
   color: var(--c-brand-t) !important;
@@ -1876,8 +1926,49 @@ article[class^=card-] .card-cover i {
   grid-area: header;
   border: none;
   background-color: var(--c-brand);
-  background-image: var(--g-brand);
-  padding: 0.5ch 1ch;
+  padding: 0 1ch;
+  height: 3rem;
+}
+.gispopup .modal-header::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--c-main);
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+          mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+  -webkit-mask-size: auto 80%;
+          mask-size: auto 80%;
+  opacity: 0.2;
+  scale: 1 -1;
+  -webkit-mask-position: right top;
+          mask-position: right top;
+  z-index: 0;
+}
+.gispopup .modal-header::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: var(--c-main);
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+          mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+  -webkit-mask-size: auto 200%;
+          mask-size: auto 200%;
+  -webkit-mask-position: right top;
+          mask-position: right top;
+  opacity: 0.3;
+  scale: -1 1;
+  z-index: 0;
+}
+.gispopup .modal-header * {
+  z-index: 1;
 }
 .gispopup .modal-header h4 {
   font-size: 1.2rem;
@@ -2238,9 +2329,13 @@ article[class^=card-] .card-cover i {
   border-radius: 1rem;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
+  -webkit-column-break-inside: avoid;
+     -moz-column-break-inside: avoid;
+          break-inside: avoid;
   overflow: hidden;
 }
 .result-all-item::after {
+  pointer-events: none;
   content: "";
   position: absolute;
   top: 0;
@@ -2248,15 +2343,17 @@ article[class^=card-] .card-cover i {
   width: 100%;
   height: 8rem;
   background-color: var(--c-highlight);
-  -webkit-mask: url(../images/title.svg) no-repeat center;
-          mask: url(../images/title.svg) no-repeat center;
+  -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 725.4 480.8" viewBox="0 0 725.4 480.8"><path d="M725.4 0c-43.9 98.3-104.1 190.2-181.6 265.2-63.2 61.7-137.6 111.6-218.2 147.3-102.4 45-213.9 68.9-325.6 68.3v-62c8.2-.5 16.3-1.2 24.5-1.9 115-11.6 228.1-49.9 324.6-113.6 58.9-38.8 111.2-87.5 154.6-142.9 3-3.9 9.4-12.4 12.3-16.3 7.4-10.2 16.3-23.1 23.2-33.6 17.1-26.6 33-54.7 46.5-83.3 4.3-9 8.5-18.1 12.5-27.2h127.2z"/></svg>') no-repeat center;
+          mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 725.4 480.8" viewBox="0 0 725.4 480.8"><path d="M725.4 0c-43.9 98.3-104.1 190.2-181.6 265.2-63.2 61.7-137.6 111.6-218.2 147.3-102.4 45-213.9 68.9-325.6 68.3v-62c8.2-.5 16.3-1.2 24.5-1.9 115-11.6 228.1-49.9 324.6-113.6 58.9-38.8 111.2-87.5 154.6-142.9 3-3.9 9.4-12.4 12.3-16.3 7.4-10.2 16.3-23.1 23.2-33.6 17.1-26.6 33-54.7 46.5-83.3 4.3-9 8.5-18.1 12.5-27.2h127.2z"/></svg>') no-repeat center;
   -webkit-mask-size: auto 100%;
           mask-size: auto 100%;
   -webkit-mask-position: left top;
           mask-position: left top;
   opacity: 0.6;
+  z-index: 0;
 }
 .result-all-item::before {
+  pointer-events: none;
   content: "";
   position: absolute;
   top: 0;
@@ -2271,6 +2368,7 @@ article[class^=card-] .card-cover i {
   -webkit-mask-position: right top;
           mask-position: right top;
   opacity: 0.3;
+  z-index: 0;
 }
 .result-all-item .result-left {
   background-color: var(--c-back-sub);
@@ -2288,9 +2386,19 @@ article[class^=card-] .card-cover i {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
+  background-color: transparent;
+  border-top: 1px dotted var(--c-main);
+  border-bottom: 1px dotted var(--c-main);
+  padding-bottom: 0.5ch;
 }
-.result-all-item div {
+.result-all-item .items [class^=fa] {
+  background-color: var(--c-highlight);
+  color: var(--c-highlight-t);
+}
+.result-all-item > div {
+  position: relative;
   width: 100%;
+  overflow: visible;
 }
 .result-all-item h2 {
   width: 100%;
@@ -2300,7 +2408,6 @@ article[class^=card-] .card-cover i {
   letter-spacing: 1px;
   color: var(--c-main-t);
   text-align: center;
-  z-index: 2;
 }
 .result-all-item h2::before {
   content: var(--fa);
@@ -2319,24 +2426,16 @@ article[class^=card-] .card-cover i {
 }
 .result-all-item .result-info p[class^=fa] {
   font-family: var(--bs-body-font-family);
+  font-weight: normal;
   display: block;
 }
 .result-all-item .result-info p[class^=fa]::before {
   margin-left: 0;
   margin-right: 3px;
-  color: var(--c-main);
+  color: var(--c-hover);
   font-weight: bold;
   font-family: "Font Awesome 6 Free";
   margin-right: 0.5ch;
-}
-.result-all-item .items {
-  background-color: transparent;
-  border-top: 1px dotted var(--c-main);
-  border-bottom: 1px dotted var(--c-main);
-}
-.result-all-item .items [class^=fa] {
-  background-color: var(--c-highlight);
-  color: var(--c-highlight-t);
 }
 .result-all-item .levels {
   padding: 0 1rem;
@@ -2394,22 +2493,6 @@ article[class^=card-] .card-cover i {
     float: none !important;
     position: absolute;
     right: 1rem;
-  }
-  .result-all-item .result-info {
-    margin: 1rem;
-  }
-  .result-all-item .result-info p[class^=fa] {
-    font-family: var(--bs-body-font-family);
-    font-weight: normal;
-    display: block;
-  }
-  .result-all-item .result-info p[class^=fa]::before {
-    margin-left: 0;
-    margin-right: 3px;
-    color: var(--c-main);
-    font-weight: bold;
-    font-family: "Font Awesome 6 Free";
-    margin-right: 0.5ch;
   }
   .result-all-item .levels {
     margin: 0;
@@ -2590,10 +2673,16 @@ article[class^=card-] .card-cover i {
   -webkit-filter: grayscale(80%);
           filter: grayscale(80%);
 }
+.levels .level:has(.items:empty) .extra-where {
+  background-color: var(--c-back);
+}
+.levels .level:has(.items:empty) .extra-where label {
+  opacity: 0.6;
+}
 .levels .level:has(.items:empty) .extra-where::after {
   position: absolute;
+  right: 1rem;
   content: "本區域無相關設施";
-  margin-left: calc(5rem + 10%);
   font-weight: normal;
   font-size: 1rem;
 }
@@ -2604,10 +2693,16 @@ article[class^=card-] .card-cover i {
   -webkit-filter: grayscale(80%);
           filter: grayscale(80%);
 }
+.levels .level:not(:has(button)) .extra-where {
+  background-color: var(--c-back);
+}
+.levels .level:not(:has(button)) .extra-where label {
+  opacity: 0.6;
+}
 .levels .level:not(:has(button)) .extra-where::after {
   position: absolute;
+  right: 1rem;
   content: "本區域無相關設施";
-  margin-left: calc(5rem + 10%);
   font-weight: normal;
   font-size: 1rem;
 }
@@ -2707,6 +2802,10 @@ article[class^=card-] .card-cover i {
   opacity: 0.7;
 }
 
+#index #content {
+  margin-top: 2rem;
+}
+
 .navbar-brand {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -2729,22 +2828,24 @@ article[class^=card-] .card-cover i {
 }
 
 .section-title {
+  margin-top: 4rem;
   position: relative;
-  color: var(--c-main);
+  padding: 0 0 0 2rem;
 }
 .section-title::after {
-  position: relative;
+  position: absolute;
   display: block;
   content: "";
-  height: 6rem;
+  height: 7rem;
   width: 6px;
-  top: 0.5ch;
+  top: 0;
   left: 0.5ch;
-  background-color: var(--c-highlight);
+  background-color: var(--c-hover);
 }
 
 .startup #slider-main .slide {
   opacity: 0;
+  pointer-events: none;
 }
 .startup #slider-main::before {
   opacity: 0.6;
@@ -2826,13 +2927,6 @@ article[class^=card-] .card-cover i {
   right: 1.5rem;
 }
 
-#index #content {
-  margin-top: 2rem;
-}
-#index .section-title {
-  color: var(--c-brand);
-}
-
 #content {
   margin-top: 6rem;
   padding-left: 1.5rem;
@@ -2847,6 +2941,34 @@ article[class^=card-] .card-cover i {
 @media only screen and (min-width: 1920px) {
   #content section {
     max-width: 100%;
+    margin: 0 auto;
+  }
+}
+#content section.page {
+  line-height: 1.75;
+}
+#content section.page h1 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+#content section.page h2 {
+  padding: 0 calc(var(--bs-gutter-x) * 0.5) 0.5rem calc(var(--bs-gutter-x) * 0.5);
+  margin: 2rem 0 1rem 0;
+  border-bottom: solid 2px var(--c-highlight);
+}
+#content section.page ol {
+  max-width: calc(100% - 1.5rem);
+  margin-left: 1.5rem;
+}
+@media only screen and (min-width: 1440px) {
+  #content section.page {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1920px) {
+  #content section.page {
+    max-width: 960px;
     margin: 0 auto;
   }
 }
@@ -2907,7 +3029,7 @@ article[class^=card-] .card-cover i {
   position: relative;
   background-color: var(--c-brand);
   margin: 3rem auto 5rem auto;
-  max-width: 960px;
+  max-width: 960px !important;
   border: 1rem solid var(--c-brand);
   border-radius: 2rem;
 }
@@ -3535,30 +3657,20 @@ article[class^=card-] .card-cover i {
   color: var(--c-gary);
 }
 #pageGIS .result-all-item {
-  -webkit-box-shadow: none;
-          box-shadow: none;
   margin: 7rem 1.5rem 4rem 1.5rem;
-  border-radius: 0;
-  overflow: visible;
 }
 #pageGIS .result-all-item > div {
   border-radius: 1rem;
   overflow: hidden;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
+  z-index: 2;
 }
 #pageGIS .result-all-item .toggle-switch {
   position: absolute;
   top: -2rem;
   right: 0;
-}
-#pageGIS .result-all-item .toggle-switch .dot {
-  -webkit-box-shadow: 0 0 0 1px var(--c-gary);
-          box-shadow: 0 0 0 1px var(--c-gary);
-  background-color: var(--c-gary);
-}
-#pageGIS .result-all-item .toggle-switch input:checked + .dot {
-  background-color: var(--c-highlight);
+  z-index: 3;
 }
 #pageGIS .result-all-item p {
   position: absolute;
@@ -3618,8 +3730,12 @@ article[class^=card-] .card-cover i {
     left: auto;
     right: 1rem;
   }
+  #pageGIS .result-all-item p {
+    top: -2rem;
+  }
   #pageGIS .result-all-item p a {
-    float: right;
+    margin-top: 0;
+    float: right !important;
   }
 }
 
@@ -3671,8 +3787,8 @@ article[class^=card-] .card-cover i {
       flex-wrap: wrap;
   padding: 0;
   border-radius: 1rem;
-  background-color: var(--c-brand);
-  color: var(--c-brand-t);
+  background-color: var(--c-back-sub);
+  color: var(--c-front-sub);
   border: none;
   overflow: visible;
 }
@@ -3694,8 +3810,6 @@ article[class^=card-] .card-cover i {
           align-items: center;
   padding: 1rem;
   border-radius: 1rem;
-  background-color: var(--c-brand);
-  color: var(--c-brand-t);
 }
 #listPage #filterPanel #filterPanelForm .form-group {
   opacity: 1;
@@ -3750,13 +3864,40 @@ article[class^=card-] .card-cover i {
   margin: 0;
   grid-template-columns: repeat(auto-fill, 1fr);
 }
+#listPage #filterPanel #moreTagsMenu .toggle-switch .dot {
+  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
+          box-shadow: 0 0 0 2px var(--c-gary);
+}
+#listPage #filterPanel #moreTagsMenu .toggle-switch .dot:before {
+  background: var(--c-gary);
+}
+#listPage #filterPanel #moreTagsMenu .toggle-switch input {
+  display: none;
+}
+#listPage #filterPanel #moreTagsMenu .toggle-switch input:checked + .dot {
+  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
+          box-shadow: 0 0 0 2px var(--c-gary);
+  background-color: var(--c-highlight);
+}
+#listPage #filterPanel #moreTagsMenu .toggle-switch input:checked + .dot::before {
+  opacity: 1;
+  -webkit-transform: translateX(1.5rem);
+          transform: translateX(1.5rem);
+  background: var(--c-hover);
+}
+#listPage #filterPanel #moreTagsMenu .toggle-switch:hover {
+  color: var(--c-hover);
+}
+#listPage #filterPanel #moreTagsMenu .toggle-switch:hover .dot {
+  -webkit-box-shadow: 0 0 0 2px var(--c-hover);
+          box-shadow: 0 0 0 2px var(--c-hover);
+}
 #listPage #filterPanel #moreTagsMenu hr {
   margin: 1ch 0;
   grid-column-start: 1;
   grid-column-end: 5;
 }
 #listPage #filterPanel #moreTagsMenu .tag {
-  margin-right: auto;
   margin-bottom: 0.5ch;
 }
 #listPage #filterPanel #moreTagsMenu.dropdown-menu.show {
@@ -3773,8 +3914,6 @@ article[class^=card-] .card-cover i {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
     padding: 0;
-    background-color: var(--c-brand);
-    color: var(--c-brand-t);
   }
   #listPage #filterPanel #moreTagsMenu {
     width: 100%;
@@ -3867,7 +4006,7 @@ article[class^=card-] .card-cover i {
   font-size: 1rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  color: var(--c-main);
+  color: var(--c-hover);
 }
 #listPage #layoutBtns a.active, #listPage #layoutBtns button.active {
   background-color: var(--c-highlight);
@@ -3949,7 +4088,6 @@ article[class^=card-] .card-cover i {
 }
 #listPage .tags .tag {
   border-width: 2px;
-  color: var(--c-brand-t);
 }
 #listPage .tags .tag:has(input:checked) {
   border: 2px solid var(--c-highlight);
@@ -3994,7 +4132,7 @@ article[class^=card-] .card-cover i {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 0 auto 0 0;
     -webkit-column-span: all;
        -moz-column-span: all;
             column-span: all;
@@ -4025,7 +4163,7 @@ article[class^=card-] .card-cover i {
         -ms-flex: 0 0 100%;
             flex: 0 0 100%;
     max-width: 1600px;
-    margin: 0 auto;
+    margin: 0 auto 0 0;
     -webkit-column-span: all;
        -moz-column-span: all;
             column-span: all;
@@ -4045,7 +4183,9 @@ article[class^=card-] .card-cover i {
   height: calc(100% - 8rem);
 }
 .swiffy-slider .slider-container figure {
+  aspect-ratio: 16/9;
   margin: 0;
+  overflow: hidden;
 }
 .swiffy-slider .slider-container img, .swiffy-slider .slider-container iframe {
   width: 100%;

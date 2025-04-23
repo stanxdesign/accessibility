@@ -207,6 +207,7 @@ $icons: (
 }
 
 .tags{
+	position: relative;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 1ch;
@@ -269,6 +270,7 @@ $icons: (
 	align-items: center;
 	margin: 0;
 	font-weight: bold;
+	z-index: 2;
 	label{
 		display: flex;
 		height: 2rem;
@@ -333,7 +335,7 @@ $icons: (
 		left:0;
 		right:0;
 		border-radius:99rem;
-		box-shadow:0 0 0 2px var(--c-g3);
+		box-shadow:0 0 0 2px var(--c-white);
 		width: 3rem;
 		cursor:pointer;
 		border:2px solid transparent;
@@ -344,7 +346,7 @@ $icons: (
 			content:"";
 			width:100%;
 			height:100%;
-			background:var(--c-g3);
+			background:var(--c-white);
 			opacity: .6;
 			border-radius:99rem;
 			transform:translateX(-1.5rem);
@@ -355,8 +357,8 @@ $icons: (
 		display:none;
 		&:checked{
 			+ .dot {
-				box-shadow:0 0 0 2px var(--c-highlight);
-				background-color: var(--c-black);
+				box-shadow:0 0 0 2px var(--c-hover);
+				background-color: var(--c-hover);
 				&::before {
 					opacity: 1;
 					transform:translateX(1.5rem);
@@ -367,6 +369,12 @@ $icons: (
 	}
 	.toggle-label{
 		margin-left: 3.5rem;
+	}
+	&:hover{
+		color: var(--c-hover);
+		.dot {
+			box-shadow:0 0 0 2px var(--c-white);
+		}
 	}
 }
 /* Style Wired */
@@ -389,6 +397,7 @@ $icons: (
 	// @include shadow;
 	box-shadow: 0 -3px 3px 0 rgba(0,0,0,0.3);
 	font-size: .9rem;
+	z-index: 99;
 	&::before{
 		display: block;
 		rotate: 270deg;
@@ -400,7 +409,7 @@ $icons: (
 		font-weight: bold;
 	}
 	&:hover{
-		animation: bounce 1s;
+		box-shadow: 0 0 8px 1px rgba(0,0,0,0.5);
 	}
 }
 
@@ -423,7 +432,7 @@ body:is([id^="list"], #index){
 			right: 1rem;
 			opacity: 1;
 			background-color: var(--c-main);
-			color: var(--c-brand) !important;
+			color: var(--c-main-t) !important;
 			pointer-events: auto;
 		}
 	}

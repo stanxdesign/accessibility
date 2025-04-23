@@ -94,48 +94,24 @@
 		<nav id="breadcrumb" aria-label="breadcrumb">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item"><a href="#"><i class="fa fa-house"></i></a></li>
-				<li class="breadcrumb-item active" aria-current="page">系統登入</li>
+				<li class="breadcrumb-item active" aria-current="page">服務資訊與問題回報</li>
 			</ol>
 		</nav>
-		<section id="loginPage" class="row">
-			<div id="loginCard" class="col-lg-6 col-md-12 p-5">
-				<h1>會員登入</h1>
-					<div class="mb-3 my-4">
-						<label for="username" class="form-label">帳號</label>
-						<input type="text" class="form-control" id="username" aria-describedby="usernameHelp">
-					</div>
-					<div class="mb-3">
-						<label for="password" class="form-label">密碼</label>
-						<div class="input-group">
-							<input type="password" class="form-control" id="password">
-							<button id="togglePassword" class="btn btn-outline-secondary" type="button"  aria-label="顯示密碼">
-							</button>
-						</div>
-					</div>
-					<div class="form-check mb-3">
-						<input type="checkbox" class="form-check-input" id="rememberMe">
-						<label class="form-check-label" for="rememberMe">記住這個帳號</label>
-						<a id="forgetPassword" href="#">忘記密碼？</a>
-					</div>
-					<div id="captcha" class="my-2 captcha">
-						{{預留 Friendly Captcha 區}}
-					</div>
-					<div class="d-grid gap-2">
-						<button type="submit" class="btn btn-highlight my-3" type="button">登入</button>
-						<button type="button" class="btn" type="button">註冊帳號</button>
-					</div>
-			</div>
-			<div id="thirdLoginCard" class="col-lg-6 col-md-12 p-5">
-				<h2>第三方登入</h2>
-				<div>
-					<hr>
-					<button class="btn btn-outline-primary fa fa-mobile-screen" type="button">行動自然人憑證</button>
-					<button class="btn btn-outline-secondary fa fa-envelope-open" type="button">EMAIL快速連結</button>
-					<button class="btn btn-outline-success fa fa-comment-sms" type="button">手機密碼連結</button>
-					<hr>
-					<p>綁定第三方登入，省時又安全！快速登入無需記密碼，享受跨裝置同步與強大防護。立即綁定，體驗無縫便利！</p>
-				</div>
-			</div>
+		<section class="row page">
+			<h1>服務資訊</h1>
+			<p>歡迎您表達對於本網站的關心與建議，我們在收到您的信件後，會立即將您的意見或建議交付權責單位妥慎處理。</p>
+			<p>您也可以利用服務專線查詢諮詢，將由專人為您服務，謝謝您。</p>
+			<h2><i class="fa-solid fa-wrench"></i>&nbsp;網站功能建議、諮詢</h2>
+			<p><i class="fa-solid fa-phone-volume"></i>&nbsp;&nbsp;01-1234-5678 分機123 黃先生、分機124 陳小姐</p>
+			<p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:feedback@xcmail.xc">feedback@xcmail.xc</a></p>
+
+			<h2><i class="fa-solid fa-file-import"></i>&nbsp;地圖資料異動、缺漏反應</h2>
+			<p><i class="fa-solid fa-phone-volume"></i>&nbsp;&nbsp;01-1234-5678 分機123 黃先生</p>
+			<p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:feedback@xcmail.xc">feedback@xcmail.xc</a></p>
+
+			<h2><i class="fa-solid fa-comments"></i>&nbsp;其他服務</h2>
+			<p> <i class="fa-solid fa-phone-volume"></i>&nbsp;&nbsp;01-1234-5678 分機124 陳小姐</p>
+			<p><i class="fa-solid fa-envelope"></i>&nbsp;&nbsp;<a href="mailto:feedback@xcmail.xc">feedback@xcmail.xc</a></p>
 		</section>
 	</main>
 </form><!--<form> end === form tag ASP.NET Web Forms-->
@@ -147,6 +123,10 @@
 			</a>
 		</div>
 		<div id="footerInfo">
+			<div id="footerCount">
+				<span>資料更新 <label id="updateTime">2025年1月10日</label></span>
+				<span>進站人次 <label id="peopleCount">123,456</label></span>
+			</div>
 			<div id="footerLink">
 				<a class="btn btn-text-lite" href="feedback.html">服務資訊與問題回報</a>
 				<a class="btn btn-text-lite" href="private.html">隱私權保護政策</a>

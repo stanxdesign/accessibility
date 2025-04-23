@@ -48,9 +48,43 @@
 		border-radius: 0;
 		border: none;
 		padding: .5ch 1rem;
+		&::before{
+			pointer-events: none;
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 3rem;
+			background-color: var(--c-main);
+			mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+			mask-size: auto 200%;
+			mask-position: right top;
+			opacity: .4;
+			scale: 2 -1;
+			transform-origin: right center;
+			z-index: 0;
+		}
+		&::after{
+			pointer-events: none;
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 3rem;
+			background-color: var(--c-black);
+			mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
+			mask-size: auto 200%;
+			mask-position: right top;
+			opacity: .3;
+			scale: -1 1;
+			z-index: 0;
+		}
 		h4{
 			font-size: 1.2rem;
 			margin: 0.5ch 0;
+			z-index: 1;
 		}
 		.modal-dismiss{
 			background: none;
@@ -58,6 +92,7 @@
 			color: var(--c-brand-t);
 			font-size: 1.5rem;
 			margin-left: auto;
+			z-index: 1;
 			&::before{
 				content: "\f00d";
 				@include fa-icon;
@@ -99,11 +134,9 @@
 	.extra-gallery{
 		grid-area: slider;
 		margin: 1rem;
-		border-radius: .5rem;
 		@include shadow;
 		.swiffy-slider{
 			height: 100%;
-			aspect-ratio: 16/9;
 		}
 		.slider-nav{
 			color: var(--c-brand-t) !important;
@@ -121,9 +154,6 @@
 			}
 		}
 		&:empty {
-			// background-image: url(/assets/images/demo_nopic.webp);
-			// background-size: cover;
-			// background-position: left bottom;
 			display: none;
 		}
 	}

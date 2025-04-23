@@ -459,30 +459,18 @@
 
 	// 共用 CLASS 本頁特殊處理 result-all-item
 	.result-all-item{
-		box-shadow: none;
 		margin: 7rem 1.5rem 4rem 1.5rem;
-		border-radius: 0;
-		overflow: visible;
 		> div{
 			border-radius: 1rem;
 			overflow: hidden;
 			@include shadow;
+			z-index: 2;
 		}
 		.toggle-switch{
 			position: absolute;
 			top: -2rem;
 			right: 0;
-			.dot{
-				box-shadow: 0 0 0 1px var(--c-gary);
-				background-color: var(--c-gary);
-			}
-			input {
-				&:checked{
-					+ .dot {
-						background-color: var(--c-highlight);
-					}
-				}
-			}
+			z-index: 3;
 		}
 		p{
 			position: absolute;
@@ -546,8 +534,10 @@
 				right: 1rem;
 			}
 			p{
+				top: -2rem;
 				a{
-					float: right;
+					margin-top: 0;
+					float: right !important;
 				}
 			}
 		}

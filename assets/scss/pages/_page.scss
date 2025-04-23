@@ -1,15 +1,6 @@
 // @use 'sass:math';
 @use '../abstracts/mixins' as *;
 
-#index{
-	#content{
-		margin-top: 2rem;
-	}
-	.section-title{
-		color: var(--c-brand);
-	}
-}
-
 #content{
 	margin-top: 6rem;
 	padding-left: 1.5rem;
@@ -22,6 +13,30 @@
 		@include XXL{
 			max-width: 100%;
 			margin: 0 auto;
+		}
+		&.page{
+			line-height: 1.75;
+			h1{
+				font-size: 1.5rem;
+				margin: 1rem 0
+			}
+			h2{
+				padding: 0 calc(var(--bs-gutter-x) * .5) .5rem calc(var(--bs-gutter-x) * .5);
+				margin: 2rem 0 1rem 0;
+				border-bottom: solid 2px var(--c-highlight);
+			}
+			ol{
+				max-width: calc(100% - 1.5rem);
+				margin-left: 1.5rem;
+			}
+			@include XL{
+				max-width: 960px;
+				margin: 0 auto;
+			}
+			@include XXL{
+				max-width: 960px;
+				margin: 0 auto;
+			}
 		}
 	}
 }

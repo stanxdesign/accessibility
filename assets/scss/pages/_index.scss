@@ -1,6 +1,13 @@
 // @use 'sass:math';
 @use "../abstracts/mixins" as *;
 
+
+#index{
+	#content{
+		margin-top: 2rem;
+	}
+}
+
 .navbar-brand{
 	display: grid;
 	grid-template-columns: auto 1fr;
@@ -16,17 +23,18 @@
 }
 
 .section-title {
+	margin-top: 4rem;
 	position: relative;
-	color: var(--c-main);
+	padding: 0 0 0 2rem;
 	&::after {
-		position: relative;
+		position: absolute;
 		display: block;
 		content: "";
-		height: 6rem;
+		height: 7rem;
 		width: 6px;
-		top: 0.5ch;
+		top: 0;
 		left: 0.5ch;
-		background-color: var(--c-highlight);
+		background-color: var(--c-hover);
 	}
 }
 
@@ -34,6 +42,7 @@
 	#slider-main{
 		.slide{
 			opacity: 0;
+			pointer-events: none;
 		}
 		&::before{
 			opacity: .6;
