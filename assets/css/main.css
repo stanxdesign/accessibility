@@ -65,7 +65,7 @@ input, textarea {
   line-height: var(---bs-btn-line-height);
 }
 .btn[class*=fa]::before {
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 .btn:hover, .btn.focus {
@@ -143,7 +143,7 @@ input, textarea {
 .btn-more::after {
   content: "\f178";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   padding: 0 0.5ch;
 }
 
@@ -196,7 +196,7 @@ input, textarea {
 .form-group .form-control + .input-group-text::before {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 
@@ -211,42 +211,42 @@ input, textarea {
 .icon-info::before {
   content: "\f05a";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 
 .icon-search::before {
   content: "\f002";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 
 .icon-list::before {
   content: "\f0ca";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 
 .icon-login::before {
   content: "\f090";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 
 .icon-logout::before {
   content: "\f08b";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 
 .icon-palette::before {
   content: "\f53f";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 
@@ -335,8 +335,8 @@ input, textarea {
 }
 .extra-where label:nth-child(2n-1) {
   border-radius: 0.5rem 0 0 0.5rem;
-  background-color: var(--c-brand);
-  color: var(--c-brand-t);
+  background-color: var(--c-sub);
+  color: var(--c-sub-t);
   padding: 0 0 0 1ch;
 }
 .extra-where label:nth-child(2n-1):empty {
@@ -353,7 +353,7 @@ input, textarea {
   width: 0;
   margin-right: 0;
   padding: 0;
-  border: 1rem solid var(--c-brand);
+  border: 1rem solid var(--c-sub);
   border-top: 1rem solid transparent;
   border-bottom: 1rem solid transparent;
   border-right: 1ch solid transparent;
@@ -499,6 +499,53 @@ div:has(.backTop) {
 }
 div:has(.backTop) .backTop {
   background-color: var(--c-brand);
+}
+
+#loadingRuning {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  text-align: center;
+  margin: 2rem auto 2rem auto;
+}
+#loadingRuning::after {
+  content: "資料讀取中...";
+  display: block;
+  margin-top: -3.5rem;
+}
+#loadingRuning #loadingIcon {
+  position: relative;
+  display: block;
+  overflow: visible;
+  width: 10rem;
+  height: 10rem;
+  rotate: 90deg;
+  translate: -1.25rem 0;
+  scale: 0.5;
+}
+#loadingRuning #loadingIcon g {
+  -webkit-animation: slide 2s linear infinite;
+          animation: slide 2s linear infinite;
+}
+#loadingRuning #loadingIcon g:nth-child(2) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+#loadingRuning #loadingIcon g:nth-child(2) path {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+  stroke-dasharray: 0px 158px;
+  stroke-dashoffset: 1px;
+}
+#loadingRuning #loadingIcon path {
+  stroke: url(#gradient);
+  stroke-width: 1.5rem;
+  stroke-linecap: round;
+  fill: none;
+  stroke-dasharray: 0 157px;
+  stroke-dashoffset: 0;
+  -webkit-animation: escalade 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
+          animation: escalade 2s cubic-bezier(0.8, 0, 0.2, 1) infinite;
 }
 
 .sr-only-focusable:not(:focus),
@@ -678,6 +725,54 @@ button, a, *::after, *::before {
   100% {
     -webkit-transform: scale(1);
             transform: scale(1);
+  }
+}
+@-webkit-keyframes slide {
+  0% {
+    -webkit-transform: translateY(-2.5rem);
+            transform: translateY(-2.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(2.5rem);
+            transform: translateY(2.5rem);
+  }
+}
+@keyframes slide {
+  0% {
+    -webkit-transform: translateY(-2.5rem);
+            transform: translateY(-2.5rem);
+  }
+  100% {
+    -webkit-transform: translateY(2.5rem);
+            transform: translateY(2.5rem);
+  }
+}
+@-webkit-keyframes escalade {
+  0% {
+    stroke-dasharray: 0 157px;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 157px 157px;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 157px 157px;
+    stroke-dashoffset: -156px;
+  }
+}
+@keyframes escalade {
+  0% {
+    stroke-dasharray: 0 157px;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 157px 157px;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: 157px 157px;
+    stroke-dashoffset: -156px;
   }
 }
 .navbar-toggler .navbar-toggler-icon {
@@ -1311,8 +1406,8 @@ svg {
 }
 
 .poly-brand {
-  fill: color-mix(in srgb, var(--c-sub) 80%, transparent);
-  stroke: var(--c-main);
+  fill: color-mix(in srgb, var(--c-brand) 60%, transparent);
+  stroke: var(--c-brand);
   stroke-width: 0;
 }
 .poly-red {
@@ -1417,7 +1512,7 @@ article[class^=card-] .card-title {
 article[class^=card-] .card-title::after {
   content: "\f0a9"; /* 假設使用 Font Awesome 的右箭頭 */
   font-weight: bold;
-  font-family: "Font Awesome 6 Free"; /* 根據你的圖標庫調整 */
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free"; /* 根據你的圖標庫調整 */
   position: absolute;
   right: 0.1ch;
   top: 50%;
@@ -1438,7 +1533,7 @@ article[class^=card-] .card-title label {
 article[class^=card-] .card-title label span::before {
   content: "\f0da";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
   opacity: 0.8;
 }
@@ -1823,7 +1918,7 @@ article[class^=card-] .card-cover i {
 .modal-theme-card .modal-header .modal-dismiss::before {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 .modal-theme-card .modal-body {
@@ -1881,6 +1976,23 @@ article[class^=card-] .card-cover i {
 }
 .modal-theme-card .extra-gallery:empty {
   display: none;
+}
+.modal-theme-card:has(.extra-gallery i) .extra-gallery {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  position: absolute;
+  top: 4rem;
+  left: 1rem;
+}
+.modal-theme-card:has(.extra-gallery i) .extra-gallery i {
+  font-size: 3rem;
+  color: var(--c-brand);
+}
+.modal-theme-card:has(.extra-gallery i) .modal-body {
+  padding-left: 8rem;
+}
+.modal-theme-card:has(.extra-gallery i) .modal-body p, .modal-theme-card:has(.extra-gallery i) .modal-body div {
+  margin-bottom: 1ch;
 }
 
 #popUpModalfoGPS .modal-body {
@@ -1987,7 +2099,7 @@ article[class^=card-] .card-cover i {
 .gispopup .modal-header .modal-dismiss::before {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 .gispopup .modal-body {
@@ -2038,7 +2150,7 @@ article[class^=card-] .card-cover i {
   display: inline-block;
   content: var(--fa);
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
   background-color: var(--c-brand);
   color: var(--c-brand-t);
@@ -2222,7 +2334,7 @@ article[class^=card-] .card-cover i {
 #filterPanel.active #moreOptionBtn::after {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 #filterPanel:focus-within {
@@ -2237,6 +2349,34 @@ article[class^=card-] .card-cover i {
 }
 #filterPanel.active:not(:focus-within) #filterPanelForm .form-group:not(:first-child) {
   opacity: 0;
+}
+#filterPanel .toggle-switch .dot {
+  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
+          box-shadow: 0 0 0 2px var(--c-gary);
+}
+#filterPanel .toggle-switch .dot:before {
+  background: var(--c-gary);
+}
+#filterPanel .toggle-switch input {
+  display: none;
+}
+#filterPanel .toggle-switch input:checked + .dot {
+  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
+          box-shadow: 0 0 0 2px var(--c-gary);
+  background-color: var(--c-highlight);
+}
+#filterPanel .toggle-switch input:checked + .dot::before {
+  opacity: 1;
+  -webkit-transform: translateX(1.5rem);
+          transform: translateX(1.5rem);
+  background: var(--c-hover);
+}
+#filterPanel .toggle-switch:hover {
+  color: var(--c-hover);
+}
+#filterPanel .toggle-switch:hover .dot {
+  -webkit-box-shadow: 0 0 0 2px var(--c-hover);
+          box-shadow: 0 0 0 2px var(--c-hover);
 }
 #filterPanel .tags .tag {
   color: var(--c-front);
@@ -2332,7 +2472,6 @@ article[class^=card-] .card-cover i {
   -webkit-column-break-inside: avoid;
      -moz-column-break-inside: avoid;
           break-inside: avoid;
-  overflow: hidden;
 }
 .result-all-item::after {
   pointer-events: none;
@@ -2342,6 +2481,7 @@ article[class^=card-] .card-cover i {
   left: 0;
   width: 100%;
   height: 8rem;
+  border-radius: 1rem;
   background-color: var(--c-highlight);
   -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 725.4 480.8" viewBox="0 0 725.4 480.8"><path d="M725.4 0c-43.9 98.3-104.1 190.2-181.6 265.2-63.2 61.7-137.6 111.6-218.2 147.3-102.4 45-213.9 68.9-325.6 68.3v-62c8.2-.5 16.3-1.2 24.5-1.9 115-11.6 228.1-49.9 324.6-113.6 58.9-38.8 111.2-87.5 154.6-142.9 3-3.9 9.4-12.4 12.3-16.3 7.4-10.2 16.3-23.1 23.2-33.6 17.1-26.6 33-54.7 46.5-83.3 4.3-9 8.5-18.1 12.5-27.2h127.2z"/></svg>') no-repeat center;
           mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 725.4 480.8" viewBox="0 0 725.4 480.8"><path d="M725.4 0c-43.9 98.3-104.1 190.2-181.6 265.2-63.2 61.7-137.6 111.6-218.2 147.3-102.4 45-213.9 68.9-325.6 68.3v-62c8.2-.5 16.3-1.2 24.5-1.9 115-11.6 228.1-49.9 324.6-113.6 58.9-38.8 111.2-87.5 154.6-142.9 3-3.9 9.4-12.4 12.3-16.3 7.4-10.2 16.3-23.1 23.2-33.6 17.1-26.6 33-54.7 46.5-83.3 4.3-9 8.5-18.1 12.5-27.2h127.2z"/></svg>') no-repeat center;
@@ -2360,6 +2500,7 @@ article[class^=card-] .card-cover i {
   right: 0;
   width: 100%;
   height: 12rem;
+  border-radius: 1rem;
   background-color: var(--c-brand);
   -webkit-mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
           mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 400 100" viewBox="0 0 400 100"><path d="M167.1 0c10.4 5.7 22.5 10.4 39.4 9.5 28.2-1.4 36.2 9.4 43.4 10.1 13.5 1.2 18.7-14.8 32.2-13.9 10 .7 16.6 10.3 21.4 19 4.8 8.7 10.5 18.6 20.3 20.6 7.7 1.6 15.4-2.4 22-6.8s13.2-9.4 21-10.3c9.4-1.1 19 4.8 22.4 13.6 1.7 4.5 1.9 9.4 3 14.1 1.2 4.7 3.2 9.4 7.7 11V-.2S189.2 0 167.1 0z"/><circle cx="321.3" cy="55.1" r="3.5"/></svg>') no-repeat center;
@@ -2413,7 +2554,7 @@ article[class^=card-] .card-cover i {
   content: var(--fa);
   margin-right: 3px;
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 .result-all-item .btn-takeme {
@@ -2434,7 +2575,7 @@ article[class^=card-] .card-cover i {
   margin-right: 3px;
   color: var(--c-hover);
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 .result-all-item .levels {
@@ -2528,7 +2669,7 @@ article[class^=card-] .card-cover i {
 .items [class^=fa]::before {
   display: inline-block;
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 .items [class^=fa]:hover {
@@ -2555,8 +2696,8 @@ article[class^=card-] .card-cover i {
   line-height: 1.5rem;
   font-size: 0.9rem;
   text-align: center;
-  background-color: var(--c-sub);
-  color: var(--c-sub-t);
+  background-color: var(--c-back);
+  color: var(--c-front);
   font-weight: bold;
 }
 .items [class^=fa]:has(span) span:empty {
@@ -2635,7 +2776,7 @@ article[class^=card-] .card-cover i {
   border-radius: 99rem;
   width: 3px;
   height: 100%;
-  background-color: var(--c-gary);
+  background-color: var(--c-sub);
 }
 .levels .level::after {
   position: absolute;
@@ -2646,21 +2787,21 @@ article[class^=card-] .card-cover i {
   border-radius: 99rem;
   width: 1.2rem;
   height: 1.2rem;
-  background-color: var(--c-hover);
-  border: 2px solid var(--c-white);
-  -webkit-box-shadow: 0 0 0 3px var(--c-brand);
-          box-shadow: 0 0 0 3px var(--c-brand);
+  background-color: var(--c-brand);
+  border: 2px solid var(--c-back-sub);
+  -webkit-box-shadow: 0 0 0 3px var(--c-back-sub);
+          box-shadow: 0 0 0 3px var(--c-back-sub);
 }
 .levels .level:hover .items {
   border-radius: 0.5rem;
-  background-color: var(--c-sub);
+  background-color: var(--c-back);
 }
 .levels .level:hover .items [class^=fa] {
   border-color: var(--c-hover);
 }
 .levels .level:hover::after {
-  background-color: var(--c-highlight);
-  border-color: var(--c-hover);
+  background-color: var(--c-brand);
+  border-color: var(--c-back-sub);
   -webkit-box-shadow: 0 0 0 3px var(--c-highlight);
           box-shadow: 0 0 0 3px var(--c-highlight);
   scale: 1.2;
@@ -2735,7 +2876,7 @@ article[class^=card-] .card-cover i {
   border-radius: 99rem;
   width: 3px;
   height: 100%;
-  background-color: var(--c-gary);
+  background-color: var(--c-sub);
 }
 @media only screen and (min-width: 768px) {
   .levels h3::before {
@@ -2802,6 +2943,46 @@ article[class^=card-] .card-cover i {
   opacity: 0.7;
 }
 
+@media only screen and (min-width: 992px) {
+  #content section.chyron {
+    max-width: 100%;
+    margin: 0;
+  }
+  #content section.chyron header {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+  #content section.chyron div.row {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-animation: tickerTape 18s linear infinite;
+            animation: tickerTape 18s linear infinite;
+  }
+  #content section.chyron div.row:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+}
+@-webkit-keyframes tickerTape {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+}
+@keyframes tickerTape {
+  0% {
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+  }
+  100% {
+    -webkit-transform: translate(-200%, 0);
+            transform: translate(-200%, 0);
+  }
+}
 #index #content {
   margin-top: 2rem;
 }
@@ -3141,7 +3322,7 @@ article[class^=card-] .card-cover i {
 #togglePassword::before {
   content: "\f06e";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 #togglePassword.active::before {
@@ -3501,7 +3682,7 @@ article[class^=card-] .card-cover i {
 }
 #pageGIS #footer label:not(:empty), #pageGIS #footer a:not(:empty) {
   opacity: 0.8;
-  border: 1px solid var(--c-sub);
+  border: 2px solid var(--c-white);
   background-color: var(--c-white);
   color: var(--c-brand);
   padding: 0 0.5rem;
@@ -3696,7 +3877,7 @@ article[class^=card-] .card-cover i {
 #pageGIS .result-all-item p label span::before, #pageGIS .result-all-item p a::before, #pageGIS .result-all-item p button::before {
   content: "\f601";
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
 }
 #pageGIS .result-all-item p label span:hover, #pageGIS .result-all-item p a:hover, #pageGIS .result-all-item p button:hover {
@@ -3772,25 +3953,13 @@ article[class^=card-] .card-cover i {
 #listPage #navbar-sub {
   display: none;
 }
-#listPage #filterPanel {
-  position: relative;
-  top: 0;
-  width: 100%;
-  max-height: unset;
-  max-width: 960px;
-  margin: 1.5rem auto;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  padding: 0;
-  border-radius: 1rem;
-  background-color: var(--c-back-sub);
-  color: var(--c-front-sub);
-  border: none;
-  overflow: visible;
+#listPage #filterPanel #send, #listPage #filterPanel #clear {
+  width: 45%;
+  margin-top: 0.5rem;
+}
+#listPage #filterPanel #clear {
+  left: auto;
+  right: 1rem;
 }
 #listPage #filterPanel #filterPanelForm {
   -webkit-box-ordinal-group: 2;
@@ -3808,89 +3977,37 @@ article[class^=card-] .card-cover i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1rem;
   border-radius: 1rem;
-}
-#listPage #filterPanel #filterPanelForm .form-group {
-  opacity: 1;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
-}
-#listPage #filterPanel #filterPanelForm .form-group label:not(.tag) {
-  -webkit-box-flex: 0;
-      -ms-flex: 0;
-          flex: 0;
-  padding: 0ch;
-}
-#listPage #filterPanel #filterPanelForm .tags {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
 }
 #listPage #filterPanel #filterPanelForm #send, #listPage #filterPanel #filterPanelForm #clear {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
-  padding-left: 2rem;
-  padding-right: 2rem;
+      -ms-flex: 1 0 40%;
+          flex: 1 0 40%;
   height: 2rem;
   line-height: 1.25;
 }
-#listPage #filterPanel #moreTagsFunction {
+#listPage #filterPanel #moreOptionBtn {
   text-decoration: none;
-  background-color: var(--c-back);
-  border-color: var(--c-back);
-  color: var(--c-sub-t);
+  background-color: var(--c-main);
+  border-color: var(--c-brand);
+  color: var(--c-main-t);
   margin-left: 0;
   margin-right: auto;
   margin-bottom: 0;
   opacity: 0.8;
 }
-#listPage #filterPanel #moreTagsFunction:hover {
+#listPage #filterPanel #moreOptionBtn:hover {
   border-color: var(--c-highlight);
   opacity: 1;
+}
+#listPage #filterPanel #moreOptionBtn::after {
+  content: "" !important;
 }
 #listPage #filterPanel #moreTagsMenu {
   width: 100%;
   padding: 0.5rem 0;
   margin: 0;
   grid-template-columns: repeat(auto-fill, 1fr);
-}
-#listPage #filterPanel #moreTagsMenu .toggle-switch .dot {
-  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
-          box-shadow: 0 0 0 2px var(--c-gary);
-}
-#listPage #filterPanel #moreTagsMenu .toggle-switch .dot:before {
-  background: var(--c-gary);
-}
-#listPage #filterPanel #moreTagsMenu .toggle-switch input {
-  display: none;
-}
-#listPage #filterPanel #moreTagsMenu .toggle-switch input:checked + .dot {
-  -webkit-box-shadow: 0 0 0 2px var(--c-gary);
-          box-shadow: 0 0 0 2px var(--c-gary);
-  background-color: var(--c-highlight);
-}
-#listPage #filterPanel #moreTagsMenu .toggle-switch input:checked + .dot::before {
-  opacity: 1;
-  -webkit-transform: translateX(1.5rem);
-          transform: translateX(1.5rem);
-  background: var(--c-hover);
-}
-#listPage #filterPanel #moreTagsMenu .toggle-switch:hover {
-  color: var(--c-hover);
-}
-#listPage #filterPanel #moreTagsMenu .toggle-switch:hover .dot {
-  -webkit-box-shadow: 0 0 0 2px var(--c-hover);
-          box-shadow: 0 0 0 2px var(--c-hover);
 }
 #listPage #filterPanel #moreTagsMenu hr {
   margin: 1ch 0;
@@ -3942,6 +4059,7 @@ article[class^=card-] .card-cover i {
             justify-content: space-between;
   }
   #listPage #filterPanel #filterPanelForm .form-group {
+    opacity: 1;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 32%;
             flex: 0 1 32%;
@@ -3956,8 +4074,6 @@ article[class^=card-] .card-cover i {
         -ms-flex: 1 0 15%;
             flex: 1 0 15%;
     margin-top: 0.25rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
@@ -3965,6 +4081,28 @@ article[class^=card-] .card-cover i {
     margin-left: auto;
     margin-right: 0;
     margin-bottom: 0;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #listPage #filterPanel {
+    position: relative;
+    top: 0;
+    width: 100%;
+    max-height: unset;
+    max-width: 960px;
+    margin: 1.5rem auto;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0;
+    border-radius: 1rem;
+    background-color: var(--c-back-sub);
+    color: var(--c-front-sub);
+    border: none;
+    overflow: visible;
   }
 }
 #listPage #layoutBtns {
@@ -4250,7 +4388,7 @@ article[class^=card-] .card-cover i {
   -webkit-mask: none;
           mask: none;
   font-weight: bold;
-  font-family: "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
   margin-right: 0.5ch;
   margin: 0;
   -webkit-box-shadow: none;
@@ -4281,8 +4419,8 @@ article[class^=card-] .card-cover i {
           mask-position: center;
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
-  -webkit-mask-size: cover;
-          mask-size: cover;
+  -webkit-mask-size: contain;
+          mask-size: contain;
   -webkit-mask-image: url(../images/curve.svg);
           mask-image: url(../images/curve.svg);
   mask-mode: alpha;
@@ -4292,8 +4430,8 @@ article[class^=card-] .card-cover i {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: left bottom;
-     object-position: left bottom;
+  -o-object-position: center bottom;
+     object-position: center bottom;
   -webkit-animation: zoom 12s ease-in-out infinite;
           animation: zoom 12s ease-in-out infinite;
   -webkit-animation-play-state: paused;
@@ -4358,15 +4496,15 @@ article[class^=card-] .card-cover i {
   --font-size: 14px;
   --c-brand:	#397BB3;
   --c-main:	#E4F1F2;
-  --c-sub:	#FAF9ED;
+  --c-sub:	#89AFC1;
   --c-brand-t:	#F7F5EF;
   --c-main-t:	#063648;
-  --c-sub-t:	#063648;
+  --c-sub-t:	#FFFFFF;
   --c-highlight:	#FCDF3F;
   --c-hover:	#009991;
   --c-hover-t:	#FCDF3F;
   --c-highlight-t:	#000000;
-  --c-focus:	#F28A10;
+  --c-focus:	#FF4D42;
   --c-front:	#000000;
   --c-front-sub:	#000000;
   --c-front-brand:	#063648;
@@ -4396,7 +4534,7 @@ article[class^=card-] .card-cover i {
 [data-bs-theme=dark] {
   --c-brand:	#354589;
   --c-main:	#4F63A3;
-  --c-sub:	#3E3E42;
+  --c-sub:	#354589;
   --c-brand-t:	#FFFFFF;
   --c-main-t:	#FFFFFF;
   --c-sub-t:	#FFFFFF;
@@ -4404,7 +4542,7 @@ article[class^=card-] .card-cover i {
   --c-highlight-t:	#FFFFFF;
   --c-hover:	#C02679;
   --c-hover-t:	#FFFFFF;
-  --c-focus:	#C02679;
+  --c-focus:	#F5FF3C;
   --c-front:	#FFFFFF;
   --c-front-sub:	#B3DBEC;
   --c-front-brand:	#70BFE0;
@@ -4427,20 +4565,20 @@ article[class^=card-] .card-cover i {
 }
 
 [data-bs-theme=contrast] {
-  --c-brand:	#3F094D;
+  --c-brand:	#4F0059;
   --c-main:	#63E6BD;
-  --c-sub:	#FEFCEC;
-  --c-brand-t:	#F5FF3C;
-  --c-main-t:	#36005A;
-  --c-sub-t:	#333333;
-  --c-highlight:	#F5FF3C;
-  --c-highlight-t:	#36005A;
-  --c-hover:	#4B0CB3;
-  --c-hover-t:	#FEFCEC;
-  --c-focus:	#F28A10;
+  --c-sub:	#429A7E;
+  --c-brand-t:	#F3FF51;
+  --c-main-t:	#390041;
+  --c-sub-t:	#FFFFFF;
+  --c-highlight:	#F3FF51;
+  --c-highlight-t:	#390041;
+  --c-hover:	#4F0059;
+  --c-hover-t:	#F3FF51;
+  --c-focus:	#FF3B6B;
   --c-front:	#333333;
   --c-front-sub:	#3F094D;
-  --c-front-brand:	#4B0CB3;
+  --c-front-brand:	#530081;
   --c-back:	#F8F7F3;
   --c-back-sub: #FFFFFF;
   --c-shadow: rgba(0,0,0,0.8);

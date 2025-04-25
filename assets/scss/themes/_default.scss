@@ -10,15 +10,15 @@
 	// 把色票移來主題，直接可以看效果。
   --c-brand: 	#397BB3;
 	--c-main: 	#E4F1F2;
-	--c-sub:		#FAF9ED;
+	--c-sub:		#89AFC1;
 	--c-brand-t:	#F7F5EF;
 	--c-main-t:		#063648;
-	--c-sub-t: 		#063648;
+	--c-sub-t: 		#FFFFFF;
 	--c-highlight: 		#FCDF3F;
 	--c-hover:		 		#009991;
 	--c-hover-t:		 	#FCDF3F;
 	--c-highlight-t: 	#000000;
-	--c-focus: 				#F28A10;
+	--c-focus: 				#FF4D42;
 
 	--c-front: 				#000000;
 	--c-front-sub: 		#000000;
@@ -75,7 +75,7 @@
   // 把色票移來主題，直接可以看效果。
   --c-brand:	#354589;
 	--c-main:		#4F63A3;
-	--c-sub:		#3E3E42;
+	--c-sub:		#354589;
 	--c-brand-t:	#FFFFFF;
 	--c-main-t:		#FFFFFF;
 	--c-sub-t: 		#FFFFFF;
@@ -83,7 +83,7 @@
 	--c-highlight-t: 	#FFFFFF;
 	--c-hover:				#C02679;
 	--c-hover-t:				#FFFFFF;
-	--c-focus: 				#C02679;
+	--c-focus: 				#F5FF3C;
 
 	--c-front: 				#FFFFFF;
 	--c-front-sub: 		#B3DBEC;
@@ -116,21 +116,21 @@
 // === 高對比主題 ===------------------------------------------------
 // ------------------------------------------------------------------
 [data-bs-theme="contrast"] {
-  --c-brand: 	#3F094D;
+  --c-brand: 	#4F0059;
 	--c-main: 	#63E6BD;
-	--c-sub:		#FEFCEC;
-	--c-brand-t:	#F5FF3C;
-	--c-main-t:		#36005A;
-	--c-sub-t: 		#333333;
-	--c-highlight: 		#F5FF3C;
-	--c-highlight-t: 	#36005A;
-	--c-hover:		 		#4B0CB3;
-	--c-hover-t:		 	#FEFCEC;
-	--c-focus: 				#F28A10;
+	--c-sub:		#429A7E;
+	--c-brand-t:	#F3FF51;
+	--c-main-t:		#390041;
+	--c-sub-t: 		#FFFFFF;
+	--c-highlight: 		#F3FF51;
+	--c-highlight-t: 	#390041;
+	--c-hover:		 		#4F0059;
+	--c-hover-t:		 	#F3FF51;
+	--c-focus: 				#FF3B6B;
 
 	--c-front: 				#333333;
 	--c-front-sub: 		#3F094D;
-	--c-front-brand: 	#4B0CB3;
+	--c-front-brand: 	#530081;
 	--c-back: 		#F8F7F3;
 	--c-back-sub: #FFFFFF;
 

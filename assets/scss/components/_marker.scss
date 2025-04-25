@@ -427,8 +427,8 @@ svg{
 }
 .poly {
 	&-brand {
-		fill: color-mix(in srgb, var(--c-sub) 80%, transparent);
-		stroke: var(--c-main);
+		fill: color-mix(in srgb, var(--c-brand) 60%, transparent);
+		stroke: var(--c-brand);
 		stroke-width: 0;
 	}
 	&-red {

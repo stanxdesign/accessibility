@@ -100,6 +100,7 @@
 			}
 		}
 	}
+
 	&:focus-within{
 		max-height: 100vh;
 		overflow: hidden;
@@ -109,6 +110,7 @@
 			}
 		}
 	}
+
 	&.active:focus-within{
 		#filterPanelForm{
 			.form-group:not(:first-child){
@@ -116,6 +118,7 @@
 			}
 		}
 	}
+
 	&.active:not(:focus-within){
 		#filterPanelForm{
 			.form-group:not(:first-child){
@@ -123,6 +126,35 @@
 			}
 		}
 	}
+	.toggle-switch {
+		.dot {
+			box-shadow:0 0 0 2px var(--c-gary);
+			&:before {
+				background:var(--c-gary);
+			}
+		}
+		input {
+			display:none;
+			&:checked{
+				+ .dot {
+					box-shadow:0 0 0 2px var(--c-gary);
+					background-color: var(--c-highlight);
+					&::before {
+						opacity: 1;
+						transform:translateX(1.5rem);
+						background:var(--c-hover);
+					}
+				}
+			}
+		}
+		&:hover{
+			color: var(--c-hover);
+			.dot {
+				box-shadow:0 0 0 2px var(--c-hover);
+			}
+		}
+	}
+
 	.tags{
 		.tag{
 			color: var(--c-front);

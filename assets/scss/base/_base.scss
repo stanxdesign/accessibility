@@ -53,7 +53,7 @@ input, textarea {
 	&[class*="fa"]{
 		line-height: var(---bs-btn-line-height);
 		&::before{
-			font-family: "Font Awesome 6 Free";
+			font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
 			margin-right: .5ch;
 		}
 	}
@@ -130,7 +130,7 @@ input, textarea {
 	&::after{
 		content: "\f178";
 		font-weight: bold;
-		font-family: "Font Awesome 6 Free";
+		font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
 		padding: 0 .5ch;
 	}
 }
@@ -281,7 +281,7 @@ $icons: (
 	}
 	label:nth-child(2n-1){
 		border-radius: .5rem 0 0 .5rem;
-		@include obj-theme(brand,0);
+		@include obj-theme(sub,0);
 		padding: 0 0 0 1ch;
 		&:empty{
 			background-color: transparent;
@@ -297,7 +297,7 @@ $icons: (
 			width: 0;
 			margin-right:0;
 			padding:0;
-			border: 1rem solid var(--c-brand);
+			border: 1rem solid var(--c-sub);
 			border-top: 1rem solid transparent;
 			border-bottom: 1rem solid transparent;
 			border-right: 1ch solid transparent;
@@ -445,5 +445,45 @@ div:has(.backTop){
 	border-top: 1px solid var(--c-gary);
 	.backTop{
 		background-color: var(--c-brand);
+	}
+}
+#loadingRuning{
+	width: max-content;
+	text-align: center;
+	margin: 2rem auto 2rem auto;
+	&::after{
+		content: '資料讀取中...';
+		display: block;
+		margin-top: -3.5rem;
+	}
+	#loadingIcon {
+		position: relative;
+		display: block;
+		overflow: visible;
+		width: 10rem;
+		height: 10rem;
+		rotate: 90deg;
+		translate: -1.25rem 0;
+		scale: .5;
+		g {
+			animation: slide $transition-duration linear infinite;
+			&:nth-child(2) {
+				animation-delay: $transition-duration / 4;
+				path {
+					animation-delay: $transition-duration / 4;
+					stroke-dasharray: 0px $path-length + 1;
+					stroke-dashoffset: 1px;
+				}
+			}
+		}
+		path{
+			stroke: url(#gradient);
+			stroke-width: 1.5rem;
+			stroke-linecap: round;
+			fill: none;
+			stroke-dasharray: 0 $path-length;
+			stroke-dashoffset: 0;
+			animation: escalade $transition-duration cubic-bezier(0.8, 0, 0.2, 1) infinite;
+		}
 	}
 }

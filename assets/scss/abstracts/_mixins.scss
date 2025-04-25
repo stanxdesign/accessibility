@@ -3,6 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 $font-family: 'Nunito', 'SF Pro', 'Arial', 'Noto Sans', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
 $gray-steps: 4;
+$transition-duration: 2s;
+$path-length: 157px; // Retrieved using SVG's
 
 // === regular color palette ===
 $white:#FFFFFF;
@@ -58,7 +60,7 @@ $dark:#3A3A3F;
   background-image: var(#{gradient-var($name, $direction)});
 }
 
-@mixin fa-icon {font-weight: bold;font-family: "Font Awesome 6 Free";margin-right:.5ch;}
+@mixin fa-icon {font-weight: bold; font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";margin-right:.5ch;}
 @mixin shadow {box-shadow: 0 0 5px 0 var(--c-shadow);}
 
 // 配合 bootstrap 斷點 處理 RWD，以行動裝置優先

@@ -157,6 +157,25 @@
 			display: none;
 		}
 	}
+
+	&:has(.extra-gallery i){
+		.extra-gallery{
+			box-shadow: none;
+			position: absolute;
+			top: 4rem;
+			left: 1rem;
+			i{
+				font-size: 3rem;
+				color: var(--c-brand);
+			}
+		}
+		.modal-body{
+			padding-left: 8rem;
+			p, div{
+				margin-bottom: 1ch;
+			}
+		}
+	}
 }
 
 

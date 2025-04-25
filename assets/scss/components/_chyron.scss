@@ -1,0 +1,34 @@
+// @use 'sass:math';
+@use '../abstracts/mixins' as *;
+
+
+@include LG{
+	#content {
+		section{
+			&.chyron{
+				header{
+					max-width: 1440px;
+					margin: 0 auto;
+				}
+				max-width: 100%;
+				margin: 0;
+				div.row{
+					flex-wrap: nowrap;
+					animation: tickerTape 18s linear infinite;
+					&:hover{
+						animation-play-state: paused;
+					}
+				}
+			}
+		}
+	}
+}
+
+@keyframes tickerTape {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-200%, 0);
+  }
+}

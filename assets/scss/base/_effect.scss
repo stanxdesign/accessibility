@@ -57,3 +57,27 @@ button, a, *::after, *::before{
 		transform: scale(1);
 	}
 }
+
+@keyframes slide {
+  0% {
+    transform: translateY(-2.5rem);
+  }
+  100% {
+    transform: translateY(2.5rem);
+  }
+}
+
+@keyframes escalade {
+  0% {
+    stroke-dasharray: 0 $path-length;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: $path-length $path-length;
+    stroke-dashoffset: 0;
+  }
+  100% {
+    stroke-dasharray: $path-length $path-length;
+    stroke-dashoffset: -($path-length - 1);
+  }
+}

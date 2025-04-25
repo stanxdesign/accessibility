@@ -303,7 +303,7 @@
 			opacity: 0;
 			&:not(:empty){
 				opacity: .8;
-				border: 1px solid var(--c-sub);
+				border: 2px solid var(--c-white);
 				background-color: var(--c-white);
 				color: var(--c-brand);
 				padding: 0 .5rem;
