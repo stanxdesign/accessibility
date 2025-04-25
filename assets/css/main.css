@@ -2528,8 +2528,6 @@ article[class^=card-] .card-cover i {
       -ms-flex-order: 2;
           order: 2;
   background-color: transparent;
-  border-top: 1px dotted var(--c-main);
-  border-bottom: 1px dotted var(--c-main);
   padding-bottom: 0.5ch;
 }
 .result-all-item .items [class^=fa] {
@@ -2843,9 +2841,10 @@ article[class^=card-] .card-cover i {
 .levels .level:not(:has(button)) .extra-where::after {
   position: absolute;
   right: 1rem;
-  content: "本區域無相關設施";
+  content: "無相關設施";
   font-weight: normal;
   font-size: 1rem;
+  opacity: 0.8;
 }
 .levels .level:not(:has(button)) .extra-where:has(label:empty)::after {
   margin-left: 4rem;
