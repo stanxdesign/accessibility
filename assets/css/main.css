@@ -3152,6 +3152,11 @@ article[class^=card-] .card-cover i {
     margin: 0 auto;
   }
 }
+#content section.page i {
+  opacity: 0.8;
+  color: var(--c-main);
+  margin-right: 0.5ch;
+}
 
 .tab-switch .tab-bar {
   display: -webkit-box;
