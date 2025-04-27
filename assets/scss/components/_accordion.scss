@@ -1,0 +1,120 @@
+@use '../abstracts/mixins' as *;
+
+
+.accordion {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+	aspect-ratio: 1 / 1;
+
+  .section {
+    flex: 1; // 預設每個 section 平均分配空間
+    min-width: 4rem;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+
+    &.grow {
+      flex: 5; // 展開的 section 占更多空間
+      background-color: var(--c-back-sub);
+
+      h3 {
+				font-size: 1.25rem;
+				transform-origin: center;
+				color: var(--c-brand);
+      }
+
+      .button-thin {
+        margin: 1.5rem .5rem 0 auto;
+        transform: rotate(180deg);
+				i{
+					color: var(--c-front) !important;
+					margin-right: 0 !important;
+				}
+      }
+
+      p {
+        display: block;
+        animation: slide 0.4s ease;
+      }
+    }
+
+    &.shrink {
+      flex: 0.1; // 收縮的 section 占較少空間
+      background-color: var(--c-brand);
+      color: var(--c-brand-t);
+			border: var(--c-g1) 1px solid;
+			justify-content: center;
+
+      h3 {
+				font-size: 1.25rem;
+				rotate: -90deg;
+				white-space:nowrap;
+				margin-bottom: auto;
+      }
+
+      .button-thin {
+				background-color: var(--c-focus);
+        margin: 1.5rem 0 auto 0;
+				i{
+					color: var(--c-hover-t) !important;
+					margin-right: 0 !important;
+				}
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    p {
+      max-height: 15rem;
+      overflow: hidden;
+      font-weight: 200;
+      color: var(--c-front);
+      margin: 0 1.5rem 1.5rem;
+      display: none;
+    }
+
+    .button-thin {
+      width: 2.5rem;
+      height: 2.5rem;
+      margin: 0;
+      padding: 0;
+      border: 1px solid var(--c-focus);
+      border-radius: 50%;
+      background-color: transparent;
+    }
+  }
+	@include MD{
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		overflow: hidden;
+		aspect-ratio: 16 / 6;
+	}
+}
+
+// 動畫效果
+@keyframes slide {
+  from {
+    transform: translateY(-120px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
