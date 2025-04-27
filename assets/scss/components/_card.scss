@@ -31,13 +31,20 @@ article {
 			p{
 				i{
 					display: block;
-					font-size: 3em;
+					font-size: 2em;
 					margin-bottom: .5ch;
 				}
 			}
 			@include MD {
 				.card {
 					padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+				}
+				p{
+					i{
+						display: block;
+						font-size: 3em;
+						margin-bottom: .5ch;
+					}
 				}
 			}
 		}
@@ -86,7 +93,7 @@ article {
 				position: absolute;
 				right: 1rem;
 				bottom: 1rem;
-				font-size: 3rem;
+				font-size: 2rem;
 				@include MD {
 					bottom: 1.5rem;
 					right: 2rem;
@@ -139,11 +146,18 @@ article {
 	flex: 0 0 100%; // 二分之一寬
 	max-width: 100%;
 	.card {
-		aspect-ratio: 2 / 1;
+		aspect-ratio: 3 / 2;
 	}
 	&.card-theme-split {
 		.card {
 			flex-direction: row;
+			.card-title{
+				padding-left: 2.5rem;
+				padding-right: 0 ;
+				&::after{
+					content: none;
+				}
+			}
 			.card-body {
 				flex: 0 0 50%;
 				max-width: 50%;
@@ -152,6 +166,12 @@ article {
 			.card-cover {
 				flex: 0 0 50%;
 				max-width: 50%;
+			}
+			p{
+				i{
+					position: absolute;
+					top: 1.25rem;
+				}
 			}
 		}
 	}
@@ -169,6 +189,12 @@ article {
 		max-width: 50%;
 		.card {
 			aspect-ratio: 2 / 1;
+			.card-title{
+				padding-right: 2.5rem;
+				&::after{
+					content: "\f0a9";
+				}
+			}
 		}
 	}
 }

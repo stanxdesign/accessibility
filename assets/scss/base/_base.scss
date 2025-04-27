@@ -391,8 +391,8 @@ $icons: (
   text-align: center;
   padding: 0 1ch;
 	text-decoration: none;
-	background-color: var(--c-brand);
-	color: var(--c-brand-t)	!important;
+	background-color: var(--c-back);
+	color: var(--c-front)	!important;
 	border-radius: 99rem;
 	// @include shadow;
 	box-shadow: 0 -3px 3px 0 rgba(0,0,0,0.3);
@@ -413,7 +413,31 @@ $icons: (
 	}
 }
 
-body:is([id^="list"], #index){
+body:is([id^="list"]){
+	.backTop{
+		position: fixed;
+		top: auto;
+		left: auto;
+		bottom: 6rem;
+		right: 1rem;
+		opacity: 0;
+		pointer-events: none;
+	}
+	&.startup{
+		.backTop{
+			pointer-events: all;
+			opacity: .7;
+		}
+	}
+	@include MD{
+		.backTop{
+			bottom: 1rem;
+			right: 1rem;
+		}
+	}
+}
+
+body#index{
 	.backTop{
 		position: fixed;
 		top: auto;
@@ -425,28 +449,12 @@ body:is([id^="list"], #index){
 	}
 	&.startup{
 		.backTop{
-			position: fixed;
-			top: auto;
-			left: auto;
-			bottom: 1rem;
-			right: 1rem;
-			opacity: 1;
-			background-color: var(--c-main);
-			color: var(--c-main-t) !important;
-			pointer-events: auto;
+			pointer-events: all;
+			opacity: .7;
 		}
 	}
 }
 
-div:has(.backTop){
-	position: relative;
-	margin: 3rem auto;
-	padding: 1rem 0;
-	border-top: 1px solid var(--c-gary);
-	.backTop{
-		background-color: var(--c-brand);
-	}
-}
 #loadingRuning{
 	width: max-content;
 	text-align: center;

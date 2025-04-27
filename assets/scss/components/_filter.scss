@@ -7,7 +7,6 @@
 	left: 0;
 	right: 0;
 	bottom: 0;
-	padding: 1rem 1.5rem 1rem 1rem;
 	position: fixed;
 	background-color: var(--c-back-sub);
 	display: block;
@@ -18,26 +17,44 @@
 	max-height: 5rem;
 	overflow: hidden;
 	transition: all .5s ease-in-out;
+	#filterPanelForm{
+		width: 100%;
+		padding: 1rem;
+	}
+	#resultPanelBtn{
+		&::before{
+			content: none !important;
+		}
+	}
 	@include MD{
 		width: 40vw;
     max-width: 39rem;
     min-width: 30rem;
-		padding: 1rem 5rem 1rem 1rem;
 		top: 4.5rem;
 		left: auto;
 		bottom: auto;
 		border-radius: 0 0 1rem 1rem;
 		border-top: var(--c-main) solid .5ch;
+		#resultPanelBtn{
+			display: none !important;
+			visibility: hidden !important;
+		}
 	}
 	#filterPanelForm{
 		order: 1;
 		display: flex;
 		flex-direction: column;
 		gap: .5rem;
+		padding: 1rem;
 		.form-group:not(:first-child){
 			opacity: 0;
 			transition: all .5s ease-in-out;
 		}
+	}
+	#resultPanelBtn{
+		max-height: 0;
+		overflow: hidden;
+		padding: 0;
 	}
 	#filterPanelMore{
 		order: 3;
@@ -78,6 +95,10 @@
 		}
 	}
 	&.active{
+		#resultPanelBtn{
+			max-height: unset;
+			padding: .5rem 0;
+		}
 		#filterPanelForm{
 			.form-group:not(:first-child){
 				opacity: 1;
@@ -104,6 +125,10 @@
 	&:focus-within{
 		max-height: 100vh;
 		overflow: hidden;
+		#resultPanelBtn{
+			max-height: unset;
+			padding: .5rem 0;
+		}
 		#filterPanelForm{
 			.form-group:not(:first-child){
 				opacity: 1;
@@ -112,6 +137,10 @@
 	}
 
 	&.active:focus-within{
+		#resultPanelBtn{
+			max-height: unset;
+			padding: .5rem 0;
+		}
 		#filterPanelForm{
 			.form-group:not(:first-child){
 				opacity: 1;
@@ -120,6 +149,10 @@
 	}
 
 	&.active:not(:focus-within){
+		#resultPanelBtn{
+			max-height: 0;
+			padding: 0;
+		}
 		#filterPanelForm{
 			.form-group:not(:first-child){
 				opacity: 0;

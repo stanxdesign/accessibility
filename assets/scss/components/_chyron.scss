@@ -1,6 +1,30 @@
 // @use 'sass:math';
 @use '../abstracts/mixins' as *;
 
+#content {
+	section{
+		&.chyron{
+			overflow: hidden;
+			div.row{
+				display: grid;
+				grid-template-columns: repeat(auto-fill, calc(100vw - 5rem)); // 每個元素寬度為 100vw
+				grid-template-rows: repeat(2, auto); // 兩行排版
+				grid-auto-flow: column; // 元素按列流動
+				overflow-x: scroll;
+				overflow-y: hidden;
+				animation: none;
+				scroll-snap-type: x mandatory;
+				article{
+					width: calc(100vw - 5rem);
+					scroll-snap-align: start;
+				}
+				&:hover{
+					animation-play-state: paused;
+				}
+			}
+		}
+	}
+}
 
 @include LG{
 	#content {
@@ -13,8 +37,10 @@
 				max-width: 100%;
 				margin: 0;
 				div.row{
+					display: flex;
 					flex-wrap: nowrap;
 					animation: tickerTape 18s linear infinite;
+					overflow: visible;
 					&:hover{
 						animation-play-state: paused;
 					}

@@ -62,9 +62,9 @@
 		border-radius: 1rem;
 		background-color: var(--c-highlight);
 		mask: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 725.4 480.8" viewBox="0 0 725.4 480.8"><path d="M725.4 0c-43.9 98.3-104.1 190.2-181.6 265.2-63.2 61.7-137.6 111.6-218.2 147.3-102.4 45-213.9 68.9-325.6 68.3v-62c8.2-.5 16.3-1.2 24.5-1.9 115-11.6 228.1-49.9 324.6-113.6 58.9-38.8 111.2-87.5 154.6-142.9 3-3.9 9.4-12.4 12.3-16.3 7.4-10.2 16.3-23.1 23.2-33.6 17.1-26.6 33-54.7 46.5-83.3 4.3-9 8.5-18.1 12.5-27.2h127.2z"/></svg>') no-repeat center;
-		mask-size: auto 100%;
+		mask-size: auto 80%;
 		mask-position: left top;
-		opacity: .6;
+		opacity: .4;
 		z-index: 0;
 	}
 	&::before{
@@ -113,6 +113,7 @@
 		letter-spacing: 1px;
 		color: var(--c-main-t);
 		text-align: center;
+		z-index: 1;
 		&::before{
 			content: var(--fa);
 			margin-right: 3px;
@@ -487,5 +488,34 @@
 		background-position: center;
 		background-size: cover;
 		opacity: .7;
+	}
+}
+
+#resultPanelBtn{
+	position: sticky;
+	top: 0;
+	left: 0;
+	display: block;
+	text-align: center;
+	max-height: unset;
+	width: 100%;
+	padding: .5rem 0;
+	background-color: var(--c-back);
+	color: var(--c-front);
+	border-top: solid 1px var(--c-white);
+	border-bottom: solid 1px var(--c-white);
+	box-shadow: inset 0 0 1px 0 rgba($color: #000000, $alpha: 0.3);
+	letter-spacing: 2px;
+	z-index: 3;
+	cursor: pointer;
+	&::before{
+		content: '';
+		display: block;
+		width: 4rem;
+		height: 4px;
+		margin: 3px auto 6px auto;
+		background-color: var(--c-main);
+		border-radius: 99rem;
+		opacity: .5;
 	}
 }
