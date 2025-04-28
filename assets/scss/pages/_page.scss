@@ -10,10 +10,6 @@
 			max-width: 1440px;
 			margin: 0 auto;
 		}
-		@include XXL{
-			max-width: 100%;
-			margin: 0 auto;
-		}
 		&.page{
 			line-height: 1.75;
 			h1{

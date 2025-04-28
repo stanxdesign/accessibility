@@ -56,7 +56,7 @@ article {
 			&::after {
 				content: "\f0a9"; /* 假設使用 Font Awesome 的右箭頭 */
 				font-weight: bold;
-				font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free"; /* 根據你的圖標庫調整 */
+				font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro"; /* 根據你的圖標庫調整 */
 				position: absolute;
 				right: 0.1ch;
 				top: 50%;
@@ -193,6 +193,23 @@ article {
 				padding-right: 2.5rem;
 				&::after{
 					content: "\f0a9";
+				}
+			}
+		}
+		&.card-theme-split {
+			.card{
+				.card-title{
+					padding-left: 0;
+					padding-right: 2.5rem;
+					&::after{
+						content: "\f0a9";
+					}
+				}
+				p{
+					i{
+						position: relative;
+						top: auto;
+					}
 				}
 			}
 		}

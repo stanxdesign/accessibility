@@ -34,6 +34,7 @@
 		left: auto;
 		bottom: auto;
 		border-radius: 0 0 1rem 1rem;
+		padding: 0 4rem 0 0;
 		border-top: var(--c-main) solid .5ch;
 		#resultPanelBtn{
 			display: none !important;
@@ -64,7 +65,7 @@
 		justify-content: left;
 		gap: .5rem;
 		border-top: solid 1px var(--c-white);
-
+		padding: 0 1rem;
 		max-height: 0;
 		opacity: 0;
 		pointer-events: none;
@@ -77,6 +78,7 @@
 		pointer-events: none;
 		overflow: hidden;
 		transition: all .3s ease-in-out;
+		padding: 0 1rem;
 		.tags{
 			border-top: dotted 1px var(--c-white);
 			padding: .5rem 0;
@@ -90,6 +92,7 @@
 		margin-top: 1rem;
 		flex: 1 0 100%;
 		gap: 1rem;
+		padding: 0 1rem 1rem 1rem;
 		button{
 			flex: 1 1 auto;
 		}

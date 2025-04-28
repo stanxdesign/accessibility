@@ -9,6 +9,7 @@
 	color: var(--c-black);
 	padding: 0;
 	border-radius: 2rem;
+	translate: -2rem 6rem;
 	@include shadow;
 	overflow: hidden;
 	z-index: 2;
@@ -89,6 +90,7 @@
 		max-height: calc(50dvh - 5rem);
 		overflow-y: auto;
 		transition: all .5s ease-in-out;
+		aspect-ratio: 16 / 10;
 		h3, .h3{
 			width: 100%;
 			font-size: 1.1rem;
@@ -99,6 +101,10 @@
 				margin: 1ch 0 0 0;
 				border-top: 1px solid var(--c-g3);
 			}
+		}
+		@include LG{
+			height: 16rem;
+			max-height: unset;
 		}
 	}
 	.modal-footer{
@@ -112,6 +118,7 @@
 		top: 0;
 		font-size: 1.5rem;
 		padding: 1ch 0;
+		margin: 0 !important;
 		width: 100%;
 		color: var(--c-front-brand);
 		background-color: var(--c-white);
@@ -143,9 +150,9 @@
 		grid-area: slider;
 		width: 100%;
 		height: 100%;
-		padding: 0 1rem;
-
+		padding: 0 1rem 1rem 1rem;
 		color: var(--c-brand-t);
+		aspect-ratio: 16 / 10;
 		.swiffy-slider{
 			height: 100%;
 			margin: 1ch 0;

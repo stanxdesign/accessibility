@@ -358,7 +358,7 @@
 			position: fixed;
 			top: 4.5rem;
 			right:0;
-			height: calc(100dvh - 7.5rem);
+			height: calc(100dvh - 4.5rem);
 			width: 40vw;
 			max-width: 39rem;
 			min-width: 30rem;
@@ -397,7 +397,7 @@
 			top: calc(100dvh - 8rem);
 		}
 		@include MD{
-			padding: 2rem 0 3.5rem 0;
+			padding: 6rem 0 3.5rem 0;
 			&:not(.active){
 				top: -110vh;
 				pointer-events: none;

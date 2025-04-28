@@ -86,10 +86,12 @@
 	.result-left{
 		background-color: var(--c-back-sub);
 		order: 1;
+		border-radius: 0 0 0 1rem;
 	}
 	.result-right{
 		order: 3;
 		background-color: var(--c-back-sub);
+		border-radius: 0 0 1rem 0;
 	}
 	.items{
 		order: 2;
@@ -129,8 +131,8 @@
 		margin: 1rem;
 		p[class^="fa"]{
 			font-family: var(--bs-body-font-family);
-				font-weight: normal;
-				display: block;
+			font-weight: normal;
+			display: block;
 			&::before{
 				margin-left: 0;
 				margin-right: 3px;
@@ -246,7 +248,7 @@
 				color: var(--c-highlight-t);
 				border-color: var(--c-front-brand);
 			}
-			&:has(:checked){
+			&:has(:checked),&:has([checked]){
 				background-color: var(--c-hover);
 				border-color: transparent;
 				color: var(--c-white);

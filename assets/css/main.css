@@ -48,6 +48,14 @@ input, textarea {
   font-size: max(1em, 16px) !important;
 }
 
+#mainContainer .container {
+  max-width: unset !important;
+}
+
+.container {
+  max-width: unset !important;
+}
+
 .no-icon::before {
   content: none !important;
 }
@@ -65,7 +73,7 @@ input, textarea {
   line-height: var(---bs-btn-line-height);
 }
 .btn[class*=fa]::before {
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 .btn:hover, .btn.focus {
@@ -143,7 +151,7 @@ input, textarea {
 .btn-more::after {
   content: "\f178";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   padding: 0 0.5ch;
 }
 
@@ -196,7 +204,7 @@ input, textarea {
 .form-group .form-control + .input-group-text::before {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 
@@ -211,42 +219,49 @@ input, textarea {
 .icon-info::before {
   content: "\f05a";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 
 .icon-search::before {
   content: "\f002";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 
 .icon-list::before {
   content: "\f0ca";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 
 .icon-login::before {
   content: "\f090";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 
 .icon-logout::before {
   content: "\f08b";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 
 .icon-palette::before {
   content: "\f53f";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
+  margin-right: 0.5ch;
+}
+
+.icon-book::before {
+  content: "\f02d";
+  font-weight: bold;
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 
@@ -361,6 +376,10 @@ input, textarea {
 }
 .extra-where label:nth-child(2n):empty {
   background-color: transparent;
+}
+.extra-where label:only-child {
+  padding-right: 1ch;
+  border-radius: 0.5rem;
 }
 .extra-where:not(:has(label)) {
   color: var(--c-main-t);
@@ -1508,7 +1527,7 @@ article[class^=card-] .card-title {
 article[class^=card-] .card-title::after {
   content: "\f0a9"; /* 假設使用 Font Awesome 的右箭頭 */
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free"; /* 根據你的圖標庫調整 */
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro"; /* 根據你的圖標庫調整 */
   position: absolute;
   right: 0.1ch;
   top: 50%;
@@ -1529,7 +1548,7 @@ article[class^=card-] .card-title label {
 article[class^=card-] .card-title label span::before {
   content: "\f0da";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
   opacity: 0.8;
 }
@@ -1652,6 +1671,17 @@ article[class^=card-] .card-cover i {
   }
   .card-half .card .card-title::after {
     content: "\f0a9";
+  }
+  .card-half.card-theme-split .card .card-title {
+    padding-left: 0;
+    padding-right: 2.5rem;
+  }
+  .card-half.card-theme-split .card .card-title::after {
+    content: "\f0a9";
+  }
+  .card-half.card-theme-split .card p i {
+    position: relative;
+    top: auto;
   }
 }
 
@@ -1931,7 +1961,7 @@ article[class^=card-] .card-cover i {
 .modal-theme-card .modal-header .modal-dismiss::before {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 .modal-theme-card .modal-body {
@@ -2033,6 +2063,7 @@ article[class^=card-] .card-cover i {
   color: var(--c-black);
   padding: 0;
   border-radius: 2rem;
+  translate: -2rem 6rem;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
   overflow: hidden;
@@ -2112,7 +2143,7 @@ article[class^=card-] .card-cover i {
 .gispopup .modal-header .modal-dismiss::before {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 .gispopup .modal-body {
@@ -2125,6 +2156,7 @@ article[class^=card-] .card-cover i {
   overflow-y: auto;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
+  aspect-ratio: 16/10;
 }
 .gispopup .modal-body h3, .gispopup .modal-body .h3 {
   width: 100%;
@@ -2137,6 +2169,12 @@ article[class^=card-] .card-cover i {
   margin: 1ch 0 0 0;
   border-top: 1px solid var(--c-g3);
 }
+@media only screen and (min-width: 992px) {
+  .gispopup .modal-body {
+    height: 16rem;
+    max-height: unset;
+  }
+}
 .gispopup .modal-footer {
   grid-area: footer;
   border: none;
@@ -2147,6 +2185,7 @@ article[class^=card-] .card-cover i {
   top: 0;
   font-size: 1.5rem;
   padding: 1ch 0;
+  margin: 0 !important;
   width: 100%;
   color: var(--c-front-brand);
   background-color: var(--c-white);
@@ -2163,7 +2202,7 @@ article[class^=card-] .card-cover i {
   display: inline-block;
   content: var(--fa);
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
   background-color: var(--c-brand);
   color: var(--c-brand-t);
@@ -2180,8 +2219,9 @@ article[class^=card-] .card-cover i {
   grid-area: slider;
   width: 100%;
   height: 100%;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
   color: var(--c-brand-t);
+  aspect-ratio: 16/10;
 }
 .gispopup .extra-gallery .swiffy-slider {
   height: 100%;
@@ -2254,6 +2294,7 @@ article[class^=card-] .card-cover i {
     left: auto;
     bottom: auto;
     border-radius: 0 0 1rem 1rem;
+    padding: 0 4rem 0 0;
     border-top: var(--c-main) solid 0.5ch;
   }
   #filterPanel #resultPanelBtn {
@@ -2303,6 +2344,7 @@ article[class^=card-] .card-cover i {
           justify-content: left;
   gap: 0.5rem;
   border-top: solid 1px var(--c-white);
+  padding: 0 1rem;
   max-height: 0;
   opacity: 0;
   pointer-events: none;
@@ -2318,6 +2360,7 @@ article[class^=card-] .card-cover i {
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  padding: 0 1rem;
 }
 #filterPanel #moreTags .tags {
   border-top: dotted 1px var(--c-white);
@@ -2340,6 +2383,7 @@ article[class^=card-] .card-cover i {
       -ms-flex: 1 0 100%;
           flex: 1 0 100%;
   gap: 1rem;
+  padding: 0 1rem 1rem 1rem;
 }
 #filterPanel #filterBtns button {
   -webkit-box-flex: 1;
@@ -2366,7 +2410,7 @@ article[class^=card-] .card-cover i {
 #filterPanel.active #moreOptionBtn::after {
   content: "\f00d";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 #filterPanel:focus-within {
@@ -2560,12 +2604,14 @@ article[class^=card-] .card-cover i {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
+  border-radius: 0 0 0 1rem;
 }
 .result-all-item .result-right {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
   background-color: var(--c-back-sub);
+  border-radius: 0 0 1rem 0;
 }
 .result-all-item .items {
   -webkit-box-ordinal-group: 3;
@@ -2597,7 +2643,7 @@ article[class^=card-] .card-cover i {
   content: var(--fa);
   margin-right: 3px;
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 .result-all-item .btn-takeme {
@@ -2618,7 +2664,7 @@ article[class^=card-] .card-cover i {
   margin-right: 3px;
   color: var(--c-hover);
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 .result-all-item .levels {
@@ -2712,7 +2758,7 @@ article[class^=card-] .card-cover i {
 .items [class^=fa]::before {
   display: inline-block;
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 .items [class^=fa]:hover {
@@ -2751,21 +2797,21 @@ article[class^=card-] .card-cover i {
   color: var(--c-highlight-t);
   border-color: var(--c-front-brand);
 }
-.items [class^=fa]:has(span):has(:checked) {
+.items [class^=fa]:has(span):has(:checked), .items [class^=fa]:has(span):has([checked]) {
   background-color: var(--c-hover);
   border-color: transparent;
   color: var(--c-white);
   -webkit-box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
           box-shadow: inset 2px 2px 4px 0 var(--c-shadow);
 }
-.items [class^=fa]:has(span):has(:checked) span {
+.items [class^=fa]:has(span):has(:checked) span, .items [class^=fa]:has(span):has([checked]) span {
   background-color: var(--c-back-sub);
   color: var(--c-front-brand);
   scale: 0.8;
   -webkit-box-shadow: 0 0 2px 0 var(--c-shadow);
           box-shadow: 0 0 2px 0 var(--c-shadow);
 }
-.items [class^=fa]:has(span):has(:checked)::before {
+.items [class^=fa]:has(span):has(:checked)::before, .items [class^=fa]:has(span):has([checked])::before {
   color: var(--c-highlight);
 }
 .items [class^=fa]:has(span).active {
@@ -3290,12 +3336,6 @@ article[class^=card-] .card-cover i {
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 1920px) {
-  #content section {
-    max-width: 100%;
-    margin: 0 auto;
-  }
-}
 #content section.page {
   line-height: 1.75;
 }
@@ -3498,7 +3538,7 @@ article[class^=card-] .card-cover i {
 #togglePassword::before {
   content: "\f06e";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 #togglePassword.active::before {
@@ -3922,7 +3962,7 @@ article[class^=card-] .card-cover i {
     position: fixed;
     top: 4.5rem;
     right: 0;
-    height: calc(100dvh - 7.5rem);
+    height: calc(100dvh - 4.5rem);
     width: 40vw;
     max-width: 39rem;
     min-width: 30rem;
@@ -3957,7 +3997,7 @@ article[class^=card-] .card-cover i {
 }
 @media only screen and (min-width: 768px) {
   #pageGIS #resultPanel {
-    padding: 2rem 0 3.5rem 0;
+    padding: 6rem 0 3.5rem 0;
   }
   #pageGIS #resultPanel:not(.active) {
     top: -110vh;
@@ -4025,7 +4065,7 @@ article[class^=card-] .card-cover i {
 #pageGIS .result-all-item p label span::before, #pageGIS .result-all-item p a::before, #pageGIS .result-all-item p button::before {
   content: "\f601";
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
 }
 #pageGIS .result-all-item p label span:hover, #pageGIS .result-all-item p a:hover, #pageGIS .result-all-item p button:hover {
@@ -4209,15 +4249,15 @@ article[class^=card-] .card-cover i {
   #listPage #filterPanel #filterPanelForm .form-group {
     opacity: 1;
     -webkit-box-flex: 0;
-        -ms-flex: 0 1 32%;
-            flex: 0 1 32%;
+        -ms-flex: 0 0 calc(33% - 2rem);
+            flex: 0 0 calc(33% - 2rem);
   }
   #listPage #filterPanel #filterPanelForm .tags {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 65%;
-            flex: 1 1 65%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 65%;
+            flex: 0 0 65%;
   }
-  #listPage #filterPanel #filterPanelForm #send, #listPage #filterPanel #filterPanelForm #clear {
+  #listPage #filterPanel #filterPanelForm #send, #listPage #filterPanel #filterPanelForm #clear, #listPage #filterPanel #filterPanelForm #btn-clear {
     -webkit-box-flex: 1;
         -ms-flex: 1 0 15%;
             flex: 1 0 15%;
@@ -4331,24 +4371,24 @@ article[class^=card-] .card-cover i {
 #listPage .school-info .align-right {
   text-align: right;
 }
-#listPage .school-info .btn-takeme {
+#listPage .school-info .btn-takeme, #listPage .school-info .btn-GoMap {
   position: absolute;
   left: auto;
   right: 0;
   top: 50%;
   translate: 0 -50%;
-  width: 3rem;
+  width: 4rem;
   min-height: 3rem;
   padding-top: 3rem;
   text-align: center;
 }
-#listPage .school-info .btn-takeme::before {
-  top: 0;
-  left: 0;
+#listPage .school-info .btn-takeme::before, #listPage .school-info .btn-GoMap::before {
+  top: 0.5rem;
+  left: 1rem;
   content: "";
   position: absolute;
-  width: 100%;
-  height: 3rem;
+  width: 2.5rem;
+  height: 2.5rem;
   background-color: var(--c-hover);
   -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 80 80" viewBox="0 0 80 80"><path d="M37.8 27.6c-4.3 4.6-7.1 10.2-8.1 16.3-.9-2.2-2.3-4.1-4-5.8L12.2 24.6l11.3-11.3L37 26.8l.8.8z"/><path d="m71 9.6-31.8 5.1 7.7 6.6-7 7c-5.6 5.6-8.7 13-8.7 20.9v21.4h16V49.3c0-3.6 1.4-7 4-9.6l6.5-6.5 4.8 6.9L71 9.6z"/></svg>');
           mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 80 80" viewBox="0 0 80 80"><path d="M37.8 27.6c-4.3 4.6-7.1 10.2-8.1 16.3-.9-2.2-2.3-4.1-4-5.8L12.2 24.6l11.3-11.3L37 26.8l.8.8z"/><path d="m71 9.6-31.8 5.1 7.7 6.6-7 7c-5.6 5.6-8.7 13-8.7 20.9v21.4h16V49.3c0-3.6 1.4-7 4-9.6l6.5-6.5 4.8 6.9L71 9.6z"/></svg>');
@@ -4359,12 +4399,12 @@ article[class^=card-] .card-cover i {
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
 }
-#listPage .school-info .btn-takeme:hover::before {
+#listPage .school-info .btn-takeme:hover::before, #listPage .school-info .btn-GoMap:hover::before {
   background-color: var(--c-brand);
 }
 @media only screen and (min-width: 768px) {
   #listPage .school-info {
-    padding-left: 4rem;
+    padding-left: 5rem;
     padding-right: 0;
   }
   #listPage .school-info .btn-takeme {
@@ -4464,6 +4504,13 @@ article[class^=card-] .card-cover i {
   }
 }
 
+@media only screen and (min-width: 1920px) {
+  #listPage #content section {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .swiffy-slider {
   width: 100%;
   height: calc(100% - 8rem);
@@ -4536,7 +4583,7 @@ article[class^=card-] .card-cover i {
   -webkit-mask: none;
           mask: none;
   font-weight: bold;
-  font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
   margin: 0;
   -webkit-box-shadow: none;

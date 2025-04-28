@@ -36,6 +36,16 @@ input, textarea {
   font-size: max(1em, 16px) !important;
 }
 
+// 複寫 BS CLASS
+#mainContainer{
+	.container{
+		max-width: unset !important;
+	}
+}
+.container{
+	max-width: unset !important;
+}
+
 .no-icon{
 	&::before{
 		content: none !important;
@@ -53,7 +63,7 @@ input, textarea {
 	&[class*="fa"]{
 		line-height: var(---bs-btn-line-height);
 		&::before{
-			font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+			font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
 			margin-right: .5ch;
 		}
 	}
@@ -130,7 +140,7 @@ input, textarea {
 	&::after{
 		content: "\f178";
 		font-weight: bold;
-		font-family: "Font Awesome 6 Pro", "Font Awesome 6 Free";
+		font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
 		padding: 0 .5ch;
 	}
 }
@@ -194,7 +204,8 @@ $icons: (
     "list": "\f0ca",    // fa-list
     "login": "\f090",   // fa-sign-in-alt
     "logout": "\f08b",  // fa-sign-out-alt
-		"palette": "\f53f"  // fa-palette
+		"palette": "\f53f",  // fa-palette
+		"book": "\f02d"  // fa-palette
 );
 
 @each $name, $code in $icons {
@@ -278,33 +289,37 @@ $icons: (
 		background-color: var(--c-main);
 		color: var(--c-main-t);
 		letter-spacing: 1px;
-	}
-	label:nth-child(2n-1){
-		border-radius: .5rem 0 0 .5rem;
-		@include obj-theme(sub,0);
-		padding: 0 0 0 1ch;
-		&:empty{
-			background-color: transparent;
+		&:nth-child(2n-1){
+			border-radius: .5rem 0 0 .5rem;
+			@include obj-theme(sub,0);
+			padding: 0 0 0 1ch;
+			&:empty{
+				background-color: transparent;
+			}
 		}
-	}
-	label:nth-child(2n){
-		border-radius: 0 .5rem .5rem 0;
-		padding: 0 2ch 0 0;
-		&::before{
-			content: "";
-			display: inline-block;
-			height: 0;
-			width: 0;
-			margin-right:0;
-			padding:0;
-			border: 1rem solid var(--c-sub);
-			border-top: 1rem solid transparent;
-			border-bottom: 1rem solid transparent;
-			border-right: 1ch solid transparent;
-			opacity: 1;
+		&:nth-child(2n){
+			border-radius: 0 .5rem .5rem 0;
+			padding: 0 2ch 0 0;
+			&::before{
+				content: "";
+				display: inline-block;
+				height: 0;
+				width: 0;
+				margin-right:0;
+				padding:0;
+				border: 1rem solid var(--c-sub);
+				border-top: 1rem solid transparent;
+				border-bottom: 1rem solid transparent;
+				border-right: 1ch solid transparent;
+				opacity: 1;
+			}
+			&:empty{
+				background-color: transparent;
+			}
 		}
-		&:empty{
-			background-color: transparent;
+		&:only-child{
+			padding-right: 1ch;
+			border-radius: .5rem;
 		}
 	}
 	&:not(:has(label)){
