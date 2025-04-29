@@ -88,7 +88,7 @@
 #slider-main{
 	position: relative;
 	width: 100%;
-	height: calc(100dvh - 12rem);
+	height: calc(100dvh - 4rem);
 	margin-top: 3rem;
 	padding: 0;
 	border-radius: 0;
@@ -107,33 +107,11 @@
 		.lead {
 			margin-top: auto;
 		}
-		.slider-nav{
-			position: absolute;
-			height: 3rem;
-			line-height: 3rem;
-			text-align: center;
-			filter: none;
-			transform: none;
-			color: var(--c-brand);
-			opacity: 1;
-			bottom: 3rem;
-			padding: 0 0.5ch;
-			margin: 0.5ch;
-			top: auto;
-			bottom: 1rem;
-			left: auto;
-			right: 5rem;
-			font-size: 4rem;
-			visibility: visible !important;
-			&.slider-nav-next {
-				right: 1.5rem;
-			}
-		}
 		.cover{
 			position: fixed;
 			width: 100vw;
 			height: 100vw;
-			top: 8rem;
+			top: 11rem;
 			left: auto;
 			right: 0;
 			opacity: 0;
@@ -153,6 +131,10 @@
 				animation-play-state: paused;
 			}
 			@include MD{
+				top: 3rem;
+				mask-position: left center;
+			}
+			@include LG{
 				width: 80vw;
 				height: 100%;
 				top: 0;
@@ -198,6 +180,27 @@
 		scale: 1.15 1.1;
 		z-index: -2;
 	}
+	.slider-nav{
+		position: absolute;
+		height: 3rem;
+		line-height: 3rem;
+		text-align: center;
+		filter: none;
+		transform: none;
+		color: var(--c-hover) !important;
+		opacity: 1;
+		padding: 0 0.5ch;
+		margin: 0.5ch;
+		top: auto;
+		bottom: 1rem;
+		left: auto;
+		right: 3rem;
+		font-size: 3.5rem;
+		visibility: visible !important;
+		&.slider-nav-next {
+			right: 0rem;
+		}
+	}
 	.slide-visible{
 		.cover{
 			opacity: 1 !important;
@@ -207,9 +210,12 @@
 			}
 		}
 	}
-	@include MD{
+	@include LG{
 		min-height: 28rem;
 		.slide{
+			h1{
+				width: 50%;
+			}
 			.cover{
 				width: 80%;
 				height: 100vh;

@@ -27,6 +27,7 @@
 html {
   font-family: "Nunito", "SF Pro", "Arial", "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
   font-size: var(--font-size);
+  min-height: 100vh;
 }
 
 body {
@@ -46,6 +47,11 @@ h3, h4, h5, h6 {
 
 input, textarea {
   font-size: max(1em, 16px) !important;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
 }
 
 #mainContainer .container {
@@ -543,8 +549,8 @@ body#index.startup .backTop {
   background-color: var(--c-back);
   z-index: 1;
   border-radius: 99rem;
-  -webkit-box-shadow: 0 0 8px 1px var(--c-shadow);
-          box-shadow: 0 0 8px 1px var(--c-shadow);
+  opacity: 0.8;
+  z-index: 99;
 }
 #loadingRuning::after {
   position: relative;
@@ -1009,6 +1015,14 @@ button, a, *::after, *::before {
 }
 #footer #footerLogo {
   margin-bottom: 1rem;
+}
+#footer #footerLogo .navbar-brand {
+  display: block;
+}
+@media only screen and (min-width: 768px) {
+  #footer #footerLogo {
+    text-align: center;
+  }
 }
 #footer #footerInfo {
   display: block;
@@ -1522,6 +1536,10 @@ article[class^=card-] .card-body {
 article[class^=card-] .card-body a {
   margin: 1ch;
 }
+article[class^=card-] .card-body p {
+  max-height: 5.75rem;
+  overflow: hidden;
+}
 article[class^=card-] .card-body p i {
   display: block;
   font-size: 2em;
@@ -1531,6 +1549,9 @@ article[class^=card-] .card-body p i {
   article[class^=card-] .card-body .card {
     padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   }
+  article[class^=card-] .card-body p {
+    max-height: unset;
+  }
   article[class^=card-] .card-body p i {
     display: block;
     font-size: 3em;
@@ -1539,7 +1560,7 @@ article[class^=card-] .card-body p i {
 }
 article[class^=card-] .card-title {
   position: relative;
-  font-size: 1.6rem;
+  font-size: 1.3rem;
   padding-right: 2.5rem;
   font-weight: bold;
 }
@@ -1555,11 +1576,6 @@ article[class^=card-] .card-title::after {
   font-size: 2rem;
   z-index: 2;
 }
-@media only screen and (min-width: 768px) {
-  article[class^=card-] .card-title::after {
-    font-size: 2.2rem;
-  }
-}
 article[class^=card-] .card-title label {
   max-height: 3.8rem;
   overflow: hidden;
@@ -1570,6 +1586,14 @@ article[class^=card-] .card-title label span::before {
   font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
   margin-right: 0.5ch;
   opacity: 0.8;
+}
+@media only screen and (min-width: 768px) {
+  article[class^=card-] .card-title {
+    font-size: 1.6rem;
+  }
+  article[class^=card-] .card-title::after {
+    font-size: 2.2rem;
+  }
 }
 article[class^=card-] .card-cover {
   width: 100%;
@@ -1669,6 +1693,7 @@ article[class^=card-] .card-cover i {
 .card-half.card-theme-split .card p i {
   position: absolute;
   top: 1.25rem;
+  left: 1.25rem;
 }
 .card-half.card-theme-cover .card .card-cover {
   position: absolute;
@@ -1678,18 +1703,27 @@ article[class^=card-] .card-cover i {
 @media only screen and (min-width: 768px) {
   .card-half {
     -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .card-half .card {
+    aspect-ratio: 2/1;
+  }
+  .card-half.card-theme-split .card .card-title {
+    padding-left: 4rem;
+    padding-right: 0;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .card-half {
+    -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
     max-width: 50%;
   }
   .card-half .card {
     aspect-ratio: 2/1;
-  }
-  .card-half .card .card-title {
-    padding-right: 2.5rem;
-  }
-  .card-half .card .card-title::after {
-    content: "\f0a9";
   }
   .card-half.card-theme-split .card .card-title {
     padding-left: 0;
@@ -1713,7 +1747,7 @@ article[class^=card-] .card-cover i {
 .card-third .card {
   aspect-ratio: 1/1;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .card-third {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 33.3333333333%;
@@ -1740,7 +1774,7 @@ article[class^=card-] .card-cover i {
     left: 2rem;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   .card-quarter {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 25%;
@@ -2082,7 +2116,6 @@ article[class^=card-] .card-cover i {
   color: var(--c-black);
   padding: 0;
   border-radius: 2rem;
-  translate: -2rem 6rem;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
   overflow: hidden;
@@ -3050,7 +3083,7 @@ article[class^=card-] .card-cover i {
   width: 4rem;
   height: 4px;
   margin: 3px auto 6px auto;
-  background-color: var(--c-main);
+  background-color: var(--c-hover);
   border-radius: 99rem;
   opacity: 0.5;
 }
@@ -3078,8 +3111,39 @@ article[class^=card-] .card-cover i {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
+#content section.chyron .card-small {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
 
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 576px) {
+  #content section.chyron {
+    overflow: hidden;
+  }
+  #content section.chyron div.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(50vw - 5rem));
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -webkit-animation: none;
+            animation: none;
+    -ms-scroll-snap-type: x mandatory;
+        scroll-snap-type: x mandatory;
+  }
+  #content section.chyron div.row article {
+    width: calc(50vw - 5rem);
+    scroll-snap-align: start;
+  }
+  #content section.chyron div.row:hover {
+    -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+  }
+}
+@media only screen and (min-width: 1440px) {
   #content section.chyron {
     max-width: 100%;
     margin: 0;
@@ -3101,6 +3165,12 @@ article[class^=card-] .card-cover i {
   #content section.chyron div.row:hover {
     -webkit-animation-play-state: paused;
             animation-play-state: paused;
+  }
+  #content section.chyron div.row .card-small {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
   }
 }
 @-webkit-keyframes tickerTape {
@@ -3321,6 +3391,7 @@ article[class^=card-] .card-cover i {
   margin-top: 6rem;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  min-height: calc(75vh - 12rem);
 }
 @media only screen and (min-width: 1440px) {
   #content section {
@@ -4386,16 +4457,16 @@ article[class^=card-] .card-cover i {
   position: relative;
   clear: both;
   margin-bottom: 3rem;
-  padding-left: 0;
-  padding-right: 4rem;
+  padding-left: 5rem;
+  padding-right: 0;
 }
 #listPage .school-info .align-right {
   text-align: right;
 }
 #listPage .school-info .btn-takeme, #listPage .school-info .btn-GoMap {
   position: absolute;
-  left: auto;
-  right: 0;
+  left: 0;
+  right: auto;
   top: 50%;
   translate: 0 -50%;
   width: 4rem;
@@ -4622,7 +4693,7 @@ article[class^=card-] .card-cover i {
 #slider-main {
   position: relative;
   width: 100%;
-  height: calc(100dvh - 12rem);
+  height: calc(100dvh - 4rem);
   margin-top: 3rem;
   padding: 0;
   border-radius: 0;
@@ -4653,35 +4724,11 @@ article[class^=card-] .card-cover i {
 #slider-main .slide .lead {
   margin-top: auto;
 }
-#slider-main .slide .slider-nav {
-  position: absolute;
-  height: 3rem;
-  line-height: 3rem;
-  text-align: center;
-  -webkit-filter: none;
-          filter: none;
-  -webkit-transform: none;
-          transform: none;
-  color: var(--c-brand);
-  opacity: 1;
-  bottom: 3rem;
-  padding: 0 0.5ch;
-  margin: 0.5ch;
-  top: auto;
-  bottom: 1rem;
-  left: auto;
-  right: 5rem;
-  font-size: 4rem;
-  visibility: visible !important;
-}
-#slider-main .slide .slider-nav.slider-nav-next {
-  right: 1.5rem;
-}
 #slider-main .slide .cover {
   position: fixed;
   width: 100vw;
   height: 100vw;
-  top: 8rem;
+  top: 11rem;
   left: auto;
   right: 0;
   opacity: 0;
@@ -4711,6 +4758,13 @@ article[class^=card-] .card-cover i {
           animation-play-state: paused;
 }
 @media only screen and (min-width: 768px) {
+  #slider-main .slide .cover {
+    top: 3rem;
+    -webkit-mask-position: left center;
+            mask-position: left center;
+  }
+}
+@media only screen and (min-width: 992px) {
   #slider-main .slide .cover {
     width: 80vw;
     height: 100%;
@@ -4767,6 +4821,29 @@ article[class^=card-] .card-cover i {
   scale: 1.15 1.1;
   z-index: -2;
 }
+#slider-main .slider-nav {
+  position: absolute;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  -webkit-filter: none;
+          filter: none;
+  -webkit-transform: none;
+          transform: none;
+  color: var(--c-hover) !important;
+  opacity: 1;
+  padding: 0 0.5ch;
+  margin: 0.5ch;
+  top: auto;
+  bottom: 1rem;
+  left: auto;
+  right: 3rem;
+  font-size: 3.5rem;
+  visibility: visible !important;
+}
+#slider-main .slider-nav.slider-nav-next {
+  right: 0rem;
+}
 #slider-main .slide-visible .cover {
   opacity: 1 !important;
 }
@@ -4776,9 +4853,12 @@ article[class^=card-] .card-cover i {
   -webkit-animation-play-state: running;
           animation-play-state: running;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 992px) {
   #slider-main {
     min-height: 28rem;
+  }
+  #slider-main .slide h1 {
+    width: 50%;
   }
   #slider-main .slide .cover {
     width: 80%;

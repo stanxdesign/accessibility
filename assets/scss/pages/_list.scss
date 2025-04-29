@@ -221,15 +221,15 @@
 		position: relative;
 		clear: both;
 		margin-bottom: 3rem;
-		padding-left: 0;
-		padding-right: 4rem;
+		padding-left: 5rem;
+		padding-right: 0;
 		.align-right{
 			text-align: right;
 		}
 		.btn-takeme, .btn-GoMap{
 			position: absolute;
-			left: auto;
-			right: 0;
+			left: 0;
+			right: auto;
 			top: 50%;
 			translate: 0 -50%;
 			width: 4rem;

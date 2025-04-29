@@ -4,6 +4,12 @@
 #footer {
 	#footerLogo{
 		margin-bottom: 1rem;
+		.navbar-brand{
+			display: block;
+		}
+		@include MD {
+			text-align: center;
+		}
 	}
 	height: 25vh;
 	min-height: 100%;
@@ -24,7 +30,6 @@
 		padding: 3rem;
 		display: flex;
 		align-items: center;
-
 		#footerInfo {
 			flex: 1;
 			align-items: center;

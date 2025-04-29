@@ -29,6 +29,8 @@ article {
 				margin: 1ch;
 			}
 			p{
+				max-height: 5.75rem;
+				overflow: hidden;
 				i{
 					display: block;
 					font-size: 2em;
@@ -40,6 +42,7 @@ article {
 					padding: 1.5rem 1.5rem 1.5rem 1.5rem;
 				}
 				p{
+					max-height: unset;
 					i{
 						display: block;
 						font-size: 3em;
@@ -50,7 +53,7 @@ article {
 		}
 		.card-title {
 			position: relative;
-			font-size: 1.6rem;
+			font-size: 1.3rem;
 			padding-right: 2.5rem;
 			font-weight: bold;
 			&::after {
@@ -63,9 +66,6 @@ article {
 				transform: translateY(-50%);
 				font-size: 2rem;
 				z-index: 2;
-				@include MD {
-					font-size: 2.2rem;
-				}
 			}
 			label {
 				max-height: 3.8rem;
@@ -76,6 +76,12 @@ article {
 						@include fa-icon;
 						opacity: .8;
 					}
+				}
+			}
+			@include MD{
+				font-size: 1.6rem;
+				&::after {
+					font-size: 2.2rem;
 				}
 			}
 		}
@@ -171,6 +177,7 @@ article {
 				i{
 					position: absolute;
 					top: 1.25rem;
+					left: 1.25rem;
 				}
 			}
 		}
@@ -184,17 +191,26 @@ article {
 			}
 		}
 	}
-	@include MD {
+	@include MD{
+		flex: 0 0 100%; // 二分之一寬
+		max-width: 100%;
+		.card {
+			aspect-ratio: 2 / 1;
+		}
+		&.card-theme-split {
+			.card{
+				.card-title{
+					padding-left: 4rem;
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	@include LG {
 		flex: 0 0 50%; // 二分之一寬
 		max-width: 50%;
 		.card {
 			aspect-ratio: 2 / 1;
-			.card-title{
-				padding-right: 2.5rem;
-				&::after{
-					content: "\f0a9";
-				}
-			}
 		}
 		&.card-theme-split {
 			.card{
@@ -222,7 +238,7 @@ article {
 	.card {
 		aspect-ratio: 1 / 1;
 	}
-	@include MD {
+	@include LG {
 		flex: 0 0 calc(100% / 3); // 三分之一寬
 		max-width: calc(100% / 3);
 		.card {
@@ -245,7 +261,7 @@ article {
 			}
 		}
 	}
-	@include MD {
+	@include LG {
 		flex: 0 0 25%; // 四分之一寬
 		max-width: 25%;
 	}

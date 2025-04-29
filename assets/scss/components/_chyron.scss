@@ -22,11 +22,41 @@
 					animation-play-state: paused;
 				}
 			}
+			.card-small {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
+@include SM{
+	#content {
+		section{
+			&.chyron{
+				overflow: hidden;
+				div.row{
+					display: grid;
+					grid-template-columns: repeat(auto-fill, calc(50vw - 5rem)); // 每個元素寬度為 100vw
+					grid-template-rows: repeat(2, auto); // 兩行排版
+					grid-auto-flow: column; // 元素按列流動
+					overflow-x: scroll;
+					overflow-y: hidden;
+					animation: none;
+					scroll-snap-type: x mandatory;
+					article{
+						width: calc(50vw - 5rem);
+						scroll-snap-align: start;
+					}
+					&:hover{
+						animation-play-state: paused;
+					}
+				}
+			}
 		}
 	}
 }
 
-@include LG{
+@include XL{
 	#content {
 		section{
 			&.chyron{
@@ -43,6 +73,10 @@
 					overflow: visible;
 					&:hover{
 						animation-play-state: paused;
+					}
+					.card-small {
+						flex: 0 0 25%;
+						max-width: 25%;
 					}
 				}
 			}

@@ -16,6 +16,7 @@
 html {
 	font-family: $font-family;
 	font-size: var(--font-size);
+	min-height: 100vh;
 }
 
 body {
@@ -34,6 +35,11 @@ h3, h4, h5, h6 {
 
 input, textarea {
   font-size: max(1em, 16px) !important;
+}
+
+.hidden{
+	display: none;
+	visibility: hidden;
 }
 
 // 複寫 BS CLASS
@@ -487,7 +493,8 @@ body#index{
 		background-color: var(--c-back);
 		z-index: 1;
 		border-radius: 99rem;
-		box-shadow: 0 0 8px 1px var(--c-shadow);
+		opacity: 0.8;
+		z-index: 99;
 	}
 	&::after{
 		position: relative;
