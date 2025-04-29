@@ -471,13 +471,30 @@ body#index{
 }
 
 #loadingRuning{
+	position: relative;
 	width: max-content;
 	text-align: center;
 	margin: 2rem auto 2rem auto;
+	&::before{
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: '';
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1 / 1;
+		background-color: var(--c-back);
+		z-index: 1;
+		border-radius: 99rem;
+		box-shadow: 0 0 8px 1px var(--c-shadow);
+	}
 	&::after{
+		position: relative;
 		content: '資料讀取中...';
 		display: block;
 		margin-top: -3.5rem;
+		z-index: 2;
 	}
 	#loadingIcon {
 		position: relative;
@@ -486,8 +503,9 @@ body#index{
 		width: 10rem;
 		height: 10rem;
 		rotate: 90deg;
-		translate: -1.25rem 0;
+		translate: -2.5rem 0;
 		scale: .5;
+		z-index: 3;
 		g {
 			animation: slide $transition-duration linear infinite;
 			&:nth-child(2) {

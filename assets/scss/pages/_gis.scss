@@ -315,11 +315,11 @@
 
 	#resultPanel{
 		position: fixed;
-		top: 1.5rem;
-		right:0;
 		height: calc(100dvh - 2.5rem);
-		width: 100%;
 		padding: 0 0 7.5rem 0;
+		top: 4.5rem;
+		right:0;
+		width: 100%;
 		transition: all .5s ease-in-out;
 		overflow-y: scroll;
 		background-color: var(--c-back-blur);

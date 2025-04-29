@@ -524,16 +524,34 @@ body#index.startup .backTop {
 }
 
 #loadingRuning {
+  position: relative;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   text-align: center;
   margin: 2rem auto 2rem auto;
 }
+#loadingRuning::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  background-color: var(--c-back);
+  z-index: 1;
+  border-radius: 99rem;
+  -webkit-box-shadow: 0 0 8px 1px var(--c-shadow);
+          box-shadow: 0 0 8px 1px var(--c-shadow);
+}
 #loadingRuning::after {
+  position: relative;
   content: "資料讀取中...";
   display: block;
   margin-top: -3.5rem;
+  z-index: 2;
 }
 #loadingRuning #loadingIcon {
   position: relative;
@@ -542,8 +560,9 @@ body#index.startup .backTop {
   width: 10rem;
   height: 10rem;
   rotate: 90deg;
-  translate: -1.25rem 0;
+  translate: -2.5rem 0;
   scale: 0.5;
+  z-index: 3;
 }
 #loadingRuning #loadingIcon g {
   -webkit-animation: slide 2s linear infinite;
@@ -3880,11 +3899,11 @@ article[class^=card-] .card-cover i {
 }
 #pageGIS #resultPanel {
   position: fixed;
-  top: 1.5rem;
-  right: 0;
   height: calc(100dvh - 2.5rem);
-  width: 100%;
   padding: 0 0 7.5rem 0;
+  top: 4.5rem;
+  right: 0;
+  width: 100%;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
   overflow-y: scroll;
@@ -4117,6 +4136,9 @@ article[class^=card-] .card-cover i {
 #listPage #filterPanel #send, #listPage #filterPanel #clear {
   width: 45%;
   margin-top: 0.5rem;
+  -webkit-box-ordinal-group: 10;
+      -ms-flex-order: 9;
+          order: 9;
 }
 #listPage #filterPanel #clear {
   left: auto;
@@ -4227,6 +4249,19 @@ article[class^=card-] .card-cover i {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 calc(33% - 2rem);
             flex: 0 0 calc(33% - 2rem);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #listPage #filterPanel #filterPanelForm .form-group label:not(.tag) {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 0px;
+            flex: 0 0 0;
+    margin: 0 auto 0 0;
   }
   #listPage #filterPanel #filterPanelForm .tags {
     -webkit-box-flex: 0;
@@ -4267,6 +4302,11 @@ article[class^=card-] .card-cover i {
     color: var(--c-front-sub);
     border: none;
     overflow: visible;
+  }
+  #listPage #filterPanel #filterPanelForm #send, #listPage #filterPanel #filterPanelForm #clear {
+    -webkit-box-ordinal-group: 9;
+        -ms-flex-order: 8;
+            order: 8;
   }
 }
 #listPage #layoutBtns {

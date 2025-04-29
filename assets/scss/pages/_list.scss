@@ -31,6 +31,7 @@
 		#send,#clear{
 			width: 45%;
 			margin-top: .5rem;
+			order: 9;
 		}
 		#clear{
 			left: auto;
@@ -109,6 +110,12 @@
 				.form-group {
 					opacity: 1;
 					flex: 0 0 calc(33% - 2rem);
+					flex-direction: column;
+					label:not(.tag) {
+						align-items: flex-start;
+						flex: 0 0 0;
+						margin: 0 auto 0 0;
+					}
 				}
 				.tags{
 					flex: 0 0 65%;
@@ -140,6 +147,11 @@
 			color: var(--c-front-sub);
 			border: none;
 			overflow: visible;
+			#filterPanelForm{
+				#send,#clear{
+					order: 8;
+				}
+			}
 		}
 	}
 
