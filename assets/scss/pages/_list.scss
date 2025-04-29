@@ -119,6 +119,9 @@
 				}
 				.tags{
 					flex: 0 0 65%;
+					.tags{
+						flex: 0 0 auto !important
+					}
 				}
 				#send,#clear,#btn-clear{
 					flex: 1 0 15%;
@@ -127,8 +130,8 @@
 				}
 			}
 			#moreTagsFunction{
-				margin-left: auto;
-				margin-right: 0;
+				margin-left: 0;
+				margin-right: auto;
 				margin-bottom: 0;
 			}
 		}
