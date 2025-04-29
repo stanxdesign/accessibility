@@ -83,6 +83,16 @@
 			border-top: dotted 1px var(--c-white);
 			padding: .5rem 0;
 		}
+		&.active{
+			opacity: 1;
+			pointer-events: all;
+			max-height: 20rem;
+			+ #filterPanelMore{
+				opacity: 1;
+				pointer-events: all;
+				max-height: 20rem;
+			}
+		}
 	}
 	#filterBtns{
 		order: 4;
@@ -97,35 +107,8 @@
 			flex: 1 1 auto;
 		}
 	}
-	&.active{
-		#resultPanelBtn{
-			max-height: unset;
-			padding: .5rem 0;
-		}
-		#filterPanelForm{
-			.form-group:not(:first-child){
-				opacity: 1;
-			}
-		}
-		#filterPanelMore{
-			opacity: 1;
-			pointer-events: all;
-			max-height: 20rem;
-		}
-		#moreTags{
-			opacity: 1;
-			pointer-events: all;
-			max-height: 20rem;
-		}
-		#moreOptionBtn{
-			&::after{
-				content: '\f00d';
-				@include fa-icon;
-			}
-		}
-	}
 
-	&:focus-within{
+	&.active{
 		max-height: 100vh;
 		overflow: hidden;
 		#resultPanelBtn{
@@ -139,29 +122,6 @@
 		}
 	}
 
-	&.active:focus-within{
-		#resultPanelBtn{
-			max-height: unset;
-			padding: .5rem 0;
-		}
-		#filterPanelForm{
-			.form-group:not(:first-child){
-				opacity: 1;
-			}
-		}
-	}
-
-	&.active:not(:focus-within){
-		#resultPanelBtn{
-			max-height: 0;
-			padding: 0;
-		}
-		#filterPanelForm{
-			.form-group:not(:first-child){
-				opacity: 0;
-			}
-		}
-	}
 	.toggle-switch {
 		.dot {
 			box-shadow:0 0 0 2px var(--c-gary);

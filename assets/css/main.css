@@ -2366,6 +2366,16 @@ article[class^=card-] .card-cover i {
   border-top: dotted 1px var(--c-white);
   padding: 0.5rem 0;
 }
+#filterPanel #moreTags.active {
+  opacity: 1;
+  pointer-events: all;
+  max-height: 20rem;
+}
+#filterPanel #moreTags.active + #filterPanelMore {
+  opacity: 1;
+  pointer-events: all;
+  max-height: 20rem;
+}
 #filterPanel #filterBtns {
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
@@ -2390,53 +2400,16 @@ article[class^=card-] .card-cover i {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
 }
+#filterPanel.active {
+  max-height: 100vh;
+  overflow: hidden;
+}
 #filterPanel.active #resultPanelBtn {
   max-height: unset;
   padding: 0.5rem 0;
 }
 #filterPanel.active #filterPanelForm .form-group:not(:first-child) {
   opacity: 1;
-}
-#filterPanel.active #filterPanelMore {
-  opacity: 1;
-  pointer-events: all;
-  max-height: 20rem;
-}
-#filterPanel.active #moreTags {
-  opacity: 1;
-  pointer-events: all;
-  max-height: 20rem;
-}
-#filterPanel.active #moreOptionBtn::after {
-  content: "\f00d";
-  font-weight: bold;
-  font-family: "Font Awesome 6 Pro 6.7.2", "Font Awesome 6 Pro";
-  margin-right: 0.5ch;
-}
-#filterPanel:focus-within {
-  max-height: 100vh;
-  overflow: hidden;
-}
-#filterPanel:focus-within #resultPanelBtn {
-  max-height: unset;
-  padding: 0.5rem 0;
-}
-#filterPanel:focus-within #filterPanelForm .form-group:not(:first-child) {
-  opacity: 1;
-}
-#filterPanel.active:focus-within #resultPanelBtn {
-  max-height: unset;
-  padding: 0.5rem 0;
-}
-#filterPanel.active:focus-within #filterPanelForm .form-group:not(:first-child) {
-  opacity: 1;
-}
-#filterPanel.active:not(:focus-within) #resultPanelBtn {
-  max-height: 0;
-  padding: 0;
-}
-#filterPanel.active:not(:focus-within) #filterPanelForm .form-group:not(:first-child) {
-  opacity: 0;
 }
 #filterPanel .toggle-switch .dot {
   -webkit-box-shadow: 0 0 0 2px var(--c-gary);
@@ -4196,6 +4169,9 @@ article[class^=card-] .card-cover i {
   padding: 0.5rem 0;
   margin: 0;
   grid-template-columns: repeat(auto-fill, 1fr);
+  -webkit-box-ordinal-group: 10;
+      -ms-flex-order: 9;
+          order: 9;
 }
 #listPage #filterPanel #moreTagsMenu hr {
   margin: 1ch 0;
@@ -4862,7 +4838,7 @@ article[class^=card-] .card-cover i {
 }
 
 [data-bs-theme=contrast] {
-  --c-brand:	#4F0059;
+  --c-brand:	#3C008C;
   --c-main:	#63E6BD;
   --c-sub:	#429A7E;
   --c-brand-t:	#F3FF51;
@@ -4870,7 +4846,7 @@ article[class^=card-] .card-cover i {
   --c-sub-t:	#FFFFFF;
   --c-highlight:	#F3FF51;
   --c-highlight-t:	#390041;
-  --c-hover:	#4F0059;
+  --c-hover:	#450BB3;
   --c-hover-t:	#F3FF51;
   --c-focus:	#FF3B6B;
   --c-front:	#333333;
