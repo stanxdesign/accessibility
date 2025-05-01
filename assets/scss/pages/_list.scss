@@ -88,11 +88,20 @@
 			}
 		}
 		@include MD{
+			position: relative;
+			top: 0;
 			width: 100%;
+			max-height: unset;
+			max-width: 960px;
 			margin: 1.5rem auto;
 			flex-direction: row;
-			flex-wrap: nowrap;
 			padding: 0;
+			border-radius: 1rem;
+			background-color: var(--c-back-sub);
+			color: var(--c-front-sub);
+			border: none;
+			overflow: visible;
+			flex-wrap: nowrap;
 			#moreTagsMenu{
 				width: 100%;
 				padding: .5rem 0;
@@ -109,7 +118,7 @@
 				justify-content: space-between;
 				.form-group {
 					opacity: 1;
-					flex: 0 0 calc(33% - 2rem);
+					flex: 0 0 calc(33% - 1rem);
 					flex-direction: column;
 					label:not(.tag) {
 						align-items: flex-start;
@@ -127,33 +136,13 @@
 					flex: 1 0 15%;
 					margin-top: .25rem;
 					align-self: flex-start;
+					order: 8;
 				}
 			}
 			#moreTagsFunction{
 				margin-left: 0;
 				margin-right: auto;
 				margin-bottom: 0;
-			}
-		}
-		@include MD{
-			position: relative;
-			top: 0;
-			width: 100%;
-			max-height: unset;
-			max-width: 960px;
-			margin: 1.5rem auto;
-			flex-direction: row;
-			flex-wrap: wrap;
-			padding: 0;
-			border-radius: 1rem;
-			background-color: var(--c-back-sub);
-			color: var(--c-front-sub);
-			border: none;
-			overflow: visible;
-			#filterPanelForm{
-				#send,#clear{
-					order: 8;
-				}
 			}
 		}
 	}

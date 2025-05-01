@@ -62,6 +62,14 @@ input, textarea {
   max-width: unset !important;
 }
 
+.select2.select2-container,
+.select2,
+.select2-container {
+  width: 100% !important;
+  display: table;
+  table-layout: fixed;
+}
+
 .no-icon::before {
   content: none !important;
 }
@@ -2418,6 +2426,14 @@ article[class^=card-] .card-cover i {
   border-top: dotted 1px var(--c-white);
   padding: 0.5rem 0;
 }
+#filterPanel #moreTags .tags.dropdown-center {
+  width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  #filterPanel #moreTags .tags.dropdown-center {
+    width: auto;
+  }
+}
 #filterPanel #moreTags.active {
   opacity: 1;
   pointer-events: all;
@@ -4279,15 +4295,24 @@ article[class^=card-] .card-cover i {
 }
 @media only screen and (min-width: 768px) {
   #listPage #filterPanel {
+    position: relative;
+    top: 0;
     width: 100%;
+    max-height: unset;
+    max-width: 960px;
     margin: 1.5rem auto;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    padding: 0;
+    border-radius: 1rem;
+    background-color: var(--c-back-sub);
+    color: var(--c-front-sub);
+    border: none;
+    overflow: visible;
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
-    padding: 0;
   }
   #listPage #filterPanel #moreTagsMenu {
     width: 100%;
@@ -4318,8 +4343,8 @@ article[class^=card-] .card-cover i {
   #listPage #filterPanel #filterPanelForm .form-group {
     opacity: 1;
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 calc(33% - 2rem);
-            flex: 0 0 calc(33% - 2rem);
+        -ms-flex: 0 0 calc(33% - 1rem);
+            flex: 0 0 calc(33% - 1rem);
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -4351,38 +4376,14 @@ article[class^=card-] .card-cover i {
     margin-top: 0.25rem;
     -ms-flex-item-align: start;
         align-self: flex-start;
+    -webkit-box-ordinal-group: 9;
+        -ms-flex-order: 8;
+            order: 8;
   }
   #listPage #filterPanel #moreTagsFunction {
     margin-left: 0;
     margin-right: auto;
     margin-bottom: 0;
-  }
-}
-@media only screen and (min-width: 768px) {
-  #listPage #filterPanel {
-    position: relative;
-    top: 0;
-    width: 100%;
-    max-height: unset;
-    max-width: 960px;
-    margin: 1.5rem auto;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    padding: 0;
-    border-radius: 1rem;
-    background-color: var(--c-back-sub);
-    color: var(--c-front-sub);
-    border: none;
-    overflow: visible;
-  }
-  #listPage #filterPanel #filterPanelForm #send, #listPage #filterPanel #filterPanelForm #clear {
-    -webkit-box-ordinal-group: 9;
-        -ms-flex-order: 8;
-            order: 8;
   }
 }
 #listPage #layoutBtns {

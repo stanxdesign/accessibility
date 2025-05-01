@@ -82,6 +82,12 @@
 		.tags{
 			border-top: dotted 1px var(--c-white);
 			padding: .5rem 0;
+			&.dropdown-center {
+				width: 100%;
+				@include MD{
+					width: auto;
+				}
+			}
 		}
 		&.active{
 			opacity: 1;

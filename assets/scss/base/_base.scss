@@ -52,6 +52,14 @@ input, textarea {
 	max-width: unset !important;
 }
 
+.select2.select2-container,
+.select2,
+.select2-container{
+	width: 100% !important;
+	display: table;
+	table-layout: fixed;
+}
+
 .no-icon{
 	&::before{
 		content: none !important;
