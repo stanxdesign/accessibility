@@ -3,32 +3,21 @@
 @use 'base/base';
 @use 'base/wcag';
 @use 'base/effect';
-// @use 'base/typography';
+
 
 @use 'layout/navbar';
-// @use 'layout/header';
-@use 'layout/footer';
-// @use 'layout/grid';
 
-@use 'components/marker';
+@use 'layout/footer';
+
 @use 'components/card';
 @use 'components/modal';
 @use 'components/popup';
-@use 'components/filter';
-@use 'components/result';
 @use 'components/chyron';
 @use 'components/accordion';
+@use 'components/slider';
 
 @use 'pages/index';
 @use 'pages/page';
 @use 'pages/login';
-@use 'pages/gis';
-@use 'pages/list';
-
-@use 'components/slider';
-// @use 'pages/home';
-// @use 'pages/about';
-// @use 'pages/login';
 
 @use 'themes/default';
-// @use 'themes/light';
