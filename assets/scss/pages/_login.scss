@@ -1,12 +1,19 @@
 // @use 'sass:math';
 @use "../abstracts/mixins" as *;
 
+#loginHeader{
+	text-align: center;
+	img{
+		margin: 2rem auto;
+		height: 4rem;
+	}
+}
+
 #loginPage{
 	position: relative;
 	background-color: var(--c-brand);
-	margin: 3rem auto 5rem auto;
+	margin: 1rem auto 5rem auto;
 	max-width: 960px !important;
-	border: 1rem solid var(--c-brand);
 	border-radius: 2rem;
 	#loginCard{
 		border-radius: 1rem 1rem 0 0;
@@ -60,7 +67,7 @@
 		float: right;
 	}
 	@include SM{
-		border: 2rem solid var(--c-brand);
+		border: 1.5rem solid var(--c-brand);
 	}
 	@include MD{
 		#loginCard{

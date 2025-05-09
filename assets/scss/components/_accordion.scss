@@ -3,43 +3,65 @@
 
 .accordion {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: stretch;
   overflow: hidden;
-	aspect-ratio: 1 / 1;
+	border-radius: 1rem;
+	overflow: hidden;
 
-  .section {
+  .accordion-item  {
     flex: 1; // 預設每個 section 平均分配空間
-    min-width: 4rem;
+    min-height: 3rem;
     cursor: pointer;
     transition: all 0.4s ease-in-out;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     overflow: hidden;
-
+		position: relative;
+		*{
+			z-index: 2;
+			order: 2;
+		}
+		.cover{
+			// position: absolute;
+			order: 1;
+			z-index: 1;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: auto;
+			aspect-ratio: 16 / 9;
+			img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+			}
+		}
     &.grow {
       flex: 5; // 展開的 section 占更多空間
       background-color: var(--c-back-sub);
-
-      h3 {
-				font-size: 1.25rem;
-				transform-origin: center;
-				color: var(--c-brand);
-      }
-
-      .button-thin {
-        margin: 1.5rem .5rem 0 auto;
+			padding-left: 0;
+			.cover{
+				opacity: 1;
+			}
+			.button-thin {
+        margin: -1rem .5rem 0 auto;
         transform: rotate(180deg);
+				translate: 0 1.5rem ;
 				i{
 					color: var(--c-front) !important;
 					margin-right: 0 !important;
 				}
       }
-
+      h3 {
+				color: var(--c-brand);
+				padding: 0 1rem;
+      }
       p {
         display: block;
+				padding: 0 1rem;
         animation: slide 0.4s ease;
       }
     }
@@ -49,33 +71,36 @@
       background-color: var(--c-brand);
       color: var(--c-brand-t);
 			border: var(--c-g1) 1px solid;
-			justify-content: center;
-
-      h3 {
-				font-size: 1.25rem;
-				rotate: -90deg;
-				white-space:nowrap;
-				margin-bottom: auto;
-      }
-
+			justify-content: end;
+			max-height: 3rem;
+			.cover{
+				opacity: 0;
+				transition: all 0.5s ease-in-out;
+			}
       .button-thin {
-				background-color: var(--c-focus);
-        margin: 1.5rem 0 auto 0;
+				border: 1px solid var(--c-highlight);
+				background-color: var(--c-highlight);
+        margin: 1.5rem .5rem auto auto;
+				translate: 0 1.5rem;
 				i{
-					color: var(--c-hover-t) !important;
+					color: var(--c-highlight-t) !important;
 					margin-right: 0 !important;
 				}
       }
-
+			h3 {
+				color: var(--c-brand-t);
+				padding: 0 1rem;
+      }
       p {
         display: none;
       }
     }
 
     h3 {
+			transform-origin: center;
       font-size: 1.25rem;
       font-weight: bold;
-      text-align: center;
+      text-align: left;
       transition: all 0.3s ease;
     }
 
@@ -84,26 +109,123 @@
       overflow: hidden;
       font-weight: 200;
       color: var(--c-front);
-      margin: 0 1.5rem 1.5rem;
+      margin: 0 1.5rem 1.5rem 0;
       display: none;
     }
 
     .button-thin {
-      width: 2.5rem;
-      height: 2.5rem;
+      width: 2rem;
+      height: 2rem;
+			min-height: 2rem;
       margin: 0;
       padding: 0;
-      border: 1px solid var(--c-focus);
+      border: 1px solid var(--c-hover);
       border-radius: 50%;
       background-color: transparent;
     }
   }
+	@include SM{
+		display: flex;
+		flex-direction: row;
+		align-items: stretch;
+		overflow: hidden;
+		aspect-ratio: 5 / 4;
+		.accordion-item  {
+			flex: 1; // 預設每個 section 平均分配空間
+			min-width: 4rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: left;
+			overflow: hidden;
+			position: relative;
+			.button-thin {
+				width: 2.5rem;
+				height: 2.5rem;
+				min-height: 2.5rem;
+				margin: 0;
+				padding: 0;
+				border: 1px solid var(--c-hover);
+				border-radius: 50%;
+				background-color: transparent;
+			}
+			&.grow {
+				flex: 5; // 展開的 section 占更多空間
+				background-color: var(--c-back-sub);
+				padding-left: calc(50% - 6rem);
+				.button-thin {
+					margin: 1.5rem 1rem auto auto;
+					translate: 0 0;
+				}
+				h3 {
+					font-size: 1.25rem;
+					transform-origin: center;
+					color: var(--c-brand);
+				}
+				p {
+					display: block;
+					animation: slide 0.4s ease;
+				}
+			}
+			&.shrink {
+				max-height: unset;
+				justify-content: center;
+				.button-thin {
+					margin: 1.5rem auto auto auto;
+					translate: 0 0;
+				}
+				h3 {
+					font-size: 1.25rem;
+					rotate: -90deg;
+					white-space:nowrap;
+					margin-bottom: auto;
+				}
+				p {
+					display: none;
+				}
+			}
+			.cover{
+				position: absolute;
+				z-index: 1;
+				top: 0;
+				left: 0;
+				width: 50%;
+				height: 100%;
+				aspect-ratio: unset;
+				img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+		}
+	}
 	@include MD{
 		display: flex;
 		flex-direction: row;
 		align-items: stretch;
 		overflow: hidden;
 		aspect-ratio: 16 / 6;
+		.accordion-item  {
+			flex: 1; // 預設每個 section 平均分配空間
+			min-width: 4rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: left;
+			overflow: hidden;
+			position: relative;
+			.button-thin {
+				width: 2.5rem;
+				height: 2.5rem;
+				min-height: 2.5rem;
+				margin: 0;
+				padding: 0;
+				border: 1px solid var(--c-hover);
+				border-radius: 50%;
+				background-color: transparent;
+			}
+		}
 	}
 }
 
