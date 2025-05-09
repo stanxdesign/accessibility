@@ -18,6 +18,19 @@
 	@include shadow;
 	border-top: 2px solid var(--c-brand);
 	z-index: 4;
+	.navbar-brand{
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		align-content: center;
+		h1{
+			font-size: 1rem;
+			align-self: center;
+			align-items: center;
+			align-content: center;
+			margin: 0 1ch;
+		}
+	}
 	#navbarMain {
 		z-index: 2;
 		a {

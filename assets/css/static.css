@@ -8,10 +8,48 @@
 /* Extra extra large */
 #loginHeader {
   text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 #loginHeader img {
-  margin: 2rem auto;
-  height: 4rem;
+  margin: 0.8rem 0;
+  height: 3.5rem;
+}
+#loginHeader span {
+  display: inline-block;
+  font-size: 1.3rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+  font-weight: bold;
+  color: var(--c-front-brand);
+}
+@media only screen and (min-width: 576px) {
+  #loginHeader {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #loginHeader img {
+    margin: 2rem 0;
+    height: 4rem;
+  }
+  #loginHeader span::before {
+    content: "";
+    border-left: 2px solid var(--c-brand);
+    margin: 0 1rem;
+  }
 }
 
 #loginPage {

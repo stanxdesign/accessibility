@@ -165,7 +165,6 @@
 			border-radius: 0 1rem 1rem 0;
 			display: flex;
 			flex-direction: column;
-
 			padding: 1rem .5rem;
 			justify-content: center;
 			align-items: center;
@@ -280,37 +279,22 @@
 
 	#footer{
 		position: fixed;
-		bottom: 10rem;
+		bottom: .5rem;
 		left: 0;
 		width: 100%;
-		padding: .5rem 1rem;
-		margin: 6px;
+		padding: 0 1.5rem;
+		margin: 0;
 		height: 2rem;
+		min-height: 2rem;
 		background: none;
 		text-align: right;
 		display: flex;
 		flex-wrap: wrap;
-		flex-direction: row;
+		flex-direction: row-reverse;
 		justify-content: flex-end;
-		gap: 6px;
+		gap: 1rem;
 		pointer-events: none;
-		@include SM{
-			position: fixed;
-			bottom: .5rem;
-			display: block;
-		}
-		label,a{
-			opacity: 0;
-			&:not(:empty){
-				opacity: .8;
-				border: 2px solid var(--c-white);
-				background-color: var(--c-white);
-				color: var(--c-brand);
-				padding: 0 .5rem;
-				border-radius: 1rem;
-				text-decoration: none;
-			}
-		}
+		top: auto;
 	}
 
 	#resultPanel{
@@ -512,6 +496,12 @@
 					float: right !important;
 				}
 			}
+		}
+	}
+	#coordinates, #scale {
+		position: unset;
+		.ol-scale-line{
+			position: unset;
 		}
 	}
 }

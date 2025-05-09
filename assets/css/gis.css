@@ -1546,12 +1546,13 @@ svg polygon:hover,
 }
 #pageGIS #footer {
   position: fixed;
-  bottom: 10rem;
+  bottom: 0.5rem;
   left: 0;
   width: 100%;
-  padding: 0.5rem 1rem;
-  margin: 6px;
+  padding: 0 1.5rem;
+  margin: 0;
   height: 2rem;
+  min-height: 2rem;
   background: none;
   text-align: right;
   display: -webkit-box;
@@ -1560,33 +1561,15 @@ svg polygon:hover,
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  gap: 6px;
+  gap: 1rem;
   pointer-events: none;
-}
-@media only screen and (min-width: 576px) {
-  #pageGIS #footer {
-    position: fixed;
-    bottom: 0.5rem;
-    display: block;
-  }
-}
-#pageGIS #footer label, #pageGIS #footer a {
-  opacity: 0;
-}
-#pageGIS #footer label:not(:empty), #pageGIS #footer a:not(:empty) {
-  opacity: 0.8;
-  border: 2px solid var(--c-white);
-  background-color: var(--c-white);
-  color: var(--c-brand);
-  padding: 0 0.5rem;
-  border-radius: 1rem;
-  text-decoration: none;
+  top: auto;
 }
 #pageGIS #resultPanel {
   position: fixed;
@@ -1789,4 +1772,10 @@ svg polygon:hover,
     margin-top: 0;
     float: right !important;
   }
+}
+#pageGIS #coordinates, #pageGIS #scale {
+  position: unset;
+}
+#pageGIS #coordinates .ol-scale-line, #pageGIS #scale .ol-scale-line {
+  position: unset;
 }/*# sourceMappingURL=gis.css.map */

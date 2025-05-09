@@ -3,9 +3,34 @@
 
 #loginHeader{
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 	img{
-		margin: 2rem auto;
-		height: 4rem;
+		margin: .8rem 0;
+		height: 3.5rem;
+	}
+	span{
+		display: inline-block;
+		font-size: 1.3rem;
+		align-self: center;
+		font-weight: bold;
+		color: var(--c-front-brand);
+	}
+	@include SM{
+		flex-direction: row;
+		img{
+			margin: 2rem 0;
+			height: 4rem;
+		}
+		span{
+		&::before{
+			content: '';
+			border-left: 2px solid var(--c-brand);
+			margin: 0 1rem;
+		}
+	}
 	}
 }
 
