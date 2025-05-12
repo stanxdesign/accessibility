@@ -135,6 +135,236 @@ article {
 	}
 }
 
+.card-faq{
+	.card{
+		overflow-y: auto !important;
+	}
+	h5{
+		margin-bottom: 1.5rem;
+	}
+	.dropdown-toggle{
+		margin-bottom: 0;
+		font-weight: bold;
+		padding-right: 6rem;
+	}
+	.collapse{
+		padding: 1rem 6rem 1rem 0;
+		transition: all .3s ease-in-out;
+		p{
+			margin-bottom: 0;
+		}
+	}
+	.collapsing{
+		padding: 0 6rem 0 0;
+		transition: all .3s ease-in-out;
+	}
+}
+
+article.card-point {
+	aspect-ratio: 1 / 1;
+	.card{
+		background-color: var(--c-back);
+		color: var(--c-front-brand);
+	}
+	.card-title{
+		padding-right: 0;
+		margin: 0;
+		text-align: center;
+		&::after{
+			content: none;
+		}
+	}
+	.card-body{
+		position: relative;
+		display: block;
+		order: 2;
+		text-decoration: none;
+		margin: 3px;
+		cursor: pointer;
+		&::before{
+			opacity: 0;
+			position: absolute;
+			top: -2rem;
+			left: 50%;
+			translate: -50%;
+			content: '前往查詢';
+			padding: .5ch 1rem;
+			background-color: var(--c-hover);
+			color: var(--c-hover-t);
+			border-radius: 1rem;
+			font-weight: bold;
+			box-shadow: 0 0 3px var(--c-shadow);
+			transition: all .5s ease-in-out;
+		}
+		&:hover{
+			&::before{
+				opacity: 1;
+			}
+		}
+		i{
+			width: 4rem;
+			height: 4rem;
+			line-height: 4rem;
+			text-align: center;
+			font-size: 2rem !important;
+			background-color: var(--c-back);
+			color: var(--c-brand);
+			border-radius: 99rem;
+			box-shadow: 0 0 0 5px var(--c-highlight);
+			margin: .5rem auto 1.25rem !important;
+		}
+	}
+	&:has(.card-cover img){
+		.card-cover{
+			order: 1;
+			aspect-ratio: 16/8;
+		}
+		.card-title{
+			text-align: left;
+		}
+		.card-body{
+			i{
+				position: absolute;
+				top: -.25rem;
+				right: .5rem;
+				scale: .5;
+				margin: 0 !important;
+				box-shadow: none;
+			}
+			&::before{
+				top: .75rem;
+				left: auto;
+				right: .6rem;
+			}
+		}
+	}
+	.card-cover{
+		order: 1;
+		aspect-ratio: 16/4;
+		overflow: hidden;
+		img{
+			position: relative;
+			z-index: 1;
+		}
+		&::before{
+			pointer-events: none;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 1rem;
+			width: 100%;
+			height: 100%;
+			aspect-ratio: 1 / 1;
+			background-color: var(--c-main);
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 1486.8 1173.4" viewBox="0 0 1486.8 1173.4"><path d="M1133.4 2.5C998.7-12.6 872.1 41.4 789.2 136.3c-54.7 62.7-137.9 92.5-219.8 77.8-10.5-1.9-21.1-3.4-31.9-4.6C271.9 179.7 32.5 371 3 636.7c-29.5 266.3 161.7 504.7 428 533.8 197.2 21.5 379.7-78.8 472.3-240.8 44.9-78.6 126.6-128.7 216.9-135.2 51.7-3.7 105.8-17.1 161.2-42.1 47.2-21.2 87.8-54.7 117.9-96.8C1604 369.3 1422.3 35 1133.4 2.5z"/></svg>');
+			mask-repeat: no-repeat;
+			mask-position: -1rem -2rem;
+			mask-size: 130% auto;
+			scale: 1.5 1.3;
+			transform-origin: center top;
+			z-index: 0;
+		}
+		&:after{
+			pointer-events: none;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			aspect-ratio: 1 / 1;
+			border-radius: 1rem;
+			width: 100%;
+			height: 100%;
+			background-color: var(--c-brand);
+			mask-repeat: no-repeat;
+			mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 1486.8 1173.4" viewBox="0 0 1486.8 1173.4"><path d="M1133.4 2.5C998.7-12.6 872.1 41.4 789.2 136.3c-54.7 62.7-137.9 92.5-219.8 77.8-10.5-1.9-21.1-3.4-31.9-4.6C271.9 179.7 32.5 371 3 636.7c-29.5 266.3 161.7 504.7 428 533.8 197.2 21.5 379.7-78.8 472.3-240.8 44.9-78.6 126.6-128.7 216.9-135.2 51.7-3.7 105.8-17.1 161.2-42.1 47.2-21.2 87.8-54.7 117.9-96.8C1604 369.3 1422.3 35 1133.4 2.5z"/></svg>');
+			mask-position: -2rem -2rem;
+			mask-size: 130% auto;
+			scale: -1 1;
+			opacity: .1;
+			transform-origin: center top;
+			z-index: 0;
+		}
+	}
+
+	footer{
+		height: 3rem;
+		order: 9;
+		text-align: right;
+		padding: 0 1rem .5rem 1rem;
+		.btn{
+			margin: 0 auto;
+		}
+	}
+	@include MD {
+		.card-cover{
+			&::before{
+				aspect-ratio: unset;
+				mask-position: -5rem -10rem;
+				mask-size: 130% auto;
+				scale: 1 .8;
+			}
+			&::after{
+				aspect-ratio: unset;
+				mask-position: -8rem -10rem;
+				mask-size: 130% auto;
+				scale: -1 .6;
+			}
+		}
+	}
+}
+
+.row:has(.card-point) {
+	align-items: flex-start;
+	.card{
+		height: 100%;
+	}
+	.card-point {
+			flex: 0 1 50%;
+			box-sizing: border-box;
+			aspect-ratio: 9 / 16;
+		}
+	@include MD{
+		.card-point {
+			flex: 0 1 33.33%;
+			box-sizing: border-box;
+			aspect-ratio: 1 /1;
+		}
+
+		// 當只有 1 個元素時
+		&:has(> .card-point:nth-child(1):last-child) {
+			.card-point {
+				flex: 0 1 100%;
+			}
+		}
+
+		// 當有 2 個元素時
+		&:has(> .card-point:nth-child(2):last-child) {
+			.card-point {
+				flex: 0 1 50%;
+			}
+		}
+
+		// 當有 3 個元素時
+		&:has(> .card-point:nth-child(3):last-child) {
+			.card-point {
+				flex: 0 1 33.33%;
+			}
+		}
+
+		// 當有 4 個元素時
+		&:has(> .card-point:nth-child(4):last-child) {
+			.card-point {
+				flex: 0 1 50%;
+			}
+		}
+	}
+}
+
 .card-wide {
 	flex: 0 0 100%; // 全寬
 	max-width: 100%;
@@ -148,7 +378,7 @@ article {
 	}
 }
 
-.card-half {
+.card-half, .card-faq {
 	flex: 0 0 100%; // 二分之一寬
 	max-width: 100%;
 	.card {

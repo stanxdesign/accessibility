@@ -13,7 +13,7 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
-	<link rel="stylesheet" href="assets/css/main.min.css?v=1.33"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=1.34" />
 </head>
 
 <body id="index">
@@ -26,7 +26,7 @@
 	<header id="navHeader">
 		<a href="#content" id="gotocenter" title="跳到主要內容" tabindex="1" class="sr-only-focusable sr-only">跳到主要內容</a>
 		<!-- 主選單列 -->
-		<nav id="navbarMain" class="navbar navbar-expand-lg ">
+		<nav id="navbarMain" class="navbar navbar-expand-lg">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="index.html" title="回到首頁">
 					<img src="assets/images/demo_logo.webp" alt="大專院校無障礙環境資訊地理系統" height="40">
@@ -91,24 +91,24 @@
 				<li class="slide" role="group" aria-roledescription="slide" aria-label="第2則：Barrier-Free Spaces, Limitless Possibilities" aria-current="true">
 					<h1 class="display-4 fw-bold">尋找大專院校的無障礙設施資訊</h1>
 					<p class="lead">打造無障礙環境<br>讓每個人都能自在行動<br>
-							從無障礙通道到貼心設施<br>人人都能無礙使用公共空間<br>
+						從無障礙通道到貼心設施<br>人人都能無礙使用公共空間<br>
 					</p>
 					<a href="#" class="btn btn-lg mt-3 btn-hover btn-more" aria-label="了解更多關於無障礙空間設計">了解更多</a>
 					<div class="cover">
-							<img src="assets/images/index-02.webp" alt="無障礙空間與友善設施的主視覺圖片">
+						<img src="assets/images/index-02.webp" alt="無障礙空間與友善設施的主視覺圖片">
 					</div>
-			</li>
+				</li>
 
-			<li class="slide" role="group" aria-roledescription="slide" aria-label="第3則：Inclusive Design, A Better Tomorrow" aria-current="true">
+				<li class="slide" role="group" aria-roledescription="slide" aria-label="第3則：Inclusive Design, A Better Tomorrow" aria-current="true">
 					<h1 class="display-4 fw-bold">哪裡有電梯、無障礙廁所、無障礙坡道</h1>
 					<p class="lead">以人為本的設計<br>讓世界更友善<br>
-							無論日常生活或公共設施<br>透過無障礙設計<br>讓眾人都有機會平等體驗<br>
+						無論日常生活或公共設施<br>透過無障礙設計<br>讓眾人都有機會平等體驗<br>
 					</p>
 					<a href="#" class="btn btn-lg mt-3 btn-hover btn-more" aria-label="了解更多關於無障礙設計">了解更多</a>
 					<div class="cover">
-							<img src="assets/images/index-03.webp" alt="無障礙設計與共融社會的主視覺圖片">
+						<img src="assets/images/index-03.webp" alt="無障礙設計與共融社會的主視覺圖片">
 					</div>
-			</li>
+				</li>
 
 			</ul>
 
@@ -120,65 +120,574 @@
 
 	<form>
 		<main id="content" class="container-fluid px-4">
-			<section>
+			<section> <!-- 所有常用設施 一般樣式 -->
 				<header class="row py-4 my-5 visually-hidden">
 					<h2 class="section-title display-5 fw-bold">常用設施</h2>
 				</header>
 				<div class="row g-4">
-					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-01">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-elevator">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟電梯頁面" aria-label="點選卡片開啟電梯頁面">
 							<div class="card-body">
-								<h5 id="card-title-01" class="card-title"><label>室外走廊</label></h5>
+								<h5 id="card-title-elevator" class="card-title"><label>電梯</label></h5>
 								<p class="card-text">
-									<i class="fa-solid fa-archway" aria-hidden="true"></i>
-									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。</p>
+									<i class="fa-solid fa-elevator" aria-hidden="true"></i>
+									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。
+								</p>
 							</div>
 							<div class="card-cover">
-								<img src="assets/images/demo_photo04.webp" alt="這是假地圖">
+								<img src="assets/images/demo_photo04.webp" alt="電梯引導設施示意圖">
 							</div>
 						</a>
 					</article>
-					<article class="card-half card-theme-split card-style-main" aria-labelledby="card-title-01">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-toilet">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟廁所頁面" aria-label="點選卡片開啟廁所頁面">
 							<div class="card-body">
-								<h5 id="card-title-01" class="card-title"><label>避難層出入口</label></h5>
+								<h5 id="card-title-toilet" class="card-title"><label>廁所</label></h5>
 								<p class="card-text">
-									<i class="fa-solid fa-door-open" aria-hidden="true"></i>
-									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。</p>
+									<i class="fa-solid fa-restroom-simple" aria-hidden="true"></i>
+									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。
+								</p>
 							</div>
 							<div class="card-cover">
-								<img src="assets/images/demo_photo03.webp" alt="這是假地圖">
+								<img src="assets/images/demo_photo03.webp" alt="無障礙廁所示意圖">
 							</div>
 						</a>
 					</article>
-					<article class="card-half card-theme-split card-style-main" aria-labelledby="card-title-01">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-outdoor-corridor">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟室外走廊頁面" aria-label="點選卡片開啟室外走廊頁面">
 							<div class="card-body">
-								<h5 id="card-title-01" class="card-title"><label>無障礙坡道</label></h5>
+								<h5 id="card-title-outdoor-corridor" class="card-title"><label>室外走廊</label></h5>
 								<p class="card-text">
-									<i class="fa-solid fa-wheelchair-move" aria-hidden="true"></i>斜坡道是替代樓梯的重要設施，能夠讓輪椅使用者、推車以及其他行動不便者更容易通行。 設計時需要考慮坡度、寬度和表面防滑等因素，確保安全和便捷。 </p>
+									<i class="fa-solid fa-square-this-way-up" aria-hidden="true"></i>
+									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。
+								</p>
 							</div>
 							<div class="card-cover">
-								<img src="assets/images/demo_photo05.webp" alt="這是假地圖">
+								<img src="assets/images/demo_photo04.webp" alt="室外走廊引導設施示意圖">
 							</div>
 						</a>
 					</article>
-					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-01">
-						<a class="card h-100" href="#" title="點選卡片開啟{{標題}}頁面" aria-label="點選卡片開啟{{標題}}頁面">
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-evacuation-entrance">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟避難層出入口頁面" aria-label="點選卡片開啟避難層出入口頁面">
 							<div class="card-body">
-								<h5 id="card-title-01" class="card-title"><label>無障礙停車位</label></h5>
+								<h5 id="card-title-evacuation-entrance" class="card-title"><label>避難層出入口</label></h5>
 								<p class="card-text">
-									<i class="fa-solid fa-parking" aria-hidden="true"></i>無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車 之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。</p>
+									<i class="fa-solid fa-person-walking-arrow-right" aria-hidden="true"></i>
+									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。
+								</p>
 							</div>
 							<div class="card-cover">
-								<img src="assets/images/demo_photo06.webp" alt="這是假地圖">
+								<img src="assets/images/demo_photo03.webp" alt="避難層出入口示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-accessible-ramp">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟無障礙坡道頁面" aria-label="點選卡片開啟無障礙坡道頁面">
+							<div class="card-body">
+								<h5 id="card-title-accessible-ramp" class="card-title"><label>無障礙坡道</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-ramp-loading" aria-hidden="true"></i>
+									斜坡道是替代樓梯的重要設施，能夠讓輪椅使用者、推車以及其他行動不便者更容易通行。 設計時需要考慮坡度、寬度和表面防滑等因素，確保安全和便捷。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo05.webp" alt="無障礙坡道示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-parking">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟停車位頁面" aria-label="點選卡片開啟停車位頁面">
+							<div class="card-body">
+								<h5 id="card-title-parking" class="card-title"><label>停車位</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-square-parking" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙停車位示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-indoor-entrance">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟室內出入口頁面" aria-label="點選卡片開啟室內出入口頁面">
+							<div class="card-body">
+								<h5 id="card-title-indoor-entrance" class="card-title"><label>室內出入口</label></h5>
+								<p class="card-text">
+									<i class="fa-regular fa-dungeon" aria-hidden="true"></i>
+									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo04.webp" alt="室內出入口引導設施示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-indoor-corridor">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟室內走廊頁面" aria-label="點選卡片開啟室內走廊頁面">
+							<div class="card-body">
+								<h5 id="card-title-indoor-corridor" class="card-title"><label>室內走廊</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-right-from-line" aria-hidden="true"></i>
+									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo03.webp" alt="室內走廊示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-stairs">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟樓梯頁面" aria-label="點選卡片開啟樓梯頁面">
+							<div class="card-body">
+								<h5 id="card-title-stairs" class="card-title"><label>樓梯</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-stairs" aria-hidden="true"></i>
+									斜坡道是替代樓梯的重要設施，能夠讓輪椅使用者、推車以及其他行動不便者更容易通行。 設計時需要考慮坡度、寬度和表面防滑等因素，確保安全和便捷。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo05.webp" alt="樓梯替代坡道示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-male-toilet">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟一般男廁頁面" aria-label="點選卡片開啟一般男廁頁面">
+							<div class="card-body">
+								<h5 id="card-title-male-toilet" class="card-title"><label>一般男廁</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-person-simple" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="一般男廁示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-bathroom">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟浴室頁面" aria-label="點選卡片開啟浴室頁面">
+							<div class="card-body">
+								<h5 id="card-title-bathroom" class="card-title"><label>浴室</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-shower" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙浴室示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-audience-seats">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟觀眾席頁面" aria-label="點選卡片開啟觀眾席頁面">
+							<div class="card-body">
+								<h5 id="card-title-audience-seats" class="card-title"><label>觀眾席</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-person-seat" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙觀眾席示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-outdoor-entrance">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟室外出入口頁面" aria-label="點選卡片開啟室外出入口頁面">
+							<div class="card-body">
+								<h5 id="card-title-outdoor-entrance" class="card-title"><label>室外出入口</label></h5>
+								<p class="card-text">
+									<i class="fa-thin fa-dungeon" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="室外出入口示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-accessible-bedroom">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟無障礙寢室頁面" aria-label="點選卡片開啟無障礙寢室頁面">
+							<div class="card-body">
+								<h5 id="card-title-accessible-bedroom" class="card-title"><label>無障礙寢室</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-bed" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙寢室示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-other-facilities">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟其他設施頁面" aria-label="點選卡片開啟其他設施頁面">
+							<div class="card-body">
+								<h5 id="card-title-other-facilities" class="card-title"><label>其他設施</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="其他無障礙設施示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-half card-theme-split card-style-brand" aria-labelledby="card-title-motorcycle-parking">
+						<a class="card h-100" href="gis.html" title="點選卡片開啟機車停車位頁面" aria-label="點選卡片開啟機車停車位頁面">
+							<div class="card-body">
+								<h5 id="card-title-motorcycle-parking" class="card-title"><label>機車停車位</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-motorcycle" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙機車停車位示意圖">
 							</div>
 						</a>
 					</article>
 				</div>
 			</section>
 
-			<section>
+			<section> <!-- 三個常用設施 -->
+				<header class="row py-4 my-5">
+					<h2 class="section-title display-5 fw-bold">三個常用設施</h2>
+				</header>
+				<div class="row g-4">
+					<article class="card-point" aria-labelledby="card-title-elevator">
+						<div class="card">
+							<a class="card-body" href="gis.html">
+								<h5 id="card-title-elevator" class="card-title"><label>電梯</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-elevator" aria-hidden="true"></i>
+									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo04.webp" alt="電梯引導設施示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</div>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-toilet">
+						<div class="card">
+							<a class="card-body" href="gis.html">
+								<h5 id="card-title-toilet" class="card-title"><label>廁所</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-restroom-simple" aria-hidden="true"></i>
+									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo03.webp" alt="無障礙廁所示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</div>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-accessible-bedroom">
+						<div class="card">
+							<a class="card-body" href="gis.html">
+								<h5 id="card-title-accessible-bedroom" class="card-title"><label>無障礙寢室</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-bed" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</div>
+					</article>
+				</div>
+			</section>
+
+			<section> <!-- 多個常用設施 -->
+				<header class="row py-4 my-5">
+					<h2 class="section-title display-5 fw-bold">多個常用設施</h2>
+				</header>
+				<div class="row g-4">
+					<article class="card-point" aria-labelledby="card-title-elevator">
+						<div class="card h-100" title="點選卡片開啟電梯頁面" aria-label="點選卡片開啟電梯頁面">
+							<div class="card-body">
+								<h5 id="card-title-elevator" class="card-title"><label>電梯</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-elevator" aria-hidden="true"></i>
+									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo04.webp" alt="電梯引導設施示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-toilet">
+						<div class="card h-100" title="點選卡片開啟廁所頁面" aria-label="點選卡片開啟廁所頁面">
+							<div class="card-body">
+								<h5 id="card-title-toilet" class="card-title"><label>廁所</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-restroom-simple" aria-hidden="true"></i>
+									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。
+								</p>
+							</div>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo03.webp" alt="無障礙廁所示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-outdoor-corridor">
+						<div class="card h-100" title="點選卡片開啟室外走廊頁面" aria-label="點選卡片開啟室外走廊頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-outdoor-corridor" class="card-title"><label>室外走廊</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-square-this-way-up" aria-hidden="true"></i>
+									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo04.webp" alt="室外走廊引導設施示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-evacuation-entrance">
+						<div class="card h-100" title="點選卡片開啟避難層出入口頁面" aria-label="點選卡片開啟避難層出入口頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-evacuation-entrance" class="card-title"><label>避難層出入口</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-person-walking-arrow-right" aria-hidden="true"></i>
+									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo03.webp" alt="避難層出入口示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-accessible-ramp">
+						<div class="card h-100" title="點選卡片開啟無障礙坡道頁面" aria-label="點選卡片開啟無障礙坡道頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-accessible-ramp" class="card-title"><label>無障礙坡道</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-ramp-loading" aria-hidden="true"></i>
+									斜坡道是替代樓梯的重要設施，能夠讓輪椅使用者、推車以及其他行動不便者更容易通行。 設計時需要考慮坡度、寬度和表面防滑等因素，確保安全和便捷。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo05.webp" alt="無障礙坡道示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-parking">
+						<div class="card h-100" title="點選卡片開啟停車位頁面" aria-label="點選卡片開啟停車位頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-parking" class="card-title"><label>停車位</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-square-parking" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙停車位示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-indoor-entrance">
+						<div class="card h-100" title="點選卡片開啟室內出入口頁面" aria-label="點選卡片開啟室內出入口頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-indoor-entrance" class="card-title"><label>室內出入口</label></h5>
+								<p class="card-text">
+									<i class="fa-regular fa-dungeon" aria-hidden="true"></i>
+									建築線（道路或人行道）至建築物主要出入口，或基地內各幢建築物間，設有引導設施，可使行動不便者獨立進出及通行之室外連續通路。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo04.webp" alt="室內出入口引導設施示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-indoor-corridor">
+						<div class="card h-100" title="點選卡片開啟室內走廊頁面" aria-label="點選卡片開啟室內走廊頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-indoor-corridor" class="card-title"><label>室內走廊</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-right-from-line" aria-hidden="true"></i>
+									建築物於避難層開向屋外之出入口，除依前條規定者外，應依左列規定： 一、建築物使用類組為A-1組者在避難層供公眾使用之出入口，應為外開門。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo03.webp" alt="室內走廊示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-stairs">
+						<div class="card h-100" title="點選卡片開啟樓梯頁面" aria-label="點選卡片開啟樓梯頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-stairs" class="card-title"><label>樓梯</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-stairs" aria-hidden="true"></i>
+									斜坡道是替代樓梯的重要設施，能夠讓輪椅使用者、推車以及其他行動不便者更容易通行。 設計時需要考慮坡度、寬度和表面防滑等因素，確保安全和便捷。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo05.webp" alt="樓梯替代坡道示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-male-toilet">
+						<div class="card h-100" title="點選卡片開啟一般男廁頁面" aria-label="點選卡片開啟一般男廁頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-male-toilet" class="card-title"><label>一般男廁</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-person-simple" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="一般男廁示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-bathroom">
+						<div class="card h-100" title="點選卡片開啟浴室頁面" aria-label="點選卡片開啟浴室頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-bathroom" class="card-title"><label>浴室</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-shower" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙浴室示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-audience-seats">
+						<div class="card h-100" title="點選卡片開啟觀眾席頁面" aria-label="點選卡片開啟觀眾席頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-audience-seats" class="card-title"><label>觀眾席</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-person-seat" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙觀眾席示意圖">
+							</div>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-outdoor-entrance">
+						<div class="card h-100" title="點選卡片開啟室外出入口頁面" aria-label="點選卡片開啟室外出入口頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-outdoor-entrance" class="card-title"><label>室外出入口</label></h5>
+								<p class="card-text">
+									<i class="fa-thin fa-dungeon" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="室外出入口示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-accessible-bedroom">
+						<div class="card h-100" title="點選卡片開啟無障礙寢室頁面" aria-label="點選卡片開啟無障礙寢室頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-accessible-bedroom" class="card-title"><label>無障礙寢室</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-bed" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙寢室示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-other-facilities">
+						<div class="card h-100" title="點選卡片開啟其他設施頁面" aria-label="點選卡片開啟其他設施頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-other-facilities" class="card-title"><label>其他設施</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="其他無障礙設施示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+					<article class="card-point" aria-labelledby="card-title-motorcycle-parking">
+						<div class="card h-100" title="點選卡片開啟機車停車位頁面" aria-label="點選卡片開啟機車停車位頁面">
+							<a class="card-body" href="gis.html" >
+								<h5 id="card-title-motorcycle-parking" class="card-title"><label>機車停車位</label></h5>
+								<p class="card-text">
+									<i class="fa-solid fa-motorcycle" aria-hidden="true"></i>
+									無障礙停車位應設於最靠近建築物無障礙出入口或無障礙昇降機之便捷處。並應於車道入口處及車道沿路轉彎處設置明顯之指引標誌，引導無障礙停車之方向及位置。入口引導標誌應與行進方向垂直，以利辨識。
+								</p>
+							</a>
+							<div class="card-cover">
+								<img src="assets/images/demo_photo06.webp" alt="無障礙機車停車位示意圖">
+							</div>
+							<footer>
+								<button type="button" class="btn btn-highlight fa fa-location-arrow" data-bs-toggle="modal" data-bs-target="#popUpModal">詳細內容</button>
+							</footer>
+						</a>
+					</article>
+				</div>
+			</section>
+
+			<section> <!-- 五步驟 -->
 				<header class="row py-4 my-5">
 					<h2 class="section-title display-5 fw-bold">使用步驟</h2>
 				</header>
@@ -340,8 +849,7 @@
 				</div>
 			</section>
 
-			<!-- 功能區卡片款式 -->
-			<section>
+			<section><!-- 功能區  網站常用功能 FAQ -->
 				<header class="row py-4 my-5">
 					<h2 class="section-title display-5 fw-bold">網站常用功能</h2>
 				</header>
@@ -368,6 +876,58 @@
 							</div>
 						</a>
 					</article>
+
+					<article class="card-faq card-style-brand" aria-labelledby="card-title-04">
+						<div class="card h-100" href="#" title="FAQ 常見問答" aria-label="點選卡片開啟FAQ 常見問答頁面">
+							<div class="card-body">
+								<h5 id="card-title-04" class="card-title"><label>FAQ 常見問答</label></h5>
+								<p type="button" class="card-text dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#faqCard1-1" aria-expanded="false" aria-controls="faqCard1">空間分析是什麼意思？</p>
+								<div id="faqCard1-1" class="anser collapse">
+									<p>地理資訊系統很重要的一環，廣義而言，它指的是透過空間資料來運算，試圖找出各種事件在地理空間上有和關聯的一門科學。</p>
+								</div>
+								<hr>
+								<p type="button" class="card-text dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#faqCard1-2" aria-expanded="false" aria-controls="faqCard2">快速查詢與空間分析有何不同？</p>
+								<div id="faqCard1-2" class="anser collapse">
+									<p>快速查詢:輸入查詢點的名稱後，就可找出所在位置與該地點資訊。</p>
+									<p>空間分析:是透過空間資料來運算，試圖找出各種事件在地理空間上有和關聯的一門科學。</p>
+								</div>
+								<hr>
+								<p type="button" class="card-text dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#faqCard1-3" aria-expanded="false" aria-controls="faqCard3">如何與地圖進行互動查詢？</p>
+								<div id="faqCard1-3" class="anser collapse">
+									<p>用此工具，您可以查看互動式卡片，並提供地圖上區域的特定詳細數據。</p>
+								</div>
+							</div>
+							<div class="card-cover">
+								<i class="fa-solid fa-person-circle-question" aria-hidden="true"></i>
+							</div>
+						</div>
+					</article>
+					<article class="card-faq card-style-main" aria-labelledby="card-title-04">
+						<div class="card h-100" href="#" title="FAQ 常見問答" aria-label="點選卡片開啟FAQ 常見問答頁面">
+							<div class="card-body">
+								<h5 id="card-title-04" class="card-title"><label>FAQ 常見問答</label></h5>
+								<p type="button" class="card-text dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#faqCard2-1" aria-expanded="false" aria-controls="faqCard1">空間分析是什麼意思？</p>
+								<div id="faqCard2-1" class="anser collapse">
+									<p>地理資訊系統很重要的一環，廣義而言，它指的是透過空間資料來運算，試圖找出各種事件在地理空間上有和關聯的一門科學。</p>
+								</div>
+								<hr>
+								<p type="button" class="card-text dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#faqCard2-2" aria-expanded="false" aria-controls="faqCard2">快速查詢與空間分析有何不同？</p>
+								<div id="faqCard2-2" class="anser collapse">
+									<p>快速查詢:輸入查詢點的名稱後，就可找出所在位置與該地點資訊。</p>
+									<p>空間分析:是透過空間資料來運算，試圖找出各種事件在地理空間上有和關聯的一門科學。</p>
+								</div>
+								<hr>
+								<p type="button" class="card-text dropdown-toggle" data-bs-toggle="collapse" data-bs-target="#faqCard2-3" aria-expanded="false" aria-controls="faqCard3">如何與地圖進行互動查詢？</p>
+								<div id="faqCard2-3" class="anser collapse">
+									<p>用此工具，您可以查看互動式卡片，並提供地圖上區域的特定詳細數據。</p>
+								</div>
+							</div>
+							<div class="card-cover">
+								<i class="fa-solid fa-person-circle-question" aria-hidden="true"></i>
+							</div>
+						</div>
+					</article>
+
 					<article class="card-quarter card-theme-cover card-style-brand" aria-labelledby="card-title-05">
 						<a class="card h-100" href="#" title="系統登入" aria-label="點選卡片開啟登入系統頁面">
 							<div class="card-body">
@@ -393,7 +953,7 @@
 				</div>
 			</section>
 
-			<section>
+			<section> <!-- FAQ -->
 				<header class="row py-4 my-5">
 					<h2 class="section-title display-5 fw-bold">常見問題</h2>
 				</header>
@@ -437,64 +997,56 @@
 			</div>
 		</main>
 
-				<!-- === 全螢幕 modal popUp視窗 ===-->
-				<div class="modal fade" id="popUpModal" tabindex="1" aria-labelledby="item-title" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-card modal-theme-brand">
-						<div class="modal-content">
-							<!-- 標頭：包含關閉按鈕 -->
-							<div class="modal-header">
-								<h4 class="modal-title item-title fa fa-solid fa-stairs">樓梯</h4>
-								<button type="button" class="modal-dismiss" data-bs-dismiss="modal" aria-label="關閉"></button>
+		<!-- === 全螢幕 modal popUp視窗 ===-->
+		<div class="modal fade" id="popUpModal" tabindex="1" aria-labelledby="item-title" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-scrollable modal-lg modal-theme-card modal-theme-brand">
+				<div class="modal-content">
+					<!-- 標頭：包含關閉按鈕 -->
+					<div class="modal-header">
+						<h4 class="modal-title item-title fa fa-solid fa-stairs">樓梯</h4>
+						<button type="button" class="modal-dismiss" data-bs-dismiss="modal" aria-label="關閉"></button>
+					</div>
+
+					<article class="extra-gallery">
+						<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible" role="region" aria-label="大學校園位置圖及圖片集，共5張" aria-live="polite">
+							<p id="slider-status" class="sr-only">目前顯示第1張，共3張</p>
+							<div class="slider-container" id="slider-13">
+
+
+								<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-1" aria-hidden="true">
+									<img src="assets/images/demo_photo01.webp" alt="校門口">
+									<figcaption id="caption-1">設施圖片說明一</figcaption>
+								</figure>
+
+								<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-2" aria-hidden="true">
+									<img src="assets/images/demo_photo02.webp" alt="圖書館內部">
+									<figcaption id="caption-2">設施圖片說明二</figcaption>
+								</figure>
+
+								<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-3" aria-hidden="true">
+									<img src="assets/images/demo_photo03.webp" alt="體育館側門">
+									<figcaption id="caption-3">設施圖片說明三</figcaption>
+								</figure>
 							</div>
-
-							<article class="extra-gallery">
-								<div class="swiffy-slider slider-item-first-visible slider-item-last-visible slider-nav-autohide slider-nav-visible"
-									role="region"
-									aria-label="大學校園位置圖及圖片集，共5張"
-									aria-live="polite">
-									<p id="slider-status" class="sr-only">目前顯示第1張，共5張</p>
-									<div class="slider-container" id="slider-13">
-										<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-4" aria-hidden="false">
-											<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1820.3974894011405!2d120.66923333884971!3d24.143837192175976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d74a3cc6029%3A0xc81df603b4737da5!2z5ZyL56uL6Ie65Lit5pWZ6IKy5aSn5a24!5e0!3m2!1szh-TW!2stw!4v1742811791218!5m2!1szh-TW!2stw" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="國立臺中教育大學校園地圖"></iframe>
-											<figcaption id="caption-0">國立臺中教育大學位置圖（Google Maps）</figcaption>
-										</figure>
-
-										<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-4" aria-hidden="false">
-											<img src="assets/images/demo_photo07.webp" alt="教學大樓外觀">
-											<figcaption id="caption-4">這是學校的教學大樓，主要用於課堂授課和行政辦公，建築設計融合了現代與傳統元素。</figcaption>
-										</figure>
-
-										<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-1" aria-hidden="true">
-												<img src="assets/images/demo_photo01.webp" alt="校門口">
-												<figcaption id="caption-1">校門口是學校的主要入口，每天有大量師生和訪客進出。</figcaption>
-										</figure>
-
-										<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-2" aria-hidden="true">
-												<img src="assets/images/demo_photo02.webp" alt="圖書館內部">
-												<figcaption id="caption-2">這是學校的圖書館，擁有超過10萬冊書籍與多種學術資源，提供學生自習與研究的空間。</figcaption>
-										</figure>
-
-										<figure class="slide" role="group" aria-roledescription="slide" aria-labelledby="caption-3" aria-hidden="true">
-												<img src="assets/images/demo_photo03.webp" alt="體育館側門">
-												<figcaption id="caption-3">體育館的側門通常用於運動隊伍的進出，也有無障礙通道方便行動不便者使用。</figcaption>
-										</figure>
-									</div>
-									<button type="button" aria-label="往上一張（←）" class="slider-nav" data-controls="prev" aria-controls="slider-13" aria-keyshortcuts="ArrowLeft"></button>
-									<button type="button" aria-label="往下一張（→）" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13" aria-keyshortcuts="ArrowRight"></button>
-								</div>
-							</article>
-
-							<!-- 可捲動內容區域 -->
-							<div class="modal-body item-info">
-								1. 建築物設置規範請參考內政部《建築技術規則建築設計施工編》第10章及其下第167-2條規定。<div>2. 建築物依規定應設置無障礙樓梯者，其設計請參考內政部《建築物無障礙設施設計規範》第3章規定。</div><div>3. 樓梯扶手請列入本項，其設計請參考內政部《建築物無障礙設施設計規範》207規定。</div><div>4. 民國97年7月1日《建築技術規則》修正施行前取得建造執照而未符合其規定者，倘改善確有困難，得參考《既有公共建築物無障礙設施替代改善計畫作業程序及認定原則》辦理。</div>
-							</div>
-
-							<div class="modal-footer">
-								<button type="button" class="btn btn-text-lite" data-bs-dismiss="modal">關閉</button>
-							</div>
+							<button type="button" aria-label="往上一張（←）" class="slider-nav" data-controls="prev" aria-controls="slider-13" aria-keyshortcuts="ArrowLeft"></button>
+							<button type="button" aria-label="往下一張（→）" class="slider-nav slider-nav-next" data-controls="next" aria-controls="slider-13" aria-keyshortcuts="ArrowRight"></button>
 						</div>
+					</article>
+
+					<!-- 可捲動內容區域 -->
+					<div class="modal-body item-info">
+						1. 建築物設置規範請參考內政部《建築技術規則建築設計施工編》第10章及其下第167-2條規定。<div>2. 建築物依規定應設置無障礙樓梯者，其設計請參考內政部《建築物無障礙設施設計規範》第3章規定。</div>
+						<div>3. 樓梯扶手請列入本項，其設計請參考內政部《建築物無障礙設施設計規範》207規定。</div>
+						<div>4. 民國97年7月1日《建築技術規則》修正施行前取得建造執照而未符合其規定者，倘改善確有困難，得參考《既有公共建築物無障礙設施替代改善計畫作業程序及認定原則》辦理。</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-highlight fa fa-location-arrow" aria-label="前往圖台查詢此設施"> 前往查詢</button>
+						<button type="button" class="btn btn-text-lite" data-bs-dismiss="modal">關閉</button>
 					</div>
 				</div>
+			</div>
+		</div>
 
 	</form>
 
@@ -523,7 +1075,7 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 	<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-	<script src="assets/js/main.min.js?v=1.33" defer></script>
+	<script src="assets/js/main.min.js?v=1.34" defer></script>
 
 </body>
 
