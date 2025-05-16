@@ -1186,16 +1186,15 @@ svg polygon:hover,
 #noResult::before {
   content: "";
   display: block;
-  width: 80%;
+  width: 100%;
   min-width: 10rem;
   height: auto;
   margin: 0 auto;
   aspect-ratio: 3/2;
-  background-image: url(../images/demo_noresult.webp);
+  background-image: url(../images/demo_noresult.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  opacity: 0.7;
+  background-size: contain;
 }
 
 #resultPanelBtn {
@@ -1407,7 +1406,7 @@ svg polygon:hover,
     width: auto;
     height: auto;
     position: fixed;
-    top: 6rem;
+    top: 11rem;
     left: 1.5rem;
     bottom: auto;
     translate: 0 0;

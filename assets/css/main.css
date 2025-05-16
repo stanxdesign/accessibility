@@ -1288,7 +1288,7 @@ article.card-point .card-body::before {
   top: -2rem;
   left: 50%;
   translate: -50%;
-  content: "前往查詢";
+  content: "詳細內容";
   padding: 0.5ch 1rem;
   background-color: var(--c-hover);
   color: var(--c-hover-t);
@@ -1361,7 +1361,7 @@ article.card-point .card-cover::before {
   width: 100%;
   height: 100%;
   aspect-ratio: 1/1;
-  background-color: var(--c-main);
+  background-color: var(--c-brand);
   -webkit-mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 1486.8 1173.4" viewBox="0 0 1486.8 1173.4"><path d="M1133.4 2.5C998.7-12.6 872.1 41.4 789.2 136.3c-54.7 62.7-137.9 92.5-219.8 77.8-10.5-1.9-21.1-3.4-31.9-4.6C271.9 179.7 32.5 371 3 636.7c-29.5 266.3 161.7 504.7 428 533.8 197.2 21.5 379.7-78.8 472.3-240.8 44.9-78.6 126.6-128.7 216.9-135.2 51.7-3.7 105.8-17.1 161.2-42.1 47.2-21.2 87.8-54.7 117.9-96.8C1604 369.3 1422.3 35 1133.4 2.5z"/></svg>');
           mask-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" style="enable-background:new 0 0 1486.8 1173.4" viewBox="0 0 1486.8 1173.4"><path d="M1133.4 2.5C998.7-12.6 872.1 41.4 789.2 136.3c-54.7 62.7-137.9 92.5-219.8 77.8-10.5-1.9-21.1-3.4-31.9-4.6C271.9 179.7 32.5 371 3 636.7c-29.5 266.3 161.7 504.7 428 533.8 197.2 21.5 379.7-78.8 472.3-240.8 44.9-78.6 126.6-128.7 216.9-135.2 51.7-3.7 105.8-17.1 161.2-42.1 47.2-21.2 87.8-54.7 117.9-96.8C1604 369.3 1422.3 35 1133.4 2.5z"/></svg>');
   -webkit-mask-repeat: no-repeat;
@@ -1371,6 +1371,7 @@ article.card-point .card-cover::before {
   -webkit-mask-size: 130% auto;
           mask-size: 130% auto;
   scale: 1.5 1.3;
+  opacity: 0.2;
   -webkit-transform-origin: center top;
           transform-origin: center top;
   z-index: 0;
@@ -1397,10 +1398,16 @@ article.card-point .card-cover:after {
   -webkit-mask-size: 130% auto;
           mask-size: 130% auto;
   scale: -1 1;
-  opacity: 0.1;
+  opacity: 0.15;
   -webkit-transform-origin: center top;
           transform-origin: center top;
   z-index: 0;
+}
+article.card-point:nth-child(2n+1) .card-cover::before, article.card-point:nth-child(2n+1) .card-cover::after {
+  background-color: var(--c-highlight);
+}
+article.card-point:nth-child(3n+1) .card-cover::before, article.card-point:nth-child(3n+1) .card-cover::after {
+  background-color: var(--c-hover);
 }
 article.card-point footer {
   height: 3rem;
@@ -1931,7 +1938,7 @@ article.card-point footer .btn {
 }
 
 #popUpModalfoGPS .modal-body {
-  background-image: url(../images/demo_gps.webp);
+  background-image: url(../images/demo_gps.svg);
   background-repeat: no-repeat;
   background-position: top center;
   padding-left: 1rem;
