@@ -1157,6 +1157,7 @@ label:not(.marker):focus input {
 }
 #loginPage #thirdLoginCard div button, #loginPage #thirdLoginCard div a {
   width: 100%;
+  margin: 0.25rem 0;
 }
 #loginPage #forgetPassword {
   float: right;
@@ -1165,13 +1166,18 @@ label:not(.marker):focus input {
   #loginPage {
     border: 1.5rem solid var(--c-brand);
   }
+  #loginPage #thirdLoginCard div button, #loginPage #thirdLoginCard div a {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 30%;
+            flex: 0 1 30%;
+  }
 }
 @media only screen and (min-width: 768px) {
   #loginPage #loginCard {
-    border-radius: 1rem 0 0 1rem;
+    border-radius: 1rem 1rem 0 0;
   }
   #loginPage #thirdLoginCard {
-    border-radius: 0 1rem 1rem 0;
+    border-radius: 0 0 1rem 1rem;
   }
   #loginPage #thirdLoginCard div {
     height: 100%;
@@ -1196,6 +1202,14 @@ label:not(.marker):focus input {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 30%;
             flex: 0 1 30%;
+  }
+}
+@media only screen and (min-width: 992px) {
+  #loginPage #loginCard {
+    border-radius: 1rem 0 0 1rem;
+  }
+  #loginPage #thirdLoginCard {
+    border-radius: 0 1rem 1rem 0;
   }
 }
 

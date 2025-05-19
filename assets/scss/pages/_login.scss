@@ -85,6 +85,7 @@
 			}
 			button,a{
 				width: 100%;
+				margin: .25rem 0;
 			}
 		}
 	}
@@ -93,13 +94,20 @@
 	}
 	@include SM{
 		border: 1.5rem solid var(--c-brand);
+		#thirdLoginCard{
+			div{
+				button, a{
+					flex: 0 1 30%;
+				}
+			}
+		}
 	}
 	@include MD{
 		#loginCard{
-			border-radius: 1rem 0 0 1rem;
+			border-radius: 1rem 1rem 0 0;
 		}
 		#thirdLoginCard{
-			border-radius: 0 1rem 1rem 0;
+			border-radius: 0 0 1rem 1rem;
 			div{
 				height: 100%;
 				display: flex;
@@ -114,6 +122,14 @@
 					flex: 0 1 30%;
 				}
 			}
+		}
+	}
+	@include LG{
+		#loginCard{
+			border-radius: 1rem 0 0 1rem;
+		}
+		#thirdLoginCard{
+			border-radius: 0 1rem 1rem 0;
 		}
 	}
 }
