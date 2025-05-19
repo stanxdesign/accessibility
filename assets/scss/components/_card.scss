@@ -340,12 +340,14 @@ article.card-point {
 	}
 	.card-point {
 			flex: 0 1 50%;
+			max-width: 50%;
 			box-sizing: border-box;
 			aspect-ratio: 9 / 16;
 		}
 	@include MD{
 		.card-point {
 			flex: 0 1 33.33%;
+			max-width: 33.33%;
 			box-sizing: border-box;
 			aspect-ratio: 1 /1;
 		}
@@ -354,6 +356,7 @@ article.card-point {
 		&:has(> .card-point:nth-child(1):last-child) {
 			.card-point {
 				flex: 0 1 100%;
+				max-width: 100%;
 			}
 		}
 
@@ -361,6 +364,7 @@ article.card-point {
 		&:has(> .card-point:nth-child(2):last-child) {
 			.card-point {
 				flex: 0 1 50%;
+				max-width: 50%;
 			}
 		}
 
@@ -368,6 +372,7 @@ article.card-point {
 		&:has(> .card-point:nth-child(3):last-child) {
 			.card-point {
 				flex: 0 1 33.33%;
+				max-width: 33.33%;
 			}
 		}
 
@@ -375,6 +380,7 @@ article.card-point {
 		&:has(> .card-point:nth-child(4):last-child) {
 			.card-point {
 				flex: 0 1 50%;
+				max-width: 50%;
 			}
 		}
 	}

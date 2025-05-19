@@ -1451,6 +1451,7 @@ article.card-point footer .btn {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 50%;
           flex: 0 1 50%;
+  max-width: 50%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   aspect-ratio: 9/16;
@@ -1460,6 +1461,7 @@ article.card-point footer .btn {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 33.33%;
             flex: 0 1 33.33%;
+    max-width: 33.33%;
     -webkit-box-sizing: border-box;
             box-sizing: border-box;
     aspect-ratio: 1/1;
@@ -1468,21 +1470,25 @@ article.card-point footer .btn {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 100%;
             flex: 0 1 100%;
+    max-width: 100%;
   }
   .row:has(.card-point):has(> .card-point:nth-child(2):last-child) .card-point {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
+    max-width: 50%;
   }
   .row:has(.card-point):has(> .card-point:nth-child(3):last-child) .card-point {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 33.33%;
             flex: 0 1 33.33%;
+    max-width: 33.33%;
   }
   .row:has(.card-point):has(> .card-point:nth-child(4):last-child) .card-point {
     -webkit-box-flex: 0;
         -ms-flex: 0 1 50%;
             flex: 0 1 50%;
+    max-width: 50%;
   }
 }
 
