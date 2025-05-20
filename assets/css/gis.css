@@ -1561,12 +1561,12 @@ svg polygon:hover,
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   gap: 1rem;
   pointer-events: none;
   top: auto;
@@ -1775,6 +1775,14 @@ svg polygon:hover,
 }
 #pageGIS #coordinates, #pageGIS #scale {
   position: unset;
+  width: auto;
+  opacity: 0.8;
+  border: 2px solid var(--c-white) !important;
+  background-color: var(--c-white) !important;
+  color: var(--c-black) !important;
+  padding: 0 0.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
 }
 #pageGIS #coordinates .ol-scale-line, #pageGIS #scale .ol-scale-line {
   position: unset;
