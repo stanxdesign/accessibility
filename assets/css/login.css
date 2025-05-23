@@ -622,13 +622,15 @@ body#index.startup .backTop {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 30%;
 }
 
 .waiting {
   position: relative;
-  width: 100%;
+  width: 320px;
+  min-width: 320px;
   aspect-ratio: 3/2;
-  padding: 25% 3rem 3rem 40%;
+  padding: 70px 0 0 130px;
 }
 .waiting::before {
   position: absolute;
@@ -651,15 +653,14 @@ body#index.startup .backTop {
 .waiting i {
   position: absolute;
   aspect-ratio: 1/1;
-  width: 12rem;
-  height: 12rem;
-  top: 15%;
-  left: -5%;
-  font-size: 5rem;
+  width: 160px;
+  height: 160px;
+  top: calc(50% - 80px);
+  left: -10px;
+  font-size: 56px;
   color: var(--c-white) !important;
   background-color: var(--c-hover);
-  border-radius: 99rem;
-  padding: 3rem;
+  padding: 56px;
   -webkit-mask-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="%23FF0066" d="M38.8,-50.4C47,-39.3,48.3,-24,52.3,-8.2C56.3,7.6,62.9,23.9,59.6,39C56.3,54.1,43.1,68,27.1,73.1C11.2,78.3,-7.3,74.7,-21.4,66.3C-35.4,57.9,-44.9,44.6,-53.4,30.5C-62,16.4,-69.6,1.4,-67,-11.5C-64.4,-24.4,-51.5,-35.3,-38.7,-45.6C-25.8,-56,-12.9,-65.9,1.2,-67.3C15.3,-68.7,30.5,-61.6,38.8,-50.4Z" transform="translate(100 100)" /></svg>');
           mask-image: url('data:image/svg+xml,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path fill="%23FF0066" d="M38.8,-50.4C47,-39.3,48.3,-24,52.3,-8.2C56.3,7.6,62.9,23.9,59.6,39C56.3,54.1,43.1,68,27.1,73.1C11.2,78.3,-7.3,74.7,-21.4,66.3C-35.4,57.9,-44.9,44.6,-53.4,30.5C-62,16.4,-69.6,1.4,-67,-11.5C-64.4,-24.4,-51.5,-35.3,-38.7,-45.6C-25.8,-56,-12.9,-65.9,1.2,-67.3C15.3,-68.7,30.5,-61.6,38.8,-50.4Z" transform="translate(100 100)" /></svg>');
   -webkit-mask-position: center;
@@ -669,8 +670,7 @@ body#index.startup .backTop {
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   text-align: center;
-  -webkit-animation: heartbeat 1.5s ease-in-out infinite;
-          animation: heartbeat 1.5s ease-in-out infinite;
+  scale: 0.8;
 }
 .waiting i::before {
   position: relative;
@@ -680,22 +680,60 @@ body#index.startup .backTop {
 .waiting h1 {
   position: relative;
   z-index: 1;
+  text-align: left;
+  font-size: 22px !important;
+  color: var(--c-front-brand);
+  margin: 0 0 0.5em !important;
 }
 .waiting p {
   position: relative;
   z-index: 1;
-}
-@media only screen and (min-width: 576px) {
-  .waiting i {
-    top: 25%;
-    left: 10%;
-  }
+  text-align: left;
+  font-size: 18px;
+  color: var(--c-front);
+  margin: 0;
 }
 @media only screen and (min-width: 768px) {
-  .waiting i {
-    top: 25%;
-    left: 10%;
+  .waiting {
+    scale: 1.2;
   }
+  .waiting h1 {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    font-size: 20px !important;
+    color: var(--c-front-brand);
+  }
+  .waiting p {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    font-size: 15px;
+    color: var(--c-front);
+  }
+}
+@media only screen and (min-width: 992px) {
+  .waiting {
+    scale: 1.5;
+  }
+  .waiting h1 {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    font-size: 18px !important;
+    color: var(--c-front-brand);
+  }
+  .waiting p {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    font-size: 13px;
+    color: var(--c-front);
+  }
+}
+.waiting.animation i {
+  -webkit-animation: heartbeat 1.5s ease-in-out infinite;
+          animation: heartbeat 1.5s ease-in-out infinite;
 }
 
 .sr-only-focusable:not(:focus),
@@ -1108,8 +1146,8 @@ label:not(.marker):focus input {
 }
 
 [data-bs-theme=dark] {
-  --c-brand:	#354589;
-  --c-main:	#4F63A3;
+  --c-brand:	#4F63A3;
+  --c-main:	#354589;
   --c-sub:	#354589;
   --c-brand-t:	#FFFFFF;
   --c-main-t:	#FFFFFF;

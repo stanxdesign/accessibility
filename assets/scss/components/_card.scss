@@ -208,9 +208,9 @@ article.card-point {
 			text-align: center;
 			font-size: 2rem !important;
 			background-color: var(--c-back);
-			color: var(--c-brand);
+			color: var(--c-hover);
 			border-radius: 99rem;
-			box-shadow: 0 0 0 5px var(--c-highlight);
+			box-shadow: 0 0 0 5px var(--c-hover);
 			margin: .5rem auto 1.25rem !important;
 		}
 	}
@@ -286,7 +286,7 @@ article.card-point {
 			mask-position: -2rem -2rem;
 			mask-size: 130% auto;
 			scale: -1 1;
-			opacity: .15;
+			opacity: .3;
 			transform-origin: center top;
 			z-index: 0;
 		}
@@ -294,14 +294,14 @@ article.card-point {
 	&:nth-child(2n+1) {
 		.card-cover {
 			&::before, &::after {
-				background-color: var(--c-highlight);
+				// background-color: var(--c-highlight);
 			}
 		}
 	}
 	&:nth-child(3n+1) {
 		.card-cover {
 			&::before, &::after {
-				background-color: var(--c-hover);
+				// background-color: var(--c-hover);
 			}
 		}
 	}
