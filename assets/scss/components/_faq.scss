@@ -7,16 +7,16 @@
 	color: var(--c-main-t);
 	margin: 1rem auto;
 	border-radius: 1rem;
-	&:nth-child(even){
-		background-color: var(--c-brand);
-		color: var(--c-brand-t);
-	}
 	&:has(.collapsing,.show){
 		button{
 			&::after{
 				rotate: 90deg;
 			}
 		}
+	}
+	&:hover{
+		background-color: var(--c-hover);
+		background-color: var(--c-hover-t);
 	}
 	button{
 		position: relative;

@@ -100,7 +100,7 @@
 				}
 			}
 		}
-		#zoomSize{
+		#zoomLevel{
 			position: relative;
 			width: 100%;
 			text-align: center;
@@ -235,7 +235,7 @@
 					color: var(--c-hover);
 				}
 			}
-			#zoomSize{
+			#zoomLevel{
 				width: 100%;
 				padding: 5rem 2px;
 				margin: -5rem 0;
@@ -296,6 +296,9 @@
 		gap: 1rem;
 		pointer-events: none;
 		top: auto;
+		@include MD{
+			bottom: 8.5rem;
+		}
 	}
 
 	#resultPanel{
@@ -310,7 +313,9 @@
 		background-color: var(--c-back-blur);
 		backdrop-filter: blur(5px);
 		@include shadow;
-
+		&:empty{
+			opacity: 0;
+		}
 		nav{
 			position: relative;
 			width: calc(100% - 1rem);
@@ -398,6 +403,7 @@
 		position: fixed;
 		top: 5.5rem;
 		left: 0;
+		z-index: 1;
 		.breadcrumb{
 			background-color: var(--c-white);
 			color: var(--c-dark);
@@ -512,5 +518,11 @@
 		.ol-scale-line{
 			position: unset;
 		}
+	}
+
+	.skip-link{
+		position: absolute;
+		left: .25rem;
+		translate: 0 -1rem;
 	}
 }

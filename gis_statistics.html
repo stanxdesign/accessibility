@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=1.38"/>
-	<link rel="stylesheet" href="assets/css/gis.min.css?v=1.38"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=1.41"/>
+	<link rel="stylesheet" href="assets/css/gis.min.css?v=1.41"/>
 </head>
 
 <!-- 套版判端用，圖台專用的ID NAME-->
@@ -59,6 +59,9 @@
 							</li>
 							<li class="nav-item">
 								<a class="nav-link icon-list" href="list.html">設施總覽</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link icon-book" href="guide.html">操作步驟</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link icon-login" href="login.html">系統登入</a>
@@ -207,7 +210,7 @@
 				<button id="allowGPS" class="fa fa-compass" aria-label="允許裝置啟用您的定位資訊" type="button" data-bs-toggle="modal"  data-bs-target="#popUpModalfoGPS">允許定位</button>
 				<button id="getGPS" class="fa fa-location" aria-label="將地圖移動至您目前地點的位置" type="button">目前位置</button>
 				<button id="zoomInMap" class="fa fa-compass"  aria-label="放大地圖" type="button"></button>
-				<label id="zoomSize" aria-label="目前地圖倍率：1.2倍">1.2x</label>
+				<label id="zoomLevel" aria-label="目前地圖倍率：1.2倍">1.2x</label>
 				<button id="zoomOutMap" class="fa fa-compass"  aria-label="縮小地圖" type="button"></button>
 				<button id="setLayerImg"  role="button" data-bs-toggle="dropdown" aria-expanded="false" class="fa fa-layer-group" aria-label="底圖切換" type="button">設定底圖</button>
 					<div class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="setLayerImg">
