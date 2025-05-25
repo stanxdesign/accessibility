@@ -25,6 +25,7 @@
 		font-size: 1.2rem;
 		text-align: left;
 		font-weight: bold;
+		z-index: 1;
 		&:hover{
 			background-color: var(--c-hover);
 			color: var(--c-hover-t);
@@ -50,21 +51,25 @@
 	}
 	.collapse, .collapsing{
 		.card-body{
-			margin: 0 1rem;
-			padding: 1.5rem 1rem;
+			padding: 1.5rem 2rem;
 			transition: all .3s ease-in-out;
 			background-color: var(--c-back-sub);
 			border-radius: 0 0 1rem 1rem;
 			box-shadow: 0 0 5px var(--c-g3);
+			translate: 0 -1rem;
+			z-index: 0;
 			img{
 				width: auto;
 				height: auto;
 				max-width: 100% !important;
 				margin: .5rem 0;
+				@include MD{
+					width: 40%;
+					float: right;
+				}
 			}
 			h1,h2,h3,h4,h5,h6{
 				font-weight: bold;
-				margin: .5rem 0;
 			}
 			h1{
 				font-size: 1.5rem;
@@ -85,8 +90,17 @@
 			h6{
 				font-size: 1rem;
 			}
-			p{
+			h1,h2,h3,h4,h5,h6,div, p, ul, ol{
+				padding-right: unset;
 				margin: .5rem 0 !important;
+				@include MD{
+					padding-right: calc(40% + 1rem);
+				}
+			}
+			&::after{
+				content: '';
+				clear: both;
+				display: block;
 			}
 		}
 		p{

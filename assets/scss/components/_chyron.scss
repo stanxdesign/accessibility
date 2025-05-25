@@ -7,88 +7,77 @@
 			overflow: hidden;
 			div.row{
 				display: grid;
-				grid-template-columns: repeat(auto-fill, calc(100vw - 5rem)); // 每個元素寬度為 100vw
 				grid-template-rows: repeat(2, auto); // 兩行排版
 				grid-auto-flow: column; // 元素按列流動
 				overflow-x: scroll;
 				overflow-y: hidden;
 				animation: none;
 				scroll-snap-type: x mandatory;
-				article{
-					width: calc(100vw - 5rem);
-					scroll-snap-align: start;
-				}
-				&:hover{
-					animation-play-state: paused;
-				}
-			}
-			.card-small {
-				flex: 0 0 100%;
-				max-width: 100%;
-			}
-		}
-	}
-}
-@include SM{
-	#content {
-		section{
-			&.chyron{
-				overflow: hidden;
-				div.row{
-					display: grid;
-					grid-template-columns: repeat(auto-fill, calc(50vw - 5rem)); // 每個元素寬度為 100vw
-					grid-template-rows: repeat(2, auto); // 兩行排版
-					grid-auto-flow: column; // 元素按列流動
-					overflow-x: scroll;
-					overflow-y: hidden;
-					animation: none;
-					scroll-snap-type: x mandatory;
-					article{
-						width: calc(50vw - 5rem);
-						scroll-snap-align: start;
-					}
+				margin: 0 .5rem;
+				@include SM{
+					margin: 0;
+					width: max-content;
+					display: flex;
+					flex-wrap: nowrap;
+					position: relative;
+					overflow-x: visible;
+					animation: tickerTape 20s linear infinite;
 					&:hover{
 						animation-play-state: paused;
 					}
+					.chyron-item {
+						padding: calc(var(--bs-gutter-x) * .5);
+					}
+				}
+			}
+			.chyron-item {
+				width: 10rem;
+				min-width: 12vw;
+				aspect-ratio: 1 / 1;
+				padding: calc(var(--bs-gutter-x) * .25);
+				scroll-snap-align: start;
+				.card{
+					background-color: var(--c-white);
+					display: flex;
+					text-align: center;
+					justify-content: center;
+					align-items: center;
+					text-decoration: none;
+					border-radius: 1rem;
+					box-shadow: 0 0 .5rem var(--c-g3);
+					.card-body{
+						order: 2;
+						padding: 0;
+						margin: 0;
+						flex: 0 0 auto;
+						color: var(--c-index-black);
+					}
+					.card-cover{
+						order: 1;
+						font-size: 4rem;
+						i{
+							color: var(--c-index-brand) !important;
+						}
+					}
+					&:hover{
+						background-color: var(--c-index-highlight);
+						scale: 1.05;
+					}
+				}
+				.card-text{
+					display: none;
 				}
 			}
 		}
 	}
 }
 
-@include XL{
-	#content {
-		section{
-			&.chyron{
-				header{
-					max-width: 1440px;
-					margin: 0 auto;
-				}
-				max-width: 100%;
-				margin: 0;
-				div.row{
-					display: flex;
-					flex-wrap: nowrap;
-					animation: tickerTape 18s linear infinite;
-					overflow: visible;
-					&:hover{
-						animation-play-state: paused;
-					}
-					.card-small {
-						flex: 0 0 25%;
-						max-width: 25%;
-					}
-				}
-			}
-		}
-	}
-}
 
 @keyframes tickerTape {
   0% {
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(-200%, 0);
+    transform: translate(-50%, 0);
   }
 }

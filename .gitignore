@@ -34,3 +34,4 @@ pnpm-debug.log*
 # 如果使用 Parcel、Vite 或其他前端工具，忽略其快取
 .parcel-cache/
 .vite/
+assets/scss/components/_card.scss
