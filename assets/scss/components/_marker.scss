@@ -9,7 +9,7 @@
 	text-align: center;
 	filter: drop-shadow(0 0 3px rgba(0,0,0,1));
 	cursor: pointer;
-	// translate: -1.5rem -3rem;
+  transform: translate(-50%, -50%);
 	&:hover{
 		filter: drop-shadow(0 0 8px var(--c-highlight));
 		&::before{
@@ -20,9 +20,9 @@
 	&::before{
 		position: relative;
 		display: block;
-		background-color: var(--c-white);
-		border: 1px solid var(--c-brand);
-		color: var(--c-brand);
+		background-color: var(--marker-color, var(--c-brand));
+		border: 1px solid var(--c-white);
+		color: var(--c-white);
 		border-radius: 99rem;
 		width: 2.5rem;
 		height: 2.5rem;
@@ -44,7 +44,7 @@
 		z-index: 1;
 		width: 3rem;
 		height: 3rem;
-		background-color: var(--c-brand);
+		background-color: var(--c-white);
 	}
 	&::after{
 		content: '';

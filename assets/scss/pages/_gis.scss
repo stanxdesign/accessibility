@@ -68,7 +68,7 @@
 			&::before{
 				font-size: 1.2rem;
 			}
-			&#zoomOutMap{
+			&#zoomOut{
 				border-radius: 99rem;
 				padding: 0;
 				background: none;
@@ -78,7 +78,7 @@
 					content: '\f010';
 				}
 			}
-			&#zoomInMap{
+			&#zoomIn{
 				border-radius: 99rem;
 				padding: 0;
 				border: none;
@@ -133,26 +133,49 @@
 				padding: 1ch !important;
 			}
 		}
-		#setLayerImg01,#setLayerImg02{
-			display:block;
-			width:auto;
-			height:auto;
-			aspect-ratio:0;
-			text-align:center;
-			border-radius:8px;
-			font-size:1rem;
-			padding:.5ch;
-			margin-bottom:1rem;
-			background-color:var(--c-back);
-			color:var(--c-front-brand);
-			border:none 0px rgba(0,0,0,0);
-			box-shadow:0 0 1rem 0 rgba($color: #000000, $alpha: 0.2);
-			&::before{
-				content:"";
-				display:block;
-				width:5rem;
-				height:3rem;
-				background-color:var(--c-g2);
+		#basemapList{
+			flex-wrap: wrap;
+			justify-content: space-between;
+			&.dropdown-menu.show {
+				display: flex;
+				min-width: 18rem;
+				max-height: 80vh;
+				top: -5rem !important;
+				left: 3em !important;
+				bottom: auto !important;
+				@include MD{
+					top: auto !important;
+					left: 5em !important;
+					bottom: -5rem !important;
+				}
+			}
+			button{
+				display: inline-flex;
+				width: 8rem;
+				height: auto;
+				line-height: 1;
+				aspect-ratio: 1 / 1;
+				text-align: center;
+				border-radius: 8px;
+				font-size: 1rem;
+				padding: 0.5ch;
+				margin-bottom: 1rem;
+				background-color: var(--c-back);
+				color: var(--c-front-brand);
+				border: none 0px rgba(0, 0, 0, 0);
+				box-shadow: 0 0 1rem 0 rgba(0,0,0,.2);
+				img {
+					width: 100%;
+					padding: 0 0 5px 0;
+				}
+				&.active-basemap {
+					background-color: var(--c-hover);
+					color: var(--c-hover-t);
+				}
+				&:hover{
+					border: 1px solid var(--c-hover);
+					box-shadow: 0 0 1rem 0 var(--c-hover);
+				}
 			}
 		}
 		@include MD{
@@ -204,7 +227,7 @@
 						}
 					}
 				}
-				&#zoomOutMap{
+				&#zoomOut{
 					border-radius: 99rem;
 					padding: 0;
 					border: none;
@@ -213,7 +236,7 @@
 						font-size: 2.5rem;
 					}
 				}
-				&#zoomInMap{
+				&#zoomIn{
 					border-radius: 99rem;
 					padding: 0;
 					border: none;;
@@ -257,7 +280,7 @@
 		position: fixed;
 		top: 0;
 		left: 0;
-		z-index: -1;
+		z-index: unset !important;
 		.layer {	// 視程式而定，可能不需要
 			position: absolute;
 			top: 0;
@@ -280,7 +303,7 @@
 
 	#footer{
 		position: fixed;
-		bottom: 8.5rem;
+		bottom: 6rem;
 		left: 0;
 		width: 100%;
 		padding: 0 1.5rem;
@@ -380,6 +403,20 @@
 					.items{
 						grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
 					}
+				}
+				.item-building{
+					text-decoration: none;
+					color: inherit;
+					font-size: inherit;
+					font-weight: inherit;
+					cursor: pointer;
+				}
+			}
+
+			.item-branch{
+				cursor: pointer !important;
+				&:hover{
+					color: var(--c-highlight) !important;
 				}
 			}
 		}
@@ -524,5 +561,20 @@
 		position: absolute;
 		left: .25rem;
 		translate: 0 -1rem;
+	}
+
+	.gispopup{
+		position: relative !important;
+		.modal-body{
+			max-height: calc(30dvh - 5rem) !important;
+			@include LG{
+				height: unset !important;
+			}
+		}
+		&.ol-popup	{
+				border-radius: 1rem;
+				grid-template-columns: 3fr 2fr;
+				grid-template-rows: 1fr 4fr 1fr
+		}
 	}
 }

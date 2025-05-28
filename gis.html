@@ -14,8 +14,8 @@
 	<link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/all.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/css/swiffy-slider.min.css">
 
-	<link rel="stylesheet" href="assets/css/main.min.css?v=2.03"/>
-	<link rel="stylesheet" href="assets/css/gis.min.css?v=2.03"/>
+	<link rel="stylesheet" href="assets/css/main.min.css?v=2.04"/>
+	<link rel="stylesheet" href="assets/css/gis.min.css?v=2.04"/>
 </head>
 
 <!-- 套版判端用，圖台專用的ID NAME-->
@@ -223,7 +223,7 @@
 			</div>
 
 			<!-- 工具按鈕 -->
-			<div id="sidePanel">
+			<div id="sidePanel" class="dropend">
 				<button id="allowGPS" class="fa fa-compass" aria-label="允許裝置啟用您的定位資訊" type="button" data-bs-toggle="modal"  data-bs-target="#popUpModalfoGPS">允許定位</button>
 				<button id="getGPS" class="fa fa-location" aria-label="將地圖移動至您目前地點的位置" type="button">目前位置</button>
 
@@ -232,11 +232,32 @@
 				<button id="zoomOutMap" class="fa fa-compass"  aria-label="縮小地圖" type="button"></button>
 
 				<button id="setLayerImg"  role="button" data-bs-toggle="dropdown" aria-expanded="false" class="fa fa-layer-group" aria-label="底圖切換" type="button">設定底圖</button>
-					<div class="dropdown-menu dropdown-menu-end p-0 text-center" aria-labelledby="setLayerImg">
-						<button id="setLayerImg01" aria-label="顯示電子地圖影像" type="button">電子地圖</button>
-						<button id="setLayerImg02" aria-label="顯示正射影像" type="button">正射影像</button>
+					<div id="basemapList" class="dropdown-menu" aria-labelledby="setLayerImg">
+						<button class="active-basemap" id="setLayerImg1" type="button" data-id="OSM" aria-label="顯示OpenStreetMap">
+							<img src="https://train.cam.moe.gov.tw/img/Basemap_OSM.png" alt="OpenStreetMap"><br>
+							OpenStreetMap
+						</button>
+
+						<button class="" id="setLayerImg2" type="button" data-id="EMap5" aria-label="顯示通用版電子地圖">
+								<img src="https://train.cam.moe.gov.tw/img/Basemap_EMAP5.png" alt="通用版電子地圖"><br>
+								通用版電子地圖
+						</button>
+
+						<button class="" id="setLayerImg3" type="button" data-id="EMAP01" aria-label="顯示通用版電子地圖(灰)">
+								<img src="https://train.cam.moe.gov.tw/img/Basemap_EMAP01.png" alt="通用版電子地圖(灰)"><br>
+								通用版電子地圖(灰)
+						</button>
+
+						<button class="" id="setLayerImg4" type="button" data-id="OrthoPhoto" aria-label="顯示正射影像圖(通用版)">
+								<img src="https://train.cam.moe.gov.tw/img/Basemap_PHOTO2.png" alt="正射影像圖(通用版)"><br>
+								正射影像圖(通用版)
+						</button>
+
+						<button class="" id="setLayerImg5" type="button" data-id="Positron" aria-label="顯示CartoDB地圖(灰)">
+								<img src="https://train.cam.moe.gov.tw/img/Basemap_CartoDB_light_all.png" alt="CartoDB地圖(灰)"><br>
+								CartoDB地圖(灰)
+						</button>
 					</div>
-				<button class="fa fa-question" aria-label="操作說明" type="button">操作說明</button>
 			</div>
 
 			<!-- 圖台區塊，＃ID的內容置換為實際圖台 -->
@@ -824,8 +845,8 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 		<script src="https://cdn.jsdelivr.net/npm/swiffy-slider@1.6.0/dist/js/swiffy-slider.min.js" defer></script>
-		<script src="assets/js/main.min.js?v=2.03" defer></script>
-		<script src="assets/js/gis.min.js?v=2.03" defer></script>
+		<script src="assets/js/main.min.js?v=2.04" defer></script>
+		<script src="assets/js/gis.min.js?v=2.04" defer></script>
 
 	</body>
 

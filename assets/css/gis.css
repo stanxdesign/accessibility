@@ -1378,7 +1378,10 @@ svg polygon:hover,
   min-width: 0;
   padding: 1ch !important;
 }
-#pageGIS #sidePanel #setLayerImg01, #pageGIS #sidePanel #setLayerImg02 {
+#pageGIS #sidePanel #basemapList {
+  top: -1rem;
+}
+#pageGIS #sidePanel #basemapList button {
   display: block;
   width: auto;
   height: auto;
@@ -1394,12 +1397,9 @@ svg polygon:hover,
   -webkit-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
 }
-#pageGIS #sidePanel #setLayerImg01::before, #pageGIS #sidePanel #setLayerImg02::before {
-  content: "";
-  display: block;
-  width: 5rem;
-  height: 3rem;
-  background-color: var(--c-g2);
+#pageGIS #sidePanel #basemapList button img {
+  width: 100%;
+  padding: 0 0 5px 0;
 }
 @media only screen and (min-width: 768px) {
   #pageGIS #sidePanel {

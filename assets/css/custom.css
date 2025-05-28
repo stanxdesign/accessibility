@@ -1,0 +1,147 @@
+/* marker樣式 */
+
+#pageGIS #filterPanel .tool1
+{
+    min-width: 5rem;
+    line-height: 2.25;
+    border: none;
+    background-color: var(--c-g1);
+    color: var(--c-front-brand);
+    border-radius: 0 6px 6px 0;
+    font-size: .8rem;
+    height: 2.25rem
+}
+
+#pageGIS #filterPanel .tool1::before
+{
+    margin-right: .5ch;
+    color: var(--c-front);
+    opacity: .6
+}
+
+#pageGIS #filterPanel .tool1.active
+{
+    background-color: var(--c-brand);
+    color: var(--c-brand-t)
+}
+
+#pageGIS #filterPanel .tool1.active::before
+{
+    margin-right: .5ch;
+    opacity: 1;
+    color: var(--c-highlight)
+}
+
+@media only screen and (min-width: 768px)
+{
+    #pageGIS #filterPanel .tool1
+    {
+        min-width: 6.5rem;
+        font-size: 1rem
+    }
+
+    #pageGIS #sidePanel .tool1
+    {
+        border-radius: 1rem;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out
+    }
+
+
+    #pageGIS #sidePanel .tool1:not(:hover)
+    {
+        font-size: 0;
+        border-radius: 99rem;
+        padding: 0;
+        border: none
+    }
+
+    #pageGIS #sidePanel .tool1:not(:hover)::before
+    {
+        translate: 0 18%;
+        font-size: 2.5rem
+    }
+
+    #pageGIS #sidePanel button#zoomIn
+    {
+        border-radius: 99rem;
+        padding: 0;
+        border: none;
+        margin-top: 1.5rem
+    }
+
+    #pageGIS #sidePanel button#zoomIn::before
+    {
+        font-size: 2.5rem
+    }
+
+    #pageGIS #sidePanel button#zoomOut
+    {
+        border-radius: 99rem;
+        padding: 0;
+        border: none;
+        margin-bottom: 1.5rem
+    }
+
+    #pageGIS #sidePanel button#zoomOut::before
+    {
+        font-size: 2.5rem
+    }
+}
+
+@media only screen and (min-width: 768px)
+{
+    #pageGIS .result-all-item h2 a
+    {
+        position: unset !important;
+    }
+}
+
+.ol-selectable-custom
+{
+    z-index: 9999;
+}
+
+.form-group .form-control+.input-group-text::before
+{
+    content: "\e214" !important;
+}
+
+#loadingRuning
+{
+    position: absolute;
+    /* 絕對定位才能真正置中 */
+    top: 50%;
+    /*left: 50%;*/
+    transform: translate(-50%, -50%);
+    /* 重點！從中心點往回拉一半 */
+}
+
+#loadingRuning::after
+{
+    content: unset !important;
+}
+
+/*收合展開建物*/
+.toggle-section-btn
+{
+    cursor: pointer;
+}
+
+/* 導盲磚預設透明 */
+.skip-link
+{
+    opacity: 0;
+}
+
+/* 導盲磚 focus 時顯示 */
+.skip-link:focus
+{
+    opacity: 1;
+}
+
+/*避免tab鍵切換跑版，預設hidden*/
+.ol-viewport
+{
+    overflow: unset !important;
+}
