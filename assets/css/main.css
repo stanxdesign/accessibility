@@ -592,12 +592,12 @@ body#index.startup .backTop {
           animation: slide 2s linear infinite;
 }
 #loadingRuning #loadingIcon g:nth-child(2) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: calc(2s / 4);
+          animation-delay: calc(2s / 4);
 }
 #loadingRuning #loadingIcon g:nth-child(2) path {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  -webkit-animation-delay: calc(2s / 4);
+          animation-delay: calc(2s / 4);
   stroke-dasharray: 0px 158px;
   stroke-dashoffset: 1px;
 }
@@ -2683,88 +2683,6 @@ button, a, *::after, *::before {
   --c-g1: #e7e7ee;
   --c-g2: #dadadf;
   --c-g3: #ccccd1;
-}
-
-[data-bs-theme=light2] {
-  --c-brand:	#FFE502;
-  --c-main:	#FDCF00;
-  --c-sub:	#FFC0C6;
-  --c-brand-t:	#000000;
-  --c-main-t:	#000000;
-  --c-sub-t:	#000000;
-  --c-highlight:	#02B4AA;
-  --c-hover:	#02B4AA;
-  --c-highlight-t:	#FFFFFF;
-  --c-focus:	#02B4AA;
-  --c-front:	#000000;
-  --c-front-sub:	#000000;
-  --c-front-brand:	#F29800;
-  --c-back:	#FFF7EA;
-  --c-back-sub: #FFFFFF;
-  --c-shadow: rgba(0,0,0,0.3);
-  --c-white:	#FFFFFF;
-  --c-black:	#000000;
-  --c-lite:	#F5F5FC;
-  --c-dark:	#3A3A3F;
-  --c-gary:	#CCCCCC;
-  --c-g1: #e7e7ee;
-  --c-g2: #dadadf;
-  --c-g3: #ccccd1;
-}
-
-[data-bs-theme=light3] {
-  --c-brand:	#06C97B;
-  --c-main:	#FDCF00;
-  --c-sub:	#5b35de;
-  --c-brand-t:	#000000;
-  --c-main-t:	#000000;
-  --c-sub-t:	#FFFFFF;
-  --c-highlight:	#f97aab;
-  --c-hover:	#f97aab;
-  --c-highlight-t:	#000000;
-  --c-focus:	#5b35de;
-  --c-front:	#000000;
-  --c-front-sub:	#000000;
-  --c-front-brand:	#06C97B;
-  --c-back:	#FFF7EA;
-  --c-back-sub: #FFFFFF;
-  --c-shadow: rgba(0,0,0,0.3);
-  --c-white:	#FFFFFF;
-  --c-black:	#000000;
-  --c-lite:	#F5F5FC;
-  --c-dark:	#3A3A3F;
-  --c-gary:	#CCCCCC;
-  --c-g1: #eee9e2;
-  --c-g2: #dddad9;
-  --c-g3: #ccccd1;
-}
-
-[data-bs-theme=dark2] {
-  --c-brand:	#fab449;
-  --c-main:	#fce4df;
-  --c-sub:	#eda9b6;
-  --c-brand-t:	#000000;
-  --c-main-t:	#000000;
-  --c-sub-t:	#000000;
-  --c-highlight:	#00bfc1;
-  --c-hover:	#007A7C;
-  --c-highlight-t:	#000000;
-  --c-focus:	#00bfc1;
-  --c-front:	#FFFFFF;
-  --c-front-sub:	#fae3ce;
-  --c-front-brand:	#fab449;
-  --c-back:	#2a1604;
-  --c-back-sub: #0f1110;
-  --c-shadow: rgba(0,0,0,0.3);
-  --c-white:	#FFFFFF;
-  --c-black:	#000000;
-  --c-lite:	#F5F5FC;
-  --c-dark:	#3A3A3F;
-  --c-gary:	#CCCCCC;
-  --c-g0: #3A3A3F;
-  --c-g1: #352e2b;
-  --c-g2: #2f2218;
-  --c-g3: #2a1604;
 }
 
 [data-font=M] {
