@@ -2218,7 +2218,7 @@ button, a, *::after, *::before {
   position: fixed;
   width: 100vw;
   height: 100vw;
-  top: 11rem;
+  top: 9rem;
   left: auto;
   right: 0;
   opacity: 0;
@@ -2256,8 +2256,8 @@ button, a, *::after, *::before {
           mask-position: center;
 }
 #slider-main .slide .cover.noMask img {
-  -o-object-position: left bottom;
-     object-position: left bottom;
+  -o-object-position: center right;
+     object-position: center right;
   -o-object-fit: contain;
      object-fit: contain;
 }
@@ -2266,6 +2266,10 @@ button, a, *::after, *::before {
     top: 3rem;
     -webkit-mask-position: center center;
             mask-position: center center;
+  }
+  #slider-main .slide .cover.noMask img {
+    -o-object-position: left bottom;
+       object-position: left bottom;
   }
 }
 @media only screen and (min-width: 992px) {

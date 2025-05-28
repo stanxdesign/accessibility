@@ -111,7 +111,7 @@
 			position: fixed;
 			width: 100vw;
 			height: 100vw;
-			top: 11rem;
+			top: 9rem;
 			left: auto;
 			right: 0;
 			opacity: 0;
@@ -135,13 +135,18 @@
 				mask-size: cover;
 				mask-position: center;
 				img{
-					object-position: left bottom;
+					object-position: center right;
 					object-fit: contain;
 				}
 			}
 			@include MD{
 				top: 3rem;
 				mask-position: center center;
+				&.noMask{
+					img{
+						object-position: left bottom;
+					}
+				}
 			}
 			@include LG{
 				width: 80vw;
