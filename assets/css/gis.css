@@ -15,6 +15,8 @@
   -webkit-filter: drop-shadow(0 0 3px rgb(0, 0, 0));
           filter: drop-shadow(0 0 3px rgb(0, 0, 0));
   cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .marker:hover {
   -webkit-filter: drop-shadow(0 0 8px var(--c-highlight));
@@ -28,9 +30,9 @@
 .marker::before {
   position: relative;
   display: block;
-  background-color: var(--c-white);
-  border: 1px solid var(--c-brand);
-  color: var(--c-brand);
+  background-color: var(--marker-color, var(--c-brand));
+  border: 1px solid var(--c-white);
+  color: var(--c-white);
   border-radius: 99rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -56,7 +58,7 @@
   z-index: 1;
   width: 3rem;
   height: 3rem;
-  background-color: var(--c-brand);
+  background-color: var(--c-white);
 }
 .marker::after {
   content: "";
@@ -1311,7 +1313,7 @@ svg polygon:hover,
 #pageGIS #sidePanel button::before {
   font-size: 1.2rem;
 }
-#pageGIS #sidePanel button#zoomOutMap {
+#pageGIS #sidePanel button#zoomOut {
   border-radius: 99rem;
   padding: 0;
   background: none;
@@ -1319,10 +1321,10 @@ svg polygon:hover,
           box-shadow: none;
   border: none 0 transparent;
 }
-#pageGIS #sidePanel button#zoomOutMap::before {
+#pageGIS #sidePanel button#zoomOut::before {
   content: "\f010";
 }
-#pageGIS #sidePanel button#zoomInMap {
+#pageGIS #sidePanel button#zoomIn {
   border-radius: 99rem;
   padding: 0;
   border: none;
@@ -1331,7 +1333,7 @@ svg polygon:hover,
           box-shadow: none;
   border: none 0 transparent;
 }
-#pageGIS #sidePanel button#zoomInMap::before {
+#pageGIS #sidePanel button#zoomIn::before {
   content: "\f00e";
 }
 #pageGIS #sidePanel button#openFliter {
@@ -1379,13 +1381,37 @@ svg polygon:hover,
   padding: 1ch !important;
 }
 #pageGIS #sidePanel #basemapList {
-  top: -1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+#pageGIS #sidePanel #basemapList.dropdown-menu.show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-width: 18rem;
+  max-height: 80vh;
+  top: -5rem !important;
+  left: 3em !important;
+  bottom: auto !important;
+}
+@media only screen and (min-width: 768px) {
+  #pageGIS #sidePanel #basemapList.dropdown-menu.show {
+    top: auto !important;
+    left: 5em !important;
+    bottom: -5rem !important;
+  }
 }
 #pageGIS #sidePanel #basemapList button {
-  display: block;
-  width: auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 8rem;
   height: auto;
-  aspect-ratio: 0;
+  line-height: 1;
+  aspect-ratio: 1/1;
   text-align: center;
   border-radius: 8px;
   font-size: 1rem;
@@ -1400,6 +1426,15 @@ svg polygon:hover,
 #pageGIS #sidePanel #basemapList button img {
   width: 100%;
   padding: 0 0 5px 0;
+}
+#pageGIS #sidePanel #basemapList button.active-basemap {
+  background-color: var(--c-hover);
+  color: var(--c-hover-t);
+}
+#pageGIS #sidePanel #basemapList button:hover {
+  border: 1px solid var(--c-hover);
+  -webkit-box-shadow: 0 0 1rem 0 var(--c-hover);
+          box-shadow: 0 0 1rem 0 var(--c-hover);
 }
 @media only screen and (min-width: 768px) {
   #pageGIS #sidePanel {
@@ -1471,22 +1506,22 @@ svg polygon:hover,
     translate: 0 18%;
     font-size: 2.5rem;
   }
-  #pageGIS #sidePanel button#zoomOutMap {
+  #pageGIS #sidePanel button#zoomOut {
     border-radius: 99rem;
     padding: 0;
     border: none;
     margin-bottom: 1.5rem;
   }
-  #pageGIS #sidePanel button#zoomOutMap::before {
+  #pageGIS #sidePanel button#zoomOut::before {
     font-size: 2.5rem;
   }
-  #pageGIS #sidePanel button#zoomInMap {
+  #pageGIS #sidePanel button#zoomIn {
     border-radius: 99rem;
     padding: 0;
     border: none;
     margin-top: 1.5rem;
   }
-  #pageGIS #sidePanel button#zoomInMap::before {
+  #pageGIS #sidePanel button#zoomIn::before {
     font-size: 2.5rem;
   }
   #pageGIS #sidePanel button#openFliter {
@@ -1524,7 +1559,7 @@ svg polygon:hover,
   position: fixed;
   top: 0;
   left: 0;
-  z-index: -1;
+  z-index: unset !important;
 }
 #pageGIS #map .layer {
   position: absolute;
@@ -1546,7 +1581,7 @@ svg polygon:hover,
 }
 #pageGIS #footer {
   position: fixed;
-  bottom: 8.5rem;
+  bottom: 6rem;
   left: 0;
   width: 100%;
   padding: 0 1.5rem;
@@ -1664,6 +1699,19 @@ svg polygon:hover,
   }
   #pageGIS #resultPanel .result-all-item .levels .items {
     grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+  }
+  #pageGIS #resultPanel .result-all-item .item-building {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+  }
+  #pageGIS #resultPanel .item-branch {
+    cursor: pointer !important;
+  }
+  #pageGIS #resultPanel .item-branch:hover {
+    color: var(--c-highlight) !important;
   }
 }
 #pageGIS #resultPanel:not(.active) {
@@ -1800,4 +1848,20 @@ svg polygon:hover,
   position: absolute;
   left: 0.25rem;
   translate: 0 -1rem;
+}
+#pageGIS .gispopup {
+  position: relative !important;
+}
+#pageGIS .gispopup .modal-body {
+  max-height: calc(30dvh - 5rem) !important;
+}
+@media only screen and (min-width: 992px) {
+  #pageGIS .gispopup .modal-body {
+    height: unset !important;
+  }
+}
+#pageGIS .gispopup.ol-popup {
+  border-radius: 1rem;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 4fr 1fr;
 }/*# sourceMappingURL=gis.css.map */

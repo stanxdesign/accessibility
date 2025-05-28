@@ -130,9 +130,18 @@
 				animation: zoom 12s ease-in-out infinite;
 				animation-play-state: paused;
 			}
+			&.noMask{
+				mask-image: none;
+				mask-size: cover;
+				mask-position: center;
+				img{
+					object-position: left bottom;
+					object-fit: contain;
+				}
+			}
 			@include MD{
 				top: 3rem;
-				mask-position: left center;
+				mask-position: center center;
 			}
 			@include LG{
 				width: 80vw;

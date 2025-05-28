@@ -90,11 +90,19 @@
 			h6{
 				font-size: 1rem;
 			}
-			h1,h2,h3,h4,h5,h6,div, p, ul, ol{
+			h1,h2,h3,h4,h5,h6,div, ul, ol{
 				padding-right: unset;
 				margin: .5rem 0 !important;
 				@include MD{
 					padding-right: calc(40% + 1rem);
+				}
+			}
+			ul, ol{
+				padding-left: 1rem;
+				padding-right: unset;
+				margin: .5rem 0 !important;
+				@include MD{
+					padding-right: calc(40% + 2rem);
 				}
 			}
 			&::after{

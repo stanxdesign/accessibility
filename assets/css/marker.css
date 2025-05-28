@@ -1,4 +1,5 @@
-@charset "UTF-8";@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 /* RWD media breakpoints (Mobile First, aligned with Bootstrap 5.3.3) */
 /* Extra small (default, no media query needed) */
 /* Small */
@@ -14,6 +15,8 @@
   -webkit-filter: drop-shadow(0 0 3px rgb(0, 0, 0));
           filter: drop-shadow(0 0 3px rgb(0, 0, 0));
   cursor: pointer;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .marker:hover {
   -webkit-filter: drop-shadow(0 0 8px var(--c-highlight));
@@ -27,9 +30,9 @@
 .marker::before {
   position: relative;
   display: block;
-  background-color: var(--c-white);
-  border: 1px solid var(--c-brand);
-  color: var(--c-brand);
+  background-color: var(--marker-color, var(--c-brand));
+  border: 1px solid var(--c-white);
+  color: var(--c-white);
   border-radius: 99rem;
   width: 2.5rem;
   height: 2.5rem;
@@ -55,7 +58,7 @@
   z-index: 1;
   width: 3rem;
   height: 3rem;
-  background-color: var(--c-brand);
+  background-color: var(--c-white);
 }
 .marker::after {
   content: "";

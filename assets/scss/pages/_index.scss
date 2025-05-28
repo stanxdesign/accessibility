@@ -242,6 +242,32 @@
 			}
 		}
 	}
+
+	#divCommonFacilities{
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+		z-index: 1;
+		.card-item{
+				flex: 0 0 100%;
+				max-width: 100%;
+				@include SM{
+					flex: 1 1 calc(50% - 1rem);
+					max-width: calc(50% - 1rem);
+				}
+				@include LG{
+					flex: 1 1 calc(33% - 1rem);
+					max-width: calc(33% - 1rem);
+				}
+			}
+	}
+	#divAllFacilities{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 1rem;
+		z-index: 1;
+	}
 	.index-section-2{
 		background-color: var(--c-index-section-2);
 		color: var(--c-index-section-2);
@@ -256,27 +282,6 @@
 			}
 			p{
 				color: var(--c-index-section-2-t);
-			}
-		}
-		.wrapper{
-			display: flex;
-			flex-wrap: wrap;
-			gap: 1rem;
-			z-index: 1;
-			header{
-				flex: 0 0 100%;
-			}
-			.card-item{
-				flex: 0 0 100%;
-				max-width: 100%;
-				@include SM{
-					flex: 1 1 calc(50% - 1rem);
-					max-width: calc(50% - 1rem);
-				}
-				@include LG{
-					flex: 1 1 calc(33% - 1rem);
-					max-width: calc(33% - 1rem);
-				}
 			}
 		}
 		img{
@@ -299,16 +304,6 @@
 			}
 			p{
 				color: var(--c-index-section-3-t);
-			}
-		}
-		.wrapper{
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-			gap: 1rem;
-			z-index: 1;
-			header{
-				flex: 0 0 100%;
 			}
 		}
 		&::before{

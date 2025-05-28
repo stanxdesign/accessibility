@@ -532,7 +532,7 @@ body:is([id^=list]).startup .backTop {
   }
 }
 
-body#index .backTop {
+body:not([id^=list]) .backTop {
   position: fixed;
   top: auto;
   left: auto;
@@ -541,7 +541,7 @@ body#index .backTop {
   opacity: 0;
   pointer-events: none;
 }
-body#index.startup .backTop {
+body:not([id^=list]).startup .backTop {
   pointer-events: all;
   opacity: 0.7;
 }
@@ -2247,11 +2247,25 @@ button, a, *::after, *::before {
   -webkit-animation-play-state: paused;
           animation-play-state: paused;
 }
+#slider-main .slide .cover.noMask {
+  -webkit-mask-image: none;
+          mask-image: none;
+  -webkit-mask-size: cover;
+          mask-size: cover;
+  -webkit-mask-position: center;
+          mask-position: center;
+}
+#slider-main .slide .cover.noMask img {
+  -o-object-position: left bottom;
+     object-position: left bottom;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
 @media only screen and (min-width: 768px) {
   #slider-main .slide .cover {
     top: 3rem;
-    -webkit-mask-position: left center;
-            mask-position: left center;
+    -webkit-mask-position: center center;
+            mask-position: center center;
   }
 }
 @media only screen and (min-width: 992px) {
@@ -2464,13 +2478,23 @@ button, a, *::after, *::before {
 .faq-item .collapse .card-body h6, .faq-item .collapsing .card-body h6 {
   font-size: 1rem;
 }
-.faq-item .collapse .card-body h1, .faq-item .collapse .card-body h2, .faq-item .collapse .card-body h3, .faq-item .collapse .card-body h4, .faq-item .collapse .card-body h5, .faq-item .collapse .card-body h6, .faq-item .collapse .card-body div, .faq-item .collapse .card-body p, .faq-item .collapse .card-body ul, .faq-item .collapse .card-body ol, .faq-item .collapsing .card-body h1, .faq-item .collapsing .card-body h2, .faq-item .collapsing .card-body h3, .faq-item .collapsing .card-body h4, .faq-item .collapsing .card-body h5, .faq-item .collapsing .card-body h6, .faq-item .collapsing .card-body div, .faq-item .collapsing .card-body p, .faq-item .collapsing .card-body ul, .faq-item .collapsing .card-body ol {
+.faq-item .collapse .card-body h1, .faq-item .collapse .card-body h2, .faq-item .collapse .card-body h3, .faq-item .collapse .card-body h4, .faq-item .collapse .card-body h5, .faq-item .collapse .card-body h6, .faq-item .collapse .card-body div, .faq-item .collapse .card-body ul, .faq-item .collapse .card-body ol, .faq-item .collapsing .card-body h1, .faq-item .collapsing .card-body h2, .faq-item .collapsing .card-body h3, .faq-item .collapsing .card-body h4, .faq-item .collapsing .card-body h5, .faq-item .collapsing .card-body h6, .faq-item .collapsing .card-body div, .faq-item .collapsing .card-body ul, .faq-item .collapsing .card-body ol {
   padding-right: unset;
   margin: 0.5rem 0 !important;
 }
 @media only screen and (min-width: 768px) {
-  .faq-item .collapse .card-body h1, .faq-item .collapse .card-body h2, .faq-item .collapse .card-body h3, .faq-item .collapse .card-body h4, .faq-item .collapse .card-body h5, .faq-item .collapse .card-body h6, .faq-item .collapse .card-body div, .faq-item .collapse .card-body p, .faq-item .collapse .card-body ul, .faq-item .collapse .card-body ol, .faq-item .collapsing .card-body h1, .faq-item .collapsing .card-body h2, .faq-item .collapsing .card-body h3, .faq-item .collapsing .card-body h4, .faq-item .collapsing .card-body h5, .faq-item .collapsing .card-body h6, .faq-item .collapsing .card-body div, .faq-item .collapsing .card-body p, .faq-item .collapsing .card-body ul, .faq-item .collapsing .card-body ol {
+  .faq-item .collapse .card-body h1, .faq-item .collapse .card-body h2, .faq-item .collapse .card-body h3, .faq-item .collapse .card-body h4, .faq-item .collapse .card-body h5, .faq-item .collapse .card-body h6, .faq-item .collapse .card-body div, .faq-item .collapse .card-body ul, .faq-item .collapse .card-body ol, .faq-item .collapsing .card-body h1, .faq-item .collapsing .card-body h2, .faq-item .collapsing .card-body h3, .faq-item .collapsing .card-body h4, .faq-item .collapsing .card-body h5, .faq-item .collapsing .card-body h6, .faq-item .collapsing .card-body div, .faq-item .collapsing .card-body ul, .faq-item .collapsing .card-body ol {
     padding-right: calc(40% + 1rem);
+  }
+}
+.faq-item .collapse .card-body ul, .faq-item .collapse .card-body ol, .faq-item .collapsing .card-body ul, .faq-item .collapsing .card-body ol {
+  padding-left: 1rem;
+  padding-right: unset;
+  margin: 0.5rem 0 !important;
+}
+@media only screen and (min-width: 768px) {
+  .faq-item .collapse .card-body ul, .faq-item .collapse .card-body ol, .faq-item .collapsing .card-body ul, .faq-item .collapsing .card-body ol {
+    padding-right: calc(40% + 2rem);
   }
 }
 .faq-item .collapse .card-body::after, .faq-item .collapsing .card-body::after {
@@ -2731,6 +2755,49 @@ button, a, *::after, *::before {
     border-right: 1px solid var(--c-index-white);
   }
 }
+#index #divCommonFacilities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  z-index: 1;
+}
+#index #divCommonFacilities .card-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
+@media only screen and (min-width: 576px) {
+  #index #divCommonFacilities .card-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(50% - 1rem);
+            flex: 1 1 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
+}
+@media only screen and (min-width: 992px) {
+  #index #divCommonFacilities .card-item {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 calc(33% - 1rem);
+            flex: 1 1 calc(33% - 1rem);
+    max-width: calc(33% - 1rem);
+  }
+}
+#index #divAllFacilities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  z-index: 1;
+}
 #index .index-section-2 {
   background-color: var(--c-index-section-2);
   color: var(--c-index-section-2);
@@ -2749,42 +2816,6 @@ button, a, *::after, *::before {
 }
 #index .index-section-2 header p {
   color: var(--c-index-section-2-t);
-}
-#index .index-section-2 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 1rem;
-  z-index: 1;
-}
-#index .index-section-2 .wrapper header {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-}
-#index .index-section-2 .wrapper .card-item {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  max-width: 100%;
-}
-@media only screen and (min-width: 576px) {
-  #index .index-section-2 .wrapper .card-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 calc(50% - 1rem);
-            flex: 1 1 calc(50% - 1rem);
-    max-width: calc(50% - 1rem);
-  }
-}
-@media only screen and (min-width: 992px) {
-  #index .index-section-2 .wrapper .card-item {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 1 calc(33% - 1rem);
-            flex: 1 1 calc(33% - 1rem);
-    max-width: calc(33% - 1rem);
-  }
 }
 #index .index-section-2 img {
   max-width: 100%;
@@ -2809,23 +2840,6 @@ button, a, *::after, *::before {
 }
 #index .index-section-3 header p {
   color: var(--c-index-section-3-t);
-}
-#index .index-section-3 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  gap: 1rem;
-  z-index: 1;
-}
-#index .index-section-3 .wrapper header {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
 }
 #index .index-section-3::before {
   content: "";
