@@ -791,6 +791,9 @@
   opacity: 0.5;
 }
 
+#listPage main {
+  padding-bottom: 1rem;
+}
 #listPage .result-area {
   -webkit-column-count: 1;
      -moz-column-count: 1;

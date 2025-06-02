@@ -1624,6 +1624,7 @@ svg polygon:hover,
   background-color: var(--c-back-blur);
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
+  z-index: 2;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
 }
@@ -1733,7 +1734,6 @@ svg polygon:hover,
   position: fixed;
   top: 5.5rem;
   left: 0;
-  z-index: 1;
 }
 #pageGIS #breadcrumb .breadcrumb {
   background-color: var(--c-white);

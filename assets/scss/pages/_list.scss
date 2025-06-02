@@ -2,6 +2,9 @@
 @use '../abstracts/mixins' as *;
 
 #listPage{
+	main{
+		padding-bottom: 1rem;
+	}
 	.result-area{
 		column-count: 1;
 	}
