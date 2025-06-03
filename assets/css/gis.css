@@ -816,7 +816,7 @@ svg polygon:hover,
 .result-all-item .btn-takeme {
   position: absolute;
   bottom: -0.5rem;
-  right: -0.5rem;
+  right: 0;
 }
 .result-all-item .result-info {
   margin: 1rem;
@@ -1853,6 +1853,8 @@ svg polygon:hover,
   position: relative !important;
 }
 #pageGIS .gispopup .modal-body {
+  min-width: 100%;
+  width: 100%;
   max-height: calc(30dvh - 5rem) !important;
 }
 @media only screen and (min-width: 992px) {

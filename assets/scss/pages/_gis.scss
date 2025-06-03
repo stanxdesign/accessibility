@@ -566,6 +566,8 @@
 	.gispopup{
 		position: relative !important;
 		.modal-body{
+			min-width: 100%;
+			width: 100%;
 			max-height: calc(30dvh - 5rem) !important;
 			@include LG{
 				height: unset !important;

@@ -520,6 +520,7 @@ body:is([id^=list]) .backTop {
   right: 1rem;
   opacity: 0;
   pointer-events: none;
+  z-index: 1;
 }
 body:is([id^=list]).startup .backTop {
   pointer-events: all;
