@@ -143,6 +143,7 @@
 				top: -5rem !important;
 				left: 3em !important;
 				bottom: auto !important;
+				transform: translate3d(0, 0, 0) !important;
 				@include MD{
 					top: auto !important;
 					left: 5em !important;

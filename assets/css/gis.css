@@ -1396,6 +1396,8 @@ svg polygon:hover,
   top: -5rem !important;
   left: 3em !important;
   bottom: auto !important;
+  -webkit-transform: translate3d(0, 0, 0) !important;
+          transform: translate3d(0, 0, 0) !important;
 }
 @media only screen and (min-width: 768px) {
   #pageGIS #sidePanel #basemapList.dropdown-menu.show {
