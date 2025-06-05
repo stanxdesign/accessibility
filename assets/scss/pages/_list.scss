@@ -292,6 +292,10 @@
 			.result-area{
 				column-count: 2;
 				column-gap: 2rem;
+				&:has(#noResult){
+					column-count: 1;
+					column-gap: 0;
+				}
 				header{
 					flex: 0 0 100%;
 					max-width: 1600px;
@@ -318,6 +322,10 @@
 					max-width: unset;
 					column-count: 2;
 					column-gap: 2rem;
+					&:has(#noResult){
+						column-count: 1;
+						column-gap: 0;
+					}
 					header{
 						flex: 0 0 100%;
 						max-width: 1600px;
@@ -340,6 +348,16 @@
 				max-width: 100%;
 				margin: 0 auto;
 			}
+		}
+	}
+	&:has(#filterPanel.active){
+		#backTop{
+			bottom: 25rem;
+		}
+	}
+	&:has(#moreTagsMenu.show){
+		#backTop{
+			bottom: 43rem;
 		}
 	}
 }
