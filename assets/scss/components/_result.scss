@@ -477,18 +477,21 @@
 	width: 100%;
 	text-align: center;
 	color: var(--c-front);
-	&::before{
-		content: '';
-		display: block;
-		width: 100%;
-		min-width: 10rem;
-		height: auto;
-		margin: 0 auto;
-		aspect-ratio: 3 / 2;
-		background-image: url(../images/demo_noresult.svg);
-		background-repeat: no-repeat;
-		background-position: center;
-		background-size: contain;
+	.icon {
+		font-size: 6rem;
+		background-color: var(--c-back);
+		width: 11rem;
+		margin: 2rem auto;
+		height: 11rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 99rem;
+		overflow: hidden;
+		i{
+			--fa-primary-color: var(--c-brand);
+			--fa-secondary-color: var(--c-hover);
+		}
 	}
 }
 

@@ -967,6 +967,7 @@ label:not(.marker):focus input {
           align-items: center;
   text-align: left;
   padding: 0.5rem 0.25rem;
+  margin: 0.5rem 0;
 }
 #loginPage #thirdLoginCard button:not(:hover, :focus), #loginPage #thirdLoginCard a:not(:hover, :focus) {
   background-color: var(--c-lite);
@@ -988,6 +989,7 @@ label:not(.marker):focus input {
 }
 #loginPage #thirdLoginCard div {
   height: auto;
+  min-height: 28rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1000,17 +1002,20 @@ label:not(.marker):focus input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  -ms-flex-line-pack: justify;
-      align-content: space-between;
+  -ms-flex-line-pack: stretch;
+      align-content: stretch;
   padding: 2rem 0 1rem 0;
 }
 #loginPage #thirdLoginCard div hr {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
+  display: none;
 }
 #loginPage #thirdLoginCard div button, #loginPage #thirdLoginCard div a {
   width: 100%;
+}
+#loginPage #thirdLoginCard div p {
+  border-top: 1px solid var(--c-brand);
+  margin-top: auto;
+  padding-top: 1.5rem;
 }
 #loginPage #forgetPassword {
   float: right;
@@ -1039,11 +1044,6 @@ label:not(.marker):focus input {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
-    -ms-flex-line-pack: justify;
-        align-content: space-between;
     padding: 1rem 0;
   }
   #loginPage #thirdLoginCard div hr {

@@ -59,6 +59,7 @@
 			align-items: center;
 			text-align: left;
 			padding: .5rem .25rem;
+			margin: .5rem 0;
 			&:not(:hover,:focus){
 				background-color: var(--c-lite);
 				color: var(--c-dark);
@@ -80,17 +81,23 @@
 		}
 		div{
 			height: auto;
+			min-height: 28rem;
 			display: flex;
 			flex-wrap: wrap;
 			flex-direction: row;
 			justify-content: space-between;
-			align-content: space-between;
+			align-content: stretch;
 			padding: 2rem 0 1rem 0;
 			hr{
-				flex: 0 0 100%;
+				display: none;
 			}
 			button,a{
 				width: 100%;
+			}
+			p{
+				border-top: 1px solid var(--c-brand);
+				margin-top:auto;
+				padding-top:1.5rem;
 			}
 		}
 	}
@@ -117,8 +124,6 @@
 				height: 100%;
 				display: flex;
 				flex-wrap: wrap;
-				justify-content: space-between;
-				align-content: space-between;
 				padding: 1rem 0;
 				hr{
 					flex: 0 0 100%;
