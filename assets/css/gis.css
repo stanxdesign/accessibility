@@ -785,6 +785,7 @@ svg polygon:hover,
       -ms-flex-order: 2;
           order: 2;
   background-color: transparent;
+  padding-top: 1ch;
   padding-bottom: 0.5ch;
 }
 .result-all-item .items [class^=fa] {

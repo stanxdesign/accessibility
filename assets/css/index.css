@@ -1043,15 +1043,26 @@ button, a, *::after, *::before {
       align-content: center;
 }
 #navHeader .navbar-brand h1 {
-  font-size: 1rem;
-  -ms-flex-item-align: center;
-      align-self: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  font-size: 1.25rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
   margin: 0 1ch;
+  line-height: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+#navHeader .navbar-brand h1 span {
+  display: block;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+  font-size: 75%;
+  letter-spacing: -1px;
+  color: var(--c-front);
 }
 #navHeader #navbarMain {
   z-index: 2;
@@ -1225,7 +1236,35 @@ button, a, *::after, *::before {
   margin-bottom: 1rem;
 }
 #footer #footerLogo .navbar-brand {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+}
+#footer #footerLogo .navbar-brand .h1 {
+  font-size: 1.25rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-line-pack: end;
+      align-content: flex-end;
+  margin: 0 1ch;
+  line-height: 1rem;
+  letter-spacing: 1px;
+  text-align: center;
+  color: var(--c-white);
+}
+#footer #footerLogo .navbar-brand .h1 span {
   display: block;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+  font-size: 75%;
+  letter-spacing: -1px;
 }
 @media only screen and (min-width: 768px) {
   #footer #footerLogo {
@@ -3106,7 +3145,7 @@ button, a, *::after, *::before {
 #index .card-item .card-cover {
   aspect-ratio: 16/8;
   overflow: hidden;
-  z-index: 1;
+  z-index: 0;
 }
 #index .card-item .card-cover img {
   width: 100%;

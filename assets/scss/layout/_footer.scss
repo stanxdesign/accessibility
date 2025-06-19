@@ -5,8 +5,29 @@
 	#footerLogo{
 		margin-bottom: 1rem;
 		.navbar-brand{
-			display: block;
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: center;
+		align-content: center;
+		.h1{
+			font-size: 1.25rem;
+			align-self: flex-end;
+			align-items: flex-end;
+			align-content: flex-end;
+			margin: 0 1ch;
+			line-height: 1rem;
+			letter-spacing: 1px;
+			text-align: center;
+			color: var(--c-white);
+			span{
+				display: block;
+				margin-top: 0.25rem;
+				opacity: .8;
+				font-size: 75%;
+				letter-spacing: -1px;
+			}
 		}
+	}
 		@include MD {
 			text-align: center;
 		}
