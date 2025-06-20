@@ -1219,30 +1219,37 @@ button, a, *::after, *::before {
 
 #footer {
   height: 25vh;
-  min-height: 100%;
-  margin-top: 5rem;
+  min-height: 12rem;
   color: var(--c-white);
   background-color: var(--c-brand);
   background-image: url(../images/footer.webp);
   background-position: center;
   background-size: cover;
-  padding: 0.5rem 1rem;
-  display: block;
-  text-align: center;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
-}
-#footer #footerLogo {
-  margin-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 #footer #footerLogo .navbar-brand {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -ms-flex-line-pack: center;
       align-content: center;
+  margin: 0 auto;
 }
 #footer #footerLogo .navbar-brand .h1 {
   font-size: 1.25rem;
@@ -1266,51 +1273,25 @@ button, a, *::after, *::before {
   font-size: 75%;
   letter-spacing: -1px;
 }
-@media only screen and (min-width: 768px) {
-  #footer #footerLogo {
-    text-align: center;
-  }
-}
-#footer #footerInfo {
-  display: block;
+#footer #footerLink {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
 }
 @media only screen and (min-width: 768px) {
   #footer {
-    padding: 3rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-  }
-  #footer #footerInfo {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
-    text-align: right;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-  }
-  #footer #footerCount {
-    -webkit-box-flex: 1;
-        -ms-flex: 1 0 100%;
-            flex: 1 0 100%;
-  }
-  #footer #copyright::before {
-    content: "|";
-    display: inline-block;
-    padding: 0 1ch 0 0.5ch;
-    opacity: 0.5;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
 }
 
