@@ -1516,7 +1516,7 @@ button, a, *::after, *::before {
   pointer-events: none;
   content: "";
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
   width: 100%;
   height: 4rem;
@@ -3105,23 +3105,10 @@ button, a, *::after, *::before {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   z-index: 1;
+  scale: 0;
 }
 #index .card-item .card-body .more i {
   margin-right: 0.5ch;
-}
-#index .card-item .card-body::after {
-  content: "";
-  pointer-events: none;
-  top: 0;
-  left: 0.5rem;
-  position: absolute;
-  display: block;
-  width: calc(100% - 1rem);
-  aspect-ratio: 1/1;
-  border-radius: 2rem;
-  background-color: var(--c-index-black);
-  opacity: 0;
-  z-index: 0;
 }
 #index .card-item .card-cover {
   aspect-ratio: 16/8;
@@ -3150,22 +3137,35 @@ button, a, *::after, *::before {
 #index .card-item:has(.card-cover:empty) .card-cover {
   display: none;
 }
-#index .card-item:hover, #index .card-item:focus {
+#index .card-item:hover, #index .card-item:focus, #index .card-item:focus-within {
   scale: 1.02;
 }
-#index .card-item:hover h5 i, #index .card-item:focus h5 i {
-  z-index: 2;
+#index .card-item:hover .card, #index .card-item:focus .card, #index .card-item:focus-within .card {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--c-yellow);
 }
-#index .card-item:hover h5 i::before, #index .card-item:focus h5 i::before {
-  -webkit-animation: bounce 1s infinite;
-          animation: bounce 1s infinite;
+#index .card-item:hover .card-text, #index .card-item:focus .card-text, #index .card-item:focus-within .card-text {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.3;
 }
-#index .card-item:hover .card-body:hover::after, #index .card-item:focus .card-body:hover::after {
-  opacity: 0.1;
+#index .card-item:hover .card-cover, #index .card-item:focus .card-cover, #index .card-item:focus-within .card-cover {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  opacity: 0.3;
 }
-#index .card-item:hover .card-body:hover .more, #index .card-item:focus .card-body:hover .more {
+#index .card-item:hover .more, #index .card-item:focus .more, #index .card-item:focus-within .more {
   pointer-events: all;
   opacity: 1;
+  scale: 1;
+}
+#index .card-item:hover h5 i, #index .card-item:focus h5 i, #index .card-item:focus-within h5 i {
+  z-index: 2;
+}
+#index .card-item:hover h5 i::before, #index .card-item:focus h5 i::before, #index .card-item:focus-within h5 i::before {
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
 }
 #index .btn-highlight {
   background-color: var(--c-index-btn);
@@ -3263,6 +3263,7 @@ button, a, *::after, *::before {
   --c-hover-t:	#FCDF3F;
   --c-highlight-t:	#000000;
   --c-focus:	#FF4D42;
+  --c-yellow:	#FCDF3F;
   --c-front:	#000000;
   --c-front-sub:	#000000;
   --c-front-brand:	#063648;

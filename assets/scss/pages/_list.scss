@@ -8,6 +8,12 @@
 	.result-area{
 		column-count: 1;
 	}
+	footer{
+		margin-bottom: 3rem;
+		@include SM{
+			margin-bottom: 0;
+		}
+	}
 	&::before{
 		content: '';
 		position: fixed;

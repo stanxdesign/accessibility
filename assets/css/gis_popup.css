@@ -1,0 +1,50 @@
+@charset "UTF-8";
+.ol-selectable-custom{
+    top: calc(25% + 3rem);
+}
+.ol-selectable-custom .gispopup{
+    right: 2rem;
+}
+
+@media only screen and (max-width: 1023px) {
+   .ol-selectable-custom{
+        top: calc(20% + 8rem);
+   }
+}
+@media only screen and (max-width: 767px) {
+    .ol-selectable-custom {
+        position: fixed;
+        pointer-events: auto;
+        top:unset;
+        bottom: 8.5rem;
+        right: .5rem;
+        transform: none !important;
+        max-width: calc(100%);
+        width: calc(100% - 5rem);
+    }
+
+    .ol-selectable-custom .gispopup {
+        width: 100%;
+        right: unset;
+        min-height: calc(100vh - 18rem);
+        max-height: calc(100vh - 3rem);
+        overflow: auto;
+    }
+
+    .ol-selectable-custom .gispopup .modal-header {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .ol-selectable-custom .gispopup .modal-body {
+        aspect-ratio: unset;
+        padding-top: 1rem;
+    }
+
+    .ol-selectable-custom .gispopup .modal-body,
+    .ol-selectable-custom .gispopup .extra-gallery,
+    .ol-selectable-custom .gispopup .modal-footer {
+        max-height: unset;
+    }
+}

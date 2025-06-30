@@ -524,21 +524,10 @@
 				opacity: 0;
 				transition: all .3s ease-in-out;
 				z-index: 1;
-				i{margin-right: .5ch;}
-			}
-			&::after{
-				content: '';
-				pointer-events: none;
-				top: 0;
-				left:  .5rem;
-				position: absolute;
-				display: block;
-				width: calc(100% - 1rem);
-				aspect-ratio: 1 / 1;
-				border-radius: 2rem;
-				background-color: var(--c-index-black);
-				opacity: 0;
-				z-index: 0;
+				scale: 0;
+				i{
+					margin-right: .5ch;
+				}
 			}
 		}
 		.card-cover{
@@ -571,21 +560,29 @@
 			}
 		}
 		transition: all .3s ease-in-out;
-		&:hover, &:focus{
+		&:hover, &:focus , &:focus-within{
 			scale: 1.02;
+			.card{
+				transition: all .3s ease-in-out;
+				background-color: var(--c-yellow);
+			}
+			.card-text{
+				transition: all .3s ease-in-out;
+				opacity: .3;
+			}
+			.card-cover{
+				transition: all .3s ease-in-out;
+				opacity: .3;
+			}
+			.more{
+				pointer-events: all;
+				opacity: 1;
+				scale: 1;
+			}
 			h5 i{
-					z-index: 2;
-					&::before{
-						animation: bounce 1s infinite;
-					}
-				}
-			.card-body:hover{
-				&::after{
-					opacity: .1;
-				}
-				.more{
-					pointer-events: all;
-					opacity: 1;
+				z-index: 2;
+				&::before{
+					animation: bounce 1s infinite;
 				}
 			}
 		}

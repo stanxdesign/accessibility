@@ -1861,21 +1861,64 @@ svg polygon:hover,
   left: 0.25rem;
   translate: 0 -1rem;
 }
-#pageGIS .gispopup {
-  position: relative !important;
+#pageGIS .gispopup.modal-content {
+  max-height: calc(100dvh - 14rem);
+  width: calc(100vw - 5rem);
 }
-#pageGIS .gispopup .modal-body {
-  min-width: 100%;
+#pageGIS .gispopup .item-info {
+  aspect-ratio: unset;
   width: 100%;
-  max-height: calc(30dvh - 5rem) !important;
+  overflow: unset;
 }
-@media only screen and (min-width: 992px) {
-  #pageGIS .gispopup .modal-body {
-    height: unset !important;
+#pageGIS .gispopup .item-info h5 {
+  font-size: 1.2rem;
+}
+#pageGIS .gispopup .item-info span:not(:empty)::before {
+  content: "「";
+}
+#pageGIS .gispopup .item-info span:not(:empty)::after {
+  content: "」";
+}
+#pageGIS .gispopup .html-editor {
+  overflow: auto;
+  padding: 1ch;
+}
+#pageGIS .gispopup .html-editor p {
+  margin-bottom: 0.25rem;
+}
+@media only screen and (min-width: 576px) {
+  #pageGIS .gispopup {
+    width: 40vw;
+    min-width: 25rem;
+    max-width: 50rem;
+    display: grid;
+    grid-template-areas: "header header" "cover right" "title right" "footer footer";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
   }
-}
-#pageGIS .gispopup.ol-popup {
-  border-radius: 1rem;
-  grid-template-columns: 3fr 2fr;
-  grid-template-rows: 1fr 4fr 1fr;
+  #pageGIS .gispopup.ol-popup {
+    border-radius: 1rem;
+    grid-template-columns: 3fr 2fr;
+    grid-template-rows: 1fr 4fr 1fr;
+  }
+  #pageGIS .gispopup .modal-header {
+    grid-area: header;
+  }
+  #pageGIS .gispopup .item-info {
+    grid-area: title;
+    height: auto;
+    aspect-ratio: 16/3;
+    width: 100%;
+  }
+  #pageGIS .gispopup .extra-gallery {
+    grid-area: cover;
+    aspect-ratio: 16/10;
+    width: 100%;
+    height: auto;
+  }
+  #pageGIS .gispopup .html-editor {
+    grid-area: right;
+    overflow: auto;
+    aspect-ratio: 16/13;
+  }
 }/*# sourceMappingURL=gis.css.map */

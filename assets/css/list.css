@@ -809,6 +809,14 @@
      -moz-column-count: 1;
           column-count: 1;
 }
+#listPage footer {
+  margin-bottom: 3rem;
+}
+@media only screen and (min-width: 576px) {
+  #listPage footer {
+    margin-bottom: 0;
+  }
+}
 #listPage::before {
   content: "";
   position: fixed;
