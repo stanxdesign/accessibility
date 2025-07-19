@@ -40,3 +40,18 @@ label:not(.marker):focus {
 		outline-width: 0 !important;
 	}
 }
+
+// 導盲磚處理
+#AC, #AR{
+	display: inline-block;
+	padding: 0 .5ch;
+	margin: 0 .5ch;
+	font-size: 1rem;
+	color: var(--c-front);
+	font-weight: bold;
+	&:focus{
+		color: var(--c-back);
+		background: var(--c-focus);
+		text-decoration: none;
+	}
+}

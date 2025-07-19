@@ -100,7 +100,7 @@
 				<div id="filterPanelForm">
 					<div class="form-group ">
 						<label for="school" required>學校(必填)</label>
-						<input id="school" class="form-control" list="school" placeholder="必填，請輸入或選擇學校" aria-label="學校選擇">
+						<input id="school" class="form-control" list="school" placeholder="必填，請輸入或選擇學校" aria-label="學校選擇" title="學校選擇" accesskey="S">
 						<datalist id="school"><!--HTML 5 原生功能 預設前端不會顯示，透過ID直接傳遞value-->>
 							<option value="國立臺灣體育運動大學">
 							<option value="中興大學">
@@ -501,7 +501,7 @@
 					<!-- 模擬設施互動 POPUP -->
 					<div class="gispopup modal-content active" style="top:10rem;left:2.5%">
 						<div class="modal-header">
-							<p class="extra-where"><label>行政大樓</label><label>3F</label></p>
+							<p class="extra-where"><label>行政大樓</label><label>3F</label></p><a href="#C" title="中央內容區塊" id="AC" accesskey="C" name="C">:::</a>
 							<button type="button" class="modal-dismiss" data-bs-dismiss="modal" aria-label="關閉"></button>
 						</div>
 						<div class="item-info modal-body">
@@ -582,6 +582,8 @@
 						<p>很抱歉，您設定的條件查不到相關的資料，請您調整條件後再行嘗試。</p>
 						<p><button type="button" class="btn btn-highlight">重新查詢</button></p>
 					</article>
+
+					<a href="#C" title="中央內容區塊" id="AR" accesskey="R" name="R">:::</a>
 
 					<!-- ===建築單位，結構相同 ===-->
 					<article class="result-all-item">

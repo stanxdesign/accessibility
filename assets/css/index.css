@@ -788,6 +788,20 @@ label:not(.marker):focus input {
   outline-width: 0 !important;
 }
 
+#AC, #AR {
+  display: inline-block;
+  padding: 0 0.5ch;
+  margin: 0 0.5ch;
+  font-size: 1rem;
+  color: var(--c-front);
+  font-weight: bold;
+}
+#AC:focus, #AR:focus {
+  color: var(--c-back);
+  background: var(--c-focus);
+  text-decoration: none;
+}
+
 button, a, *::after, *::before {
   -webkit-transition-property: all;
   transition-property: all;
@@ -2984,7 +2998,7 @@ button, a, *::after, *::before {
 }
 #index .card-item-style .card-body:hover, #index .card-item-style .card-body:focus, #index .card-item-style .card-body:focus-within {
   background-color: var(--c-yellow);
-  color: var(--c-front);
+  color: var(--c-black);
   scale: 1.02;
 }
 #index .card-item-style .card-body:hover .card-title i, #index .card-item-style .card-body:focus .card-title i, #index .card-item-style .card-body:focus-within .card-title i {
