@@ -2780,6 +2780,22 @@ button, a, *::after, *::before {
     border-right: 1px solid var(--c-index-white);
   }
 }
+#index #divCommonFacilities-style {
+  margin-top: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+  z-index: 1;
+}
+#index #divCommonFacilities-style .card-item-style {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 calc(50% - 1rem);
+          flex: 0 0 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
+}
 #index #divCommonFacilities {
   margin-top: 6rem;
   display: -webkit-box;
@@ -2923,6 +2939,119 @@ button, a, *::after, *::before {
 #index #footer {
   margin: 0 !important;
 }
+#index .card-item-style {
+  position: relative;
+  padding: 0;
+}
+#index .card-item-style .card {
+  background: transparent;
+  border: 0 none transparent;
+  padding: 0;
+}
+#index .card-item-style .card-body {
+  padding: 0;
+  background: var(--c-brand);
+  color: var(--c-brand-t);
+  border-radius: 1.5rem;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#index .card-item-style .card-body .card-title {
+  position: relative;
+  font-size: 1.5rem;
+  padding: 1rem 4rem 6rem 1rem;
+}
+#index .card-item-style .card-body .card-title i {
+  position: absolute;
+  font-size: 4rem;
+  bottom: 0;
+}
+#index .card-item-style .card-body .card-text {
+  padding: 0 1rem 1rem 1rem;
+  margin: 0;
+}
+#index .card-item-style .card-body .btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: var(--c-brand-t);
+  color: var(--c-brand);
+  border-radius: 99rem;
+}
+#index .card-item-style .card-body .btn i {
+  margin: 0 0.5ch 0 0;
+}
+#index .card-item-style .card-body:hover, #index .card-item-style .card-body:focus, #index .card-item-style .card-body:focus-within {
+  background-color: var(--c-yellow);
+  color: var(--c-front);
+  scale: 1.02;
+}
+#index .card-item-style .card-body:hover .card-title i, #index .card-item-style .card-body:focus .card-title i, #index .card-item-style .card-body:focus-within .card-title i {
+  color: var(--c-hover);
+}
+#index .card-item-style .card-body:hover .btn, #index .card-item-style .card-body:focus .btn, #index .card-item-style .card-body:focus-within .btn {
+  background-color: var(--c-hover);
+  color: var(--c-hover-t);
+}
+@media only screen and (min-width: 768px) {
+  #index .card-item-style {
+    width: 50%;
+    aspect-ratio: 2/1;
+  }
+  #index .card-item-style .card-body {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #index .card-item-style .card-body .card-title {
+    width: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 1rem;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+  #index .card-item-style .card-body .card-title i {
+    position: relative;
+  }
+  #index .card-item-style .card-body .card-text {
+    width: 50%;
+  }
+  #index .card-item-style .card-body .card-cover {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0;
+    right: 0;
+  }
+  #index .card-item-style .card-body .card-cover img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #index .card-item-style .card-body .btn {
+    right: calc(50% + 1ch);
+  }
+}
 #index .card-item {
   position: relative;
   -webkit-transition: all 0.3s ease-in-out;
@@ -3029,6 +3158,8 @@ button, a, *::after, *::before {
   text-align: center;
   font-size: 1.5rem;
   color: var(--c-front);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   z-index: 1;
 }
 #index .card-item h5 i {
@@ -3039,6 +3170,8 @@ button, a, *::after, *::before {
           filter: drop-shadow(0 0 3px rgb(0, 0, 0));
   cursor: pointer;
   translate: -0.5rem -0.5rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 #index .card-item h5 i::before {
   position: relative;
@@ -3137,6 +3270,15 @@ button, a, *::after, *::before {
 #index .card-item:has(.card-cover:empty) .card-cover {
   display: none;
 }
+#index .card-item:has(.card-cover:not(:empty)):hover h5, #index .card-item:has(.card-cover:not(:empty)):focus h5, #index .card-item:has(.card-cover:not(:empty)):focus-within h5 {
+  position: relative;
+  font-size: 0;
+  z-index: 2;
+}
+#index .card-item:has(.card-cover:not(:empty)):hover h5 i, #index .card-item:has(.card-cover:not(:empty)):focus h5 i, #index .card-item:has(.card-cover:not(:empty)):focus-within h5 i {
+  scale: 2;
+  translate: 0 2rem;
+}
 #index .card-item:hover, #index .card-item:focus, #index .card-item:focus-within {
   scale: 1.02;
 }
@@ -3213,7 +3355,7 @@ button, a, *::after, *::before {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  font-size: 4rem;
+  font-size: min(4rem, 48px);
 }
 #index .card-item-small .card .card-cover i {
   color: var(--c-index-brand);
