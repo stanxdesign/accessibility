@@ -1634,8 +1634,7 @@ svg polygon:hover,
   transition: all 0.5s ease-in-out;
   overflow-y: scroll;
   background-color: var(--c-back-blur);
-  -webkit-backdrop-filter: blur(5px);
-          backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
   z-index: 2;
   -webkit-box-shadow: 0 0 5px 0 var(--c-shadow);
           box-shadow: 0 0 5px 0 var(--c-shadow);
@@ -1892,14 +1891,9 @@ svg polygon:hover,
     min-width: 25rem;
     max-width: 50rem;
     display: grid;
-    grid-template-areas: "header header" "cover right" "title right" "footer footer";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto auto auto;
-  }
-  #pageGIS .gispopup.ol-popup {
-    border-radius: 1rem;
-    grid-template-columns: 3fr 2fr;
-    grid-template-rows: 1fr 4fr 1fr;
+    grid-template-areas: "header header" "cover right" "title footer";
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto auto;
   }
   #pageGIS .gispopup .modal-header {
     grid-area: header;
@@ -1912,13 +1906,15 @@ svg polygon:hover,
   }
   #pageGIS .gispopup .extra-gallery {
     grid-area: cover;
-    aspect-ratio: 16/10;
     width: 100%;
     height: auto;
+    aspect-ratio: 16/10;
   }
   #pageGIS .gispopup .html-editor {
     grid-area: right;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/10;
     overflow: auto;
-    aspect-ratio: 16/13;
   }
 }/*# sourceMappingURL=gis.css.map */

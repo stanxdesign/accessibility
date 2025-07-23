@@ -1,6 +1,8 @@
 # 校園無障礙網站設計
 
 [預覽網址：https://demo.stanxdesign.info/accessibility/](https://demo.stanxdesign.info/accessibility/)
+[LOGO檔下載網址（PNG透明圖檔）：https://demo.stanxdesign.info/accessibility/logos_20250723.zip](https://demo.stanxdesign.info/accessibility/logos_20250723.zip)
+[A4手冊範本下載網址：https://demo.stanxdesign.info/accessibility/guidebook_20250623.zip](https://demo.stanxdesign.info/accessibility/guidebook_20250623.zip)
 
 # 追蹤記錄
 
@@ -14,7 +16,7 @@
 - [X] 查詢表單新增「清除」按鈕
 - [X] 查無資料的樣式
 - [X] 清單的回頂端功能
-- [] 色系調整、加上漸層
+- [X] 色系調整、加上漸層
 - [X] 英數文字換字型
 
 ## 2025.03.18 => 討論說明
@@ -34,13 +36,13 @@
 - [X] 設施圖示樣式
 - [X] 設施介紹 POPUP 樣式
 - [X] RWD 行動裝置版面
-- [] 互動效果 JS
+- [X] 互動效果 JS
 
 ### 空間分析（圖台）
 - [X] 資料佈局調整
 - [X] 鄰近設施 POPUP 樣式
 - [X] RWD 行動裝置版面
-- [] 互動效果 JS
+- [X] 互動效果 JS
 - [X] 圖標樣式
 
 ### 設施總覽
@@ -54,8 +56,8 @@
 - [X] 淺色配色
 - [X] 深色配色
 - [X] 高對比配色
-- [] 操作步驟元件
-- [] 搭配圖片
+- [X] 操作步驟元件
+- [X] 搭配圖片
 - [X] 頁尾排版
 - [X] FA-ICON的CLASS應用全相容
 - [X] 大架構及元件不以bootstrap網格製作，避免結構嵌套

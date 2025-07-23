@@ -135,10 +135,10 @@
 						margin: 0 auto 0 0;
 					}
 				}
-				.tags{
+				.tags:not(#common_fac1){
 					flex: 0 0 65%;
 					.tags{
-						flex: 0 0 auto !important
+						// flex: 0 0 auto !important
 					}
 				}
 				#send,#clear,#btn-clear{

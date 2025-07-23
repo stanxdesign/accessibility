@@ -600,15 +600,9 @@
 			grid-template-areas:
 				"header header"
 				"cover right"
-				"title right"
-				"footer footer";
-			grid-template-columns: 1fr 1fr;
-			grid-template-rows: auto auto auto auto;
-			&.ol-popup	{
-					border-radius: 1rem;
-					grid-template-columns: 3fr 2fr;
-					grid-template-rows: 1fr 4fr 1fr
-			}
+				"title footer";
+			grid-template-columns: 50% 50%;
+			grid-template-rows: auto auto auto;
 			.modal-header{
 				grid-area: header;
 			}
@@ -620,14 +614,16 @@
 			}
 			.extra-gallery{
 				grid-area: cover;
-				aspect-ratio: 16 / 10;
 				width: 100%;
 				height: auto;
+				aspect-ratio: 16 / 10;
 			}
 			.html-editor{
 				grid-area: right;
+				width: 100%;
+				height: auto;
+				aspect-ratio: 16 / 10;
 				overflow: auto;
-				aspect-ratio: 16 / 13;
 			}
 		}
 	}

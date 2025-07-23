@@ -790,15 +790,19 @@ label:not(.marker):focus input {
 
 #AC, #AR {
   display: inline-block;
-  padding: 0 0.5ch;
   margin: 0 0.5ch;
   font-size: 1rem;
   color: var(--c-front);
   font-weight: bold;
+  padding: 0.5ch 1ch;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  border-radius: 1rem;
+  text-decoration: none;
 }
 #AC:focus, #AR:focus {
-  color: var(--c-back);
-  background: var(--c-focus);
+  color: var(--c-front-sub);
+  background-color: var(--c-highlight);
   text-decoration: none;
 }
 
@@ -2673,8 +2677,8 @@ button, a, *::after, *::before {
   --c-lite:	#F2F2F2;
   --c-dark:	#534E3C;
   --c-gary:	#CCCCCC;
-  --c-g1: #e5e5e7;
-  --c-g2: #d9d9dc;
+  --c-g1: rgb(229.3333333333, 229.3333333333, 231);
+  --c-g2: rgb(216.6666666667, 216.6666666667, 220);
   --c-g3: #ccccd1;
   /* Primary 主題相關 */
 }
@@ -2712,8 +2716,8 @@ button, a, *::after, *::before {
   --c-dark:	#3A3A3F;
   --c-gary:	#CCCCCC;
   --c-g0: #3A3A3F;
-  --c-g1: #3e3e42;
-  --c-g2: #424244;
+  --c-g1: rgb(62, 62, 65.6666666667);
+  --c-g2: rgb(66, 66, 68.3333333333);
   --c-g3: #464647;
 }
 
@@ -2744,8 +2748,8 @@ button, a, *::after, *::before {
   --g-brand: linear-gradient(#63E6BD 30%, #45A185 95%);
   --g-brant-top: linear-gradient(#63E6BD 60%, #5AD2AD 98%);
   --g-brand-bottom: linear-gradient(#5AD2AD 2%, #45A185 95%);
-  --c-g1: #e7e7ee;
-  --c-g2: #dadadf;
+  --c-g1: rgb(231.3333333333, 231.3333333333, 237.6666666667);
+  --c-g2: rgb(217.6666666667, 217.6666666667, 223.3333333333);
   --c-g3: #ccccd1;
 }
 

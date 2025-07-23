@@ -984,15 +984,10 @@
             flex: 0 0 0;
     margin: 0 auto 0 0;
   }
-  #listPage #filterPanel #filterPanelForm .tags {
+  #listPage #filterPanel #filterPanelForm .tags:not(#common_fac1) {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 65%;
             flex: 0 0 65%;
-  }
-  #listPage #filterPanel #filterPanelForm .tags .tags {
-    -webkit-box-flex: 0 !important;
-        -ms-flex: 0 0 auto !important;
-            flex: 0 0 auto !important;
   }
   #listPage #filterPanel #filterPanelForm #send, #listPage #filterPanel #filterPanelForm #clear, #listPage #filterPanel #filterPanelForm #btn-clear {
     -webkit-box-flex: 1;

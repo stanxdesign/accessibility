@@ -44,14 +44,17 @@ label:not(.marker):focus {
 // 導盲磚處理
 #AC, #AR{
 	display: inline-block;
-	padding: 0 .5ch;
 	margin: 0 .5ch;
 	font-size: 1rem;
 	color: var(--c-front);
 	font-weight: bold;
+	padding: .5ch 1ch;
+  align-content: center;
+  border-radius: 1rem;
+	text-decoration: none;
 	&:focus{
-		color: var(--c-back);
-		background: var(--c-focus);
+		color: var(--c-front-sub);
+		background-color: var(--c-highlight);
 		text-decoration: none;
 	}
 }
