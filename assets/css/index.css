@@ -788,7 +788,7 @@ label:not(.marker):focus input {
   outline-width: 0 !important;
 }
 
-#AC, #AR {
+#AC, #AR, #AZ, #AU {
   display: inline-block;
   margin: 0 0.5ch;
   font-size: 1rem;
@@ -800,7 +800,7 @@ label:not(.marker):focus input {
   border-radius: 1rem;
   text-decoration: none;
 }
-#AC:focus, #AR:focus {
+#AC:focus, #AR:focus, #AZ:focus, #AU:focus {
   color: var(--c-front-sub);
   background-color: var(--c-highlight);
   text-decoration: none;
