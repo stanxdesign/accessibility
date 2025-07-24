@@ -249,8 +249,12 @@
 		gap: 1rem;
 		z-index: 1;
 		.card-item-style{
-			flex: 0 0 calc(50% - 1rem);
+			flex: 0 0 100%;
+			max-width: 100%;
+			@include MD{
+				flex: 0 0 calc(50% - 1rem);
 			max-width: calc(50% - 1rem);
+			}
 		}
 	}
 	#divCommonFacilities{
@@ -384,8 +388,6 @@
 	.card-item-style{
 		position: relative;
 		padding: 0;
-		// border-radius: 1.5rem;
-		// overflow: hidden;
 		.card{
 			background: var(--c-brand);
 			color: var(--c-brand-t);
@@ -410,13 +412,17 @@
 			}
 		}
 		.card-body{
+			width: 100%;
 			padding: 0;
+			display: flex;
+			flex-direction: column;
 			.card-title{
 				position: relative;
 				font-size: 2rem;
 				text-align: center;
 				padding: 1rem;
 				line-height: 2;
+				order: 1;
 				i{
 					margin: 0 .5ch 0 0;
 				}
@@ -424,24 +430,28 @@
 			.card-text{
 				padding: 0 1rem 1rem 1rem;
 				margin: 0;
+				order: 1;
+				min-height: 6rem;
+			}
+			.card-cover{
+				order: 3;
 			}
 			.btn{
 				width: fit-content;
 				background: var(--c-brand-t);
 				color: var(--c-brand);
 				margin: 1rem auto;
+				order: 2;
 				i{
 					margin: 0 .5ch 0 0;
 				}
 			}
 		}
-		@include MD{
+		@include XL{
 			width: 50%;
-			aspect-ratio: 2 / 1;
 			.card-body{
 				width: 50%;
 				position: relative;
-				display: flex;
 				flex-direction: column;
 				justify-content: space-between;
 				overflow: visible;

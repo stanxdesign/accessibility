@@ -2810,9 +2810,17 @@ button, a, *::after, *::before {
 }
 #index #divCommonFacilities-style .card-item-style {
   -webkit-box-flex: 0;
-      -ms-flex: 0 0 calc(50% - 1rem);
-          flex: 0 0 calc(50% - 1rem);
-  max-width: calc(50% - 1rem);
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%;
+}
+@media only screen and (min-width: 768px) {
+  #index #divCommonFacilities-style .card-item-style {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(50% - 1rem);
+            flex: 0 0 calc(50% - 1rem);
+    max-width: calc(50% - 1rem);
+  }
 }
 #index #divCommonFacilities {
   margin-top: 6rem;
@@ -2984,7 +2992,15 @@ button, a, *::after, *::before {
   color: var(--c-hover-t);
 }
 #index .card-item-style .card-body {
+  width: 100%;
   padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 #index .card-item-style .card-body .card-title {
   position: relative;
@@ -2992,6 +3008,9 @@ button, a, *::after, *::before {
   text-align: center;
   padding: 1rem;
   line-height: 2;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
 }
 #index .card-item-style .card-body .card-title i {
   margin: 0 0.5ch 0 0;
@@ -2999,6 +3018,15 @@ button, a, *::after, *::before {
 #index .card-item-style .card-body .card-text {
   padding: 0 1rem 1rem 1rem;
   margin: 0;
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  min-height: 6rem;
+}
+#index .card-item-style .card-body .card-cover {
+  -webkit-box-ordinal-group: 4;
+      -ms-flex-order: 3;
+          order: 3;
 }
 #index .card-item-style .card-body .btn {
   width: -webkit-fit-content;
@@ -3007,21 +3035,20 @@ button, a, *::after, *::before {
   background: var(--c-brand-t);
   color: var(--c-brand);
   margin: 1rem auto;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
 }
 #index .card-item-style .card-body .btn i {
   margin: 0 0.5ch 0 0;
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 1440px) {
   #index .card-item-style {
     width: 50%;
-    aspect-ratio: 2/1;
   }
   #index .card-item-style .card-body {
     width: 50%;
     position: relative;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
