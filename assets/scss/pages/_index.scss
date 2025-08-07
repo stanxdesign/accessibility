@@ -446,6 +446,13 @@
 			}
 			.card-cover{
 				order: 3;
+				img{
+					width: 100%;
+					height: auto;
+					aspect-ratio: 1 / 1;
+					object-fit: cover;
+					object-position: center;
+				}
 			}
 			.btn{
 				width: fit-content;

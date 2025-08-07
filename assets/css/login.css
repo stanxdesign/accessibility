@@ -24,6 +24,10 @@
   text-shadow: none;
 }
 
+:target {
+  scroll-margin-top: 8rem;
+}
+
 html {
   font-family: "Nunito", "SF Pro", "Arial", "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
   font-size: var(--font-size);

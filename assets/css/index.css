@@ -24,6 +24,10 @@
   text-shadow: none;
 }
 
+:target {
+  scroll-margin-top: 8rem;
+}
+
 html {
   font-family: "Nunito", "SF Pro", "Arial", "Noto Sans", "PingFang TC", "Microsoft JhengHei", sans-serif;
   font-size: var(--font-size);
@@ -3051,6 +3055,15 @@ button, a, *::after, *::before {
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
           order: 3;
+}
+#index .card-item-style .card-body .card-cover img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
 }
 #index .card-item-style .card-body .btn {
   width: -webkit-fit-content;

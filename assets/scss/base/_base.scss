@@ -12,6 +12,9 @@
   color: var(--c-black);
   text-shadow: none;
 }
+:target {
+    scroll-margin-top: 8rem;
+}
 
 html {
 	font-family: $font-family;
