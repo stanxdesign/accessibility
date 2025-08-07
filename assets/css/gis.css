@@ -816,7 +816,6 @@ svg polygon:hover,
 }
 .result-all-item .btn-takeme {
   position: absolute;
-  bottom: -0.5rem;
   right: 0;
 }
 .result-all-item .result-info {
@@ -1878,12 +1877,45 @@ svg polygon:hover,
 #pageGIS .gispopup .item-info span:not(:empty)::after {
   content: "」";
 }
+#pageGIS .gispopup .itemFooter {
+  -webkit-box-ordinal-group: 10;
+      -ms-flex-order: 9;
+          order: 9;
+}
+#pageGIS .gispopup .extra-gallery {
+  -webkit-box-ordinal-group: 9;
+      -ms-flex-order: 8;
+          order: 8;
+}
 #pageGIS .gispopup .html-editor {
   overflow: auto;
   padding: 1ch;
 }
+#pageGIS .gispopup .html-editor h6 {
+  font-family: inherit !important;
+}
+#pageGIS .gispopup .html-editor h6 label {
+  width: 6rem;
+  text-align: center;
+  background-color: var(--c-main);
+  color: var(--c-main-t);
+  margin-right: 0.5ch;
+  letter-spacing: 1px;
+  line-height: 1.5;
+  border-radius: 6px;
+}
 #pageGIS .gispopup .html-editor p {
+  font-family: inherit !important;
+  font-size: 1rem !important;
   margin-bottom: 0.25rem;
+}
+#pageGIS .gispopup .html-editor span, #pageGIS .gispopup .html-editor label, #pageGIS .gispopup .html-editor a, #pageGIS .gispopup .html-editor button, #pageGIS .gispopup .html-editor table, #pageGIS .gispopup .html-editor th, #pageGIS .gispopup .html-editor td, #pageGIS .gispopup .html-editor li, #pageGIS .gispopup .html-editor ol, #pageGIS .gispopup .html-editor ul, #pageGIS .gispopup .html-editor strong, #pageGIS .gispopup .html-editor b, #pageGIS .gispopup .html-editor em, #pageGIS .gispopup .html-editor i, #pageGIS .gispopup .html-editor h1, #pageGIS .gispopup .html-editor h2, #pageGIS .gispopup .html-editor h3, #pageGIS .gispopup .html-editor h4, #pageGIS .gispopup .html-editor h5, #pageGIS .gispopup .html-editor h6 {
+  font-family: inherit !important;
+  font-size: 1rem !important;
+}
+#pageGIS .gispopup .html-editor face {
+  font-family: inherit !important;
+  font-size: 1rem !important;
 }
 @media only screen and (min-width: 576px) {
   #pageGIS .gispopup {

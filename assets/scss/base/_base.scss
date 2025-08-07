@@ -304,11 +304,14 @@ $icons: (
 	z-index: 2;
 	label{
 		display: flex;
+		min-width: 3rem;
 		height: 2rem;
 		line-height: 2rem;
 		background-color: var(--c-main);
 		color: var(--c-main-t);
 		letter-spacing: 1px;
+		overflow: hidden;
+		text-overflow: ellipsis;
 		&:nth-child(2n-1){
 			border-radius: .5rem 0 0 .5rem;
 			@include obj-theme(sub,0);
@@ -454,7 +457,7 @@ body:is([id^="list"]){
 		top: auto;
 		left: auto;
 		bottom: 6rem;
-		right: 1rem;
+		right: -.75rem;
 		opacity: 0;
 		pointer-events: none;
 		z-index: 1;
@@ -479,7 +482,7 @@ body:not([id^="list"]){
 		top: auto;
 		left: auto;
 		bottom: 1rem;
-		right: 1rem;
+		right: -.75rem;
 		opacity: 0;
 		pointer-events: none;
 	}

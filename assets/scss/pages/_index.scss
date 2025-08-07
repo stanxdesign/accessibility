@@ -135,6 +135,11 @@
 		color: var(--c-index-section-1-t);
 		margin: 10vw 0;
 		padding: 3rem 0;
+		::selection {
+			background: var(--c-back);
+			color: var(--c-front);
+			text-shadow: none;
+		}
 		&::before{
 			position: absolute;
 			left:0;
@@ -388,9 +393,14 @@
 	.card-item-style{
 		position: relative;
 		padding: 0;
+		::selection {
+			background: var(--c-back);
+			color: var(--c-front);
+			text-shadow: none;
+		}
 		.card{
 			background: var(--c-brand);
-			color: var(--c-brand-t);
+			color: var(--c-white);
 			border: 0 none transparent;
 			padding: 0;
 			border-radius: 1.5rem;
@@ -424,6 +434,7 @@
 				line-height: 2;
 				order: 1;
 				i{
+					color: var(--c-yellow);
 					margin: 0 .5ch 0 0;
 				}
 			}
@@ -438,7 +449,7 @@
 			}
 			.btn{
 				width: fit-content;
-				background: var(--c-brand-t);
+				background: var(--c-yellow);
 				color: var(--c-brand);
 				margin: 1rem auto;
 				order: 2;

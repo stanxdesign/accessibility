@@ -585,11 +585,40 @@
 				}
 			}
 		}
+		.itemFooter{
+			order: 9;
+		}
+		.extra-gallery{
+			order: 8;
+		}
 		.html-editor{
 			overflow: auto;
 			padding: 1ch;
+			h6{
+				font-family: inherit !important;
+				label{
+					width: 6rem;
+					text-align: center;
+					background-color: var(--c-main);
+					color: var(--c-main-t);
+					margin-right: .5ch;
+					letter-spacing: 1px;
+					line-height: 1.5;
+					border-radius: 6px	;
+				}
+			}
 			p{
+				font-family: inherit !important;
+				font-size: 1rem !important;
 				margin-bottom: .25rem;
+			}
+			span, label, a, button, table, th, td, li, ol, ul, strong, b, em, i, h1, h2, h3, h4, h5, h6{
+				font-family: inherit !important;
+				font-size: 1rem !important;
+			}
+			face{
+				font-family: inherit !important;
+				font-size: 1rem !important;
 			}
 		}
 		@include SM{

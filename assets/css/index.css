@@ -365,11 +365,14 @@ input, textarea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  min-width: 3rem;
   height: 2rem;
   line-height: 2rem;
   background-color: var(--c-main);
   color: var(--c-main-t);
   letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .extra-where label:nth-child(2n-1) {
   border-radius: 0.5rem 0 0 0.5rem;
@@ -517,7 +520,7 @@ body:is([id^=list]) .backTop {
   top: auto;
   left: auto;
   bottom: 6rem;
-  right: 1rem;
+  right: -0.75rem;
   opacity: 0;
   pointer-events: none;
   z-index: 1;
@@ -538,7 +541,7 @@ body:not([id^=list]) .backTop {
   top: auto;
   left: auto;
   bottom: 1rem;
-  right: 1rem;
+  right: -0.75rem;
   opacity: 0;
   pointer-events: none;
 }
@@ -2668,6 +2671,16 @@ button, a, *::after, *::before {
   margin: 10vw 0;
   padding: 3rem 0;
 }
+#index .index-section-1 ::-moz-selection {
+  background: var(--c-back);
+  color: var(--c-front);
+  text-shadow: none;
+}
+#index .index-section-1 ::selection {
+  background: var(--c-back);
+  color: var(--c-front);
+  text-shadow: none;
+}
 #index .index-section-1::before {
   position: absolute;
   left: 0;
@@ -2969,9 +2982,19 @@ button, a, *::after, *::before {
   position: relative;
   padding: 0;
 }
+#index .card-item-style ::-moz-selection {
+  background: var(--c-back);
+  color: var(--c-front);
+  text-shadow: none;
+}
+#index .card-item-style ::selection {
+  background: var(--c-back);
+  color: var(--c-front);
+  text-shadow: none;
+}
 #index .card-item-style .card {
   background: var(--c-brand);
-  color: var(--c-brand-t);
+  color: var(--c-white);
   border: 0 none transparent;
   padding: 0;
   border-radius: 1.5rem;
@@ -3013,6 +3036,7 @@ button, a, *::after, *::before {
           order: 1;
 }
 #index .card-item-style .card-body .card-title i {
+  color: var(--c-yellow);
   margin: 0 0.5ch 0 0;
 }
 #index .card-item-style .card-body .card-text {
@@ -3032,7 +3056,7 @@ button, a, *::after, *::before {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background: var(--c-brand-t);
+  background: var(--c-yellow);
   color: var(--c-brand);
   margin: 1rem auto;
   -webkit-box-ordinal-group: 3;
